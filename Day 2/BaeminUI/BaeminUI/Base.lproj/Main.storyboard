@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DE2-zm-SGa">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BaeminUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vYw-8J-W8o"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1982.4427480916029" y="-27.464788732394368"/>
+        </scene>
+        <!--검색-->
+        <scene sceneID="xC2-fm-jb6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oMu-i2-MCz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="I9h-ar-k9M"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7gJ-LH-gK0">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Xa0-kv-bnL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wcF-vP-EHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="26P-Aa-Z2J">
+            <objects>
+                <viewController id="HWH-H5-8ep" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ELb-LZ-Acg">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="CDu-sT-uwA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Lt-uf-O3T"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gkR-ES-pS6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1982.4427480916029" y="656.33802816901414"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="eCS-ks-wKu">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="DE2-zm-SGa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oe8-8p-o0R">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="oMu-i2-MCz" kind="relationship" relationship="viewControllers" id="Xuu-xv-lZn"/>
+                        <segue destination="rUX-it-YqG" kind="relationship" relationship="viewControllers" id="n0d-yD-pHE"/>
+                        <segue destination="ZAm-eB-h55" kind="relationship" relationship="viewControllers" id="Eqi-rY-cJJ"/>
+                        <segue destination="wC6-Sy-eUO" kind="relationship" relationship="viewControllers" id="fz4-FW-nbO"/>
+                        <segue destination="0CV-a0-WwD" kind="relationship" relationship="viewControllers" id="mea-EO-UqY"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v94-2I-nK3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="126" y="1354"/>
+        </scene>
+        <!--찜-->
+        <scene sceneID="kD9-WU-hjX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rUX-it-YqG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="찜" image="heart" catalog="system" id="lsE-k7-zHF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fhn-gq-kzs">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HWH-H5-8ep" kind="relationship" relationship="rootViewController" id="7EX-Na-lNf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tcn-fh-dQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055.7251908396945" y="656.33802816901414"/>
+        </scene>
+        <!--배달의 민족-->
+        <scene sceneID="nvC-ao-F4h">
+            <objects>
+                <viewController id="zQ9-tj-oJk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wzi-kf-eHl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner01" translatesAutoresizingMaskIntoConstraints="NO" id="9GZ-iT-e8X">
+                                <rect key="frame" x="0.0" y="103" width="393" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="MO9-dK-zPa"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z6J-ge-Io2">
+                                <rect key="frame" x="20" y="273" width="353" height="427.33333333333326"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7ij-c8-ncd">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="99.333333333333329"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JMW-IV-eTL">
+                                                <rect key="frame" x="0.0" y="0.0" width="77" height="99.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal_fresh01" translatesAutoresizingMaskIntoConstraints="NO" id="7hP-cD-Ys7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="7hP-cD-Ys7" secondAttribute="height" multiplier="1:1" id="V9z-Qb-fH9"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B마트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbN-U1-r7k">
+                                                        <rect key="frame" x="24.333333333333336" y="85" width="28.666666666666664" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="A6W-RU-ct2">
+                                                <rect key="frame" x="92" y="0.0" width="77" height="99.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal01" translatesAutoresizingMaskIntoConstraints="NO" id="6CK-nd-nts">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="6CK-nd-nts" secondAttribute="height" multiplier="1:1" id="b2B-P5-ffc"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="배민라이더스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="out-ir-DdJ">
+                                                        <rect key="frame" x="7.3333333333333321" y="85" width="62.333333333333343" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AUc-GM-cyn">
+                                                <rect key="frame" x="184" y="0.0" width="77" height="99.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal02" translatesAutoresizingMaskIntoConstraints="NO" id="fdK-RH-HoT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="fdK-RH-HoT" secondAttribute="height" multiplier="1:1" id="JjS-SU-gSe"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2인분" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hh-dO-THg">
+                                                        <rect key="frame" x="24.333333333333343" y="85" width="28.333333333333329" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nya-dV-tKY">
+                                                <rect key="frame" x="276" y="0.0" width="77" height="99.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal03" translatesAutoresizingMaskIntoConstraints="NO" id="ls4-PK-XlZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="ls4-PK-XlZ" secondAttribute="height" multiplier="1:1" id="1kR-Ne-G2i"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="배민모노" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ld9-mi-mZF">
+                                                        <rect key="frame" x="17.666666666666682" y="85" width="41.666666666666657" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="RpV-Uk-o1f">
+                                        <rect key="frame" x="0.0" y="109.33333333333331" width="353" height="99.333333333333314"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gsb-jS-zs1">
+                                                <rect key="frame" x="0.0" y="0.0" width="77" height="99.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal04" translatesAutoresizingMaskIntoConstraints="NO" id="WQC-TL-WLL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="WQC-TL-WLL" secondAttribute="height" multiplier="1:1" id="HZI-AT-9nl"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlG-8o-hFo">
+                                                        <rect key="frame" x="28" y="85" width="21" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BB5-er-ay8">
+                                                <rect key="frame" x="92" y="0.0" width="77" height="99.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal05" translatesAutoresizingMaskIntoConstraints="NO" id="lwv-V0-t8T">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="lwv-V0-t8T" secondAttribute="height" multiplier="1:1" id="nX5-vB-lJL"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="분식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xqd-Bd-0r6">
+                                                        <rect key="frame" x="28" y="85" width="21" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8wI-kb-qT8">
+                                                <rect key="frame" x="184" y="0.0" width="77" height="99.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal06" translatesAutoresizingMaskIntoConstraints="NO" id="Wwc-lZ-Eyv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Wwc-lZ-Eyv" secondAttribute="height" multiplier="1:1" id="evY-pw-VIf"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카페/디저트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZT-hu-O3q">
+                                                        <rect key="frame" x="10.666666666666654" y="85" width="55.666666666666657" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7y1-Nd-58w">
+                                                <rect key="frame" x="276" y="0.0" width="77" height="99.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal07" translatesAutoresizingMaskIntoConstraints="NO" id="xbq-hs-tW8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="xbq-hs-tW8" secondAttribute="height" multiplier="1:1" id="KOj-Ob-nps"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="돈까스/회/일식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLS-Ag-hKv">
+                                                        <rect key="frame" x="3.6666666666666856" y="85" width="69.666666666666671" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="HcB-sW-5Ld">
+                                        <rect key="frame" x="0.0" y="218.66666666666671" width="353" height="99.333333333333343"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b4O-gQ-lEj">
+                                                <rect key="frame" x="0.0" y="0.0" width="77" height="99.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal08" translatesAutoresizingMaskIntoConstraints="NO" id="DQc-09-Xkf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="DQc-09-Xkf" secondAttribute="height" multiplier="1:1" id="Cgv-YV-hUz"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="치킨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V89-h9-N28">
+                                                        <rect key="frame" x="28" y="84.999999999999943" width="21" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FVd-n1-6WM">
+                                                <rect key="frame" x="92" y="0.0" width="77" height="99.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal09" translatesAutoresizingMaskIntoConstraints="NO" id="UTr-3C-BaY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="UTr-3C-BaY" secondAttribute="height" multiplier="1:1" id="i4f-pJ-Vtl"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="피자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7c-F5-UtS">
+                                                        <rect key="frame" x="28" y="84.999999999999943" width="21" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HYm-Jj-ECZ">
+                                                <rect key="frame" x="184" y="0.0" width="77" height="99.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal10" translatesAutoresizingMaskIntoConstraints="NO" id="zdm-jr-lXC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="zdm-jr-lXC" secondAttribute="height" multiplier="1:1" id="yol-Sa-92A"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아시안/양식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylG-sR-kAM">
+                                                        <rect key="frame" x="10.666666666666654" y="84.999999999999943" width="55.666666666666657" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5q8-NB-eU0">
+                                                <rect key="frame" x="276" y="2.6666666666666288" width="77" height="94.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal11" translatesAutoresizingMaskIntoConstraints="NO" id="O9S-R2-R7t">
+                                                        <rect key="frame" x="2.6666666666666856" y="0.0" width="72" height="72"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="O9S-R2-R7t" secondAttribute="height" multiplier="1:1" id="ERP-mC-7nt"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="중국집" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRX-BV-vUh">
+                                                        <rect key="frame" x="23" y="80.000000000000057" width="31.333333333333329" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Y50-b5-BkR">
+                                        <rect key="frame" x="0.0" y="328" width="353" height="99.333333333333314"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jI8-T4-1VI">
+                                                <rect key="frame" x="0.0" y="0.0" width="77" height="99.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal12" translatesAutoresizingMaskIntoConstraints="NO" id="jSL-eR-m1W">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="jSL-eR-m1W" secondAttribute="height" multiplier="1:1" id="hkO-CY-JZR"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="족발/보쌈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmD-7C-fYO">
+                                                        <rect key="frame" x="16.000000000000004" y="85" width="45.333333333333343" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IQW-7Z-XNV">
+                                                <rect key="frame" x="92" y="0.0" width="77" height="99.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal13" translatesAutoresizingMaskIntoConstraints="NO" id="BlH-7T-GMx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="BlH-7T-GMx" secondAttribute="height" multiplier="1:1" id="Ggh-M3-oNU"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="야식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLX-Hs-U4T">
+                                                        <rect key="frame" x="28" y="85" width="21" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bKh-Qx-hHO">
+                                                <rect key="frame" x="184" y="0.0" width="77" height="99.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal14" translatesAutoresizingMaskIntoConstraints="NO" id="EbD-Zd-6AN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="EbD-Zd-6AN" secondAttribute="height" multiplier="1:1" id="hVg-Yo-YaJ"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="찜/탕" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzl-DS-tLf">
+                                                        <rect key="frame" x="26.333333333333343" y="85" width="24.666666666666671" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eQu-j2-yCh">
+                                                <rect key="frame" x="276" y="0.0" width="77" height="99.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal15" translatesAutoresizingMaskIntoConstraints="NO" id="3KB-ra-m58">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="3KB-ra-m58" secondAttribute="height" multiplier="1:1" id="BBm-V6-7Yo"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도시락" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxu-O2-BPC">
+                                                        <rect key="frame" x="23" y="85" width="31.333333333333329" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="66C-Ae-LiL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9GZ-iT-e8X" firstAttribute="centerX" secondItem="Wzi-kf-eHl" secondAttribute="centerX" id="2km-Jc-Nl0"/>
+                            <constraint firstItem="Z6J-ge-Io2" firstAttribute="leading" secondItem="66C-Ae-LiL" secondAttribute="leading" constant="20" id="3HG-RG-K5J"/>
+                            <constraint firstItem="Z6J-ge-Io2" firstAttribute="top" secondItem="9GZ-iT-e8X" secondAttribute="bottom" constant="20" id="3ad-wb-Xx4"/>
+                            <constraint firstItem="9GZ-iT-e8X" firstAttribute="top" secondItem="66C-Ae-LiL" secondAttribute="top" id="851-Eo-h3Q"/>
+                            <constraint firstItem="9GZ-iT-e8X" firstAttribute="trailing" secondItem="66C-Ae-LiL" secondAttribute="trailing" id="VTw-90-vyf"/>
+                            <constraint firstItem="9GZ-iT-e8X" firstAttribute="trailing" secondItem="66C-Ae-LiL" secondAttribute="trailing" id="hJ8-KF-tqt"/>
+                            <constraint firstItem="9GZ-iT-e8X" firstAttribute="leading" secondItem="66C-Ae-LiL" secondAttribute="leading" id="qB1-mr-ygt"/>
+                            <constraint firstItem="9GZ-iT-e8X" firstAttribute="top" secondItem="66C-Ae-LiL" secondAttribute="top" id="vq0-Rb-w7l"/>
+                            <constraint firstItem="9GZ-iT-e8X" firstAttribute="leading" secondItem="66C-Ae-LiL" secondAttribute="leading" id="wYC-H8-OMO"/>
+                            <constraint firstItem="66C-Ae-LiL" firstAttribute="trailing" secondItem="Z6J-ge-Io2" secondAttribute="trailing" constant="20" id="y2y-vo-KVk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="배달의 민족" id="wOV-bQ-d6M"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RPB-zZ-vNh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1980.916030534351" y="1353.5211267605634"/>
+        </scene>
+        <!--홈-->
+        <scene sceneID="8M7-Yu-4fv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZAm-eB-h55" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="w0N-5j-R28"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hjs-Ll-U5Z">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" systemColor="systemMintColor"/>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zQ9-tj-oJk" kind="relationship" relationship="rootViewController" id="C1V-ma-ZVd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fwQ-XP-Uiz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1054" y="1354"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GHx-dq-YTI">
+            <objects>
+                <viewController id="bFB-Io-fHY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6H9-c5-oPJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4BR-cB-TwB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Ih-IZ-6hg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sfi-yg-ipV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1981" y="2052"/>
+        </scene>
+        <!--주문내역-->
+        <scene sceneID="5so-D4-Cpn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wC6-Sy-eUO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="주문내역" image="doc" catalog="system" id="PbB-BL-qHL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rWv-kt-O0L">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bFB-Io-fHY" kind="relationship" relationship="rootViewController" id="gig-yj-hj0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="awx-sF-Fz7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053" y="2052"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Gs3-7p-kQ1">
+            <objects>
+                <viewController id="aC2-ig-vQL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cTR-fn-0DJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="C31-ku-NtG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="24h-QA-RcY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGb-d9-j4o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1984" y="2770"/>
+        </scene>
+        <!--my배민-->
+        <scene sceneID="RL6-lr-BWh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0CV-a0-WwD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="my배민" image="face.smiling" catalog="system" id="2v9-kU-FaX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RUd-ec-YIF">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aC2-ig-vQL" kind="relationship" relationship="rootViewController" id="oTR-SN-482"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHb-mc-AzZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056" y="2770"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="banner01" width="915" height="516"/>
+        <image name="doc" catalog="system" width="115" height="128"/>
+        <image name="face.smiling" catalog="system" width="128" height="123"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="mono_baedal01" width="112" height="62"/>
+        <image name="mono_baedal02" width="69" height="94"/>
+        <image name="mono_baedal03" width="92" height="92"/>
+        <image name="mono_baedal04" width="82" height="89"/>
+        <image name="mono_baedal05" width="92" height="99"/>
+        <image name="mono_baedal06" width="78" height="96"/>
+        <image name="mono_baedal07" width="80" height="56"/>
+        <image name="mono_baedal08" width="104" height="76"/>
+        <image name="mono_baedal09" width="94" height="97"/>
+        <image name="mono_baedal10" width="73" height="91"/>
+        <image name="mono_baedal11" width="72" height="65"/>
+        <image name="mono_baedal12" width="83" height="60"/>
+        <image name="mono_baedal13" width="107" height="74"/>
+        <image name="mono_baedal14" width="89" height="83"/>
+        <image name="mono_baedal15" width="89" height="95"/>
+        <image name="mono_baedal_fresh01" width="111" height="111"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
