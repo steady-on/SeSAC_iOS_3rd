@@ -12,8 +12,9 @@ class SearchingViewController: UIViewController {
     @IBOutlet weak var searchWordTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     
-    @IBOutlet weak var recentSearchWordCollectionView: UICollectionView!
+    @IBOutlet weak var buttonStackView: UIStackView!
     
+
     @IBOutlet weak var searchResultLabel: UILabel!
     
     var newlyCoinedWordDictionary = [
@@ -28,10 +29,12 @@ class SearchingViewController: UIViewController {
         "오뱅알": "오늘 방송 알찼다"
     ]
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
+        
     }
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
@@ -54,4 +57,47 @@ class SearchingViewController: UIViewController {
         
         return meaning
     }
+    
+    @IBAction func testCollectionView(_ sender: UIButton) {
+        guard let randomKeyword = newlyCoinedWordDictionary.keys.randomElement() else { return }
+        
+        print(randomKeyword)
+        
+        let newButton = createRecentSearchKeywordButton(for: randomKeyword)
+    
+        buttonStackView.insertArrangedSubview(newButton, at: 0)
+    }
+    
+    func createRecentSearchKeywordButton(for label: String) -> UIButton {
+        let newButton = UIButton()
+        
+        var config = UIButton.Configuration.plain()
+        config.title = label
+        config.titlePadding = 5
+        config.titleAlignment = .center
+        
+        config.baseForegroundColor = .black
+        config.cornerStyle = .capsule
+        config.background.strokeColor = .black
+        
+        newButton.configuration = config
+        
+        return newButton
+    }
+    
+//    func manageRecentSearchKeywords(for keyword: String) -> UIButton {
+//        let newButton = createRecentSearchKeywordButton(for: keyword)
+//
+//        if let index = recentSearchKeywords.firstIndex(of: newButton) {
+//            let temp = recentSearchKeywords.remove(at: index)
+//        }
+//
+//        recentSearchKeywords.insert(newButton, at: 0)
+//
+//        if recentSearchKeywords.count > 5 {
+//            recentSearchKeywords.removeLast()
+//        }
+//
+//        return newButton
+//    }
 }

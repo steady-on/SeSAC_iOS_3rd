@@ -53,20 +53,6 @@
                                     <constraint firstAttribute="height" constant="50" id="cVe-3z-Wl7"/>
                                 </constraints>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Nuf-Bm-WFC">
-                                <rect key="frame" x="20" y="175.66666666666666" width="353" height="40"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Pe7-qE-fQW"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pYh-PI-hWe">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8D-Hh-MwF">
                                 <rect key="frame" x="20" y="326" width="353" height="200"/>
                                 <subviews>
@@ -91,26 +77,60 @@
                                     <constraint firstItem="ovJ-UI-pqa" firstAttribute="centerY" secondItem="j8D-Hh-MwF" secondAttribute="centerY" id="wdJ-9H-zFF"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfH-Ma-pg4">
+                                <rect key="frame" x="159" y="253" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="testCollectionView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ush-yM-kHU"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaL-ao-hFI">
+                                <rect key="frame" x="20" y="175.66666666666666" width="353" height="40"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xtv-Wy-Rp3">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" priority="250" constant="353" id="qhA-WE-H0d"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xtv-Wy-Rp3" firstAttribute="trailing" secondItem="CJ9-GO-fnE" secondAttribute="trailing" id="JRK-tf-j87"/>
+                                    <constraint firstItem="xtv-Wy-Rp3" firstAttribute="bottom" secondItem="CJ9-GO-fnE" secondAttribute="bottom" id="Qyd-H2-Jqd"/>
+                                    <constraint firstAttribute="height" constant="40" id="ekp-tn-kEb"/>
+                                    <constraint firstItem="xtv-Wy-Rp3" firstAttribute="height" secondItem="Usn-P8-HMH" secondAttribute="height" id="fJY-Fn-eKn"/>
+                                    <constraint firstItem="CJ9-GO-fnE" firstAttribute="top" secondItem="xtv-Wy-Rp3" secondAttribute="top" id="q83-4L-2e9"/>
+                                    <constraint firstItem="xtv-Wy-Rp3" firstAttribute="leading" secondItem="CJ9-GO-fnE" secondAttribute="leading" id="svp-gE-bEu"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="CJ9-GO-fnE"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Usn-P8-HMH"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Nuf-Bm-WFC" firstAttribute="leading" secondItem="zm5-xf-UYX" secondAttribute="leading" id="1hU-57-3Nj"/>
                             <constraint firstItem="zm5-xf-UYX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="34m-Uf-sHe"/>
-                            <constraint firstItem="Nuf-Bm-WFC" firstAttribute="top" secondItem="u3x-TC-zlo" secondAttribute="bottom" constant="8" id="Fbt-Fu-4k7"/>
+                            <constraint firstItem="NaL-ao-hFI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Bsc-qb-v5p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NaL-ao-hFI" secondAttribute="trailing" constant="20" id="Fng-M1-bjm"/>
                             <constraint firstItem="zm5-xf-UYX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Iac-Ya-jhZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nuf-Bm-WFC" secondAttribute="trailing" constant="20" id="Idm-lb-Fau"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u3x-TC-zlo" secondAttribute="trailing" constant="20" id="KUa-V8-bzM"/>
                             <constraint firstItem="j8D-Hh-MwF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NuN-RA-Rms"/>
                             <constraint firstItem="u3x-TC-zlo" firstAttribute="leading" secondItem="zm5-xf-UYX" secondAttribute="leading" id="YF4-y5-CHl"/>
                             <constraint firstItem="j8D-Hh-MwF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YhG-UD-9Zf"/>
+                            <constraint firstItem="NaL-ao-hFI" firstAttribute="top" secondItem="u3x-TC-zlo" secondAttribute="bottom" constant="8" id="eZi-NL-x9E"/>
                             <constraint firstItem="u3x-TC-zlo" firstAttribute="top" secondItem="zm5-xf-UYX" secondAttribute="bottom" constant="8" id="mfm-ee-t6z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j8D-Hh-MwF" secondAttribute="trailing" constant="20" id="wdz-u9-b2I"/>
                             <constraint firstItem="j8D-Hh-MwF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="z3F-7W-dwU"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="recentSearchWordCollectionView" destination="Nuf-Bm-WFC" id="gRK-S8-XyI"/>
+                        <outlet property="buttonStackView" destination="xtv-Wy-Rp3" id="5Pb-D5-xdj"/>
                         <outlet property="searchButton" destination="ZKV-dt-DSv" id="tyH-hr-nen"/>
                         <outlet property="searchResultLabel" destination="ovJ-UI-pqa" id="VR9-lj-4hb"/>
                         <outlet property="searchWordTextField" destination="tBy-bd-Jet" id="8zR-EJ-jOZ"/>
