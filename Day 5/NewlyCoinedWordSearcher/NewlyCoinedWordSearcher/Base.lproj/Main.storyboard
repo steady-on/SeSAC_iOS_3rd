@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Searching View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SearchingViewController" customModule="NewlyCoinedWordSearcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신조어 검색기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zm5-xf-UYX">
+                                <rect key="frame" x="20" y="69" width="184" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3x-TC-zlo">
+                                <rect key="frame" x="20" y="117.66666666666669" width="353" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="검색어를 입력하세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="tBy-bd-Jet">
+                                        <rect key="frame" x="0.0" y="0.0" width="303.33333333333331" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKV-dt-DSv">
+                                        <rect key="frame" x="303.33333333333331" y="0.0" width="49.666666666666686" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="">
+                                            <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
+                                            <backgroundConfiguration key="background" cornerRadius="0.0">
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cVe-3z-Wl7"/>
+                                </constraints>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Nuf-Bm-WFC">
+                                <rect key="frame" x="20" y="175.66666666666666" width="353" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Pe7-qE-fQW"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pYh-PI-hWe">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8D-Hh-MwF">
+                                <rect key="frame" x="20" y="326" width="353" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="tMf-My-Yhs">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="200"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovJ-UI-pqa">
+                                        <rect key="frame" x="156" y="90" width="41.333333333333343" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tMf-My-Yhs" secondAttribute="trailing" id="6UD-TL-j4y"/>
+                                    <constraint firstItem="tMf-My-Yhs" firstAttribute="top" secondItem="j8D-Hh-MwF" secondAttribute="top" id="76q-V2-OtP"/>
+                                    <constraint firstAttribute="height" constant="200" id="VYS-ty-8cW"/>
+                                    <constraint firstItem="tMf-My-Yhs" firstAttribute="leading" secondItem="j8D-Hh-MwF" secondAttribute="leading" id="awp-ET-F80"/>
+                                    <constraint firstItem="ovJ-UI-pqa" firstAttribute="centerX" secondItem="j8D-Hh-MwF" secondAttribute="centerX" id="ffz-jo-ys6"/>
+                                    <constraint firstAttribute="bottom" secondItem="tMf-My-Yhs" secondAttribute="bottom" id="snl-Tl-JCU"/>
+                                    <constraint firstItem="ovJ-UI-pqa" firstAttribute="centerY" secondItem="j8D-Hh-MwF" secondAttribute="centerY" id="wdJ-9H-zFF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Nuf-Bm-WFC" firstAttribute="leading" secondItem="zm5-xf-UYX" secondAttribute="leading" id="1hU-57-3Nj"/>
+                            <constraint firstItem="zm5-xf-UYX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="34m-Uf-sHe"/>
+                            <constraint firstItem="Nuf-Bm-WFC" firstAttribute="top" secondItem="u3x-TC-zlo" secondAttribute="bottom" constant="8" id="Fbt-Fu-4k7"/>
+                            <constraint firstItem="zm5-xf-UYX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Iac-Ya-jhZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nuf-Bm-WFC" secondAttribute="trailing" constant="20" id="Idm-lb-Fau"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u3x-TC-zlo" secondAttribute="trailing" constant="20" id="KUa-V8-bzM"/>
+                            <constraint firstItem="j8D-Hh-MwF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NuN-RA-Rms"/>
+                            <constraint firstItem="u3x-TC-zlo" firstAttribute="leading" secondItem="zm5-xf-UYX" secondAttribute="leading" id="YF4-y5-CHl"/>
+                            <constraint firstItem="j8D-Hh-MwF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YhG-UD-9Zf"/>
+                            <constraint firstItem="u3x-TC-zlo" firstAttribute="top" secondItem="zm5-xf-UYX" secondAttribute="bottom" constant="8" id="mfm-ee-t6z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j8D-Hh-MwF" secondAttribute="trailing" constant="20" id="wdz-u9-b2I"/>
+                            <constraint firstItem="j8D-Hh-MwF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="z3F-7W-dwU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="recentSearchWordCollectionView" destination="Nuf-Bm-WFC" id="gRK-S8-XyI"/>
+                        <outlet property="searchResultLabel" destination="ovJ-UI-pqa" id="VR9-lj-4hb"/>
+                        <outlet property="searchWordTextField" destination="tBy-bd-Jet" id="8zR-EJ-jOZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81.679389312977094" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="300" height="300"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
