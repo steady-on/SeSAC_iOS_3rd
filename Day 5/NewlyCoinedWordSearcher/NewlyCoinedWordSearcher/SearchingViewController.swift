@@ -10,6 +10,7 @@ import UIKit
 class SearchingViewController: UIViewController {
     
     @IBOutlet weak var searchWordTextField: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
     
     @IBOutlet weak var recentSearchWordCollectionView: UICollectionView!
     
@@ -30,9 +31,27 @@ class SearchingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+    
     }
-
     
+    @IBAction func searchButtonTapped(_ sender: UIButton) {
+        guard let textFieldInput = searchWordTextField.text,
+              textFieldInput.isEmpty == false else { return }
+        
+        view.endEditing(true)
+        
+        searchResultLabel.text = searchToDictionary(for: textFieldInput)
+    }
     
+    @IBAction func inputReturnKeyToTextField(_ sender: UITextField) {
+        searchButtonTapped(searchButton)
+    }
+    
+    func searchToDictionary(for keyword: String) -> String {
+        guard let meaning = newlyCoinedWordDictionary[keyword] else {
+            return "검색 결과가 없습니다."
+        }
+        
+        return meaning
+    }
 }

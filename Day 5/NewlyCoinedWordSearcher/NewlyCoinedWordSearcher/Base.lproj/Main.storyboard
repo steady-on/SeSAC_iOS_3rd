@@ -27,10 +27,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3x-TC-zlo">
                                 <rect key="frame" x="20" y="117.66666666666669" width="353" height="50"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="검색어를 입력하세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="tBy-bd-Jet">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="검색어를 입력하세요." textAlignment="natural" minimumFontSize="20" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="tBy-bd-Jet">
                                         <rect key="frame" x="0.0" y="0.0" width="303.33333333333331" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                        <connections>
+                                            <action selector="inputReturnKeyToTextField:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="tUJ-1I-ELm"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKV-dt-DSv">
                                         <rect key="frame" x="303.33333333333331" y="0.0" width="49.666666666666686" height="50"/>
@@ -41,6 +44,9 @@
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="60F-06-k0g"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -67,9 +73,9 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="tMf-My-Yhs">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="200"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovJ-UI-pqa">
-                                        <rect key="frame" x="156" y="90" width="41.333333333333343" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 검색어가 입력되지 않았습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovJ-UI-pqa">
+                                        <rect key="frame" x="37" y="88" width="279.33333333333331" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -105,6 +111,7 @@
                     </view>
                     <connections>
                         <outlet property="recentSearchWordCollectionView" destination="Nuf-Bm-WFC" id="gRK-S8-XyI"/>
+                        <outlet property="searchButton" destination="ZKV-dt-DSv" id="tyH-hr-nen"/>
                         <outlet property="searchResultLabel" destination="ovJ-UI-pqa" id="VR9-lj-4hb"/>
                         <outlet property="searchWordTextField" destination="tBy-bd-Jet" id="8zR-EJ-jOZ"/>
                     </connections>
