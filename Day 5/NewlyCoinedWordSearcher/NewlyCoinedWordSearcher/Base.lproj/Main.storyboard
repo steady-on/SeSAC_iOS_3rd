@@ -59,7 +59,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="tMf-My-Yhs">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="200"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 검색어가 입력되지 않았습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovJ-UI-pqa">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 검색어가 입력되지 않았습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovJ-UI-pqa">
                                         <rect key="frame" x="37" y="88" width="279.33333333333331" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -70,6 +70,8 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="tMf-My-Yhs" secondAttribute="trailing" id="6UD-TL-j4y"/>
                                     <constraint firstItem="tMf-My-Yhs" firstAttribute="top" secondItem="j8D-Hh-MwF" secondAttribute="top" id="76q-V2-OtP"/>
+                                    <constraint firstItem="ovJ-UI-pqa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="j8D-Hh-MwF" secondAttribute="leading" constant="25" id="Cjn-gE-OzZ"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ovJ-UI-pqa" secondAttribute="trailing" constant="25" id="Djd-Xy-HBS"/>
                                     <constraint firstAttribute="height" constant="200" id="VYS-ty-8cW"/>
                                     <constraint firstItem="tMf-My-Yhs" firstAttribute="leading" secondItem="j8D-Hh-MwF" secondAttribute="leading" id="awp-ET-F80"/>
                                     <constraint firstItem="ovJ-UI-pqa" firstAttribute="centerX" secondItem="j8D-Hh-MwF" secondAttribute="centerX" id="ffz-jo-ys6"/>
@@ -80,7 +82,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaL-ao-hFI">
                                 <rect key="frame" x="20" y="175.66666666666666" width="353" height="40"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xtv-Wy-Rp3">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xtv-Wy-Rp3">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" priority="250" constant="353" id="qhA-WE-H0d"/>

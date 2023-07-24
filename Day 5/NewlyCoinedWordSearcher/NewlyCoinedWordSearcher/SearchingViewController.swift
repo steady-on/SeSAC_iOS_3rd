@@ -45,17 +45,22 @@ class SearchingViewController: UIViewController {
         
         view.endEditing(true)
         
+        guard let findedMeaning = searchToDictionary(for: textFieldInput) else {
+            searchResultLabel.text = "\(textFieldInput)에 대한 검색 결과가 없습니다."
+            return
+        }
+        
+        searchResultLabel.text = findedMeaning
         addRecentKeywordButton(for: textFieldInput)
-        searchResultLabel.text = searchToDictionary(for: textFieldInput)
     }
     
     @IBAction func inputReturnKeyToTextField(_ sender: UITextField) {
         searchButtonTapped(searchButton)
     }
     
-    func searchToDictionary(for keyword: String) -> String {
+    func searchToDictionary(for keyword: String) -> String? {
         guard let meaning = newlyCoinedWordDictionary[keyword] else {
-            return "검색 결과가 없습니다."
+            return nil
         }
         
         return meaning
