@@ -39,6 +39,10 @@ class SearchingViewController: UIViewController {
         
     }
     
+    @IBAction func screenTapGesture(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
     @IBAction func searchButtonTapped(_ sender: UIButton) {
         guard let textFieldInput = searchWordTextField.text,
               textFieldInput.isEmpty == false else { return }
@@ -80,7 +84,7 @@ class SearchingViewController: UIViewController {
             exist.removeFromSuperview()
         }
         
-        if buttonStackSubviews.count >= 5, let first = buttonStackSubviews.first {
+        if buttonStackSubviews.count >= 7, let first = buttonStackSubviews.first {
             buttonStackView.removeArrangedSubview(first)
             first.removeFromSuperview()
         }

@@ -30,7 +30,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="검색어를 입력하세요." textAlignment="natural" minimumFontSize="20" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="tBy-bd-Jet">
                                         <rect key="frame" x="0.0" y="0.0" width="303.33333333333331" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <connections>
                                             <action selector="inputReturnKeyToTextField:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="tUJ-1I-ELm"/>
                                         </connections>
@@ -103,6 +103,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="zm5-xf-UYX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="34m-Uf-sHe"/>
                             <constraint firstItem="NaL-ao-hFI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Bsc-qb-v5p"/>
@@ -117,6 +118,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j8D-Hh-MwF" secondAttribute="trailing" constant="20" id="wdz-u9-b2I"/>
                             <constraint firstItem="j8D-Hh-MwF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="z3F-7W-dwU"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="SXB-ZS-Lt5" appends="YES" id="07B-zG-V9o"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="buttonStackView" destination="xtv-Wy-Rp3" id="5Pb-D5-xdj"/>
@@ -126,6 +130,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SXB-ZS-Lt5">
+                    <connections>
+                        <action selector="screenTapGesture:" destination="BYZ-38-t0r" id="FEB-nk-4hK"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="81.679389312977094" y="-34.507042253521128"/>
         </scene>
