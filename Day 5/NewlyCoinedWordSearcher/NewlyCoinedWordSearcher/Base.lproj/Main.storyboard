@@ -77,19 +77,6 @@
                                     <constraint firstItem="ovJ-UI-pqa" firstAttribute="centerY" secondItem="j8D-Hh-MwF" secondAttribute="centerY" id="wdJ-9H-zFF"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfH-Ma-pg4">
-                                <rect key="frame" x="159" y="253" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="capsule">
-                                    <backgroundConfiguration key="background">
-                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="testCollectionView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ush-yM-kHU"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaL-ao-hFI">
                                 <rect key="frame" x="20" y="175.66666666666666" width="353" height="40"/>
                                 <subviews>

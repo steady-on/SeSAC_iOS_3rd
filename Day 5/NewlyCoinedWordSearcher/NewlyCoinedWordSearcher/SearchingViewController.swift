@@ -14,6 +14,10 @@ class SearchingViewController: UIViewController {
     
     @IBOutlet weak var buttonStackView: UIStackView!
     
+    private var buttonStackSubviews: [UIButton] {
+        let subViews = buttonStackView.subviews as! [UIButton]
+        return subViews
+    }
 
     @IBOutlet weak var searchResultLabel: UILabel!
     
@@ -29,8 +33,6 @@ class SearchingViewController: UIViewController {
         "오뱅알": "오늘 방송 알찼다"
     ]
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +45,7 @@ class SearchingViewController: UIViewController {
         
         view.endEditing(true)
         
+        addRecentKeywordButton(for: textFieldInput)
         searchResultLabel.text = searchToDictionary(for: textFieldInput)
     }
     
@@ -58,14 +61,24 @@ class SearchingViewController: UIViewController {
         return meaning
     }
     
-    @IBAction func testCollectionView(_ sender: UIButton) {
-        guard let randomKeyword = newlyCoinedWordDictionary.keys.randomElement() else { return }
+    func addRecentKeywordButton(for keyword: String) {
+        let newButton = createRecentSearchKeywordButton(for: keyword)
         
-        print(randomKeyword)
+        manageStackView(for: keyword)
         
-        let newButton = createRecentSearchKeywordButton(for: randomKeyword)
-    
         buttonStackView.insertArrangedSubview(newButton, at: 0)
+    }
+    
+    func manageStackView(for new: String) {
+        if let exist = buttonStackSubviews.first(where: { $0.configuration?.title == new }) {
+            buttonStackView.removeArrangedSubview(exist)
+            exist.removeFromSuperview()
+        }
+        
+        if buttonStackSubviews.count >= 5, let first = buttonStackSubviews.first {
+            buttonStackView.removeArrangedSubview(first)
+            first.removeFromSuperview()
+        }
     }
     
     func createRecentSearchKeywordButton(for label: String) -> UIButton {
@@ -85,19 +98,8 @@ class SearchingViewController: UIViewController {
         return newButton
     }
     
-//    func manageRecentSearchKeywords(for keyword: String) -> UIButton {
-//        let newButton = createRecentSearchKeywordButton(for: keyword)
-//
-//        if let index = recentSearchKeywords.firstIndex(of: newButton) {
-//            let temp = recentSearchKeywords.remove(at: index)
-//        }
-//
-//        recentSearchKeywords.insert(newButton, at: 0)
-//
-//        if recentSearchKeywords.count > 5 {
-//            recentSearchKeywords.removeLast()
-//        }
-//
-//        return newButton
-//    }
+    @objc func keywordButtonTapped(keyword: String) {
+        self.searchWordTextField.text = keyword
+        searchButtonTapped(searchButton)
+    }
 }
