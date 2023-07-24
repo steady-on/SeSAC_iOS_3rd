@@ -100,11 +100,13 @@ class SearchingViewController: UIViewController {
         
         newButton.configuration = config
         
+        newButton.addTarget(self, action: #selector(keywordButtonTapped(sender: )), for: .touchUpInside)
+        
         return newButton
     }
     
-    @objc func keywordButtonTapped(keyword: String) {
-        self.searchWordTextField.text = keyword
+    @objc func keywordButtonTapped(sender: UIButton) {
+        self.searchWordTextField.text = sender.configuration?.title
         searchButtonTapped(searchButton)
     }
 }
