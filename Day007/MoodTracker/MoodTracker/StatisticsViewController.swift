@@ -9,17 +9,20 @@ import UIKit
 
 class StatisticsViewController: UIViewController {
 
+    @IBOutlet var emotionLabelViews: [UIView]!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setUI()
     }
     
     func setUI() {
-        
+        emotionLabelViews.forEach { view in
+            view.layer.cornerRadius = 10
+        }
     }
     
 }
