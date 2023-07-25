@@ -104,7 +104,7 @@
         <!--Statistics-->
         <scene sceneID="xU9-K5-Alg">
             <objects>
-                <viewController id="4D7-mo-Xba" sceneMemberID="viewController">
+                <viewController id="4D7-mo-Xba" customClass="StatisticsViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Buy-Lv-cqR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
