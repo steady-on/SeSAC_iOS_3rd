@@ -14,7 +14,7 @@ class StatisticsViewController: UIViewController {
     @IBOutlet var emotionStringLabels: [UILabel]!
     
     @IBOutlet var numbersOfEmotionTapped: [UILabel]!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,5 +46,4 @@ class StatisticsViewController: UIViewController {
             label.text = emotionCountDict[emotion] ?? "0회"
         }
     }
-    
 }
