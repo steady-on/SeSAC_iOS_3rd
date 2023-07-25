@@ -8,8 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    private var emotionManager = EmotionManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +20,8 @@ class ViewController: UIViewController {
             return
         }
         
-        emotionManager.addValue(to: emotionForTagValue)
-        emotionManager.printMessageForEmotionCount(to: emotionForTagValue)
+        EmotionManager.addValue(to: emotionForTagValue)
+        EmotionManager.printMessageForEmotionCount(to: emotionForTagValue)
     }
     
 }
