@@ -8,14 +8,18 @@
 import Foundation
 
 final class EmotionManager {
+    static var shared = EmotionManager()
+    
     private var emotionData = [Emotion:Int]()
     
-    func addValue(to emotion: Emotion) {
-        emotionData[emotion, default: 0] += 1
+    private init() {}
+    
+    static func addValue(to emotion: Emotion) {
+        shared.emotionData[emotion, default: 0] += 1
     }
     
-    func printMessageForEmotionCount(to emotion: Emotion) {
-        guard let countForEmotion = emotionData[emotion] else {
+    static func printMessageForEmotionCount(to emotion: Emotion) {
+        guard let countForEmotion = shared.emotionData[emotion] else {
             print("Error! \(emotion.koreanExpression) 기분은 지금까지 체크된 적이 없어요!")
             return
         }
