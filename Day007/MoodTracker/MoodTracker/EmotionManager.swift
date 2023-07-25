@@ -20,7 +20,7 @@ final class EmotionManager {
             return
         }
         
-        let message = "\(emotion.koreanExpression) 기분은 지금까지 \(countForEmotion)회 체크되었어요!"
+        let message = "\(emotion.koreanExpression) 기분은 지금까지 \(countForEmotion)회 체크 되었어요!"
         print(message)
     }
 }
