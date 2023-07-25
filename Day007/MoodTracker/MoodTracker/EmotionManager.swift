@@ -22,6 +22,14 @@ final class EmotionManager {
         shared.emotionData[emotion, default: 0] += 1
     }
     
+    static func addValue(to emotion: Emotion, count: Int) {
+        shared.emotionData[emotion, default: 0] += count
+    }
+    
+    static func resetData(of emotion: Emotion) {
+        shared.emotionData[emotion] = nil
+    }
+    
     static func printMessageForEmotionCount(to emotion: Emotion) {
         guard let countForEmotion = shared.emotionData[emotion] else {
             print("Error! \(emotion.koreanExpression) 기분은 지금까지 체크된 적이 없어요!")
