@@ -13,6 +13,8 @@
 		6347FBD62A6FB145001F76A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6347FBD42A6FB145001F76A8 /* Main.storyboard */; };
 		6347FBD82A6FB147001F76A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6347FBD72A6FB147001F76A8 /* Assets.xcassets */; };
 		6347FBDB2A6FB147001F76A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6347FBD92A6FB147001F76A8 /* LaunchScreen.storyboard */; };
+		6347FBE32A6FBE85001F76A8 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6347FBE22A6FBE85001F76A8 /* Emotion.swift */; };
+		6347FBE52A6FBF25001F76A8 /* EmotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6347FBE42A6FBF25001F76A8 /* EmotionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		6347FBD72A6FB147001F76A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6347FBDA2A6FB147001F76A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6347FBDC2A6FB147001F76A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6347FBE22A6FBE85001F76A8 /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
+		6347FBE42A6FBF25001F76A8 /* EmotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				6347FBCE2A6FB145001F76A8 /* AppDelegate.swift */,
 				6347FBD02A6FB145001F76A8 /* SceneDelegate.swift */,
 				6347FBD22A6FB145001F76A8 /* ViewController.swift */,
+				6347FBE22A6FBE85001F76A8 /* Emotion.swift */,
+				6347FBE42A6FBF25001F76A8 /* EmotionManager.swift */,
 				6347FBD42A6FB145001F76A8 /* Main.storyboard */,
 				6347FBD72A6FB147001F76A8 /* Assets.xcassets */,
 				6347FBD92A6FB147001F76A8 /* LaunchScreen.storyboard */,
@@ -141,6 +147,8 @@
 				6347FBD32A6FB145001F76A8 /* ViewController.swift in Sources */,
 				6347FBCF2A6FB145001F76A8 /* AppDelegate.swift in Sources */,
 				6347FBD12A6FB145001F76A8 /* SceneDelegate.swift in Sources */,
+				6347FBE52A6FBF25001F76A8 /* EmotionManager.swift in Sources */,
+				6347FBE32A6FBE85001F76A8 /* Emotion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
