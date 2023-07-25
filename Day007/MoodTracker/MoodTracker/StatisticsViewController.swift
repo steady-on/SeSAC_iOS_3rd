@@ -21,6 +21,16 @@ class StatisticsViewController: UIViewController {
         setUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let emotionCountDict = EmotionManager.shared.emotionCountDict
+
+        for (label, emotion) in zip(numbersOfEmotionTapped, Emotion.allCases) {
+            label.text = emotionCountDict[emotion] ?? "0회"
+        }
+    }
+    
     func setUI() {
         emotionLabelViews.forEach { view in
             view.layer.cornerRadius = 10
