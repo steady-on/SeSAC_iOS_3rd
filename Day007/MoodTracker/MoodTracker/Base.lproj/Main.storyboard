@@ -100,7 +100,7 @@
             </objects>
             <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
         </scene>
-        <!--통계-->
+        <!--Statistics-->
         <scene sceneID="xU9-K5-Alg">
             <objects>
                 <viewController id="4D7-mo-Xba" sceneMemberID="viewController">
@@ -110,7 +110,7 @@
                         <viewLayoutGuide key="safeArea" id="ntl-9d-5Uv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="통계" image="chart.bar.fill" selectedImage="chart.bar.fill" catalog="system" id="BAi-zU-TbU"/>
+                    <tabBarItem key="tabBarItem" title="Statistics" image="chart.bar.fill" selectedImage="chart.bar.fill" catalog="system" id="BAi-zU-TbU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEA-Mi-bv9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
