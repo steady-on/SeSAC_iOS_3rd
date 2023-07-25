@@ -11,6 +11,9 @@ class StatisticsViewController: UIViewController {
 
     @IBOutlet var emotionLabelViews: [UIView]!
     
+    @IBOutlet var emotionStringLabels: [UILabel]!
+    
+    @IBOutlet var numbersOfEmotionTapped: [UILabel]!
     
     
     override func viewDidLoad() {
@@ -22,6 +25,10 @@ class StatisticsViewController: UIViewController {
     func setUI() {
         emotionLabelViews.forEach { view in
             view.layer.cornerRadius = 10
+        }
+        
+        for (label, emotion) in zip(emotionStringLabels, Emotion.allCases) {
+            label.text = emotion.koreanExpression
         }
     }
     
