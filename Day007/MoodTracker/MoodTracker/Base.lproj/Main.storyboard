@@ -33,6 +33,9 @@
                                             <backgroundConfiguration key="background" cornerRadius="0.0"/>
                                             <color key="baseBackgroundColor" red="0.91976243257522583" green="0.41666050221618434" blue="0.46108995109791595" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gW2-xC-Yf5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2A-51-Dfp">
                                         <rect key="frame" x="0.0" y="138" width="393" height="138"/>
@@ -41,6 +44,9 @@
                                             <backgroundConfiguration key="background" cornerRadius="0.0"/>
                                             <color key="baseBackgroundColor" red="0.9529411793" green="0.87301515297647736" blue="0.58275879452178359" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A2n-9a-VDE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwg-9m-8zP">
                                         <rect key="frame" x="0.0" y="276" width="393" height="137.66666666666663"/>
@@ -48,6 +54,9 @@
                                         <buttonConfiguration key="configuration" style="filled" image="emoji3" title="">
                                             <color key="baseBackgroundColor" red="0.97254902119999997" green="0.98039215800000001" blue="0.71372550729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aAN-lL-GfF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKh-vK-0Ee">
                                         <rect key="frame" x="0.0" y="413.66666666666669" width="393" height="138.00000000000006"/>
@@ -56,6 +65,9 @@
                                             <backgroundConfiguration key="background" cornerRadius="0.0"/>
                                             <color key="baseBackgroundColor" red="0.72941178080000002" green="0.93333333730000001" blue="0.88235294819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2O4-XD-z7o"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lz-ib-JhD">
                                         <rect key="frame" x="0.0" y="551.66666666666663" width="393" height="138"/>
@@ -64,6 +76,9 @@
                                             <backgroundConfiguration key="background" cornerRadius="0.0"/>
                                             <color key="baseBackgroundColor" red="0.24313727020000001" green="0.40000003579999999" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g91-pe-GYA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
