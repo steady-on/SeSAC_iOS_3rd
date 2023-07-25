@@ -15,7 +15,6 @@ class StatisticsViewController: UIViewController {
     
     @IBOutlet var numbersOfEmotionTapped: [UILabel]!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +28,12 @@ class StatisticsViewController: UIViewController {
         
         for (label, emotion) in zip(emotionStringLabels, Emotion.allCases) {
             label.text = emotion.koreanExpression
+        }
+        
+        let emotionCountDict = EmotionManager.shared.emotionCountDict
+
+        for (label, emotion) in zip(numbersOfEmotionTapped, Emotion.allCases) {
+            label.text = emotionCountDict[emotion] ?? "0회"
         }
     }
     
