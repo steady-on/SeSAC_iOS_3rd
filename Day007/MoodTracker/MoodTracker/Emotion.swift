@@ -17,15 +17,15 @@ enum Emotion: Int {
     var koreanExpression: String {
         switch self {
         case .happy:
-            return "완전행복한"
+            return "완전 행복한"
         case .smile:
             return "좋은"
         case .soso:
-            return "그냥그런"
+            return "그냥 그런"
         case .upset:
             return "속상한"
         case .sad:
-            return "너무슬픈"
+            return "너무 슬픈"
         }
     }
 }
