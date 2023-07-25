@@ -9,9 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet var emotionButtons: [UIButton]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        emotionButtons.forEach { button in
+            setPullDownAction(to: button)
+        }
     }
 
     @IBAction func emotionButtonTapped(_ sender: UIButton) {
