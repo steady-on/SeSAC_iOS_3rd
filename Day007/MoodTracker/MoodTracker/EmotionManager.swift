@@ -12,6 +12,10 @@ final class EmotionManager {
     
     private var emotionData = [Emotion:Int]()
     
+    var emotionCountDict: [Emotion: String] {
+        return emotionData.mapValues { count in "\(count)회" }
+    }
+    
     private init() {}
     
     static func addValue(to emotion: Emotion) {
