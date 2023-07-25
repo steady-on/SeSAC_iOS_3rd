@@ -95,6 +95,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Record" image="face.smiling.inverse" catalog="system" selectedImage="face.smiling.inverse" id="iS1-Pf-gLg"/>
+                    <connections>
+                        <outletCollection property="emotionButtons" destination="qsf-8l-Bad" collectionClass="NSMutableArray" id="pa2-hs-F4X"/>
+                        <outletCollection property="emotionButtons" destination="j2A-51-Dfp" collectionClass="NSMutableArray" id="P2I-xi-svi"/>
+                        <outletCollection property="emotionButtons" destination="Pwg-9m-8zP" collectionClass="NSMutableArray" id="QDv-f2-9t6"/>
+                        <outletCollection property="emotionButtons" destination="QKh-vK-0Ee" collectionClass="NSMutableArray" id="QQG-AY-FCI"/>
+                        <outletCollection property="emotionButtons" destination="2Lz-ib-JhD" collectionClass="NSMutableArray" id="jlO-VM-b8H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -281,7 +288,7 @@
                             <constraint firstItem="SRA-n3-rzw" firstAttribute="height" secondItem="Buy-Lv-cqR" secondAttribute="height" multiplier="0.5" id="t1P-nc-mI6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Statistics" image="chart.bar.fill" selectedImage="chart.bar.fill" catalog="system" id="BAi-zU-TbU"/>
+                    <tabBarItem key="tabBarItem" title="Statistics" image="chart.bar.fill" catalog="system" selectedImage="chart.bar.fill" id="BAi-zU-TbU"/>
                     <connections>
                         <outletCollection property="emotionLabelViews" destination="0G7-QY-D5w" collectionClass="NSMutableArray" id="Ux0-Mv-hby"/>
                         <outletCollection property="emotionLabelViews" destination="8bu-Ea-QoF" collectionClass="NSMutableArray" id="zh1-sg-J4W"/>
@@ -310,6 +317,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="P0N-jZ-ohr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AcP-PC-8le">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -324,7 +332,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chart.bar.fill" width="128" height="128"/>
         <image name="chart.bar.fill" catalog="system" width="128" height="90"/>
         <image name="emoji1" width="53" height="51"/>
         <image name="emoji2" width="52" height="48"/>
