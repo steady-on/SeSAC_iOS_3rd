@@ -24,10 +24,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mhe-Rt-8Su">
-                                <rect key="frame" x="0.0" y="79.333333333333314" width="393" height="689.66666666666674"/>
+                                <rect key="frame" x="0.0" y="87.333333333333314" width="393" height="681.66666666666674"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsf-8l-Bad">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="138"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="136.33333333333334"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="emoji1" title="" cornerStyle="fixed">
                                             <backgroundConfiguration key="background" cornerRadius="0.0"/>
@@ -38,7 +38,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2A-51-Dfp">
-                                        <rect key="frame" x="0.0" y="138" width="393" height="138"/>
+                                        <rect key="frame" x="0.0" y="136.33333333333331" width="393" height="136.33333333333331"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="emoji2" cornerStyle="fixed">
                                             <backgroundConfiguration key="background" cornerRadius="0.0"/>
@@ -49,7 +49,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwg-9m-8zP">
-                                        <rect key="frame" x="0.0" y="276" width="393" height="137.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="272.66666666666669" width="393" height="136.33333333333331"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="emoji3" title="">
                                             <color key="baseBackgroundColor" red="0.97254902119999997" green="0.98039215800000001" blue="0.71372550729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -59,7 +59,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKh-vK-0Ee">
-                                        <rect key="frame" x="0.0" y="413.66666666666669" width="393" height="138.00000000000006"/>
+                                        <rect key="frame" x="0.0" y="409" width="393" height="136.33333333333337"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="emoji4" cornerStyle="fixed">
                                             <backgroundConfiguration key="background" cornerRadius="0.0"/>
@@ -70,7 +70,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lz-ib-JhD">
-                                        <rect key="frame" x="0.0" y="551.66666666666663" width="393" height="138"/>
+                                        <rect key="frame" x="0.0" y="545.33333333333326" width="393" height="136.33333333333337"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="emoji5" cornerStyle="fixed">
                                             <backgroundConfiguration key="background" cornerRadius="0.0"/>
@@ -88,7 +88,7 @@
                         <constraints>
                             <constraint firstItem="RnJ-yB-Kko" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4kG-aI-qrs"/>
                             <constraint firstItem="RnJ-yB-Kko" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="D6d-fw-rua"/>
-                            <constraint firstItem="mhe-Rt-8Su" firstAttribute="top" secondItem="RnJ-yB-Kko" secondAttribute="bottom" id="NMG-l9-cje"/>
+                            <constraint firstItem="mhe-Rt-8Su" firstAttribute="top" secondItem="RnJ-yB-Kko" secondAttribute="bottom" constant="8" id="NMG-l9-cje"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mhe-Rt-8Su" secondAttribute="bottom" id="htX-qR-Ceu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mhe-Rt-8Su" secondAttribute="trailing" id="vd3-gd-phI"/>
                             <constraint firstItem="mhe-Rt-8Su" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yIu-HM-XCR"/>
