@@ -17,7 +17,7 @@ class StatisticsViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUI()
     }
     
@@ -44,6 +44,10 @@ class StatisticsViewController: UIViewController {
 
         for (label, emotion) in zip(numbersOfEmotionTapped, Emotion.allCases) {
             label.text = emotionCountDict[emotion] ?? "0회"
+        }
+        
+        for (view, emotion) in zip(emotionLabelViews, Emotion.allCases) {
+            view.backgroundColor = emotion.color
         }
     }
 }

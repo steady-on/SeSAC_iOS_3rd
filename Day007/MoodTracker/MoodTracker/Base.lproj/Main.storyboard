@@ -140,7 +140,6 @@
                                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.90588235859999999" green="0.45098042490000001" blue="0.55294120309999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="Zqj-De-aYQ" firstAttribute="top" secondItem="0G7-QY-D5w" secondAttribute="top" id="UVM-J6-zsP"/>
                                             <constraint firstAttribute="bottom" secondItem="Zqj-De-aYQ" secondAttribute="bottom" id="sDR-Sh-2xr"/>
@@ -170,7 +169,6 @@
                                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.9529411793" green="0.86666667460000002" blue="0.57647061349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="Mp0-04-qxa" firstAttribute="leading" secondItem="8bu-Ea-QoF" secondAttribute="leading" id="6Oq-zX-osh"/>
                                             <constraint firstItem="Mp0-04-qxa" firstAttribute="top" secondItem="8bu-Ea-QoF" secondAttribute="top" id="YVU-v6-07i"/>
@@ -200,7 +198,6 @@
                                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.97254902119999997" green="0.98039215800000001" blue="0.71372550729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="nNv-gh-O8R" firstAttribute="top" secondItem="Ev8-wW-uCE" secondAttribute="top" id="9Li-da-yfv"/>
                                             <constraint firstAttribute="bottom" secondItem="nNv-gh-O8R" secondAttribute="bottom" id="RTk-rc-tT4"/>
@@ -230,7 +227,6 @@
                                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.72941178080000002" green="0.93333333730000001" blue="0.88235294819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="01g-3v-z3u" firstAttribute="leading" secondItem="4BI-hY-re7" secondAttribute="leading" id="cFG-L0-iWi"/>
                                             <constraint firstAttribute="bottom" secondItem="01g-3v-z3u" secondAttribute="bottom" id="dy6-xs-gLi"/>
@@ -260,7 +256,6 @@
                                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.24313727020000001" green="0.40000003579999999" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="tGa-RQ-NyH" secondAttribute="trailing" id="6oC-Hb-qLE"/>
                                             <constraint firstItem="tGa-RQ-NyH" firstAttribute="leading" secondItem="bmT-hh-mMj" secondAttribute="leading" id="TTG-fp-avY"/>
