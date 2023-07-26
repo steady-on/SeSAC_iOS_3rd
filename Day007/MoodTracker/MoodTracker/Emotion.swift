@@ -5,7 +5,7 @@
 //  Created by Roen White on 2023/07/25.
 //
 
-import Foundation
+import UIKit
 
 enum Emotion: Int, CaseIterable {
     case happy
@@ -26,6 +26,21 @@ enum Emotion: Int, CaseIterable {
             return "속상한"
         case .sad:
             return "너무 슬픈"
+        }
+    }
+    
+    var color: UIColor? {
+        switch self {
+        case .happy:
+            return UIColor(named: "MTRed")
+        case .smile:
+            return UIColor(named: "MTOrange")
+        case .soso:
+            return UIColor(named: "MTYellow")
+        case .upset:
+            return UIColor(named: "MTMint")
+        case .sad:
+            return UIColor(named: "MTNavy")
         }
     }
 }
