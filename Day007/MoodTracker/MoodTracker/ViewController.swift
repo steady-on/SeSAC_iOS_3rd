@@ -14,6 +14,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        for (button, emotion) in zip(emotionButtons, Emotion.allCases) {
+            button.tintColor = emotion.color
+        }
+        
         emotionButtons.forEach { button in
             setPullDownAction(to: button)
         }
