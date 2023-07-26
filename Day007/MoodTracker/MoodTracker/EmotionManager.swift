@@ -10,28 +10,35 @@ import Foundation
 final class EmotionManager {
     static var shared = EmotionManager()
     
-    private var emotionData = [Emotion:Int]()
+    private var emotionData: [String:Int] {
+        get {
+            UserDefaults.standard.dictionary(forKey: "emotionData") as? [String:Int] ?? [:]
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "emotionData")
+        }
+    }
     
-    var emotionCountDict: [Emotion: String] {
+    var emotionCountDict: [String: String] {
         return emotionData.mapValues { count in "\(count)회" }
     }
     
     private init() {}
     
     static func addValue(to emotion: Emotion) {
-        shared.emotionData[emotion, default: 0] += 1
+        shared.emotionData[emotion.koreanExpression, default: 0] += 1
     }
     
     static func addValue(to emotion: Emotion, count: Int) {
-        shared.emotionData[emotion, default: 0] += count
+        shared.emotionData[emotion.koreanExpression, default: 0] += count
     }
     
     static func resetData(of emotion: Emotion) {
-        shared.emotionData[emotion] = nil
+        shared.emotionData[emotion.koreanExpression] = nil
     }
     
     static func printMessageForEmotionCount(to emotion: Emotion) {
-        guard let countForEmotion = shared.emotionData[emotion] else {
+        guard let countForEmotion = shared.emotionData[emotion.koreanExpression] else {
             print("Error! \(emotion.koreanExpression) 기분은 지금까지 체크된 적이 없어요!")
             return
         }

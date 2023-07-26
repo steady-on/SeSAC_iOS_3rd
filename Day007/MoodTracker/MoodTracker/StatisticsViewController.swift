@@ -27,7 +27,7 @@ class StatisticsViewController: UIViewController {
         let emotionCountDict = EmotionManager.shared.emotionCountDict
 
         for (label, emotion) in zip(numbersOfEmotionTapped, Emotion.allCases) {
-            label.text = emotionCountDict[emotion] ?? "0회"
+            label.text = emotionCountDict[emotion.koreanExpression] ?? "0회"
         }
     }
     
@@ -43,7 +43,7 @@ class StatisticsViewController: UIViewController {
         let emotionCountDict = EmotionManager.shared.emotionCountDict
 
         for (label, emotion) in zip(numbersOfEmotionTapped, Emotion.allCases) {
-            label.text = emotionCountDict[emotion] ?? "0회"
+            label.text = emotionCountDict[emotion.koreanExpression] ?? "0회"
         }
         
         for (view, emotion) in zip(emotionLabelViews, Emotion.allCases) {
