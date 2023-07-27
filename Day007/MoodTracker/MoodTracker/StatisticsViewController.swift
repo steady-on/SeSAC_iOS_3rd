@@ -10,9 +10,7 @@ import UIKit
 class StatisticsViewController: UIViewController {
 
     @IBOutlet var emotionLabelViews: [UIView]!
-    
     @IBOutlet var emotionStringLabels: [UILabel]!
-    
     @IBOutlet var numbersOfEmotionTapped: [UILabel]!
         
     override func viewDidLoad() {
