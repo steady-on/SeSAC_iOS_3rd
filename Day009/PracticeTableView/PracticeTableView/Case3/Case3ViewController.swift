@@ -10,14 +10,21 @@ import UIKit
 class Case3ViewController: UIViewController {
     
     @IBOutlet weak var todoTableView: UITableView!
-
+    @IBOutlet weak var inputTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
     }
     
-    
+    @IBAction func addButtonTapped(_ sender: UIButton) {
+        guard let inputText = inputTextField.text else { return }
+        
+        TodoManager.add(inputText)
+        inputTextField.text = ""
+        todoTableView.reloadData()
+    }
 }
 
 extension UIViewController: UITableViewDataSource {
