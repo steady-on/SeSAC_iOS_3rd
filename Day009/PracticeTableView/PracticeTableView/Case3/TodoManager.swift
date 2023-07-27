@@ -18,6 +18,10 @@ final class TodoManager {
     
     private var todosStore = [Todo]()
     
+    var todoCount: Int {
+        TodoManager.shared.todosStore.count
+    }
+    
     var doneTodo: [Todo] {
         TodoManager.shared.todosStore.filter { $0.isDone == true }
     }
