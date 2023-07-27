@@ -23,7 +23,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZeR-OC-2ka">
                                         <rect key="frame" x="20" y="17.666666666666671" width="353" height="50"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jRL-vr-Yoh">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="할일을 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jRL-vr-Yoh">
                                                 <rect key="frame" x="0.0" y="0.0" width="289.33333333333331" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="oZU-c8-7za"/>
@@ -40,6 +40,9 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="추가">
                                                     <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="addButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="98d-jO-c62"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -131,6 +134,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="MY TODO LIST" id="If8-dY-kvi"/>
                     <connections>
+                        <outlet property="inputTextField" destination="jRL-vr-Yoh" id="NlB-Wh-CWO"/>
                         <outlet property="todoTableView" destination="pvP-jb-Pd1" id="Nh9-KD-bOP"/>
                     </connections>
                 </viewController>
