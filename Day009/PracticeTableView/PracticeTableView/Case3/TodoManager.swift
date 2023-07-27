@@ -43,7 +43,7 @@ final class TodoManager {
     }
     
     static func toggleIsDone(_ todoId: UUID) {
-        guard var selectedTodoIndex = shared.todosStore.firstIndex(where: { $0.id == todoId }) else {
+        guard let selectedTodoIndex = shared.todosStore.firstIndex(where: { $0.id == todoId }) else {
             print("잘못된 요청입니다.")
             return
         }
@@ -52,7 +52,7 @@ final class TodoManager {
     }
     
     static func modify(_ todoId: UUID, string: String) {
-        guard var selectedTodoIndex = shared.todosStore.firstIndex(where: { $0.id == todoId }) else {
+        guard let selectedTodoIndex = shared.todosStore.firstIndex(where: { $0.id == todoId }) else {
             print("잘못된 요청입니다.")
             return
         }
