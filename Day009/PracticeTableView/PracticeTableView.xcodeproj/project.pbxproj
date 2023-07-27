@@ -16,6 +16,7 @@
 		63A25BE72A7254800039C54C /* Case1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A25BE62A7254800039C54C /* Case1.storyboard */; };
 		63A25BEA2A725B010039C54C /* Case2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A25BE92A725B010039C54C /* Case2.storyboard */; };
 		63A25BEC2A725B3B0039C54C /* Case2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A25BEB2A725B3B0039C54C /* Case2TableViewController.swift */; };
+		63C04E182A725CB7009AF3F4 /* Case2SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C04E172A725CB7009AF3F4 /* Case2SectionType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		63A25BE62A7254800039C54C /* Case1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Case1.storyboard; sourceTree = "<group>"; };
 		63A25BE92A725B010039C54C /* Case2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Case2.storyboard; sourceTree = "<group>"; };
 		63A25BEB2A725B3B0039C54C /* Case2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case2TableViewController.swift; sourceTree = "<group>"; };
+		63C04E172A725CB7009AF3F4 /* Case2SectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case2SectionType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				63A25BE92A725B010039C54C /* Case2.storyboard */,
 				63A25BEB2A725B3B0039C54C /* Case2TableViewController.swift */,
+				63C04E172A725CB7009AF3F4 /* Case2SectionType.swift */,
 			);
 			path = Case2;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			files = (
 				63A25BD62A7254230039C54C /* ViewController.swift in Sources */,
 				63A25BD22A7254230039C54C /* AppDelegate.swift in Sources */,
+				63C04E182A725CB7009AF3F4 /* Case2SectionType.swift in Sources */,
 				63A25BEC2A725B3B0039C54C /* Case2TableViewController.swift in Sources */,
 				63A25BD42A7254230039C54C /* SceneDelegate.swift in Sources */,
 			);
