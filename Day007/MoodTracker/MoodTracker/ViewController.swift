@@ -50,12 +50,26 @@ class ViewController: UIViewController {
         
         let resetData = UIAction(title: "기록 초기화", subtitle: "해당 기분의 기록 초기화", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
             guard let selectedEmotion = Emotion(rawValue: button.tag) else { return }
-            
-            EmotionManager.resetData(of: selectedEmotion)
-            EmotionManager.printMessageForEmotionCount(to: selectedEmotion)
+            self.alertDataReset(for: selectedEmotion)
         }
         
         button.menu = UIMenu(options: .displayInline, children: [plusFive, plusTen, resetData])
     }
+    
+    func alertDataReset(for selectedEmotion: Emotion) {
+        let alert = UIAlertController(title: "데이터 삭제", message: "\(selectedEmotion.koreanExpression) 기분에 대한 데이터를 삭제하시겠습니까?", preferredStyle: .alert)
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        let delete = UIAlertAction(title: "삭제", style: .destructive) { _ in
+            EmotionManager.resetData(of: selectedEmotion)
+            EmotionManager.printMessageForEmotionCount(to: selectedEmotion)
+        }
+        
+        alert.addAction(cancel)
+        alert.addAction(delete)
+        
+        present(alert, animated: true)
+    }
 }
+
 

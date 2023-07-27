@@ -64,11 +64,11 @@
 			children = (
 				6347FBCE2A6FB145001F76A8 /* AppDelegate.swift */,
 				6347FBD02A6FB145001F76A8 /* SceneDelegate.swift */,
+				6347FBD42A6FB145001F76A8 /* Main.storyboard */,
 				6347FBD22A6FB145001F76A8 /* ViewController.swift */,
+				6347FBE62A6FC8F8001F76A8 /* StatisticsViewController.swift */,
 				6347FBE22A6FBE85001F76A8 /* Emotion.swift */,
 				6347FBE42A6FBF25001F76A8 /* EmotionManager.swift */,
-				6347FBD42A6FB145001F76A8 /* Main.storyboard */,
-				6347FBE62A6FC8F8001F76A8 /* StatisticsViewController.swift */,
 				6347FBD72A6FB147001F76A8 /* Assets.xcassets */,
 				6347FBD92A6FB147001F76A8 /* LaunchScreen.storyboard */,
 				6347FBDC2A6FB147001F76A8 /* Info.plist */,
