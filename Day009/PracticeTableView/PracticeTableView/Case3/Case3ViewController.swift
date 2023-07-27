@@ -7,15 +7,15 @@
 
 import UIKit
 
-class Case3ViewController: UIViewController {
+class Case3ViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var todoTableView: UITableView!
     @IBOutlet weak var inputTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        todoTableView.delegate = self
+        todoTableView.dataSource = self
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
@@ -56,8 +56,10 @@ extension UIViewController: UITableViewDataSource {
               
         switch sectionType {
         case .unDone:
+            unDoneTodoCell.textLabel?.text = TodoManager.shared.unDoneTodo[indexPath.row].todo
             return unDoneTodoCell
         case .done:
+            doneTodoCell.textLabel?.text = TodoManager.shared.doneTodo[indexPath.row].todo
             return doneTodoCell
         }
     }
