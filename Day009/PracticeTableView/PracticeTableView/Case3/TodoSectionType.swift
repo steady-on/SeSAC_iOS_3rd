@@ -15,8 +15,8 @@ enum TodoSectionType: Int, CaseIterable {
         switch self {
         case .unDone:
             return "미완료"
-        }
         case .done:
             return "완료"
+        }
     }
 }
