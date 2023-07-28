@@ -8,18 +8,20 @@
 import Foundation
 
 @propertyWrapper
-struct UserDefault<T: Encodable> {
+struct TodoStorage {
     private let key: String
-    private let defaultValue: T
+    private let defaultValue: [Todo]?
 
-    init(key: String, defaultValue: T) {
+    init(key: String, defaultValue: [Todo]? = nil) {
         self.key = key
         self.defaultValue = defaultValue
     }
 
-    var wrappedValue: T {
+    var wrappedValue: [Todo]? {
         get {
-            return UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
+            guard let data = UserDefaults.standard.data(forKey: key) else { return nil }
+            let decodedData = try? PropertyListDecoder().decode([Todo].self, from: data)
+            return decodedData
         }
         set {
             let newValue = try? PropertyListEncoder().encode(newValue)
