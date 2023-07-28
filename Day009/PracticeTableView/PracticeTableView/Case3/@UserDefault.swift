@@ -22,6 +22,7 @@ struct UserDefault<T: Encodable> {
             return UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
         }
         set {
+            let newValue = try? PropertyListEncoder().encode(newValue)
             UserDefaults.standard.set(newValue, forKey: key)
         }
     }

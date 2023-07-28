@@ -12,3 +12,5 @@ struct Todo {
     var todo: String
     var isDone: Bool = false
 }
+
+extension Todo: Encodable {}
