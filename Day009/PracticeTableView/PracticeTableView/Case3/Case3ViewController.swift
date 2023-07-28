@@ -11,6 +11,7 @@ class Case3ViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var todoTableView: UITableView!
     @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var addButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +21,14 @@ class Case3ViewController: UIViewController, UITableViewDelegate {
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
         guard let inputText = inputTextField.text else { return }
-        
+        view.endEditing(true)
         TodoManager.add(inputText)
         inputTextField.text = ""
         todoTableView.reloadData()
+    }
+    
+    @IBAction func tappedReturnKeyInsideTextField(_ sender: UITextField) {
+        addButtonTapped(addButton)
     }
 }
 

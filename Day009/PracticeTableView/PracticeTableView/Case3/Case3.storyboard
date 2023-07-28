@@ -30,6 +30,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="tappedReturnKeyInsideTextField:" destination="Y6W-OH-hqX" eventType="editingDidEndOnExit" id="B0G-59-XyP"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTs-RZ-o5Y">
                                                 <rect key="frame" x="299.33333333333331" y="0.0" width="53.666666666666686" height="50"/>
@@ -134,6 +137,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="MY TODO LIST" id="If8-dY-kvi"/>
                     <connections>
+                        <outlet property="addButton" destination="YTs-RZ-o5Y" id="OMc-Lj-93f"/>
                         <outlet property="inputTextField" destination="jRL-vr-Yoh" id="NlB-Wh-CWO"/>
                         <outlet property="todoTableView" destination="pvP-jb-Pd1" id="Nh9-KD-bOP"/>
                     </connections>
