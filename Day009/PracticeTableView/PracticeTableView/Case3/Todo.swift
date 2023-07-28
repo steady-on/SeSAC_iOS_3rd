@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Todo: Hashable {
+struct Todo {
     let id: UUID = UUID()
     var todo: String
     var isDone: Bool = false
