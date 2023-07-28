@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		635056592A72B1D50096149C /* TodoSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635056582A72B1D50096149C /* TodoSectionType.swift */; };
+		6350565B2A7341BE0096149C /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350565A2A7341BE0096149C /* Todo.swift */; };
 		63A25BD22A7254230039C54C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A25BD12A7254230039C54C /* AppDelegate.swift */; };
 		63A25BD42A7254230039C54C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A25BD32A7254230039C54C /* SceneDelegate.swift */; };
 		63A25BD62A7254230039C54C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A25BD52A7254230039C54C /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		635056582A72B1D50096149C /* TodoSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSectionType.swift; sourceTree = "<group>"; };
+		6350565A2A7341BE0096149C /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		63A25BCE2A7254230039C54C /* PracticeTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticeTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A25BD12A7254230039C54C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63A25BD32A7254230039C54C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				63C04E1A2A7267EA009AF3F4 /* Case3.storyboard */,
 				63C04E1C2A72682D009AF3F4 /* Case3ViewController.swift */,
 				63C04E1E2A72A682009AF3F4 /* TodoManager.swift */,
+				6350565A2A7341BE0096149C /* Todo.swift */,
 				635056582A72B1D50096149C /* TodoSectionType.swift */,
 			);
 			path = Case3;
@@ -193,6 +196,7 @@
 				63A25BD22A7254230039C54C /* AppDelegate.swift in Sources */,
 				63C04E1D2A72682D009AF3F4 /* Case3ViewController.swift in Sources */,
 				63C04E182A725CB7009AF3F4 /* Case2SectionType.swift in Sources */,
+				6350565B2A7341BE0096149C /* Todo.swift in Sources */,
 				63A25BEC2A725B3B0039C54C /* Case2TableViewController.swift in Sources */,
 				635056592A72B1D50096149C /* TodoSectionType.swift in Sources */,
 				63A25BD42A7254230039C54C /* SceneDelegate.swift in Sources */,

@@ -7,12 +7,6 @@
 
 import Foundation
 
-struct Todo: Hashable {
-    let id: UUID = UUID()
-    var todo: String
-    var isDone: Bool = false
-}
-
 final class TodoManager {
     static var shared = TodoManager()
     
