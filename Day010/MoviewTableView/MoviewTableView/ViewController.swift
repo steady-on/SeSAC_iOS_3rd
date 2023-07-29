@@ -31,4 +31,14 @@ extension ViewController {
         searchTextField.autocorrectionType = .no
         searchTextField.returnKeyType = .go
     }
+    
+    func designSearchButton() {
+        searchButton.setTitleColor(.init(named: "AccentColor"), for: .normal)
+        
+        let buttonImage = UIImage(systemName: "magnifyingglass")
+        var symbolConfiguration = UIImage.SymbolConfiguration.init(font: .preferredFont(forTextStyle: .largeTitle))
+        buttonImage?.applyingSymbolConfiguration(symbolConfiguration)
+        
+        searchButton.imageView?.image = buttonImage
+    }
 }
