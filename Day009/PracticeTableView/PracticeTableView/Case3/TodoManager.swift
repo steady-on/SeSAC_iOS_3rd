@@ -30,10 +30,13 @@ final class TodoManager {
     private init() {}
     
     static func add(_ todo: String) {
-        guard let todosStore = TodoManager.shared.todosStore else { return }
         let newTodo = Todo(todo: todo)
+        guard TodoManager.shared.todosStore != nil else {
+            shared.todosStore = [newTodo]
+            return
+        }
 
-        shared.todosStore?.insert(newTodo, at: 0)
+        shared.todosStore!.insert(newTodo, at: 0)
     }
     
     static func delete(_ todoId: UUID) {
