@@ -30,6 +30,20 @@ class Case3ViewController: UIViewController, UITableViewDelegate {
     @IBAction func tappedReturnKeyInsideTextField(_ sender: UITextField) {
         addButtonTapped(addButton)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let sectionType = TodoSectionType(rawValue: indexPath.section) else { return }
+        
+        switch sectionType {
+        case .unDone:
+            let todo = TodoManager.shared.unDoneTodo[indexPath.row]
+            TodoManager.toggleIsDone(todo.id)
+        case .done:
+            let todo = TodoManager.shared.doneTodo[indexPath.row]
+            TodoManager.toggleIsDone(todo.id)
+        }
+        tableView.reloadData()
+    }
 }
 
 extension UIViewController: UITableViewDataSource {
