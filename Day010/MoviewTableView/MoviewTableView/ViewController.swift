@@ -7,16 +7,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
     
     let movieStore = MovieStore().movies
     
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var movieTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        movieTableView.delegate = self
+        movieTableView.dataSource = self
+        movieTableView.rowHeight = 150
         setUI()
     }
 
@@ -26,6 +29,7 @@ class ViewController: UIViewController {
 // MARK: UI design code
 extension ViewController {
     func setUI() {
+        
         designSearchButton()
         designSearchButton()
     }
@@ -60,6 +64,10 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "movieInfo") as? MovieTableViewCell else { return UITableViewCell() }
         
+        let row = movieStore[indexPath.row]
+        cell.configureCell(for: row)
+        
         return cell
     }
+
 }
