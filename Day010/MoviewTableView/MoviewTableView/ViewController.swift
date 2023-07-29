@@ -11,6 +11,12 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     let movieStore = MovieStore().movies
     
+    var searchKeyword = String()
+    var movieData: [Movie] {
+        guard searchKeyword.isEmpty == false else { return movieStore }
+        return movieStore.filter { $0.title.contains(searchKeyword) }
+    }
+    
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var movieTableView: UITableView!
@@ -23,6 +29,16 @@ class ViewController: UIViewController, UITableViewDelegate {
         setUI()
     }
     
+    @IBAction func searchButtonTapped(_ sender: UIButton) {
+        guard let inputText = searchTextField.text else { return }
+        
+        let inputKeyword = inputText.replacingOccurrences(of: " ", with: "")
+        
+        searchKeyword = inputKeyword
+        view.endEditing(true)
+        movieTableView.reloadData()
+    }
+    
     
 }
 
@@ -30,7 +46,7 @@ class ViewController: UIViewController, UITableViewDelegate {
 extension ViewController {
     func setUI() {
         designSearchButton()
-        designSearchButton()
+        designSearchTextField()
         movieTableView.rowHeight = 230
     }
     
@@ -58,17 +74,16 @@ extension ViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieStore.count
+        return movieData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "movieInfo") as? MovieTableViewCell else { return UITableViewCell() }
         
-        let row = movieStore[indexPath.row]
+        let row = movieData[indexPath.row]
         cell.configureCell(for: row)
         cell.setCellUp()
         
         return cell
     }
-
 }

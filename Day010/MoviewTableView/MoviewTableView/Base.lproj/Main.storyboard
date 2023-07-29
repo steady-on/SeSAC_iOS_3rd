@@ -41,6 +41,10 @@
                                                 <rect key="frame" x="50" y="0.0" width="263" height="40"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="tappedClearButtonInsideTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="Z7s-7i-CS0"/>
+                                                    <action selector="tappedReturnKeyInsideTextField:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Ueb-mS-kf7"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jW1-4B-GoS">
                                                 <rect key="frame" x="313" y="0.0" width="40" height="40"/>
