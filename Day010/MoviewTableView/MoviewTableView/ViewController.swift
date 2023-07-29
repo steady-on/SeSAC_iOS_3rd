@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let movieStore = MovieStore().movies
+    
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     
@@ -21,6 +23,7 @@ class ViewController: UIViewController {
     
 }
 
+// MARK: UI design code
 extension ViewController {
     func setUI() {
         designSearchButton()
@@ -42,9 +45,16 @@ extension ViewController {
         searchButton.setTitleColor(.init(named: "AccentColor"), for: .normal)
         
         let buttonImage = UIImage(systemName: "magnifyingglass")
-        var symbolConfiguration = UIImage.SymbolConfiguration.init(font: .preferredFont(forTextStyle: .largeTitle))
+        let symbolConfiguration = UIImage.SymbolConfiguration.init(font: .preferredFont(forTextStyle: .largeTitle))
         buttonImage?.applyingSymbolConfiguration(symbolConfiguration)
         
         searchButton.imageView?.image = buttonImage
     }
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return movieStore.count
+    }
+    
 }
