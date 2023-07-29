@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63187ABC2A74F89B00E6F638 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63187ABB2A74F89B00E6F638 /* Movie.swift */; };
+		63187ABE2A74F97D00E6F638 /* MovieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63187ABD2A74F97D00E6F638 /* MovieStore.swift */; };
 		635056762A73D72C0096149C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635056752A73D72C0096149C /* AppDelegate.swift */; };
 		635056782A73D72C0096149C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635056772A73D72C0096149C /* SceneDelegate.swift */; };
 		6350567A2A73D72C0096149C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635056792A73D72C0096149C /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63187ABB2A74F89B00E6F638 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		63187ABD2A74F97D00E6F638 /* MovieStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStore.swift; sourceTree = "<group>"; };
 		635056722A73D72C0096149C /* MoviewTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviewTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635056752A73D72C0096149C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		635056772A73D72C0096149C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 				635056772A73D72C0096149C /* SceneDelegate.swift */,
 				6350567B2A73D72C0096149C /* Main.storyboard */,
 				635056792A73D72C0096149C /* ViewController.swift */,
+				63187ABB2A74F89B00E6F638 /* Movie.swift */,
+				63187ABD2A74F97D00E6F638 /* MovieStore.swift */,
 				6350567E2A73D72E0096149C /* Assets.xcassets */,
 				635056802A73D72E0096149C /* LaunchScreen.storyboard */,
 				635056832A73D72E0096149C /* Info.plist */,
@@ -140,7 +146,9 @@
 			files = (
 				6350567A2A73D72C0096149C /* ViewController.swift in Sources */,
 				635056762A73D72C0096149C /* AppDelegate.swift in Sources */,
+				63187ABC2A74F89B00E6F638 /* Movie.swift in Sources */,
 				635056782A73D72C0096149C /* SceneDelegate.swift in Sources */,
+				63187ABE2A74F97D00E6F638 /* MovieStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
