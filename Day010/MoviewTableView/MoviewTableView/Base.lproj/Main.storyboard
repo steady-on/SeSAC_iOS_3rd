@@ -265,6 +265,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MOVIE SEARCHER" id="I2b-WD-ziT"/>
+                    <connections>
+                        <outlet property="searchButton" destination="jW1-4B-GoS" id="pKu-eY-Ue3"/>
+                        <outlet property="searchTextField" destination="rwM-5l-Ns3" id="bbv-N6-npg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
