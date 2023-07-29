@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         movieTableView.delegate = self
         movieTableView.dataSource = self
-        movieTableView.rowHeight = 150
+        movieTableView.rowHeight = 230
         setUI()
     }
 
@@ -66,6 +66,7 @@ extension ViewController: UITableViewDataSource {
         
         let row = movieStore[indexPath.row]
         cell.configureCell(for: row)
+        cell.setCellUp()
         
         return cell
     }
