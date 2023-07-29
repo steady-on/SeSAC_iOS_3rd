@@ -13,8 +13,8 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     var searchKeyword = String()
     var movieData: [Movie] {
-        guard searchKeyword.isEmpty == false else { return movieStore }
-        return movieStore.filter { $0.title.contains(searchKeyword) }
+        guard searchKeyword.isEmpty == false else { return movieStore.sorted { $0.title < $1.title } }
+        return movieStore.filter { $0.title.contains(searchKeyword) }.sorted { $0.title < $1.title }
     }
     
     @IBOutlet weak var searchTextField: UITextField!
