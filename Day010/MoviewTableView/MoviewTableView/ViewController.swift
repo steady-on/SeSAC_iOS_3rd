@@ -19,19 +19,19 @@ class ViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         movieTableView.delegate = self
         movieTableView.dataSource = self
-        movieTableView.rowHeight = 230
+        
         setUI()
     }
-
+    
     
 }
 
 // MARK: UI design code
 extension ViewController {
     func setUI() {
-        
         designSearchButton()
         designSearchButton()
+        movieTableView.rowHeight = 230
     }
     
     func designSearchTextField() {
