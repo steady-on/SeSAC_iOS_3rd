@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2V-Ku-96B">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2V-Ku-96B" userLabel="SearchView">
                                 <rect key="frame" x="0.0" y="59" width="442.33333333333331" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGo-Zw-jbL">
@@ -70,7 +70,7 @@
                                     <constraint firstItem="RGo-Zw-jbL" firstAttribute="top" secondItem="m2V-Ku-96B" secondAttribute="top" constant="10" id="par-yg-xFn"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wfx-fo-gy7">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wfx-fo-gy7" userLabel="Divider">
                                 <rect key="frame" x="0.0" y="119" width="442.33333333333331" height="1"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
