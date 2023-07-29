@@ -14,13 +14,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        setUI()
     }
 
     
 }
 
 extension ViewController {
+    func setUI() {
+        designSearchButton()
+        designSearchButton()
+    }
+    
     func designSearchTextField() {
         searchTextField.font = .preferredFont(forTextStyle: .body)
         searchTextField.textAlignment = .left
