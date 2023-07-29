@@ -57,4 +57,9 @@ extension ViewController: UITableViewDataSource {
         return movieStore.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell") as? MovieTableViewCell else { return UITableViewCell() }
+        
+        return cell
+    }
 }
