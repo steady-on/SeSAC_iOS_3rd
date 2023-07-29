@@ -39,6 +39,15 @@ class ViewController: UIViewController, UITableViewDelegate {
         movieTableView.reloadData()
     }
     
+    @IBAction func tappedReturnKeyInsideTextField(_ sender: UITextField) {
+        searchButtonTapped(searchButton)
+    }
+    
+    @IBAction func tappedClearButtonInsideTextField(_ sender: UITextField) {
+        if sender.hasText == false {
+            searchButtonTapped(searchButton)
+        }
+    }
     
 }
 
