@@ -24,10 +24,10 @@
                         </constraints>
                     </imageView>
                     <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ph5-b5-QfQ">
-                        <rect key="frame" x="0.0" y="101" width="114" height="70"/>
+                        <rect key="frame" x="0.0" y="115.33333333333333" width="114" height="55.666666666666671"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y7g-5T-zhg">
-                                <rect key="frame" x="8" y="8" width="98" height="54"/>
+                                <rect key="frame" x="8" y="8" width="98" height="39.666666666666664"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="책제목" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAi-Kr-zHf">
                                         <rect key="frame" x="0.0" y="0.0" width="98" height="20.333333333333332"/>
@@ -36,15 +36,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작가" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Oe-hc-ApI">
-                                        <rect key="frame" x="0.0" y="20.333333333333343" width="98" height="19.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="20.333333333333329" width="98" height="19.333333333333329"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="완독 여부" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pF5-gi-mHF">
-                                        <rect key="frame" x="0.0" y="39.666666666666657" width="98" height="14.333333333333336"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                        <color key="textColor" systemColor="systemPinkColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -74,7 +68,6 @@
             <connections>
                 <outlet property="authorLabel" destination="4Oe-hc-ApI" id="GYC-vB-mSe"/>
                 <outlet property="coverImageView" destination="Sa1-sM-Pct" id="D8m-al-jAc"/>
-                <outlet property="stateOfReading" destination="pF5-gi-mHF" id="vsy-OP-Ncu"/>
                 <outlet property="titleLabel" destination="hAi-Kr-zHf" id="viK-cu-Nr2"/>
             </connections>
             <point key="canvasLocation" x="178.62595419847327" y="31.338028169014088"/>
@@ -83,9 +76,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

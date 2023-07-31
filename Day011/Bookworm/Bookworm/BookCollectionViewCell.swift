@@ -12,11 +12,15 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var stateOfReading: UILabel!
     
-    func configureBookCell() {
+    func configureBookCell(for data: Book) {
         self.layer.cornerRadius = 15
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.darkGray.cgColor
+        
+        titleLabel.text = data.title
+        authorLabel.text = data.author
+        coverImageView.image = UIImage(named: data.title)
+        coverImageView.contentMode = .scaleAspectFill
     }
 }
