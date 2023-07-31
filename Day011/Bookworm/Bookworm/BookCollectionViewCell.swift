@@ -12,6 +12,9 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var stateOfReadingLabel: UILabel!
+    @IBOutlet weak var bookmarkImageView: UIImageView!
+    
     
     func configureBookCell(for data: Book) {
         self.layer.cornerRadius = 15
@@ -22,5 +25,11 @@ class BookCollectionViewCell: UICollectionViewCell {
         authorLabel.text = data.author
         coverImageView.image = UIImage(named: data.title)
         coverImageView.contentMode = .scaleAspectFill
+        
+        if let readingState = StateOfReading(rawValue: data.stateOfReading) {
+            stateOfReadingLabel.text = readingState.expression
+        }
+        
+        bookmarkImageView.isHidden = !data.isBookmark
     }
 }

@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,10 +25,10 @@
                         </constraints>
                     </imageView>
                     <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ph5-b5-QfQ">
-                        <rect key="frame" x="0.0" y="115.33333333333333" width="114" height="55.666666666666671"/>
+                        <rect key="frame" x="0.0" y="101" width="114" height="70"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y7g-5T-zhg">
-                                <rect key="frame" x="8" y="8" width="98" height="39.666666666666664"/>
+                                <rect key="frame" x="8" y="8" width="98" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="책제목" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAi-Kr-zHf">
                                         <rect key="frame" x="0.0" y="0.0" width="98" height="20.333333333333332"/>
@@ -36,9 +37,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작가" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Oe-hc-ApI">
-                                        <rect key="frame" x="0.0" y="20.333333333333329" width="98" height="19.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="20.333333333333343" width="98" height="19.333333333333329"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="읽는 중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VxK-6P-ojk">
+                                        <rect key="frame" x="0.0" y="39.666666666666657" width="98" height="14.333333333333336"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" systemColor="systemPinkColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -52,30 +59,61 @@
                             <constraint firstItem="Y7g-5T-zhg" firstAttribute="leading" secondItem="Ph5-b5-QfQ" secondAttribute="leading" constant="8" id="qWX-Eg-ZRu"/>
                         </constraints>
                     </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vwQ-NM-Crt">
+                        <rect key="frame" x="15" y="0.33333333333333215" width="15" height="24.666666666666668"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="KcK-1h-yNz"/>
+                            <constraint firstAttribute="height" constant="25" id="mI5-p6-nxu"/>
+                        </constraints>
+                        <imageReference key="image" image="bookmark.fill" catalog="system" renderingMode="hierarchical-single">
+                            <hierarchicalColors>
+                                <color systemColor="systemRedColor"/>
+                                <color systemColor="secondaryLabelColor"/>
+                                <color systemColor="tertiaryLabelColor"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Sa1-sM-Pct" secondAttribute="bottom" id="56C-YO-Bgt"/>
+                <constraint firstItem="vwQ-NM-Crt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5WJ-ec-ZP2"/>
                 <constraint firstAttribute="bottom" secondItem="Ph5-b5-QfQ" secondAttribute="bottom" id="LT8-mm-hEO"/>
                 <constraint firstAttribute="trailing" secondItem="Sa1-sM-Pct" secondAttribute="trailing" id="XK1-Yj-Q3H"/>
                 <constraint firstItem="Ph5-b5-QfQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bKK-W3-2kT"/>
                 <constraint firstItem="Sa1-sM-Pct" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="k9U-bm-qht"/>
                 <constraint firstItem="Sa1-sM-Pct" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="l7i-OJ-6I4"/>
+                <constraint firstItem="vwQ-NM-Crt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="rIa-ye-zV8"/>
                 <constraint firstAttribute="trailing" secondItem="Ph5-b5-QfQ" secondAttribute="trailing" id="vMs-bD-p0h"/>
             </constraints>
             <size key="customSize" width="114" height="171"/>
             <connections>
                 <outlet property="authorLabel" destination="4Oe-hc-ApI" id="GYC-vB-mSe"/>
+                <outlet property="bookmarkImageView" destination="vwQ-NM-Crt" id="Bhm-Q6-lUs"/>
                 <outlet property="coverImageView" destination="Sa1-sM-Pct" id="D8m-al-jAc"/>
+                <outlet property="stateOfReadingLabel" destination="VxK-6P-ojk" id="sPP-QD-CLP"/>
                 <outlet property="titleLabel" destination="hAi-Kr-zHf" id="viK-cu-Nr2"/>
             </connections>
             <point key="canvasLocation" x="178.62595419847327" y="31.338028169014088"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="bookmark.fill" catalog="system" width="110" height="128"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
