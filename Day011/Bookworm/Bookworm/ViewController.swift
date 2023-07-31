@@ -66,5 +66,14 @@ extension ViewController: UICollectionViewDataSource {
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let detailViewStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let detailViewController = detailViewStoryboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+        
+        detailViewController.book = bookData[indexPath.row]
+        
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
 }
