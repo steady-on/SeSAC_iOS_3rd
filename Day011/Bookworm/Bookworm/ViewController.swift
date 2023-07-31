@@ -11,7 +11,6 @@ class ViewController: UIViewController, UICollectionViewDelegate {
 
     @IBOutlet weak var bookCollectionView: UICollectionView!
     
-    let temp = ["Booktitle", "Author", "안 읽음"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,16 +42,14 @@ class ViewController: UIViewController, UICollectionViewDelegate {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return bookData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = bookCollectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
-        
-        cell.configureBookCell()
-        cell.titleLabel.text = temp[0]
-        cell.authorLabel.text = temp[1]
-        cell.stateOfReading.text = temp[2]
+                
+        let row = bookData[indexPath.row]
+        cell.configureBookCell(for: row)
         
         return cell
     }
