@@ -1,82 +1,122 @@
 [
  {
   "title": "키다리 아저씨",
-  "author": "진 웹스터"
+  "author": "진 웹스터",
+  "stateOfReading": 0,
+  "isBookmark": false
  },
  {
   "title": "제인에어1",
-  "author": "샬럿 브론테"
+  "author": "샬럿 브론테",
+  "stateOfReading": 1,
+  "isBookmark": false
  },
  {
   "title": "제인에어2",
-  "author": "샬럿 브론테"
+  "author": "샬럿 브론테",
+  "stateOfReading": 2,
+  "isBookmark": false
  },
  {
   "title": "데미안",
-  "author": "헤르만 헤세"
+  "author": "헤르만 헤세",
+  "stateOfReading": 1,
+  "isBookmark": false
  },
  {
   "title": "몽위",
-  "author": "온다 리쿠"
+  "author": "온다 리쿠",
+  "stateOfReading": 2,
+  "isBookmark": false
  },
  {
   "title": "초판본 피터래빗 이야기",
-  "author": "베아트릭스 포터"
+  "author": "베아트릭스 포터",
+  "stateOfReading": 1,
+  "isBookmark": false
  },
  {
   "title": "초판본 이상한 나라의 앨리스",
-  "author": "루이스 캐럴"
+  "author": "루이스 캐럴",
+  "stateOfReading": 2,
+  "isBookmark": false
  },
  {
   "title": "초판본 거울나라의 앨리스",
-  "author": "루이스 캐럴"
+  "author": "루이스 캐럴",
+  "stateOfReading": 0,
+  "isBookmark": false
  },
  {
   "title": "요네자와 호노부와 고전부",
-  "author": "요네자와 호노부"
+  "author": "요네자와 호노부",
+  "stateOfReading": 0,
+  "isBookmark": false
  },
  {
   "title": "불렛저널",
-  "author": "라이더 캐롤"
+  "author": "라이더 캐롤",
+  "stateOfReading": 0,
+  "isBookmark": false
  },
  {
   "title": "봄철 한정 딸기 타르트 사건",
-  "author": "요네자와 호노부"
+  "author": "요네자와 호노부",
+  "stateOfReading": 0,
+  "isBookmark": false
  },
  {
   "title": "여름철 한정 트로피컬 파르페 사건",
-  "author": "요네자와 호노부"
+  "author": "요네자와 호노부",
+  "stateOfReading": 0,
+  "isBookmark": false
  },
  {
   "title": "가을철 한정 구리킨톤 사건 - 하",
-  "author": "요네자와 호노부"
+  "author": "요네자와 호노부",
+  "stateOfReading": 0,
+  "isBookmark": false
  },
  {
   "title": "가을철 한정 구리킨톤 사건 - 상",
-  "author": "요네자와 호노부"
+  "author": "요네자와 호노부",
+  "stateOfReading": 2,
+  "isBookmark": false
  },
  {
   "title": "괴도신사 아르센 뤼팽",
-  "author": "모리스 르블랑"
+  "author": "모리스 르블랑",
+  "stateOfReading": 0,
+  "isBookmark": false
  },
  {
   "title": "작은 아씨들",
-  "author": "루이자 메이 올콧"
+  "author": "루이자 메이 올콧",
+  "stateOfReading": 1,
+  "isBookmark": false
  },
  {
   "title": "커리어스킬",
-  "author": "존 손메즈"
+  "author": "존 손메즈",
+  "stateOfReading": 2,
+  "isBookmark": false
  },
  {
   "title": "비전공자를 위한 이해할 수 있는 IT지식",
-  "author": "최원영"
+  "author": "최원영",
+  "stateOfReading": 0,
+  "isBookmark": false
  },
  {
   "title": "1일 1로그 100일 완성 IT지식",
-  "author": "브라이언 W. 커니핸"
+  "author": "브라이언 W. 커니핸",
+  "stateOfReading": 1,
+  "isBookmark": false
  },
  {
   "title": "8월은 차가운 성",
-  "author": "온다 리쿠"
+  "author": "온다 리쿠",
+  "stateOfReading": 0,
+  "isBookmark": false
  }
 ]
