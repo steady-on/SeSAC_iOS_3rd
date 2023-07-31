@@ -61,6 +61,9 @@
                     <navigationItem key="navigationItem" title="MY SHELF" id="5f3-Ny-wMp">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="sYy-8h-cLq">
                             <color key="tintColor" systemColor="systemMintColor"/>
+                            <connections>
+                                <action selector="searchBarButtonTapped:" destination="BYZ-38-t0r" id="rPu-Xj-TDk"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -70,6 +73,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="9Ng-9b-1ZK">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="coO-In-VVB" customClass="SearchViewController" customModule="Bookworm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S0s-jF-eti">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ou5-U3-l71">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="coO-In-VVB" id="4hF-sF-7Of"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IyY-e7-7hr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ou5-U3-l71" firstAttribute="leading" secondItem="IyY-e7-7hr" secondAttribute="leading" id="8fO-gP-Ty7"/>
+                            <constraint firstItem="ou5-U3-l71" firstAttribute="trailing" secondItem="IyY-e7-7hr" secondAttribute="trailing" id="BYz-w4-rp4"/>
+                            <constraint firstItem="ou5-U3-l71" firstAttribute="top" secondItem="IyY-e7-7hr" secondAttribute="top" id="sBj-Dt-ivc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hwx-xE-vdt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2001" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ftc-gx-1RR">

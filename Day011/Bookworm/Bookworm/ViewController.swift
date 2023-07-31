@@ -25,6 +25,18 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         setCollectionViewLayout()
     }
     
+    @IBAction func searchBarButtonTapped(_ sender: UIBarButtonItem) {
+        let searchViewStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+        guard let searchViewController = searchViewStoryboard.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else { return }
+        
+        let navigationController = UINavigationController(rootViewController: searchViewController)
+
+        navigationController.modalPresentationStyle = .fullScreen
+        
+        present(navigationController, animated: true)
+    }
+    
     func setCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
         
