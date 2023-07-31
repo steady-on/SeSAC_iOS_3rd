@@ -7,9 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate {
+class ViewController: UIViewController, UICollectionViewDelegate, UITableViewDelegate {
 
     @IBOutlet weak var bookCollectionView: UICollectionView!
+    @IBOutlet weak var bookTableView: UITableView!
+    @IBOutlet weak var mainView: UIView!
     
     
     override func viewDidLoad() {
@@ -19,10 +21,22 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         bookCollectionView.delegate = self
         bookCollectionView.dataSource = self
         
-        let nib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
-        bookCollectionView.register(nib, forCellWithReuseIdentifier: "BookCollectionViewCell")
+        let collectionNib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
+        bookCollectionView.register(collectionNib, forCellWithReuseIdentifier: "BookCollectionViewCell")
         
         setCollectionViewLayout()
+        
+        bookTableView.delegate = self
+        bookTableView.dataSource = self
+        
+        let tableNib = UINib(nibName: "BookTableViewCell", bundle: nil)
+        bookTableView.register(tableNib, forCellReuseIdentifier: "BookTableViewCell")
+    }
+    
+    @IBAction func segmentValueChenged(_ sender: UISegmentedControl) {
+        
+        mainView.exchangeSubview(at: 1, withSubviewAt: 0)
+
     }
     
     @IBAction func searchBarButtonTapped(_ sender: UIBarButtonItem) {
@@ -76,4 +90,21 @@ extension ViewController: UICollectionViewDataSource {
         
         navigationController?.pushViewController(detailViewController, animated: true)
     }
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return bookData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = bookTableView.dequeueReusableCell(withIdentifier: "BookTableViewCell") as? BookTableViewCell else { return UITableViewCell() }
+        
+        let row = bookData[indexPath.row]
+        cell.configureCell(for: row)
+        
+        return cell
+    }
+    
+    
 }

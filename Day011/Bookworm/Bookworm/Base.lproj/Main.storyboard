@@ -22,10 +22,17 @@
                                     <segment title="컬렉션 보기"/>
                                     <segment title="리스트 보기"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentValueChenged:" destination="BYZ-38-t0r" eventType="valueChanged" id="XdD-vm-gUH"/>
+                                </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GrQ-Pg-fya">
                                 <rect key="frame" x="0.0" y="159" width="393" height="659"/>
                                 <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DGF-Ks-J3h">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="659"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kip-lw-3M4">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="659"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -41,9 +48,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="kip-lw-3M4" firstAttribute="leading" secondItem="GrQ-Pg-fya" secondAttribute="leading" id="2He-0C-eBN"/>
+                                    <constraint firstAttribute="trailing" secondItem="DGF-Ks-J3h" secondAttribute="trailing" id="Jee-L4-Nnr"/>
+                                    <constraint firstItem="DGF-Ks-J3h" firstAttribute="leading" secondItem="GrQ-Pg-fya" secondAttribute="leading" id="NbF-Us-aqE"/>
                                     <constraint firstAttribute="trailing" secondItem="kip-lw-3M4" secondAttribute="trailing" id="cJa-ph-SRn"/>
                                     <constraint firstItem="kip-lw-3M4" firstAttribute="top" secondItem="GrQ-Pg-fya" secondAttribute="top" id="g5I-Fp-Sko"/>
                                     <constraint firstAttribute="bottom" secondItem="kip-lw-3M4" secondAttribute="bottom" id="hGA-OJ-rTp"/>
+                                    <constraint firstItem="DGF-Ks-J3h" firstAttribute="top" secondItem="GrQ-Pg-fya" secondAttribute="top" id="kuq-jY-N3S"/>
+                                    <constraint firstAttribute="bottom" secondItem="DGF-Ks-J3h" secondAttribute="bottom" id="wVP-hz-eRc"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -68,6 +79,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bookCollectionView" destination="kip-lw-3M4" id="tCp-RP-RIA"/>
+                        <outlet property="bookTableView" destination="DGF-Ks-J3h" id="q1l-A6-eDi"/>
+                        <outlet property="mainView" destination="GrQ-Pg-fya" id="3UX-t6-b5C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
