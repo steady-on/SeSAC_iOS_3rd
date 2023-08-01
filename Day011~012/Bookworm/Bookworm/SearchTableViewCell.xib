@@ -73,6 +73,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="authorLabel" destination="LQO-cN-jdW" id="PPd-5f-Fel"/>
+                <outlet property="backgroundUIView" destination="ys8-r2-4u2" id="oq6-zj-LL6"/>
+                <outlet property="bookTitleLabel" destination="gsK-7g-4iw" id="H7g-to-Wyh"/>
+                <outlet property="introduceTextView" destination="ZYp-dh-1kC" id="R0A-ef-nCP"/>
+            </connections>
             <point key="canvasLocation" x="253.43511450381678" y="48.239436619718312"/>
         </tableViewCell>
     </objects>
