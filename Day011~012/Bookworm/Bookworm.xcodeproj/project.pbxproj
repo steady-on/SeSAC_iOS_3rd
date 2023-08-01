@@ -23,6 +23,8 @@
 		63E2C99F2A77E3820064163A /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C99D2A77E3820064163A /* BookTableViewCell.swift */; };
 		63E2C9A02A77E3820064163A /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E2C99E2A77E3820064163A /* BookTableViewCell.xib */; };
 		63E2C9A22A7970010064163A /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C9A12A7970010064163A /* UIImageView+.swift */; };
+		63E2C9A92A797B2E0064163A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C9A72A797B2E0064163A /* SearchTableViewCell.swift */; };
+		63E2C9AA2A797B2E0064163A /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E2C9A82A797B2E0064163A /* SearchTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		63E2C99D2A77E3820064163A /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		63E2C99E2A77E3820064163A /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
 		63E2C9A12A7970010064163A /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		63E2C9A72A797B2E0064163A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		63E2C9A82A797B2E0064163A /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				63E2C99E2A77E3820064163A /* BookTableViewCell.xib */,
 				63E2C9972A77D7DD0064163A /* DetailViewController.swift */,
 				63E2C9952A77CE640064163A /* SearchViewController.swift */,
+				63E2C9A72A797B2E0064163A /* SearchTableViewCell.swift */,
+				63E2C9A82A797B2E0064163A /* SearchTableViewCell.xib */,
 				63E2C9892A77B0650064163A /* BookCollectionViewCell.swift */,
 				63E2C98A2A77B0650064163A /* BookCollectionViewCell.xib */,
 				63E2C9A32A7970230064163A /* extension */,
@@ -167,6 +173,7 @@
 				63E2C9902A77BD2F0064163A /* BookData.json in Resources */,
 				63E2C9A02A77E3820064163A /* BookTableViewCell.xib in Resources */,
 				63E2C98C2A77B0650064163A /* BookCollectionViewCell.xib in Resources */,
+				63E2C9AA2A797B2E0064163A /* SearchTableViewCell.xib in Resources */,
 				63E2C97B2A77A90F0064163A /* Assets.xcassets in Resources */,
 				63E2C9792A77A90D0064163A /* Main.storyboard in Resources */,
 			);
@@ -183,6 +190,7 @@
 				63E2C9962A77CE640064163A /* SearchViewController.swift in Sources */,
 				63E2C98B2A77B0650064163A /* BookCollectionViewCell.swift in Sources */,
 				63E2C9942A77C81D0064163A /* BookData.swift in Sources */,
+				63E2C9A92A797B2E0064163A /* SearchTableViewCell.swift in Sources */,
 				63E2C9A22A7970010064163A /* UIImageView+.swift in Sources */,
 				63E2C99F2A77E3820064163A /* BookTableViewCell.swift in Sources */,
 				63E2C9722A77A90D0064163A /* AppDelegate.swift in Sources */,
