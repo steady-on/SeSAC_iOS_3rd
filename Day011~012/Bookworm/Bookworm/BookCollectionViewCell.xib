@@ -24,7 +24,7 @@
                             <constraint firstAttribute="width" secondItem="Sa1-sM-Pct" secondAttribute="height" multiplier="2:3" id="iW2-bu-UCn"/>
                         </constraints>
                     </imageView>
-                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ph5-b5-QfQ">
+                    <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ph5-b5-QfQ">
                         <rect key="frame" x="0.0" y="101" width="114" height="70"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y7g-5T-zhg">

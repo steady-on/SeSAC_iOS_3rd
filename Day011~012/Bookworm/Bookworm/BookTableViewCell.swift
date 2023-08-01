@@ -9,6 +9,7 @@ import UIKit
 
 class BookTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var backgroundUIView: UIView!
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
@@ -16,10 +17,11 @@ class BookTableViewCell: UITableViewCell {
     @IBOutlet weak var bookmarkImage: UIImageView!
     
     func configureCell(for data: Book) {
+        backgroundUIView.clipsToBounds = true
+        backgroundUIView.layer.cornerRadius = 15
+        
         coverImageView.image = UIImage(named: data.title)
-        coverImageView.layer.cornerRadius = 15
-        coverImageView.layer.borderWidth = 0.5
-        coverImageView.layer.borderColor = UIColor.darkGray.cgColor
+        coverImageView.contentMode = .scaleAspectFill
         
         titleLabel.text = data.title
         authorLabel.text = data.author
@@ -27,5 +29,7 @@ class BookTableViewCell: UITableViewCell {
         stateOfReadingLabel.text = data.stateOfReading.expression
         
         bookmarkImage.isHidden = !data.isBookmark
+        
+        self.backgroundColor = .systemGray6
     }
 }

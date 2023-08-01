@@ -18,64 +18,78 @@
                 <rect key="frame" x="0.0" y="0.0" width="518" height="200"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-mI-IwJ">
-                        <rect key="frame" x="160" y="20" width="348" height="64"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mr-VQ-r1E">
+                        <rect key="frame" x="20" y="10" width="478" height="180"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="책 제목" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQw-v5-ezz">
-                                <rect key="frame" x="0.0" y="0.0" width="348" height="20.333333333333332"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작가" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBG-s3-TF4">
-                                <rect key="frame" x="0.0" y="25.333333333333336" width="348" height="19.333333333333336"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="읽는 중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aX-O3-oK1">
-                                <rect key="frame" x="0.0" y="49.666666666666671" width="348" height="14.333333333333329"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <color key="textColor" systemColor="systemPinkColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eOL-AE-k9W">
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eOL-AE-k9W" secondAttribute="height" multiplier="2:3" id="drc-Le-CPB"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dVT-tl-BhN">
+                                <rect key="frame" x="15" y="0.33333333333333215" width="15" height="24.666666666666668"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Rc0-2j-5Fd"/>
+                                    <constraint firstAttribute="width" constant="15" id="l3S-mw-YFh"/>
+                                </constraints>
+                                <imageReference key="image" image="bookmark.fill" catalog="system" renderingMode="hierarchical-single">
+                                    <hierarchicalColors>
+                                        <color systemColor="systemRedColor"/>
+                                        <color systemColor="secondaryLabelColor"/>
+                                        <color systemColor="tertiaryLabelColor"/>
+                                    </hierarchicalColors>
+                                </imageReference>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-mI-IwJ">
+                                <rect key="frame" x="135" y="15" width="323" height="68.666666666666671"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="책 제목" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQw-v5-ezz">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작가" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBG-s3-TF4">
+                                        <rect key="frame" x="0.0" y="29" width="323" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="읽는 중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aX-O3-oK1">
+                                        <rect key="frame" x="0.0" y="54.333333333333329" width="323" height="14.333333333333329"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" systemColor="systemPinkColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                    </stackView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eOL-AE-k9W">
-                        <rect key="frame" x="10" y="10" width="135" height="180"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="eOL-AE-k9W" secondAttribute="height" multiplier="3:4" id="drc-Le-CPB"/>
+                            <constraint firstItem="8FR-mI-IwJ" firstAttribute="top" secondItem="3mr-VQ-r1E" secondAttribute="top" constant="15" id="HH8-ks-N0b"/>
+                            <constraint firstAttribute="trailing" secondItem="8FR-mI-IwJ" secondAttribute="trailing" constant="20" id="bAU-bM-7sb"/>
+                            <constraint firstItem="dVT-tl-BhN" firstAttribute="leading" secondItem="eOL-AE-k9W" secondAttribute="leading" constant="15" id="cnu-mw-G21"/>
+                            <constraint firstItem="8FR-mI-IwJ" firstAttribute="leading" secondItem="eOL-AE-k9W" secondAttribute="trailing" constant="15" id="cuH-qP-qNR"/>
+                            <constraint firstItem="eOL-AE-k9W" firstAttribute="height" secondItem="3mr-VQ-r1E" secondAttribute="height" id="d9T-UA-Vef"/>
+                            <constraint firstItem="eOL-AE-k9W" firstAttribute="top" secondItem="3mr-VQ-r1E" secondAttribute="top" id="j4W-SG-xPB"/>
+                            <constraint firstItem="dVT-tl-BhN" firstAttribute="top" secondItem="eOL-AE-k9W" secondAttribute="top" id="ozt-Bk-pun"/>
+                            <constraint firstAttribute="bottom" secondItem="eOL-AE-k9W" secondAttribute="bottom" id="pqm-1I-dPl"/>
+                            <constraint firstItem="eOL-AE-k9W" firstAttribute="leading" secondItem="3mr-VQ-r1E" secondAttribute="leading" id="ulF-KE-sHj"/>
                         </constraints>
-                    </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dVT-tl-BhN">
-                        <rect key="frame" x="20" y="10.33333333333333" width="15" height="24.666666666666671"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="25" id="Rc0-2j-5Fd"/>
-                            <constraint firstAttribute="width" constant="15" id="l3S-mw-YFh"/>
-                        </constraints>
-                        <imageReference key="image" image="bookmark.fill" catalog="system" renderingMode="hierarchical-single">
-                            <hierarchicalColors>
-                                <color systemColor="systemRedColor"/>
-                                <color systemColor="secondaryLabelColor"/>
-                                <color systemColor="tertiaryLabelColor"/>
-                            </hierarchicalColors>
-                        </imageReference>
-                    </imageView>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="eOL-AE-k9W" secondAttribute="bottom" constant="10" id="Fom-Ta-5eg"/>
-                    <constraint firstItem="8FR-mI-IwJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="JAP-Db-j7f"/>
-                    <constraint firstItem="dVT-tl-BhN" firstAttribute="top" secondItem="eOL-AE-k9W" secondAttribute="top" id="JGR-Ow-tSu"/>
-                    <constraint firstItem="eOL-AE-k9W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="S0V-yv-LVG"/>
-                    <constraint firstItem="dVT-tl-BhN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Wds-uC-Nzt"/>
-                    <constraint firstItem="8FR-mI-IwJ" firstAttribute="leading" secondItem="eOL-AE-k9W" secondAttribute="trailing" constant="15" id="hDO-Yp-NZF"/>
-                    <constraint firstAttribute="trailing" secondItem="8FR-mI-IwJ" secondAttribute="trailing" constant="10" id="jM1-Ta-27e"/>
-                    <constraint firstItem="eOL-AE-k9W" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="xvv-2i-3Wl"/>
+                    <constraint firstItem="3mr-VQ-r1E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="4a7-by-g5J"/>
+                    <constraint firstItem="3mr-VQ-r1E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="MVQ-Wo-URn"/>
+                    <constraint firstAttribute="trailing" secondItem="3mr-VQ-r1E" secondAttribute="trailing" constant="20" id="NIm-sf-let"/>
+                    <constraint firstAttribute="bottom" secondItem="3mr-VQ-r1E" secondAttribute="bottom" constant="10" id="khx-Qw-odE"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="authorLabel" destination="oBG-s3-TF4" id="WWK-Zx-JcU"/>
+                <outlet property="backgroundUIView" destination="3mr-VQ-r1E" id="7nj-UI-6z9"/>
                 <outlet property="bookmarkImage" destination="dVT-tl-BhN" id="dmp-Cc-6Rk"/>
                 <outlet property="coverImageView" destination="eOL-AE-k9W" id="NJE-jB-UFF"/>
                 <outlet property="stateOfReadingLabel" destination="9aX-O3-oK1" id="Rb9-U9-uED"/>
@@ -88,6 +102,9 @@
         <image name="bookmark.fill" catalog="system" width="110" height="128"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
