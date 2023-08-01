@@ -13,6 +13,7 @@ class BookTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var stateOfReadingLabel: UILabel!
+    @IBOutlet weak var bookmarkImage: UIImageView!
     
     func configureCell(for data: Book) {
         coverImageView.image = UIImage(named: data.title)
@@ -27,5 +28,6 @@ class BookTableViewCell: UITableViewCell {
             stateOfReadingLabel.text = readingState.expression
         }
         
+        bookmarkImage.isHidden = !data.isBookmark
     }
 }

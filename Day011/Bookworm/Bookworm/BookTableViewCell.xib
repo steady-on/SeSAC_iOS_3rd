@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -46,11 +47,27 @@
                             <constraint firstAttribute="width" secondItem="eOL-AE-k9W" secondAttribute="height" multiplier="3:4" id="drc-Le-CPB"/>
                         </constraints>
                     </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dVT-tl-BhN">
+                        <rect key="frame" x="20" y="10.33333333333333" width="15" height="24.666666666666671"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="Rc0-2j-5Fd"/>
+                            <constraint firstAttribute="width" constant="15" id="l3S-mw-YFh"/>
+                        </constraints>
+                        <imageReference key="image" image="bookmark.fill" catalog="system" renderingMode="hierarchical-single">
+                            <hierarchicalColors>
+                                <color systemColor="systemRedColor"/>
+                                <color systemColor="secondaryLabelColor"/>
+                                <color systemColor="tertiaryLabelColor"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="eOL-AE-k9W" secondAttribute="bottom" constant="10" id="Fom-Ta-5eg"/>
                     <constraint firstItem="8FR-mI-IwJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="JAP-Db-j7f"/>
+                    <constraint firstItem="dVT-tl-BhN" firstAttribute="top" secondItem="eOL-AE-k9W" secondAttribute="top" id="JGR-Ow-tSu"/>
                     <constraint firstItem="eOL-AE-k9W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="S0V-yv-LVG"/>
+                    <constraint firstItem="dVT-tl-BhN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Wds-uC-Nzt"/>
                     <constraint firstItem="8FR-mI-IwJ" firstAttribute="leading" secondItem="eOL-AE-k9W" secondAttribute="trailing" constant="15" id="hDO-Yp-NZF"/>
                     <constraint firstAttribute="trailing" secondItem="8FR-mI-IwJ" secondAttribute="trailing" constant="10" id="jM1-Ta-27e"/>
                     <constraint firstItem="eOL-AE-k9W" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="xvv-2i-3Wl"/>
@@ -59,6 +76,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="authorLabel" destination="oBG-s3-TF4" id="WWK-Zx-JcU"/>
+                <outlet property="bookmarkImage" destination="dVT-tl-BhN" id="dmp-Cc-6Rk"/>
                 <outlet property="coverImageView" destination="eOL-AE-k9W" id="NJE-jB-UFF"/>
                 <outlet property="stateOfReadingLabel" destination="9aX-O3-oK1" id="Rb9-U9-uED"/>
                 <outlet property="titleLabel" destination="GQw-v5-ezz" id="Fx3-Jf-Xu2"/>
@@ -67,8 +85,18 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="bookmark.fill" catalog="system" width="110" height="128"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
