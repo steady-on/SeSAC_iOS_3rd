@@ -29,9 +29,11 @@ class SearchTableViewCell: UITableViewCell {
         coverImageView.image = UIImage(named: book.title)
         bookTitleLabel.text = book.title
         authorLabel.text = book.author
-        introduceTextView.text = book.introduce
         
         introduceTextView.textContainer.maximumNumberOfLines = 3
         introduceTextView.textContainer.lineBreakMode = .byTruncatingTail
+        introduceTextView.textContainerInset = .zero
+        introduceTextView.textContainer.lineFragmentPadding = .zero
+        introduceTextView.text = book.introduce
     }
 }
