@@ -236,15 +236,27 @@
                                     <outlet property="delegate" destination="coO-In-VVB" id="4hF-sF-7Of"/>
                                 </connections>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8dR-55-ndr">
+                                <rect key="frame" x="0.0" y="115" width="393" height="703"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IyY-e7-7hr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="IyY-e7-7hr" firstAttribute="trailing" secondItem="8dR-55-ndr" secondAttribute="trailing" id="1f0-1t-jgT"/>
                             <constraint firstItem="ou5-U3-l71" firstAttribute="leading" secondItem="IyY-e7-7hr" secondAttribute="leading" id="8fO-gP-Ty7"/>
                             <constraint firstItem="ou5-U3-l71" firstAttribute="trailing" secondItem="IyY-e7-7hr" secondAttribute="trailing" id="BYz-w4-rp4"/>
+                            <constraint firstItem="8dR-55-ndr" firstAttribute="leading" secondItem="IyY-e7-7hr" secondAttribute="leading" id="ZZf-a6-8C8"/>
+                            <constraint firstItem="IyY-e7-7hr" firstAttribute="bottom" secondItem="8dR-55-ndr" secondAttribute="bottom" id="m0v-X1-qQb"/>
+                            <constraint firstItem="8dR-55-ndr" firstAttribute="top" secondItem="ou5-U3-l71" secondAttribute="bottom" id="mSJ-bF-DBr"/>
                             <constraint firstItem="ou5-U3-l71" firstAttribute="top" secondItem="IyY-e7-7hr" secondAttribute="top" id="sBj-Dt-ivc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="ou5-U3-l71" id="bA2-Fj-9lv"/>
+                        <outlet property="searchTableView" destination="8dR-55-ndr" id="9Am-EF-jPn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwx-xE-vdt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

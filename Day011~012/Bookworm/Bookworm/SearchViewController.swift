@@ -9,8 +9,9 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchTableView: UITableView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +19,7 @@ class SearchViewController: UIViewController {
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeButtonTapped))
     }
+    
     
     @objc func closeButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
