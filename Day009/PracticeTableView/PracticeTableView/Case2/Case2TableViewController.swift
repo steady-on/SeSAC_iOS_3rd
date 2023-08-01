@@ -8,9 +8,6 @@
 import UIKit
 
 class Case2TableViewController: UITableViewController {
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
