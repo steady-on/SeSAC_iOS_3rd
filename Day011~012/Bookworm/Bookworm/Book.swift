@@ -10,11 +10,12 @@ import Foundation
 struct Book: Codable {
     var title: String
     var author: String
-    var stateOfReading: StateOfReading.RawValue
+    var stateOfReading: StateOfReading
     var isBookmark: Bool
+    var introduce: String
 }
 
-enum StateOfReading: Int {
+enum StateOfReading: Int, Codable {
     case notYet
     case reading
     case finished

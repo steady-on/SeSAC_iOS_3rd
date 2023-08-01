@@ -26,9 +26,7 @@ class BookCollectionViewCell: UICollectionViewCell {
         coverImageView.image = UIImage(named: data.title)
         coverImageView.contentMode = .scaleAspectFill
         
-        if let readingState = StateOfReading(rawValue: data.stateOfReading) {
-            stateOfReadingLabel.text = readingState.expression
-        }
+        stateOfReadingLabel.text = data.stateOfReading.expression
         
         bookmarkImageView.isHidden = !data.isBookmark
     }

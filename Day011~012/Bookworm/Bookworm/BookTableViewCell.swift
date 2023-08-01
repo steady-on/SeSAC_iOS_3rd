@@ -24,9 +24,7 @@ class BookTableViewCell: UITableViewCell {
         titleLabel.text = data.title
         authorLabel.text = data.author
         
-        if let readingState = StateOfReading(rawValue: data.stateOfReading) {
-            stateOfReadingLabel.text = readingState.expression
-        }
+        stateOfReadingLabel.text = data.stateOfReading.expression
         
         bookmarkImage.isHidden = !data.isBookmark
     }
