@@ -127,4 +127,17 @@ extension ViewController: UITableViewDataSource {
         let trailingSwipeActions = UISwipeActionsConfiguration(actions: [delete])
         return trailingSwipeActions
     }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let bookmark = UIContextualAction(style: .normal, title: nil) { _, _, _ in
+            bookData[indexPath.row].isBookmark.toggle()
+            tableView.reloadData()
+        }
+        
+        bookmark.image = bookData[indexPath.row].isBookmark ? UIImage(systemName: "bookmark.slash.fill") : UIImage(systemName: "bookmark.fill")
+        bookmark.backgroundColor = bookData[indexPath.row].isBookmark ? .systemGray : .systemRed
+        
+        let leadingSwipeActions = UISwipeActionsConfiguration(actions: [bookmark])
+        return leadingSwipeActions
+    }
 }
