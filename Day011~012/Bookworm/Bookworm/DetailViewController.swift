@@ -11,9 +11,12 @@ class DetailViewController: UIViewController {
     
     var book: Book?
 
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var introduceTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +25,19 @@ class DetailViewController: UIViewController {
     }
     
     func setDetailView() {
+        contentView.layer.cornerRadius = 15
         guard let book else { return }
         
         title = book.title
+
+        backgroundImageView.image = UIImage(named: book.title)
+        backgroundImageView.contentMode = .bottom
         
         coverImageView.image = UIImage(named: book.title)
-        coverImageView.layer.cornerRadius = 15
 
         titleLabel.text = book.title
         authorLabel.text = book.author
+        
+        introduceTextView.text = book.introduce
     }
 }
