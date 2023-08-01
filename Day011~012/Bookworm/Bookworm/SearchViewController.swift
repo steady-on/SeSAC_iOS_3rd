@@ -21,13 +21,27 @@ class SearchViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setSearchBar()
+        setSearchTableView()
+        setNavigationThing()
+    }
+    
+    func setSearchBar() {
+        searchBar.placeholder = "책제목을 입력하세요"
+        searchBar.searchTextField.addTarget(self, action: #selector(searchBarReturnTapped), for: .editingDidEndOnExit)
+    }
+    
+    @objc func searchBarReturnTapped() {
+        searchKeyword = searchBar.text
+        searchTableView.reloadData()
+    }
+    
+    func setSearchTableView() {
         searchTableView.delegate = self
         searchTableView.dataSource = self
         
         let nib = UINib(nibName: "SearchTableViewCell", bundle: nil)
         searchTableView.register(nib, forCellReuseIdentifier: "SearchTableViewCell")
-        
-        setNavigationThing()
     }
     
     func setNavigationThing() {
