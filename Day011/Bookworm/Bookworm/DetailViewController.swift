@@ -19,7 +19,6 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         setDetailView()
-        
     }
     
     func setDetailView() {
@@ -28,6 +27,8 @@ class DetailViewController: UIViewController {
         title = book.title
         
         coverImageView.image = UIImage(named: book.title)
+        coverImageView.layer.cornerRadius = 15
+
         titleLabel.text = book.title
         authorLabel.text = book.author
     }

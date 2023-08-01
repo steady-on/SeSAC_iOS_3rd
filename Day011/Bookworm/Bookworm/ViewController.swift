@@ -36,7 +36,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UITableViewDel
     @IBAction func segmentValueChenged(_ sender: UISegmentedControl) {
         
         mainView.exchangeSubview(at: 1, withSubviewAt: 0)
-
     }
     
     @IBAction func searchBarButtonTapped(_ sender: UIBarButtonItem) {

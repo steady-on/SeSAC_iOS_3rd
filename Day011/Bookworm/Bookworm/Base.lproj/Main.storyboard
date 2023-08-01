@@ -91,44 +91,42 @@
         <scene sceneID="BiU-35-TcC">
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" id="ZHR-RD-sH6" customClass="DetailViewController" customModule="Bookworm" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="45T-Cz-4eB">
+                    <view key="view" contentMode="scaleToFill" id="45T-Cz-4eB">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ieq-VU-dmC">
-                                <rect key="frame" x="20" y="79" width="304" height="200"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QoC-PA-fpu">
+                                <rect key="frame" x="30" y="89.000000000000014" width="118" height="170.33333333333337"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cNt-FD-eau">
+                                <rect key="frame" x="168" y="89" width="205" height="101"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QoC-PA-fpu">
-                                        <rect key="frame" x="0.0" y="0.0" width="142" height="200"/>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="0XG-8h-sGb">
-                                        <rect key="frame" x="162" y="0.0" width="142" height="200"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mug-Yp-ELH">
-                                                <rect key="frame" x="0.0" y="0.0" width="142" height="102.66666666666667"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작가" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eiK-io-yiC">
-                                                <rect key="frame" x="0.0" y="102.66666666666669" width="142" height="97.333333333333314"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mug-Yp-ELH">
+                                        <rect key="frame" x="0.0" y="0.0" width="29.666666666666668" height="46"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작가" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eiK-io-yiC">
+                                        <rect key="frame" x="0.0" y="51" width="28" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hwR-HL-fBP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ieq-VU-dmC" firstAttribute="height" secondItem="45T-Cz-4eB" secondAttribute="height" multiplier="0.2" id="JAO-Be-lvj"/>
-                            <constraint firstItem="ieq-VU-dmC" firstAttribute="leading" secondItem="hwR-HL-fBP" secondAttribute="leading" constant="20" id="TPj-us-gQs"/>
-                            <constraint firstItem="hwR-HL-fBP" firstAttribute="trailing" secondItem="ieq-VU-dmC" secondAttribute="trailing" constant="20" id="b5i-H4-H6Q"/>
-                            <constraint firstItem="ieq-VU-dmC" firstAttribute="top" secondItem="hwR-HL-fBP" secondAttribute="top" constant="20" id="dSd-Yg-9Rb"/>
+                            <constraint firstItem="QoC-PA-fpu" firstAttribute="top" secondItem="hwR-HL-fBP" secondAttribute="top" constant="30" id="6oo-mH-NzJ"/>
+                            <constraint firstItem="cNt-FD-eau" firstAttribute="leading" secondItem="QoC-PA-fpu" secondAttribute="trailing" constant="20" id="AZW-bQ-zdV"/>
+                            <constraint firstItem="QoC-PA-fpu" firstAttribute="leading" secondItem="hwR-HL-fBP" secondAttribute="leading" constant="30" id="FWQ-05-Mde"/>
+                            <constraint firstItem="hwR-HL-fBP" firstAttribute="trailing" secondItem="cNt-FD-eau" secondAttribute="trailing" constant="20" id="KpY-en-oSV"/>
+                            <constraint firstItem="QoC-PA-fpu" firstAttribute="height" secondItem="45T-Cz-4eB" secondAttribute="height" multiplier="0.2" id="TBo-TY-tab"/>
+                            <constraint firstItem="QoC-PA-fpu" firstAttribute="width" secondItem="45T-Cz-4eB" secondAttribute="width" multiplier="0.3" id="cOh-47-3dI"/>
+                            <constraint firstItem="cNt-FD-eau" firstAttribute="top" secondItem="hwR-HL-fBP" secondAttribute="top" constant="30" id="mdX-tE-lLV"/>
                         </constraints>
                     </view>
                     <connections>
