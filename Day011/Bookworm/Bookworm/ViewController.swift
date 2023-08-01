@@ -34,8 +34,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UITableViewDel
         bookTableView.rowHeight = 150
     }
     
-    
-    
     @IBAction func segmentValueChenged(_ sender: UISegmentedControl) {
         mainView.exchangeSubview(at: 1, withSubviewAt: 0)
         
@@ -88,14 +86,36 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let detailViewStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
         guard let detailViewController = detailViewStoryboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
         
         detailViewController.book = bookData[indexPath.row]
-        
         navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
+        guard let indexPath = indexPaths.first else { return nil }
+        
+        let selectedBook = bookData[indexPath.row]
+        
+        let contextMenuConfig = UIContextMenuConfiguration(previewProvider: nil) { _ in
+            let bookmarkMenuTitle = selectedBook.isBookmark ? "북마크 해제" : "북마크 하기"
+            let bookmarkMenuImage = UIImage(systemName: selectedBook.isBookmark ? "bookmark.slash.fill" : "bookmark.fill")
+            
+            let bookmark = UIAction(title: bookmarkMenuTitle, image: bookmarkMenuImage) { _ in
+                bookData[indexPath.row].isBookmark.toggle()
+                collectionView.reloadData()
+            }
+            
+            let delete = UIAction(title: "삭제", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
+                bookData.remove(at: indexPath.row)
+                collectionView.reloadData()
+            }
+            
+            return UIMenu(children: [bookmark, delete])
+        }
+        
+        return contextMenuConfig
     }
 }
 
