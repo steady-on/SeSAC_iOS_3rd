@@ -13,25 +13,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UITableViewDel
     @IBOutlet weak var bookTableView: UITableView!
     @IBOutlet weak var mainView: UIView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        bookCollectionView.delegate = self
-        bookCollectionView.dataSource = self
-        
-        let collectionNib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
-        bookCollectionView.register(collectionNib, forCellWithReuseIdentifier: "BookCollectionViewCell")
-        
-        setCollectionViewLayout()
-        
-        bookTableView.delegate = self
-        bookTableView.dataSource = self
-        
-        let tableNib = UINib(nibName: "BookTableViewCell", bundle: nil)
-        bookTableView.register(tableNib, forCellReuseIdentifier: "BookTableViewCell")
-        bookTableView.rowHeight = 150
+        setInitialCollectionView()
+        setInitialTableView()
     }
     
     @IBAction func segmentValueChenged(_ sender: UISegmentedControl) {
@@ -54,6 +40,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UITableViewDel
         navigationController.modalPresentationStyle = .fullScreen
         
         present(navigationController, animated: true)
+    }
+    
+    func setInitialCollectionView() {
+        bookCollectionView.delegate = self
+        bookCollectionView.dataSource = self
+        
+        let collectionNib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
+        bookCollectionView.register(collectionNib, forCellWithReuseIdentifier: "BookCollectionViewCell")
+        
+        setCollectionViewLayout()
+    }
+    
+    func setInitialTableView() {
+        bookTableView.delegate = self
+        bookTableView.dataSource = self
+        
+        let tableNib = UINib(nibName: "BookTableViewCell", bundle: nil)
+        bookTableView.register(tableNib, forCellReuseIdentifier: "BookTableViewCell")
+        bookTableView.rowHeight = 150
     }
     
     func setCollectionViewLayout() {
