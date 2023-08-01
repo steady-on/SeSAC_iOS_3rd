@@ -32,6 +32,7 @@ class DetailViewController: UIViewController {
 
         backgroundImageView.image = UIImage(named: book.title)
         backgroundImageView.contentMode = .bottom
+        backgroundImageView.applyBlurEffect()
         
         coverImageView.image = UIImage(named: book.title)
 

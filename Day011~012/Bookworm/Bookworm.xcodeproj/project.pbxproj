@@ -22,6 +22,7 @@
 		63E2C9982A77D7DD0064163A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C9972A77D7DD0064163A /* DetailViewController.swift */; };
 		63E2C99F2A77E3820064163A /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C99D2A77E3820064163A /* BookTableViewCell.swift */; };
 		63E2C9A02A77E3820064163A /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E2C99E2A77E3820064163A /* BookTableViewCell.xib */; };
+		63E2C9A22A7970010064163A /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C9A12A7970010064163A /* UIImageView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		63E2C9972A77D7DD0064163A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		63E2C99D2A77E3820064163A /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		63E2C99E2A77E3820064163A /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
+		63E2C9A12A7970010064163A /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				63E2C9952A77CE640064163A /* SearchViewController.swift */,
 				63E2C9892A77B0650064163A /* BookCollectionViewCell.swift */,
 				63E2C98A2A77B0650064163A /* BookCollectionViewCell.xib */,
+				63E2C9A32A7970230064163A /* extension */,
 				63E2C9912A77C6740064163A /* Book.swift */,
 				63E2C9932A77C81D0064163A /* BookData.swift */,
 				63E2C98F2A77BD2F0064163A /* BookData.json */,
@@ -92,6 +95,14 @@
 				63E2C97F2A77A90F0064163A /* Info.plist */,
 			);
 			path = Bookworm;
+			sourceTree = "<group>";
+		};
+		63E2C9A32A7970230064163A /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				63E2C9A12A7970010064163A /* UIImageView+.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 				63E2C9962A77CE640064163A /* SearchViewController.swift in Sources */,
 				63E2C98B2A77B0650064163A /* BookCollectionViewCell.swift in Sources */,
 				63E2C9942A77C81D0064163A /* BookData.swift in Sources */,
+				63E2C9A22A7970010064163A /* UIImageView+.swift in Sources */,
 				63E2C99F2A77E3820064163A /* BookTableViewCell.swift in Sources */,
 				63E2C9722A77A90D0064163A /* AppDelegate.swift in Sources */,
 				63E2C9922A77C6740064163A /* Book.swift in Sources */,
