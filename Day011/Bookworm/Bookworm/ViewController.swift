@@ -31,11 +31,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UITableViewDel
         
         let tableNib = UINib(nibName: "BookTableViewCell", bundle: nil)
         bookTableView.register(tableNib, forCellReuseIdentifier: "BookTableViewCell")
+        bookTableView.rowHeight = 150
     }
     
+    
+    
     @IBAction func segmentValueChenged(_ sender: UISegmentedControl) {
-        
         mainView.exchangeSubview(at: 1, withSubviewAt: 0)
+        
+        switch sender.selectedSegmentIndex {
+        case 0: bookCollectionView.reloadData()
+        case 1: bookTableView.reloadData()
+        default: return
+        }
     }
     
     @IBAction func searchBarButtonTapped(_ sender: UIBarButtonItem) {
@@ -105,5 +113,18 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: nil) { _, _, _ in
+            bookData.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+        delete.image = UIImage(systemName: "trash")
+        
+        let trailingSwipeActions = UISwipeActionsConfiguration(actions: [delete])
+        return trailingSwipeActions
+    }
 }
