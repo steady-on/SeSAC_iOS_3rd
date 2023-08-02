@@ -93,10 +93,77 @@
                     <view key="view" contentMode="scaleToFill" id="xZP-wW-Rfp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpi-GO-04g">
+                                <rect key="frame" x="0.0" y="103" width="393" height="213"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 본 작품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8u2-xj-aaD">
+                                        <rect key="frame" x="15" y="8" width="96.333333333333329" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sC2-YB-Lpz">
+                                        <rect key="frame" x="0.0" y="42" width="393" height="171"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DXh-Vb-m5j">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="sC2-YB-Lpz" firstAttribute="top" secondItem="8u2-xj-aaD" secondAttribute="bottom" constant="10" id="UXW-S9-c1z"/>
+                                    <constraint firstItem="8u2-xj-aaD" firstAttribute="leading" secondItem="qpi-GO-04g" secondAttribute="leading" constant="15" id="WTu-Gt-3ks"/>
+                                    <constraint firstItem="sC2-YB-Lpz" firstAttribute="leading" secondItem="qpi-GO-04g" secondAttribute="leading" id="eNb-lD-fJ0"/>
+                                    <constraint firstItem="8u2-xj-aaD" firstAttribute="top" secondItem="qpi-GO-04g" secondAttribute="top" constant="8" id="jIg-wy-aZY"/>
+                                    <constraint firstAttribute="bottom" secondItem="sC2-YB-Lpz" secondAttribute="bottom" id="trQ-En-Z1V"/>
+                                    <constraint firstAttribute="trailing" secondItem="sC2-YB-Lpz" secondAttribute="trailing" id="wPV-AH-kEL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0UK-zp-nKW">
+                                <rect key="frame" x="0.0" y="331" width="393" height="438"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요즘 인기 작품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2F-gg-s63">
+                                        <rect key="frame" x="15.000000000000007" y="8" width="113.66666666666669" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VuX-ay-NzB">
+                                        <rect key="frame" x="0.0" y="42" width="393" height="396"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="VuX-ay-NzB" firstAttribute="leading" secondItem="0UK-zp-nKW" secondAttribute="leading" id="EXX-DL-2vu"/>
+                                    <constraint firstItem="g2F-gg-s63" firstAttribute="top" secondItem="0UK-zp-nKW" secondAttribute="top" constant="8" id="Fu9-Jb-mIx"/>
+                                    <constraint firstAttribute="trailing" secondItem="VuX-ay-NzB" secondAttribute="trailing" id="gHa-ow-UoF"/>
+                                    <constraint firstItem="VuX-ay-NzB" firstAttribute="top" secondItem="g2F-gg-s63" secondAttribute="bottom" constant="10" id="gpz-Oo-PcP"/>
+                                    <constraint firstAttribute="bottom" secondItem="VuX-ay-NzB" secondAttribute="bottom" id="uwT-zk-6jw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="huF-yP-liN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qpi-GO-04g" firstAttribute="top" secondItem="huF-yP-liN" secondAttribute="top" id="2lu-mZ-LVr"/>
+                            <constraint firstItem="0UK-zp-nKW" firstAttribute="top" secondItem="qpi-GO-04g" secondAttribute="bottom" constant="15" id="Q78-fZ-GM3"/>
+                            <constraint firstItem="huF-yP-liN" firstAttribute="trailing" secondItem="0UK-zp-nKW" secondAttribute="trailing" id="QlD-Nc-3l4"/>
+                            <constraint firstItem="g2F-gg-s63" firstAttribute="leading" secondItem="8u2-xj-aaD" secondAttribute="leading" id="aOR-70-bO7"/>
+                            <constraint firstItem="huF-yP-liN" firstAttribute="bottom" secondItem="0UK-zp-nKW" secondAttribute="bottom" id="dSw-jE-OJc"/>
+                            <constraint firstItem="qpi-GO-04g" firstAttribute="leading" secondItem="huF-yP-liN" secondAttribute="leading" id="eEM-ae-meU"/>
+                            <constraint firstItem="0UK-zp-nKW" firstAttribute="leading" secondItem="huF-yP-liN" secondAttribute="leading" id="eYh-qt-XjN"/>
+                            <constraint firstItem="qpi-GO-04g" firstAttribute="height" secondItem="xZP-wW-Rfp" secondAttribute="height" multiplier="0.25" id="idi-Rm-FVw"/>
+                            <constraint firstItem="huF-yP-liN" firstAttribute="trailing" secondItem="qpi-GO-04g" secondAttribute="trailing" id="mUe-Or-YOK"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1Si-eX-5MG"/>
+                    <navigationItem key="navigationItem" id="1Si-eX-5MG" userLabel="둘러보기"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTY-5L-V6I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
