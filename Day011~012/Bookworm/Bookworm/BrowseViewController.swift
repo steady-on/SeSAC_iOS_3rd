@@ -16,8 +16,11 @@ class BrowseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        bestTableView.separatorStyle = .none
+        configureTableView()
         configureCollectionView()
+        setLayoutForCollectionView()
     }
 
 }
@@ -31,6 +34,14 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
         recentCollectionView.register(nib, forCellWithReuseIdentifier: "BrowseCollectionViewCell")
     }
     
+    func setLayoutForCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 120, height: 180)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        
+        recentCollectionView.collectionViewLayout = layout
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
@@ -40,6 +51,29 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
         guard let cell = recentCollectionView.dequeueReusableCell(withReuseIdentifier: "BrowseCollectionViewCell", for: indexPath) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
         
         cell.book = data[indexPath.row]
+        cell.configureCell()
+        
+        return cell
+    }
+}
+
+extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
+    func configureTableView() {
+        bestTableView.dataSource = self
+        bestTableView.delegate = self
+        
+        let nib = UINib(nibName: "SearchTableViewCell", bundle: nil)
+        bestTableView.register(nib, forCellReuseIdentifier: "SearchTableViewCell")
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = bestTableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell") as? SearchTableViewCell else { return UITableViewCell() }
+        
+        cell.book = data.reversed()[indexPath.row]
         cell.configureCell()
         
         return cell
