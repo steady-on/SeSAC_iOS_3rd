@@ -134,7 +134,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = bookTableView.dequeueReusableCell(withIdentifier: "BookTableViewCell") as? BookTableViewCell else { return UITableViewCell() }
         
         let row = bookData[indexPath.row]
-        cell.configureCell(for: row)
+        cell.data = row
+        cell.configureCell()
+        cell.stateOfReadingButton.tag = indexPath.row
         
         return cell
     }

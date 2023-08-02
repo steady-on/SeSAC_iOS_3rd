@@ -6,6 +6,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -42,7 +43,7 @@
                                 </imageReference>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-mI-IwJ">
-                                <rect key="frame" x="135" y="15" width="323" height="68.666666666666671"/>
+                                <rect key="frame" x="135" y="15.000000000000007" width="323" height="103.66666666666669"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="책 제목" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQw-v5-ezz">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="24"/>
@@ -62,6 +63,16 @@
                                         <color key="textColor" systemColor="systemPinkColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhd-zi-FAp">
+                                        <rect key="frame" x="0.0" y="73.666666666666671" width="323" height="30"/>
+                                        <menu key="menu" id="iPD-gE-hhI">
+                                            <children>
+                                                <command title="Item 1" id="4fM-Za-MJw"/>
+                                                <command title="Item 2" id="P7W-cx-Dwd"/>
+                                            </children>
+                                        </menu>
+                                        <state key="normal" title="Button"/>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -92,6 +103,7 @@
                 <outlet property="backgroundUIView" destination="3mr-VQ-r1E" id="7nj-UI-6z9"/>
                 <outlet property="bookmarkImage" destination="dVT-tl-BhN" id="dmp-Cc-6Rk"/>
                 <outlet property="coverImageView" destination="eOL-AE-k9W" id="NJE-jB-UFF"/>
+                <outlet property="stateOfReadingButton" destination="bhd-zi-FAp" id="OTz-Ug-Po3"/>
                 <outlet property="stateOfReadingLabel" destination="9aX-O3-oK1" id="Rb9-U9-uED"/>
                 <outlet property="titleLabel" destination="GQw-v5-ezz" id="Fx3-Jf-Xu2"/>
             </connections>
