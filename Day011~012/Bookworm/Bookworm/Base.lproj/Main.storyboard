@@ -164,6 +164,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1Si-eX-5MG" userLabel="둘러보기"/>
+                    <connections>
+                        <outlet property="bestTableView" destination="VuX-ay-NzB" id="HZQ-Os-9Qd"/>
+                        <outlet property="recentCollectionView" destination="sC2-YB-Lpz" id="bUw-xv-2Ma"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTY-5L-V6I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -369,6 +373,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="s1F-xx-VxE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r7T-uv-KuO">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
