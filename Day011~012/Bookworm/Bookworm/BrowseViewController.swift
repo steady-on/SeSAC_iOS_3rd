@@ -23,6 +23,14 @@ class BrowseViewController: UIViewController {
         setLayoutForCollectionView()
     }
 
+    func presentDetailView(for book: Book) {
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+        
+        detailVC.book = book
+        detailVC.modalPresentationStyle = .automatic
+        
+        present(detailVC, animated: true)
+    }
 }
 
 extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -55,6 +63,11 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let book = data[indexPath.row]
+        presentDetailView(for: book)
+    }
 }
 
 extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
@@ -77,5 +90,10 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configureCell()
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let book = data.reversed()[indexPath.row]
+        presentDetailView(for: book)
     }
 }
