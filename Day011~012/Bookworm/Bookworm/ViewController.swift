@@ -95,6 +95,7 @@ extension ViewController: UICollectionViewDataSource {
         guard let detailViewController = detailViewStoryboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
         
         detailViewController.book = bookData[indexPath.row]
+        
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     

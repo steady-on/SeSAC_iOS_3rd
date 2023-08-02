@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		633FCBB12A7A4C8300873965 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633FCBB02A7A4C8300873965 /* BrowseViewController.swift */; };
 		63E2C9722A77A90D0064163A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C9712A77A90D0064163A /* AppDelegate.swift */; };
 		63E2C9742A77A90D0064163A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C9732A77A90D0064163A /* SceneDelegate.swift */; };
 		63E2C9762A77A90D0064163A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C9752A77A90D0064163A /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		633FCBB02A7A4C8300873965 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		63E2C96E2A77A90D0064163A /* Bookworm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookworm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E2C9712A77A90D0064163A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E2C9732A77A90D0064163A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,9 +86,10 @@
 				63E2C9732A77A90D0064163A /* SceneDelegate.swift */,
 				63E2C9752A77A90D0064163A /* ViewController.swift */,
 				63E2C9772A77A90D0064163A /* Main.storyboard */,
+				63E2C9972A77D7DD0064163A /* DetailViewController.swift */,
+				633FCBB02A7A4C8300873965 /* BrowseViewController.swift */,
 				63E2C99D2A77E3820064163A /* BookTableViewCell.swift */,
 				63E2C99E2A77E3820064163A /* BookTableViewCell.xib */,
-				63E2C9972A77D7DD0064163A /* DetailViewController.swift */,
 				63E2C9952A77CE640064163A /* SearchViewController.swift */,
 				63E2C9A72A797B2E0064163A /* SearchTableViewCell.swift */,
 				63E2C9A82A797B2E0064163A /* SearchTableViewCell.xib */,
@@ -192,6 +195,7 @@
 				63E2C9942A77C81D0064163A /* BookData.swift in Sources */,
 				63E2C9A92A797B2E0064163A /* SearchTableViewCell.swift in Sources */,
 				63E2C9A22A7970010064163A /* UIImageView+.swift in Sources */,
+				633FCBB12A7A4C8300873965 /* BrowseViewController.swift in Sources */,
 				63E2C99F2A77E3820064163A /* BookTableViewCell.swift in Sources */,
 				63E2C9722A77A90D0064163A /* AppDelegate.swift in Sources */,
 				63E2C9922A77C6740064163A /* Book.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zXs-ek-XVO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s1F-xx-VxE">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -27,13 +27,13 @@
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GrQ-Pg-fya">
-                                <rect key="frame" x="0.0" y="159" width="393" height="659"/>
+                                <rect key="frame" x="0.0" y="159" width="393" height="610"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DGF-Ks-J3h">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="659"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="610"/>
                                     </tableView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kip-lw-3M4">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="659"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="610"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AOI-w6-WS1">
                                             <size key="itemSize" width="128" height="128"/>
@@ -84,7 +84,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1982.4427480916029" y="-27.464788732394368"/>
+        </scene>
+        <!--Browse View Controller-->
+        <scene sceneID="lp2-QO-kvn">
+            <objects>
+                <viewController storyboardIdentifier="BrowseViewController" id="f5i-KG-KpF" customClass="BrowseViewController" customModule="Bookworm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xZP-wW-Rfp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="huF-yP-liN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Si-eX-5MG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tTY-5L-V6I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1981" y="696"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="BiU-35-TcC">
@@ -218,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3UQ-I9-H3V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2009.9236641221373" y="330.98591549295776"/>
+            <point key="canvasLocation" x="2881.679389312977" y="-27.464788732394368"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="9Ng-9b-1ZK">
@@ -259,12 +275,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwx-xE-vdt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2016" y="-384"/>
+            <point key="canvasLocation" x="1982" y="-737"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--내 책장-->
         <scene sceneID="ftc-gx-1RR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zXs-ek-XVO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="내 책장" image="books.vertical.fill" catalog="system" id="e28-OQ-LEm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rL5-ib-Yjt">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -277,10 +294,49 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYJ-hZ-WwM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Ag3-mE-MKe">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="s1F-xx-VxE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r7T-uv-KuO">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="zXs-ek-XVO" kind="relationship" relationship="viewControllers" id="ZLg-AT-7Bw"/>
+                        <segue destination="282-qX-Lem" kind="relationship" relationship="viewControllers" id="gbz-Dc-ODJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zkr-X2-yq5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+        <!--둘러보기-->
+        <scene sceneID="Hc6-OQ-f9s">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="282-qX-Lem" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="둘러보기" image="globe" catalog="system" id="LiL-6C-3J8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mjl-DW-S9z">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="f5i-KG-KpF" kind="relationship" relationship="rootViewController" id="W9u-vH-0PU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dam-da-YGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056" y="696"/>
         </scene>
     </scenes>
     <resources>
+        <image name="books.vertical.fill" catalog="system" width="128" height="110"/>
+        <image name="globe" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
