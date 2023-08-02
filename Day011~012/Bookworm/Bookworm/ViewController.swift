@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UITableViewDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet weak var bookCollectionView: UICollectionView!
     @IBOutlet weak var bookTableView: UITableView!
@@ -41,7 +41,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UITableViewDel
         
         present(navigationController, animated: true)
     }
-    
+}
+
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func setInitialCollectionView() {
         bookCollectionView.delegate = self
         bookCollectionView.dataSource = self
@@ -50,15 +52,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UITableViewDel
         bookCollectionView.register(collectionNib, forCellWithReuseIdentifier: "BookCollectionViewCell")
         
         setCollectionViewLayout()
-    }
-    
-    func setInitialTableView() {
-        bookTableView.delegate = self
-        bookTableView.dataSource = self
-        
-        let tableNib = UINib(nibName: "BookTableViewCell", bundle: nil)
-        bookTableView.register(tableNib, forCellReuseIdentifier: "BookTableViewCell")
-        bookTableView.rowHeight = 150
     }
     
     func setCollectionViewLayout() {
@@ -74,9 +67,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UITableViewDel
         layout.minimumInteritemSpacing = spacing
         bookCollectionView.collectionViewLayout = layout
     }
-}
-
-extension ViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return bookData.count
     }
@@ -125,7 +116,16 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    func setInitialTableView() {
+        bookTableView.delegate = self
+        bookTableView.dataSource = self
+        
+        let tableNib = UINib(nibName: "BookTableViewCell", bundle: nil)
+        bookTableView.register(tableNib, forCellReuseIdentifier: "BookTableViewCell")
+        bookTableView.rowHeight = 150
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bookData.count
     }
