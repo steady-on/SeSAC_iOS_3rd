@@ -16,20 +16,19 @@ class BookTableViewCell: UITableViewCell {
     @IBOutlet weak var stateOfReadingLabel: UILabel!
     @IBOutlet weak var bookmarkImage: UIImageView!
     
-    func configureCell(for data: Book) {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.backgroundColor = .systemGray6
         backgroundUIView.clipsToBounds = true
         backgroundUIView.layer.cornerRadius = 15
-        
-        coverImageView.image = UIImage(named: data.title)
         coverImageView.contentMode = .scaleAspectFill
-        
+    }
+    
+    func configureCell(for data: Book) {
+        coverImageView.image = UIImage(named: data.title)
         titleLabel.text = data.title
         authorLabel.text = data.author
-        
         stateOfReadingLabel.text = data.stateOfReading.expression
-        
         bookmarkImage.isHidden = !data.isBookmark
-        
-        self.backgroundColor = .systemGray6
     }
 }
