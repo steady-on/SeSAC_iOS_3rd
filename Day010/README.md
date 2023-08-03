@@ -61,4 +61,5 @@ Naver에서 `영화`를 검색했을 때 나오는 화면을 구현하고자 함
 
 - 추측컨대 컴포넌트 자체의 높이보다 내용물이 생략되면서 측정되는 높이가 짧아지면, 컴포넌트 높이의 중간을 중심으로 컨텐츠가 렌더링되면서 아래로 내려가게 되는 것 같았다.
 
-- `textView.textContainerInset = UIEdgeInsets.zero` 코드를 적용해서 text를 담는 컨테이너의 inset을 0으로 지정해주면서 문제가 해결되었다.
+- `textView.textContainerInset = .zero` 코드를 적용하면 text 위에 생기는 공백을 없애고,
+- `textView.textContainer.lineFragmentPadding = .zero` 코드를 적용하면 text 왼쪽에 생기는 공백을 없앤다.
