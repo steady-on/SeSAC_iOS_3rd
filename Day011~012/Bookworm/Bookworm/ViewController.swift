@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setInitialCollectionView()
+        configureCollectionView()
         setInitialTableView()
     }
     
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func setInitialCollectionView() {
+    func configureCollectionView() {
         bookCollectionView.delegate = self
         bookCollectionView.dataSource = self
         
