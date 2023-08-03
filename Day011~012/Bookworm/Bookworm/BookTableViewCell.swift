@@ -34,11 +34,10 @@ class BookTableViewCell: UITableViewCell {
         titleLabel.text = data.title
         authorLabel.text = data.author
         bookmarkImage.isHidden = !data.isBookmark
-        changeStateOfReading(stateOfReadingButton, defaultValue: data.stateOfReading)
+        stateOfReadingButton.menu = makeMenuforStateOfReading(for: stateOfReadingButton.tag, defaultValue: data.stateOfReading)
     }
     
-    func changeStateOfReading(_ sender: UIButton, defaultValue: StateOfReading) {
-        let row = sender.tag
+    func makeMenuforStateOfReading(for row: Int, defaultValue: StateOfReading) -> UIMenu {
         
         let notYet = UIAction(title: "아직 안읽음", image: UIImage(systemName: "book.closed")) { _ in
             bookData[row].stateOfReading = .notYet
@@ -63,6 +62,6 @@ class BookTableViewCell: UITableViewCell {
         
         let menu = UIMenu(title: "읽기 상태", options: .singleSelection, children: [notYet, reading, finished])
         
-        sender.menu = menu
+        return menu
     }
 }
