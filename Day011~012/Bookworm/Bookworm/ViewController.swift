@@ -135,9 +135,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         let row = bookData[indexPath.row]
         cell.data = row
-        cell.configureCell()
         cell.stateOfReadingButton.tag = indexPath.row
-        
+        cell.configureCell()
+                
         return cell
     }
     
