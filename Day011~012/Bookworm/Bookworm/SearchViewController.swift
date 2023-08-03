@@ -7,11 +7,11 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UITableViewDelegate {
+class SearchViewController: UIViewController {
     
     private var searchKeyword: String?
     private var filteredData: [Book] {
-        guard let searchKeyword else { return bookData }
+        guard let searchKeyword, searchKeyword.isEmpty == false else { return bookData }
         return bookData.filter { $0.title.contains(searchKeyword) }
     }
     
@@ -27,11 +27,12 @@ class SearchViewController: UIViewController, UITableViewDelegate {
     }
     
     func setSearchBar() {
+        searchBar.delegate = self
         searchBar.placeholder = "책제목을 입력하세요"
-        searchBar.searchTextField.addTarget(self, action: #selector(searchBarReturnTapped), for: .editingDidEndOnExit)
+        searchBar.searchTextField.clearButtonMode = .always
     }
     
-    @objc func searchBarReturnTapped() {
+    func searchBarReturnTapped() {
         searchKeyword = searchBar.text
         searchTableView.reloadData()
     }
@@ -55,7 +56,17 @@ class SearchViewController: UIViewController, UITableViewDelegate {
     }
 }
 
-extension SearchViewController: UITableViewDataSource {
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBarReturnTapped()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchBarReturnTapped()
+    }
+}
+
+extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredData.count
     }
