@@ -15,7 +15,6 @@ class BookTableViewCell: UITableViewCell {
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var stateOfReadingLabel: UILabel!
     @IBOutlet weak var bookmarkImage: UIImageView!
     @IBOutlet weak var stateOfReadingButton: UIButton!
     
@@ -25,6 +24,7 @@ class BookTableViewCell: UITableViewCell {
         backgroundUIView.clipsToBounds = true
         backgroundUIView.layer.cornerRadius = 15
         coverImageView.contentMode = .scaleAspectFill
+        stateOfReadingButton.configuration?.buttonSize = .mini
     }
     
     func configureCell() {
@@ -33,7 +33,6 @@ class BookTableViewCell: UITableViewCell {
         coverImageView.image = UIImage(named: data.title)
         titleLabel.text = data.title
         authorLabel.text = data.author
-        stateOfReadingLabel.text = data.stateOfReading.expression
         bookmarkImage.isHidden = !data.isBookmark
         changeStateOfReading(stateOfReadingButton, defaultValue: data.stateOfReading)
     }

@@ -43,7 +43,7 @@
                                 </imageReference>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-mI-IwJ">
-                                <rect key="frame" x="135" y="15.000000000000007" width="323" height="103.66666666666669"/>
+                                <rect key="frame" x="135" y="15.000000000000004" width="323" height="49.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="책 제목" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQw-v5-ezz">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="24"/>
@@ -57,33 +57,37 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="읽는 중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aX-O3-oK1">
-                                        <rect key="frame" x="0.0" y="54.333333333333329" width="323" height="14.333333333333329"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                        <color key="textColor" systemColor="systemPinkColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhd-zi-FAp">
-                                        <rect key="frame" x="0.0" y="73.666666666666671" width="323" height="30"/>
-                                        <menu key="menu" id="iPD-gE-hhI">
-                                            <children>
-                                                <command title="Item 1" id="4fM-Za-MJw"/>
-                                                <command title="Item 2" id="P7W-cx-Dwd"/>
-                                            </children>
-                                        </menu>
-                                        <state key="normal" title="Button"/>
-                                    </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhd-zi-FAp">
+                                <rect key="frame" x="135" y="135.66666666666666" width="87" height="34.333333333333343"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <menu key="menu" id="iPD-gE-hhI">
+                                    <menuOptions key="menuOptions" singleSelection="YES"/>
+                                    <children>
+                                        <command title="Item 1" id="4fM-Za-MJw"/>
+                                        <command title="Item 2" id="P7W-cx-Dwd"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" systemColor="systemPinkColor"/>
+                                    <imageReference key="image" image="chevron.up.chevron.down" catalog="system" symbolScale="small"/>
+                                </state>
+                                <buttonConfiguration key="configuration" style="gray" title="Button" cornerStyle="capsule">
+                                    <color key="baseForegroundColor" systemColor="systemPinkColor"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8FR-mI-IwJ" firstAttribute="top" secondItem="3mr-VQ-r1E" secondAttribute="top" constant="15" id="HH8-ks-N0b"/>
+                            <constraint firstItem="bhd-zi-FAp" firstAttribute="leading" secondItem="8FR-mI-IwJ" secondAttribute="leading" id="JjU-Ty-oP1"/>
                             <constraint firstAttribute="trailing" secondItem="8FR-mI-IwJ" secondAttribute="trailing" constant="20" id="bAU-bM-7sb"/>
                             <constraint firstItem="dVT-tl-BhN" firstAttribute="leading" secondItem="eOL-AE-k9W" secondAttribute="leading" constant="15" id="cnu-mw-G21"/>
                             <constraint firstItem="8FR-mI-IwJ" firstAttribute="leading" secondItem="eOL-AE-k9W" secondAttribute="trailing" constant="15" id="cuH-qP-qNR"/>
                             <constraint firstItem="eOL-AE-k9W" firstAttribute="height" secondItem="3mr-VQ-r1E" secondAttribute="height" id="d9T-UA-Vef"/>
                             <constraint firstItem="eOL-AE-k9W" firstAttribute="top" secondItem="3mr-VQ-r1E" secondAttribute="top" id="j4W-SG-xPB"/>
+                            <constraint firstAttribute="bottom" secondItem="bhd-zi-FAp" secondAttribute="bottom" constant="10" id="jl8-cV-EaK"/>
                             <constraint firstItem="dVT-tl-BhN" firstAttribute="top" secondItem="eOL-AE-k9W" secondAttribute="top" id="ozt-Bk-pun"/>
                             <constraint firstAttribute="bottom" secondItem="eOL-AE-k9W" secondAttribute="bottom" id="pqm-1I-dPl"/>
                             <constraint firstItem="eOL-AE-k9W" firstAttribute="leading" secondItem="3mr-VQ-r1E" secondAttribute="leading" id="ulF-KE-sHj"/>
@@ -104,7 +108,6 @@
                 <outlet property="bookmarkImage" destination="dVT-tl-BhN" id="dmp-Cc-6Rk"/>
                 <outlet property="coverImageView" destination="eOL-AE-k9W" id="NJE-jB-UFF"/>
                 <outlet property="stateOfReadingButton" destination="bhd-zi-FAp" id="OTz-Ug-Po3"/>
-                <outlet property="stateOfReadingLabel" destination="9aX-O3-oK1" id="Rb9-U9-uED"/>
                 <outlet property="titleLabel" destination="GQw-v5-ezz" id="Fx3-Jf-Xu2"/>
             </connections>
             <point key="canvasLocation" x="93.129770992366403" y="42.253521126760567"/>
@@ -112,6 +115,7 @@
     </objects>
     <resources>
         <image name="bookmark.fill" catalog="system" width="110" height="128"/>
+        <image name="chevron.up.chevron.down" catalog="system" width="128" height="128"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
