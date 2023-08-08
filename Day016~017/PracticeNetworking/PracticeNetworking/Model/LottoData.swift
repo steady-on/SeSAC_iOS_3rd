@@ -23,5 +23,3 @@ struct LottoData: Codable {
     var firstAccumamnt : Int
     var drwNo          : Int
 }
-
-
