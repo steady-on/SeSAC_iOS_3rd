@@ -61,7 +61,9 @@
                                                     <constraint firstAttribute="width" secondItem="hqJ-oC-EBF" secondAttribute="height" multiplier="1:1" id="m68-7K-l1S"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="1"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="1">
+                                                    <backgroundConfiguration key="background"/>
+                                                </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URL-tn-Pqn">
                                                 <rect key="frame" x="58" y="0.0" width="47.666666666666657" height="47.666666666666664"/>
@@ -183,6 +185,20 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Lotto" image="45.circle.fill" catalog="system" id="s8r-Eu-mCp"/>
+                    <connections>
+                        <outlet property="bonusNumberButton" destination="ZRR-yJ-PWf" id="9j8-fY-0Yu"/>
+                        <outlet property="drawingDate" destination="i3W-Q1-QHO" id="nnX-c2-PjS"/>
+                        <outlet property="drawingNumberLabel" destination="UwP-Pb-iZp" id="vOi-T1-kSN"/>
+                        <outlet property="drawingNumberTextField" destination="KbT-s4-7e6" id="BS9-Z1-gdz"/>
+                        <outletCollection property="lotteryNumberButtons" destination="hqJ-oC-EBF" collectionClass="NSMutableArray" id="K1T-Yl-lF0"/>
+                        <outletCollection property="lotteryNumberButtons" destination="URL-tn-Pqn" collectionClass="NSMutableArray" id="ysa-iT-YBB"/>
+                        <outletCollection property="lotteryNumberButtons" destination="MSy-Xu-FTh" collectionClass="NSMutableArray" id="NVw-xW-nC3"/>
+                        <outletCollection property="lotteryNumberButtons" destination="rB7-ix-Uxv" collectionClass="NSMutableArray" id="Jx6-LQ-xKZ"/>
+                        <outletCollection property="lotteryNumberButtons" destination="sK4-NV-2u6" collectionClass="NSMutableArray" id="nkx-n3-lQ8"/>
+                        <outletCollection property="lotteryNumberButtons" destination="O6N-fE-W0f" collectionClass="NSMutableArray" id="bOZ-7b-pyj"/>
+                        <outletCollection property="wrappingViews" destination="ySM-2N-KTJ" collectionClass="NSMutableArray" id="uL5-qC-17m"/>
+                        <outletCollection property="wrappingViews" destination="9hG-W3-0uj" collectionClass="NSMutableArray" id="Vfx-Of-x5q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
