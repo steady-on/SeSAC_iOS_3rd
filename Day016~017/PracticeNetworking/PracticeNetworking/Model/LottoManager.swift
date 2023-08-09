@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LottoDataManager {
+struct LottoManager {
 
     private let lottoURL: String = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber"
     
