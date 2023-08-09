@@ -13,13 +13,13 @@ struct Lotto {
     let loteryNumber: [Int]
     let bonusNumber: Int
     
-    static func getImageName(for number: Int) -> String {
+    static func getColorName(for number: Int) -> String {
         switch number {
-        case 1...10: return "yellowball"
-        case 11...20: return "blueball"
-        case 21...30: return "redball"
-        case 31...40: return "grayball"
-        default: return "greenball"
+        case 1...10: return "lottoYellow"
+        case 11...20: return "lottoBlue"
+        case 21...30: return "lottoRed"
+        case 31...40: return "lottoGray"
+        default: return "lottoGreen"
         }
     }
 }
