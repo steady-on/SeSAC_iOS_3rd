@@ -1,24 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mV2-WU-uw5">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="9nf-aR-ZCz">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="mV2-WU-uw5" customClass="ViewController" customModule="FeelLikeBeer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AtT-sY-xGP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iT2-W3-wZW">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQJ-Gk-CcG">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="897.66666666666663"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XuP-g6-lHz">
+                                                <rect key="frame" x="30" y="20" width="333" height="877.66666666666663"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Pick!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRg-iT-8SY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="333" height="26.333333333333332"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cheers" translatesAutoresizingMaskIntoConstraints="NO" id="IRj-7f-9UC">
+                                                        <rect key="frame" x="0.0" y="36.333333333333329" width="333" height="227.66666666666669"/>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZX-a2-7Aa">
+                                                        <rect key="frame" x="0.0" y="274" width="333" height="231.66666666666663"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zeitgeist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5U-sL-dw2">
+                                                                <rect key="frame" x="0.0" y="0.0" width="333" height="33.666666666666664"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIy-Qs-lYG">
+                                                                <rect key="frame" x="0.0" y="43.666666666666686" width="333" height="188"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <string key="text">Zeitgeist is an idiosyncratic alternative black lager. Its inspiration is found more than 200 years ago. Zeitgeist takes an age old classic, a forgotten masterpiece, and gives it relevance and an avant-garde edge.</string>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Y5U-sL-dw2" firstAttribute="leading" secondItem="SZX-a2-7Aa" secondAttribute="leading" id="Bc3-59-TMI"/>
+                                                            <constraint firstAttribute="trailing" secondItem="tIy-Qs-lYG" secondAttribute="trailing" id="Dt5-UB-JHH"/>
+                                                            <constraint firstItem="tIy-Qs-lYG" firstAttribute="top" secondItem="Y5U-sL-dw2" secondAttribute="bottom" constant="10" id="REM-37-XGj"/>
+                                                            <constraint firstAttribute="bottom" secondItem="tIy-Qs-lYG" secondAttribute="bottom" id="bCE-F4-Ep8"/>
+                                                            <constraint firstItem="tIy-Qs-lYG" firstAttribute="leading" secondItem="SZX-a2-7Aa" secondAttribute="leading" id="dh1-Yd-fhc"/>
+                                                            <constraint firstItem="Y5U-sL-dw2" firstAttribute="top" secondItem="SZX-a2-7Aa" secondAttribute="top" id="gUA-ZM-ILI"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Y5U-sL-dw2" secondAttribute="trailing" id="pmV-Lz-gXs"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vut-1T-1YW">
+                                                        <rect key="frame" x="0.0" y="515.66666666666663" width="333" height="178"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최고의 안주 궁합" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7b-GV-2Yc">
+                                                                <rect key="frame" x="0.0" y="0.0" width="333" height="24"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6jt-vI-9nf">
+                                                                <rect key="frame" x="0.0" y="34" width="333" height="144"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <string key="text">"Spicy cajun fried chicken",
+"Pork dumplings with rich soy sauce",
+"Cinnamon carrot cake with creamy cheese frosting"</string>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="r7b-GV-2Yc" secondAttribute="trailing" id="0Em-xy-qNl"/>
+                                                            <constraint firstItem="6jt-vI-9nf" firstAttribute="leading" secondItem="vut-1T-1YW" secondAttribute="leading" id="HBE-cl-Vus"/>
+                                                            <constraint firstItem="r7b-GV-2Yc" firstAttribute="leading" secondItem="vut-1T-1YW" secondAttribute="leading" id="OLS-LY-5ra"/>
+                                                            <constraint firstAttribute="bottom" secondItem="6jt-vI-9nf" secondAttribute="bottom" id="cq4-ES-B1J"/>
+                                                            <constraint firstItem="r7b-GV-2Yc" firstAttribute="top" secondItem="vut-1T-1YW" secondAttribute="top" id="e0P-KL-fWe"/>
+                                                            <constraint firstItem="6jt-vI-9nf" firstAttribute="top" secondItem="r7b-GV-2Yc" secondAttribute="bottom" constant="10" id="kyi-d9-TXm"/>
+                                                            <constraint firstAttribute="trailing" secondItem="6jt-vI-9nf" secondAttribute="trailing" id="rbA-II-V9m"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vrn-Yp-zYg">
+                                                        <rect key="frame" x="0.0" y="703.66666666666663" width="333" height="174"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ser-DZ-IGP">
+                                                                <rect key="frame" x="0.0" y="0.0" width="333" height="24"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UJN-58-zdt">
+                                                                <rect key="frame" x="0.0" y="34" width="333" height="140"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <string key="text">Inspect the colour of the wort during boiling. If it is not quite dark enough, extend the boil by 10 - 15 mins and check again. The wort will darken during the boiling process.</string>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="UJN-58-zdt" firstAttribute="leading" secondItem="Vrn-Yp-zYg" secondAttribute="leading" id="2XU-Eh-OZH"/>
+                                                            <constraint firstAttribute="bottom" secondItem="UJN-58-zdt" secondAttribute="bottom" id="39F-EH-bEZ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="UJN-58-zdt" secondAttribute="trailing" id="CyV-Hq-MMa"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ser-DZ-IGP" secondAttribute="trailing" id="IoE-kS-3eV"/>
+                                                            <constraint firstItem="UJN-58-zdt" firstAttribute="top" secondItem="ser-DZ-IGP" secondAttribute="bottom" constant="10" id="TOa-zZ-KFz"/>
+                                                            <constraint firstItem="ser-DZ-IGP" firstAttribute="top" secondItem="Vrn-Yp-zYg" secondAttribute="top" id="YdX-fy-1BK"/>
+                                                            <constraint firstItem="ser-DZ-IGP" firstAttribute="leading" secondItem="Vrn-Yp-zYg" secondAttribute="leading" id="ZPc-5F-eEn"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="XuP-g6-lHz" firstAttribute="top" secondItem="PQJ-Gk-CcG" secondAttribute="top" constant="20" id="OJT-0M-7Zd"/>
+                                            <constraint firstAttribute="trailing" secondItem="XuP-g6-lHz" secondAttribute="trailing" constant="30" id="biv-Ho-CrJ"/>
+                                            <constraint firstItem="XuP-g6-lHz" firstAttribute="leading" secondItem="PQJ-Gk-CcG" secondAttribute="leading" constant="30" id="btW-k0-eDj"/>
+                                            <constraint firstAttribute="bottom" secondItem="XuP-g6-lHz" secondAttribute="bottom" id="yzF-SV-rsu"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PQJ-Gk-CcG" firstAttribute="leading" secondItem="gk9-qa-GsJ" secondAttribute="leading" id="JD4-jD-QND"/>
+                                    <constraint firstItem="PQJ-Gk-CcG" firstAttribute="width" secondItem="gEY-E0-o43" secondAttribute="width" id="MFq-Al-HRI"/>
+                                    <constraint firstItem="PQJ-Gk-CcG" firstAttribute="bottom" secondItem="gk9-qa-GsJ" secondAttribute="bottom" id="R51-EE-0il"/>
+                                    <constraint firstItem="PQJ-Gk-CcG" firstAttribute="top" secondItem="gk9-qa-GsJ" secondAttribute="top" id="UW7-uh-9jb"/>
+                                    <constraint firstItem="IRj-7f-9UC" firstAttribute="height" secondItem="gEY-E0-o43" secondAttribute="height" multiplier="0.3" id="qi6-zZ-gkB"/>
+                                    <constraint firstItem="PQJ-Gk-CcG" firstAttribute="trailing" secondItem="gk9-qa-GsJ" secondAttribute="trailing" id="xmp-Ql-HZf"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="gk9-qa-GsJ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="gEY-E0-o43"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZtE-yW-6Zk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZtE-yW-6Zk" firstAttribute="trailing" secondItem="iT2-W3-wZW" secondAttribute="trailing" id="0Nq-S0-NZK"/>
+                            <constraint firstItem="iT2-W3-wZW" firstAttribute="top" secondItem="ZtE-yW-6Zk" secondAttribute="top" id="Grc-PU-1st"/>
+                            <constraint firstItem="ZtE-yW-6Zk" firstAttribute="bottom" secondItem="iT2-W3-wZW" secondAttribute="bottom" id="hbh-Hl-17v"/>
+                            <constraint firstItem="iT2-W3-wZW" firstAttribute="leading" secondItem="ZtE-yW-6Zk" secondAttribute="leading" id="xOb-OH-IM9"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YaK-Vz-0eu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="831.29770992366412" y="-29.577464788732396"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cheers" width="170.66667175292969" height="170.66667175292969"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
