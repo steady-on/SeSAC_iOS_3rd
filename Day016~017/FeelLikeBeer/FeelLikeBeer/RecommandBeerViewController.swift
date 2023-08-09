@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class RecommandBeerViewController: UIViewController {
 
@@ -23,6 +25,28 @@ class RecommandBeerViewController: UIViewController {
         super.viewDidLoad()
         
         setUpDesignForUI()
+        
+        callRequest()
+    }
+    
+    func callRequest() {
+        let url = "https://api.punkapi.com/v2/beers/random"
+        
+        AF.request(url, method: .get).validate().responseJSON { [self] response in
+            switch response.result {
+            case .success(let value):
+                guard let json = JSON(value).arrayValue.first else { return }
+                print("JSON: \(json)")
+                
+                nameLabel.text = json["name"].stringValue
+                descriptionTextView.text = json["description"].stringValue
+                bestFoodPairTextView.text = json["food_pairing"].arrayValue.map { $0.stringValue }.joined(separator: ",\n")
+                tipTextView.text = json["brewers_tips"].stringValue
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
     func setUpDesignForUI() {
@@ -45,6 +69,7 @@ extension RecommandBeerViewController {
     
     func designTitleLabel() {
         titleLabel.text = "Today's Pick For You!"
+        titleLabel.numberOfLines = 0
         titleLabel.font = .boldSystemFont(ofSize: 22)
         titleLabel.textColor = .accentColor
         titleLabel.textAlignment = .center
@@ -59,7 +84,7 @@ extension RecommandBeerViewController {
     func designCommonTextView(_ textView: UITextView) {
         textView.font = .systemFont(ofSize: 17)
         textView.textColor = UIColor.fontColor
-        textView.textAlignment = .natural
+        textView.textAlignment = .center
         textView.isEditable = false
         textView.isScrollEnabled = false
         textView.backgroundColor = .clear
