@@ -9,33 +9,37 @@ import UIKit
 
 class LottoViewController: UIViewController {
     
+    let lottoManager = LottoManager()
+    
     @IBOutlet var wrappingViews: [UIView]!
     
     @IBOutlet weak var drawingNumberTextField: UITextField!
     @IBOutlet weak var drawingNumberLabel: UILabel!
     @IBOutlet weak var drawingDate: UILabel!
     
-    @IBOutlet var lotteryNumberButtons: [UIButton]!
-    @IBOutlet weak var bonusNumberButton: UIButton!
+    @IBOutlet var lotteryNumberLabels: [UILabel]!
+    @IBOutlet weak var bonusNumberLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpDesignForUI()
+        drawingNumberTextField.text = "\(1079)"
+    }
+    
         
     }
     
     func setUpDesignForUI() {
         designWrappingViews()
-        lotteryNumberButtons.forEach { designNumberButton($0) }
-        designNumberButton(bonusNumberButton)
+        lotteryNumberLabels.forEach { designNumberLabel($0) }
+        designNumberLabel(bonusNumberLabel)
     }
     
-    func configureButton(_ button: UIButton, for number: Int) {
-        let imageName = ""
-        
-        button.setTitle("\(number)", for: .disabled)
-        button.setBackgroundImage(UIImage(named: imageName), for: .disabled)
+    func configureLabel(_ label: UILabel, for number: Int) {
+        let colorName = Lotto.getColorName(for: number)
+        label.setBackgroundColor(colorName)
+        label.text = "\(number)"
     }
 }
 
@@ -47,8 +51,13 @@ extension LottoViewController {
         }
     }
     
-    func designNumberButton(_ button: UIButton) {
-        button.isEnabled = true
-        button.setTitleColor(.white, for: .disabled)
+    func designNumberLabel(_ label: UILabel) {
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = .boldSystemFont(ofSize: 17)
+        label.shadowColor = .gray
+        label.shadowOffset = CGSize(width: 0.5, height: 0.5)
+        label.layer.cornerRadius =  label.frame.width/2
+        label.layer.masksToBounds = true
     }
 }

@@ -21,12 +21,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nLT-n8-ZPM">
                                 <rect key="frame" x="88.333333333333329" y="258.33333333333331" width="216.66666666666669" height="34"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KbT-s4-7e6">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KbT-s4-7e6">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="6G7-tE-qoC"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회차 바로가기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpE-Kg-mws">
@@ -52,60 +52,61 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySM-2N-KTJ">
                                 <rect key="frame" x="20" y="382" width="353" height="88"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mlf-hp-emv">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mlf-hp-emv">
                                         <rect key="frame" x="8" y="32.333333333333314" width="337" height="47.666666666666657"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqJ-oC-EBF">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8k7-qG-fBq">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="47.666666666666664"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="hqJ-oC-EBF" secondAttribute="height" multiplier="1:1" id="m68-7K-l1S"/>
+                                                    <constraint firstAttribute="width" secondItem="8k7-qG-fBq" secondAttribute="height" multiplier="1:1" id="eXb-UN-peO"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="1">
-                                                    <backgroundConfiguration key="background"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URL-tn-Pqn">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <size key="shadowOffset" width="0.5" height="0.5"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OS-8Y-VjN">
                                                 <rect key="frame" x="58" y="0.0" width="47.666666666666657" height="47.666666666666664"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="URL-tn-Pqn" secondAttribute="height" multiplier="1:1" id="AyY-Sh-gOl"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="2"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSy-Xu-FTh">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <size key="shadowOffset" width="0.5" height="0.5"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjn-V0-dbL">
                                                 <rect key="frame" x="115.66666666666666" y="0.0" width="48" height="47.666666666666664"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="3"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rB7-ix-Uxv">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <size key="shadowOffset" width="0.5" height="0.5"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pH-HS-UY8">
                                                 <rect key="frame" x="173.66666666666666" y="0.0" width="47.666666666666657" height="47.666666666666664"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="rB7-ix-Uxv" secondAttribute="height" multiplier="1:1" id="Gbz-86-SRU"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="4"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sK4-NV-2u6">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <size key="shadowOffset" width="0.5" height="0.5"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmz-Yy-olb">
                                                 <rect key="frame" x="231.33333333333331" y="0.0" width="48" height="47.666666666666664"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="sK4-NV-2u6" secondAttribute="height" multiplier="1:1" id="C8A-G0-7KU"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="5"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6N-fE-W0f">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <size key="shadowOffset" width="0.5" height="0.5"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJY-hl-n3X">
                                                 <rect key="frame" x="289.33333333333331" y="0.0" width="47.666666666666686" height="47.666666666666664"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="O6N-fE-W0f" secondAttribute="height" multiplier="1:1" id="JlX-rh-lGa"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="6"/>
-                                            </button>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <size key="shadowOffset" width="0.5" height="0.5"/>
+                                            </label>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="MSy-Xu-FTh" firstAttribute="width" secondItem="MSy-Xu-FTh" secondAttribute="height" multiplier="1:1" id="oKr-2k-bEm"/>
-                                        </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당첨번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPg-Nh-2Bo">
                                         <rect key="frame" x="155.66666666666666" y="8" width="41.666666666666657" height="14.333333333333336"/>
@@ -125,31 +126,33 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hG-W3-0uj">
-                                <rect key="frame" x="164.66666666666666" y="510.33333333333331" width="63.666666666666657" height="88.333333333333314"/>
+                                <rect key="frame" x="167.66666666666666" y="510.33333333333331" width="57.666666666666657" height="88.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보너스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4Y-aG-NFb">
-                                        <rect key="frame" x="16.333333333333343" y="8.0000000000000568" width="31.333333333333329" height="14.333333333333336"/>
+                                        <rect key="frame" x="13.333333333333341" y="8.0000000000000568" width="31.333333333333329" height="14.333333333333336"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRR-yJ-PWf">
-                                        <rect key="frame" x="8" y="32.333333333333314" width="47.666666666666664" height="48"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdU-DY-k8b">
+                                        <rect key="frame" x="8" y="38.333333333333314" width="41.666666666666664" height="42"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="ZRR-yJ-PWf" secondAttribute="height" multiplier="1:1" id="E5l-ii-UCN"/>
+                                            <constraint firstAttribute="width" secondItem="zdU-DY-k8b" secondAttribute="height" multiplier="1:1" id="cil-a3-pg0"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="45"/>
-                                    </button>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="0.5" height="0.5"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" name="BackgrounColor"/>
                                 <constraints>
-                                    <constraint firstItem="ZRR-yJ-PWf" firstAttribute="leading" secondItem="9hG-W3-0uj" secondAttribute="leadingMargin" id="GiL-xn-4TB"/>
-                                    <constraint firstItem="ZRR-yJ-PWf" firstAttribute="top" secondItem="M4Y-aG-NFb" secondAttribute="bottom" constant="10" id="Mff-P0-tIZ"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="zdU-DY-k8b" secondAttribute="trailing" id="G3c-3u-ctZ"/>
                                     <constraint firstItem="M4Y-aG-NFb" firstAttribute="centerX" secondItem="9hG-W3-0uj" secondAttribute="centerX" id="bAF-Yg-ZF2"/>
                                     <constraint firstItem="M4Y-aG-NFb" firstAttribute="top" secondItem="9hG-W3-0uj" secondAttribute="topMargin" id="nFW-dW-4ga"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="ZRR-yJ-PWf" secondAttribute="trailing" id="ynK-7f-dFs"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="ZRR-yJ-PWf" secondAttribute="bottom" id="zLd-KI-PQu"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="zdU-DY-k8b" secondAttribute="bottom" id="njj-v4-xSp"/>
+                                    <constraint firstItem="zdU-DY-k8b" firstAttribute="leading" secondItem="9hG-W3-0uj" secondAttribute="leadingMargin" id="oWN-vy-hdn"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ghC-lc-YSB">
@@ -171,13 +174,13 @@
                             <constraint firstItem="ySM-2N-KTJ" firstAttribute="top" secondItem="i3W-Q1-QHO" secondAttribute="bottom" constant="20" id="P33-Jg-r7t"/>
                             <constraint firstItem="ghC-lc-YSB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q7u-JZ-cht"/>
                             <constraint firstItem="i3W-Q1-QHO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RWQ-BL-SKc"/>
-                            <constraint firstItem="ZRR-yJ-PWf" firstAttribute="width" secondItem="rB7-ix-Uxv" secondAttribute="width" id="TXC-rs-4Yv"/>
                             <constraint firstAttribute="trailing" secondItem="ySM-2N-KTJ" secondAttribute="trailing" constant="20" id="WDX-tP-xP1"/>
                             <constraint firstItem="9hG-W3-0uj" firstAttribute="top" secondItem="ghC-lc-YSB" secondAttribute="bottom" constant="10" id="Xw6-gD-j3X"/>
                             <constraint firstItem="9hG-W3-0uj" firstAttribute="height" secondItem="ySM-2N-KTJ" secondAttribute="height" id="YPM-2r-OYL"/>
                             <constraint firstItem="i3W-Q1-QHO" firstAttribute="top" secondItem="UwP-Pb-iZp" secondAttribute="bottom" constant="10" id="gyB-61-61p"/>
                             <constraint firstItem="9hG-W3-0uj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hBs-DW-SLs"/>
                             <constraint firstItem="UwP-Pb-iZp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hyD-gb-pT4"/>
+                            <constraint firstItem="zdU-DY-k8b" firstAttribute="width" secondItem="8k7-qG-fBq" secondAttribute="width" multiplier="0.875" id="lx4-vV-ZMD"/>
                             <constraint firstItem="ySM-2N-KTJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vJL-ui-QWo"/>
                             <constraint firstItem="UwP-Pb-iZp" firstAttribute="top" secondItem="nLT-n8-ZPM" secondAttribute="bottom" constant="20" id="wQj-VJ-7wj"/>
                             <constraint firstItem="nLT-n8-ZPM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xKL-bA-hwW"/>
@@ -186,18 +189,18 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Lotto" image="45.circle.fill" catalog="system" id="s8r-Eu-mCp"/>
                     <connections>
-                        <outlet property="bonusNumberButton" destination="ZRR-yJ-PWf" id="9j8-fY-0Yu"/>
+                        <outlet property="bonusNumberLabel" destination="zdU-DY-k8b" id="8zD-NT-3pt"/>
                         <outlet property="drawingDate" destination="i3W-Q1-QHO" id="nnX-c2-PjS"/>
                         <outlet property="drawingNumberLabel" destination="UwP-Pb-iZp" id="vOi-T1-kSN"/>
                         <outlet property="drawingNumberTextField" destination="KbT-s4-7e6" id="BS9-Z1-gdz"/>
-                        <outletCollection property="lotteryNumberButtons" destination="hqJ-oC-EBF" collectionClass="NSMutableArray" id="K1T-Yl-lF0"/>
-                        <outletCollection property="lotteryNumberButtons" destination="URL-tn-Pqn" collectionClass="NSMutableArray" id="ysa-iT-YBB"/>
-                        <outletCollection property="lotteryNumberButtons" destination="MSy-Xu-FTh" collectionClass="NSMutableArray" id="NVw-xW-nC3"/>
-                        <outletCollection property="lotteryNumberButtons" destination="rB7-ix-Uxv" collectionClass="NSMutableArray" id="Jx6-LQ-xKZ"/>
-                        <outletCollection property="lotteryNumberButtons" destination="sK4-NV-2u6" collectionClass="NSMutableArray" id="nkx-n3-lQ8"/>
-                        <outletCollection property="lotteryNumberButtons" destination="O6N-fE-W0f" collectionClass="NSMutableArray" id="bOZ-7b-pyj"/>
                         <outletCollection property="wrappingViews" destination="ySM-2N-KTJ" collectionClass="NSMutableArray" id="uL5-qC-17m"/>
                         <outletCollection property="wrappingViews" destination="9hG-W3-0uj" collectionClass="NSMutableArray" id="Vfx-Of-x5q"/>
+                        <outletCollection property="lotteryNumberLabels" destination="8k7-qG-fBq" collectionClass="NSMutableArray" id="dEH-1X-ChU"/>
+                        <outletCollection property="lotteryNumberLabels" destination="2OS-8Y-VjN" collectionClass="NSMutableArray" id="Qxz-gl-A9x"/>
+                        <outletCollection property="lotteryNumberLabels" destination="Wjn-V0-dbL" collectionClass="NSMutableArray" id="m1a-si-Kdo"/>
+                        <outletCollection property="lotteryNumberLabels" destination="9pH-HS-UY8" collectionClass="NSMutableArray" id="k6l-NQ-0f9"/>
+                        <outletCollection property="lotteryNumberLabels" destination="bmz-Yy-olb" collectionClass="NSMutableArray" id="Cf1-1X-kuH"/>
+                        <outletCollection property="lotteryNumberLabels" destination="UJY-hl-n3X" collectionClass="NSMutableArray" id="xBh-Qd-0vb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
