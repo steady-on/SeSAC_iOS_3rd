@@ -26,13 +26,27 @@ class RecommandBeerViewController: UIViewController {
         super.viewDidLoad()
         
         setUpDesignForUI()
-        
         callRequest()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        presentCoverView()
     }
     
     @IBAction func pickAgainButtonTapped(_ sender: UIButton) {
         callRequest()
         scrollView.setContentOffset(.zero, animated: true)
+    }
+    
+    func presentCoverView() {
+        print(#function)
+        guard let coverViewController = storyboard?.instantiateViewController(withIdentifier: "CoverViewController") as? CoverViewController else { return }
+        
+        coverViewController.modalPresentationStyle = .overFullScreen
+        
+        present(coverViewController, animated: false)
     }
     
     func callRequest() {
