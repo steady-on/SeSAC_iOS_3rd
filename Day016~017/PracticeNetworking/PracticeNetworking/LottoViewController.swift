@@ -25,9 +25,29 @@ class LottoViewController: UIViewController {
         super.viewDidLoad()
         setUpDesignForUI()
         drawingNumberTextField.text = "\(1079)"
+        requestLotto()
     }
     
+    func requestLotto() {
+        guard let drawingNumber = Int(drawingNumberTextField.text ?? "") else { return }
         
+        lottoManager.fetchLotto(drawingNumber: drawingNumber) { [self] lotto in
+            guard let lotto else {
+                print(#function, "error: 해당 회차에 대한 데이터가 없거나 서버 연결에 실패했습니다.")
+                return
+            }
+            
+            DispatchQueue.main.async { [self] in
+                drawingNumberLabel.text = "\(lotto.drawingNumber)회 당첨결과"
+                drawingDate.text = lotto.drawingDate
+                
+                for (label, number) in zip(lotteryNumberLabels, lotto.loteryNumber) {
+                    configureLabel(label, for: number)
+                }
+                
+                configureLabel(bonusNumberLabel, for: lotto.bonusNumber)
+            }
+        }
     }
     
     func setUpDesignForUI() {
