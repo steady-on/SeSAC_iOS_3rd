@@ -14,6 +14,8 @@
 		63AB574F2A839C7A00A138C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63AB574E2A839C7A00A138C7 /* Assets.xcassets */; };
 		63AB57522A839C7A00A138C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AB57502A839C7A00A138C7 /* LaunchScreen.storyboard */; };
 		63AB575B2A83A10400A138C7 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB575A2A83A10400A138C7 /* UIColor+.swift */; };
+		63C85A492A83F1BD0007F1B0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 63C85A482A83F1BD0007F1B0 /* Alamofire */; };
+		63C85A4C2A83F1C80007F1B0 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 63C85A4B2A83F1C80007F1B0 /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C85A4C2A83F1C80007F1B0 /* SwiftyJSON in Frameworks */,
+				63C85A492A83F1BD0007F1B0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +98,10 @@
 			dependencies = (
 			);
 			name = FeelLikeBeer;
+			packageProductDependencies = (
+				63C85A482A83F1BD0007F1B0 /* Alamofire */,
+				63C85A4B2A83F1C80007F1B0 /* SwiftyJSON */,
+			);
 			productName = FeelLikeBeer;
 			productReference = 63AB57422A839C7A00A138C7 /* FeelLikeBeer.app */;
 			productType = "com.apple.product-type.application";
@@ -122,6 +130,10 @@
 				Base,
 			);
 			mainGroup = 63AB57392A839C7A00A138C7;
+			packageReferences = (
+				63C85A472A83F1BD0007F1B0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				63C85A4A2A83F1C80007F1B0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = 63AB57432A839C7A00A138C7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -368,6 +380,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63C85A472A83F1BD0007F1B0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		63C85A4A2A83F1C80007F1B0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63C85A482A83F1BD0007F1B0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63C85A472A83F1BD0007F1B0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		63C85A4B2A83F1C80007F1B0 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63C85A4A2A83F1C80007F1B0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63AB573A2A839C7A00A138C7 /* Project object */;
 }
