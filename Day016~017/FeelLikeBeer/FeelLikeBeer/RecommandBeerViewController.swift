@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class RecommandBeerViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -29,6 +30,11 @@ class RecommandBeerViewController: UIViewController {
         callRequest()
     }
     
+    @IBAction func pickAgainButtonTapped(_ sender: UIButton) {
+        callRequest()
+        scrollView.setContentOffset(.zero, animated: true)
+    }
+    
     func callRequest() {
         let url = "https://api.punkapi.com/v2/beers/random"
         
@@ -36,7 +42,7 @@ class RecommandBeerViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 guard let json = JSON(value).arrayValue.first else { return }
-                print("JSON: \(json)")
+//                print("JSON: \(json)")
                 
                 nameLabel.text = json["name"].stringValue
                 descriptionTextView.text = json["description"].stringValue

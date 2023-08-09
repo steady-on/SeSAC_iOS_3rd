@@ -127,6 +127,9 @@
                                                         <rect key="frame" x="0.0" y="912.66666666666663" width="333" height="34.333333333333371"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" title="One more Pick!"/>
+                                                        <connections>
+                                                            <action selector="pickAgainButtonTapped:" destination="mV2-WU-uw5" eventType="touchUpInside" id="t6z-uz-N89"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -169,6 +172,7 @@
                         <outlet property="imageView" destination="IRj-7f-9UC" id="CUm-1B-YdO"/>
                         <outlet property="nameLabel" destination="Y5U-sL-dw2" id="rhg-t0-JHT"/>
                         <outlet property="pickAgainButton" destination="IAK-7j-jaz" id="iuT-QD-dHn"/>
+                        <outlet property="scrollView" destination="iT2-W3-wZW" id="lH2-bu-qXd"/>
                         <outlet property="tipLabel" destination="ser-DZ-IGP" id="Sop-MA-5k7"/>
                         <outlet property="tipTextView" destination="UJN-58-zdt" id="Fwb-ap-cng"/>
                         <outlet property="titleLabel" destination="eRg-iT-8SY" id="KPQ-mD-Drb"/>
