@@ -43,7 +43,7 @@ class RecommandBeerViewController: UIViewController {
     func presentCoverView() {
         guard let coverViewController = storyboard?.instantiateViewController(withIdentifier: "CoverViewController") as? CoverViewController else { return }
         
-        coverViewController.modalPresentationStyle = .overFullScreen
+        coverViewController.modalPresentationStyle = .overCurrentContext
         
         present(coverViewController, animated: false)
     }
