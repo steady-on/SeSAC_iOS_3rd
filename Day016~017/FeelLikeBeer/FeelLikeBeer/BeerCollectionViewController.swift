@@ -16,17 +16,18 @@ class BeerCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestCall()
         
         beerCollectionView.prefetchDataSource = self
-        
+
 //        if let layout = beerCollectionView.collectionViewLayout as? DynamicCollectionViewLayout {
 //            layout.delegate = self
 //        }
-        
-//        configureCollectionViewFlowLayout()
-        
-        requestCall()
-        
+//
+//        let spacing: CGFloat = 20
+//        beerCollectionView.contentInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+
+        configureCollectionViewFlowLayout()
     }
     
     func requestCall() {
@@ -46,7 +47,7 @@ class BeerCollectionViewController: UICollectionViewController {
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing
-        
+
         beerCollectionView.collectionViewLayout = layout
     }
 
@@ -56,8 +57,8 @@ class BeerCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BeerCollectionViewCell", for: indexPath) as? BeerCollectionViewCell else { return UICollectionViewCell() }
-    
-        cell.beer = beers[indexPath.row]
+            
+        cell.beer = beers[indexPath.item]
         
         return cell
     }
@@ -66,7 +67,7 @@ class BeerCollectionViewController: UICollectionViewController {
 extension BeerCollectionViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
-            if beers.count - 4 == indexPath.row {
+            if beers.count - 4 == indexPath.item {
                 beerManager.goToNextPage()
                 beerManager.fetchPagingBeerData { beers in
                     self.beers.append(contentsOf: beers)
@@ -77,20 +78,22 @@ extension BeerCollectionViewController: UICollectionViewDataSourcePrefetching {
     }
 }
 
-extension BeerCollectionViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BeerCollectionViewCell", for: indexPath) as? BeerCollectionViewCell else { return .zero }
-        
-        let width = (UIScreen.main.bounds.width - 60)/2
-        
-        let cellSize = cell.sizeFittingWith(cellWidth: width)
-        return cellSize
-    }
-}
-
+//extension BeerCollectionViewCell: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+//        return CGSize(width: itemSize, height: itemSize)
+//    }
+//}
+//
 //extension BeerCollectionViewController: DynamicCollectionViewLayoutDelegate {
 //    func collectionView(_ collectionView: UICollectionView, heightForItemAtIndexPath indexPath: IndexPath) -> CGFloat {
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BeerCollectionViewCell", for: indexPath) as? BeerCollectionViewCell else { return .zero }
 //
-//        return 1
+//        let insets = collectionView.contentInset
+//        let width = collectionView.bounds.width - (insets.left + insets.right)
+//
+//        let cellSize = cell.sizeFittingWith(cellWidth: width, beer: beers[indexPath.item])
+//
+//        return cellSize.height
 //    }
 //}

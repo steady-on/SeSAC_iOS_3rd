@@ -11,7 +11,7 @@ import UIKit
 /// https://www.kodeco.com/4829472-uicollectionview-custom-layout-tutorial-pinterest
 
 protocol DynamicCollectionViewLayoutDelegate: AnyObject {
-    func collectionView(_ collectionView : UICollectionView, heightForItemAtIndexPath  indexPath : IndexPath ) -> CGFloat
+    func collectionView(_ collectionView : UICollectionView, heightForItemAtIndexPath  indexPath : IndexPath) -> CGFloat
 }
 
 class DynamicCollectionViewLayout: UICollectionViewLayout {
@@ -110,7 +110,8 @@ class DynamicCollectionViewLayout: UICollectionViewLayout {
     // MARK: - layoutAttributesForItem(at:)
     /// 이 메서드는 컬렉션 보기에 주문형 레이아웃 정보를 제공합니다. 이를 재정의하고 요청된 indexPath의 item의 레이아웃 속성을 반환해야 합니다.
     // 캐시에서 요청된 indexPath에 해당하는 레이아웃 특성을 검색하고 반환
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        return cache[indexPath.item]
-    }
+//    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+//        print(cache)
+//        return cache[indexPath.item]
+//    }
 }

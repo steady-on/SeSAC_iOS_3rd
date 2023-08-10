@@ -32,9 +32,19 @@ class BeerCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func sizeFittingWith(cellWidth: CGFloat) -> CGSize {
+    func sizeFittingWith(cellWidth: CGFloat, beer: Beer) -> CGSize {
+        
+        nameLabel.text = beer.name
+        descriptionTextView.text = beer.description
+        beer.getBeerImage { image in
+            DispatchQueue.main.async {
+                self.imageView.image = image
+            }
+        }
+        
         let targetSize = CGSize(width: cellWidth, height: UIView.layoutFittingCompressedSize.height)
-        return self.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
+        
+        return self.wrappingView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
     }
     
     private func setUIDesignForUI() {
