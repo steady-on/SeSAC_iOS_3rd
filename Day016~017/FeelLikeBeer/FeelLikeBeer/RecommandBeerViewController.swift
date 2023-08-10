@@ -41,7 +41,6 @@ class RecommandBeerViewController: UIViewController {
     }
     
     func presentCoverView() {
-        print(#function)
         guard let coverViewController = storyboard?.instantiateViewController(withIdentifier: "CoverViewController") as? CoverViewController else { return }
         
         coverViewController.modalPresentationStyle = .overFullScreen
@@ -63,10 +62,34 @@ class RecommandBeerViewController: UIViewController {
                 bestFoodPairTextView.text = json["food_pairing"].arrayValue.map { $0.stringValue }.joined(separator: ",\n")
                 tipTextView.text = json["brewers_tips"].stringValue
                 
+                getImageToURL(json["image_url"].stringValue) { image in
+                    DispatchQueue.main.async {
+                        self.imageView.image = image
+                    }
+                }
+                
             case .failure(let error):
                 print(error)
             }
         }
+    }
+    
+    func getImageToURL(_ url: String, completionHandler: @escaping (UIImage?) -> Void) {
+        guard let url = URL(string: url) else { return }
+        var photoImage: UIImage? = nil
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print("에러있음: \(error!)")
+            }
+            // 옵셔널 바인딩
+            guard let imageData = data else { return }
+            
+            // 데이터를 UIImage 타입으로 변형
+            photoImage = UIImage(data: imageData)
+            completionHandler(photoImage)
+            
+        }.resume()
     }
 
     func setUpDesignForUI() {
