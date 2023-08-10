@@ -9,13 +9,16 @@ import UIKit
 
 class BeerCollectionViewController: UICollectionViewController {
 
-    let beerManager = BeerManager()
+    var beerManager = BeerManager()
     var beers = [Beer]()
     
     @IBOutlet var beerCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        beerCollectionView.prefetchDataSource = self
+        
         configureCollectionViewFlowLayout()
         requestCall()
         
@@ -59,5 +62,19 @@ class BeerCollectionViewController: UICollectionViewController {
         }
     
         return cell
+    }
+}
+
+extension BeerCollectionViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if beers.count - 4 == indexPath.row {
+                beerManager.goToNextPage()
+                beerManager.fetchPagingBeerData { beers in
+                    self.beers.append(contentsOf: beers)
+                    self.beerCollectionView.reloadData()
+                }
+            }
+        }
     }
 }
