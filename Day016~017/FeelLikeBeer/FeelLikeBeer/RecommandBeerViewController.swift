@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 class RecommandBeerViewController: UIViewController {
+    
+    let beerManager = BeerManager()
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -49,47 +49,17 @@ class RecommandBeerViewController: UIViewController {
     }
     
     func callRequest() {
-        let url = "https://api.punkapi.com/v2/beers/random"
-        
-        AF.request(url, method: .get).validate().responseJSON { [self] response in
-            switch response.result {
-            case .success(let value):
-                guard let json = JSON(value).arrayValue.first else { return }
-//                print("JSON: \(json)")
-                
-                nameLabel.text = json["name"].stringValue
-                descriptionTextView.text = json["description"].stringValue
-                bestFoodPairTextView.text = json["food_pairing"].arrayValue.map { $0.stringValue }.joined(separator: ",\n")
-                tipTextView.text = json["brewers_tips"].stringValue
-                
-                getImageToURL(json["image_url"].stringValue) { image in
-                    DispatchQueue.main.async {
-                        self.imageView.image = image
-                    }
+        beerManager.fetchRandomBeer { [self] beer in
+            nameLabel.text = beer.name
+            descriptionTextView.text = beer.description
+            bestFoodPairTextView.text = beer.pairingFoodsString
+            tipTextView.text = beer.tip
+            beer.getBeerImage { image in
+                DispatchQueue.main.async {
+                    self.imageView.image = image
                 }
-                
-            case .failure(let error):
-                print(error)
             }
         }
-    }
-    
-    func getImageToURL(_ url: String, completionHandler: @escaping (UIImage?) -> Void) {
-        guard let url = URL(string: url) else { return }
-        var photoImage: UIImage? = nil
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                print("에러있음: \(error!)")
-            }
-            // 옵셔널 바인딩
-            guard let imageData = data else { return }
-            
-            // 데이터를 UIImage 타입으로 변형
-            photoImage = UIImage(data: imageData)
-            completionHandler(photoImage)
-            
-        }.resume()
     }
 
     func setUpDesignForUI() {
