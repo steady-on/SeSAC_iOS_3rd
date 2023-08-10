@@ -19,6 +19,19 @@ class BeerCollectionViewCell: UICollectionViewCell {
         setUIDesignForUI()
     }
     
+    var beer: Beer? {
+        didSet {
+            guard let beer else { return }
+            nameLabel.text = beer.name
+            descriptionTextView.text = beer.description
+            beer.getBeerImage { image in
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                }
+            }
+        }
+    }
+    
     private func setUIDesignForUI() {
         designWrappingView()
         designNameLabel()

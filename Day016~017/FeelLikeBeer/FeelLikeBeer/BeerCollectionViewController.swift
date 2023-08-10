@@ -18,8 +18,12 @@ class BeerCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         beerCollectionView.prefetchDataSource = self
+//        if let layout = beerCollectionView.collectionViewLayout as? DynamicCollectionViewLayout {
+//            layout.delegate = self
+//        }
         
         configureCollectionViewFlowLayout()
+        
         requestCall()
         
     }
@@ -33,10 +37,10 @@ class BeerCollectionViewController: UICollectionViewController {
     
     func configureCollectionViewFlowLayout() {
         let layout = UICollectionViewFlowLayout()
-        
+
         let spacing: CGFloat = 20
         let width = UIScreen.main.bounds.width - (spacing * 3)
-        
+
         layout.itemSize = CGSize(width: width/2, height: width)
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumLineSpacing = spacing
@@ -51,16 +55,8 @@ class BeerCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BeerCollectionViewCell", for: indexPath) as? BeerCollectionViewCell else { return UICollectionViewCell() }
     
-        let beer = beers[indexPath.row]
+        cell.beer = beers[indexPath.row]
         
-        cell.nameLabel.text = beer.name
-        cell.descriptionTextView.text = beer.description
-        beer.getBeerImage { image in
-            DispatchQueue.main.async {
-                cell.imageView.image = image
-            }
-        }
-    
         return cell
     }
 }
@@ -78,3 +74,10 @@ extension BeerCollectionViewController: UICollectionViewDataSourcePrefetching {
         }
     }
 }
+
+//extension BeerCollectionViewController: DynamicCollectionViewLayoutDelegate {
+//    func collectionView(_ collectionView: UICollectionView, heightForItemAtIndexPath indexPath: IndexPath) -> CGFloat {
+//
+//        return 1
+//    }
+//}
