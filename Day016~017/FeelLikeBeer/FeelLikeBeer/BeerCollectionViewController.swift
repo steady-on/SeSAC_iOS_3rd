@@ -18,11 +18,12 @@ class BeerCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         beerCollectionView.prefetchDataSource = self
+        
 //        if let layout = beerCollectionView.collectionViewLayout as? DynamicCollectionViewLayout {
 //            layout.delegate = self
 //        }
         
-        configureCollectionViewFlowLayout()
+//        configureCollectionViewFlowLayout()
         
         requestCall()
         
@@ -45,6 +46,7 @@ class BeerCollectionViewController: UICollectionViewController {
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing
+        
         beerCollectionView.collectionViewLayout = layout
     }
 
@@ -72,6 +74,17 @@ extension BeerCollectionViewController: UICollectionViewDataSourcePrefetching {
                 }
             }
         }
+    }
+}
+
+extension BeerCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BeerCollectionViewCell", for: indexPath) as? BeerCollectionViewCell else { return .zero }
+        
+        let width = (UIScreen.main.bounds.width - 60)/2
+        
+        let cellSize = cell.sizeFittingWith(cellWidth: width)
+        return cellSize
     }
 }
 

@@ -32,6 +32,11 @@ class BeerCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    func sizeFittingWith(cellWidth: CGFloat) -> CGSize {
+        let targetSize = CGSize(width: cellWidth, height: UIView.layoutFittingCompressedSize.height)
+        return self.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
+    }
+    
     private func setUIDesignForUI() {
         designWrappingView()
         designNameLabel()
