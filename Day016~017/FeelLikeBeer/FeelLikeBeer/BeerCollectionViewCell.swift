@@ -32,20 +32,29 @@ class BeerCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func sizeFittingWith(cellWidth: CGFloat, beer: Beer) -> CGSize {
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         
-        nameLabel.text = beer.name
-        descriptionTextView.text = beer.description
-        beer.getBeerImage { image in
-            DispatchQueue.main.async {
-                self.imageView.image = image
-            }
-        }
+        let targetSize = CGSize(width: layoutAttributes.frame.width, height: 0)
         
-        let targetSize = CGSize(width: cellWidth, height: UIView.layoutFittingCompressedSize.height)
+        layoutAttributes.frame.size = contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
         
-        return self.wrappingView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
+        return layoutAttributes
     }
+    
+//    func sizeFittingWith(cellWidth: CGFloat, beer: Beer) -> CGSize {
+//
+//        nameLabel.text = beer.name
+//        descriptionTextView.text = beer.description
+//        beer.getBeerImage { image in
+//            DispatchQueue.main.async {
+//                self.imageView.image = image
+//            }
+//        }
+//
+//        let targetSize = CGSize(width: cellWidth, height: UIView.layoutFittingCompressedSize.height)
+//
+//        return self.wrappingView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
+//    }
     
     private func setUIDesignForUI() {
         designWrappingView()

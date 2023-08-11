@@ -22,6 +22,7 @@
 		63C85A542A8490E10007F1B0 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A532A8490E10007F1B0 /* Beer.swift */; };
 		63C85A572A8496E60007F1B0 /* BeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A562A8496E60007F1B0 /* BeerManager.swift */; };
 		63C85A592A8512090007F1B0 /* DynamicCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A582A8512090007F1B0 /* DynamicCollectionViewLayout.swift */; };
+		63C85A5B2A85B62A0007F1B0 /* DynamicFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A5A2A85B62A0007F1B0 /* DynamicFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		63C85A532A8490E10007F1B0 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		63C85A562A8496E60007F1B0 /* BeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerManager.swift; sourceTree = "<group>"; };
 		63C85A582A8512090007F1B0 /* DynamicCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCollectionViewLayout.swift; sourceTree = "<group>"; };
+		63C85A5A2A85B62A0007F1B0 /* DynamicFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				63C85A4F2A848C430007F1B0 /* BeerCollectionViewCell.swift */,
 				63C85A4D2A83FEB80007F1B0 /* CoverViewController.swift */,
 				63C85A582A8512090007F1B0 /* DynamicCollectionViewLayout.swift */,
+				63C85A5A2A85B62A0007F1B0 /* DynamicFlowLayout.swift */,
 				63C85A552A8491CF0007F1B0 /* Model */,
 				63AB57592A83A0CC00A138C7 /* extension */,
 				63AB574E2A839C7A00A138C7 /* Assets.xcassets */,
@@ -191,6 +194,7 @@
 				63AB574A2A839C7A00A138C7 /* RecommandBeerViewController.swift in Sources */,
 				63AB575B2A83A10400A138C7 /* UIColor+.swift in Sources */,
 				63C85A522A848CB90007F1B0 /* BeerCollectionViewController.swift in Sources */,
+				63C85A5B2A85B62A0007F1B0 /* DynamicFlowLayout.swift in Sources */,
 				63C85A592A8512090007F1B0 /* DynamicCollectionViewLayout.swift in Sources */,
 				63C85A542A8490E10007F1B0 /* Beer.swift in Sources */,
 				63C85A502A848C430007F1B0 /* BeerCollectionViewCell.swift in Sources */,

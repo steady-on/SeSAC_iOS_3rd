@@ -42,6 +42,7 @@ struct BeerManager {
     }
     
     func fetchPagingBeerData(completion: @escaping ([Beer]) -> ()) {
+        
         let parameters: Parameters = ["page": "\(BeerManager.page)"]
         
         AF.request(url, method: .get, parameters: parameters).validate().responseJSON { response in
