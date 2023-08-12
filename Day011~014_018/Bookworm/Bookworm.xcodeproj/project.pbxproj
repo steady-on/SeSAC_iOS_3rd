@@ -10,6 +10,9 @@
 		633FCBB12A7A4C8300873965 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633FCBB02A7A4C8300873965 /* BrowseViewController.swift */; };
 		633FCBB42A7A4FF900873965 /* BrowseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633FCBB22A7A4FF900873965 /* BrowseCollectionViewCell.swift */; };
 		633FCBB52A7A4FF900873965 /* BrowseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633FCBB32A7A4FF900873965 /* BrowseCollectionViewCell.xib */; };
+		63C85A6B2A8624330007F1B0 /* KakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A6A2A8624330007F1B0 /* KakaoAPIManager.swift */; };
+		63C85A6D2A86244E0007F1B0 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A6C2A86244E0007F1B0 /* APIKey.swift */; };
+		63C85A742A8637090007F1B0 /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A732A8637090007F1B0 /* BookData.swift */; };
 		63E2C9722A77A90D0064163A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C9712A77A90D0064163A /* AppDelegate.swift */; };
 		63E2C9742A77A90D0064163A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C9732A77A90D0064163A /* SceneDelegate.swift */; };
 		63E2C9762A77A90D0064163A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C9752A77A90D0064163A /* ViewController.swift */; };
@@ -34,6 +37,9 @@
 		633FCBB02A7A4C8300873965 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		633FCBB22A7A4FF900873965 /* BrowseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionViewCell.swift; sourceTree = "<group>"; };
 		633FCBB32A7A4FF900873965 /* BrowseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowseCollectionViewCell.xib; sourceTree = "<group>"; };
+		63C85A6A2A8624330007F1B0 /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
+		63C85A6C2A86244E0007F1B0 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		63C85A732A8637090007F1B0 /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
 		63E2C96E2A77A90D0064163A /* Bookworm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookworm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E2C9712A77A90D0064163A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E2C9732A77A90D0064163A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +73,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63C85A712A8628090007F1B0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				63C85A6C2A86244E0007F1B0 /* APIKey.swift */,
+				63C85A6A2A8624330007F1B0 /* KakaoAPIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		63C85A722A8636EE0007F1B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63E2C9912A77C6740064163A /* Book.swift */,
+				63C85A732A8637090007F1B0 /* BookData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		63E2C9652A77A90D0064163A = {
 			isa = PBXGroup;
 			children = (
@@ -101,8 +125,9 @@
 				63E2C9A82A797B2E0064163A /* SearchTableViewCell.xib */,
 				63E2C9892A77B0650064163A /* BookCollectionViewCell.swift */,
 				63E2C98A2A77B0650064163A /* BookCollectionViewCell.xib */,
-				63E2C9A32A7970230064163A /* extension */,
-				63E2C9912A77C6740064163A /* Book.swift */,
+				63C85A722A8636EE0007F1B0 /* Model */,
+				63C85A712A8628090007F1B0 /* Network */,
+				63E2C9A32A7970230064163A /* Extension */,
 				63E2C9932A77C81D0064163A /* BookData.swift */,
 				63E2C98F2A77BD2F0064163A /* BookData.json */,
 				63E2C97A2A77A90F0064163A /* Assets.xcassets */,
@@ -112,12 +137,12 @@
 			path = Bookworm;
 			sourceTree = "<group>";
 		};
-		63E2C9A32A7970230064163A /* extension */ = {
+		63E2C9A32A7970230064163A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				63E2C9A12A7970010064163A /* UIImageView+.swift */,
 			);
-			path = extension;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +225,8 @@
 				633FCBB42A7A4FF900873965 /* BrowseCollectionViewCell.swift in Sources */,
 				63E2C9962A77CE640064163A /* SearchViewController.swift in Sources */,
 				63E2C98B2A77B0650064163A /* BookCollectionViewCell.swift in Sources */,
+				63C85A6D2A86244E0007F1B0 /* APIKey.swift in Sources */,
+				63C85A6B2A8624330007F1B0 /* KakaoAPIManager.swift in Sources */,
 				63E2C9942A77C81D0064163A /* BookData.swift in Sources */,
 				63E2C9A92A797B2E0064163A /* SearchTableViewCell.swift in Sources */,
 				63E2C9A22A7970010064163A /* UIImageView+.swift in Sources */,
@@ -208,6 +235,7 @@
 				63E2C9722A77A90D0064163A /* AppDelegate.swift in Sources */,
 				63E2C9922A77C6740064163A /* Book.swift in Sources */,
 				63E2C9742A77A90D0064163A /* SceneDelegate.swift in Sources */,
+				63C85A742A8637090007F1B0 /* BookData.swift in Sources */,
 				63E2C9982A77D7DD0064163A /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
