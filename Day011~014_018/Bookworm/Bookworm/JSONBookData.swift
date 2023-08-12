@@ -1,5 +1,5 @@
 //
-//  BookData.swift
+//  JSONBookData.swift
 //  Bookworm
 //
 //  Created by Roen White on 2023/07/31.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-var bookData: [Book] = loadJson("BookData.json")
+var localBookData: [Book] = loadJson("BookData.json")
 
 func loadJson<T: Decodable>(_ filename: String) -> T {
     let data: Data

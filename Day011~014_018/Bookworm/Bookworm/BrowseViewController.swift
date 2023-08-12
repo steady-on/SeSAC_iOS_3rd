@@ -9,7 +9,7 @@ import UIKit
 
 class BrowseViewController: UIViewController {
     
-    let data = bookData.shuffled()
+    let data = localBookData.shuffled()
 
     @IBOutlet weak var recentCollectionView: UICollectionView!
     @IBOutlet weak var bestTableView: UITableView!

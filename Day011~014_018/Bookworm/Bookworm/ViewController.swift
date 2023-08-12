@@ -69,13 +69,13 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bookData.count
+        return localBookData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = bookCollectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
                 
-        let row = bookData[indexPath.row]
+        let row = localBookData[indexPath.row]
         cell.configureBookCell(for: row)
         
         return cell
@@ -85,7 +85,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         let detailViewStoryboard = UIStoryboard(name: "Main", bundle: nil)
         guard let detailViewController = detailViewStoryboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
         
-        detailViewController.book = bookData[indexPath.row]
+        detailViewController.book = localBookData[indexPath.row]
         
         navigationController?.pushViewController(detailViewController, animated: true)
     }
@@ -93,19 +93,19 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
         guard let indexPath = indexPaths.first else { return nil }
         
-        let selectedBook = bookData[indexPath.row]
+        let selectedBook = localBookData[indexPath.row]
         
         let contextMenuConfig = UIContextMenuConfiguration(previewProvider: nil) { _ in
             let bookmarkMenuTitle = selectedBook.isBookmark ? "북마크 해제" : "북마크 하기"
             let bookmarkMenuImage = UIImage(systemName: selectedBook.isBookmark ? "bookmark.slash.fill" : "bookmark.fill")
             
             let bookmark = UIAction(title: bookmarkMenuTitle, image: bookmarkMenuImage) { _ in
-                bookData[indexPath.row].isBookmark.toggle()
+                localBookData[indexPath.row].isBookmark.toggle()
                 collectionView.reloadData()
             }
             
             let delete = UIAction(title: "삭제", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
-                bookData.remove(at: indexPath.row)
+                localBookData.remove(at: indexPath.row)
                 collectionView.reloadData()
             }
             
@@ -127,13 +127,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bookData.count
+        return localBookData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = bookTableView.dequeueReusableCell(withIdentifier: "BookTableViewCell") as? BookTableViewCell else { return UITableViewCell() }
         
-        let row = bookData[indexPath.row]
+        let row = localBookData[indexPath.row]
         cell.data = row
         cell.stateOfReadingButton.tag = indexPath.row
         cell.configureCell()
@@ -143,7 +143,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: nil) { _, _, _ in
-            bookData.remove(at: indexPath.row)
+            localBookData.remove(at: indexPath.row)
             tableView.reloadData()
         }
         delete.image = UIImage(systemName: "trash")
@@ -154,12 +154,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let bookmark = UIContextualAction(style: .normal, title: nil) { _, _, _ in
-            bookData[indexPath.row].isBookmark.toggle()
+            localBookData[indexPath.row].isBookmark.toggle()
             tableView.reloadData()
         }
         
-        bookmark.image = bookData[indexPath.row].isBookmark ? UIImage(systemName: "bookmark.slash.fill") : UIImage(systemName: "bookmark.fill")
-        bookmark.backgroundColor = bookData[indexPath.row].isBookmark ? .systemGray : .systemRed
+        bookmark.image = localBookData[indexPath.row].isBookmark ? UIImage(systemName: "bookmark.slash.fill") : UIImage(systemName: "bookmark.fill")
+        bookmark.backgroundColor = localBookData[indexPath.row].isBookmark ? .systemGray : .systemRed
         
         let leadingSwipeActions = UISwipeActionsConfiguration(actions: [bookmark])
         return leadingSwipeActions

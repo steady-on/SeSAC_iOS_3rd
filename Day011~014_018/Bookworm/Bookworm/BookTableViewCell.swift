@@ -40,15 +40,15 @@ class BookTableViewCell: UITableViewCell {
     func makeMenuforStateOfReading(for row: Int, defaultValue: StateOfReading) -> UIMenu {
         
         let notYet = UIAction(title: "아직 안읽음", image: UIImage(systemName: "book.closed")) { _ in
-            bookData[row].stateOfReading = .notYet
+            localBookData[row].stateOfReading = .notYet
         }
         
         let reading = UIAction(title: "읽는 중", image: UIImage(systemName: "book")) { _ in
-            bookData[row].stateOfReading = .reading
+            localBookData[row].stateOfReading = .reading
         }
         
         let finished = UIAction(title: "다 읽음", image: UIImage(systemName: "book")) { _ in
-            bookData[row].stateOfReading = .finished
+            localBookData[row].stateOfReading = .finished
         }
         
         switch defaultValue {
