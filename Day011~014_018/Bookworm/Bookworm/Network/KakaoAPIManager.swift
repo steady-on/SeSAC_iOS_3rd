@@ -13,6 +13,7 @@ struct KakaoAPIManager {
     
     func searchBook(query: String, completion: @escaping ([Book]?) -> Void) {
         guard var urlComponents = URLComponents(string: urlString) else { return }
+
         let paramaters = URLQueryItem(name: "query", value: query)
         urlComponents.queryItems = [paramaters]
         
@@ -41,11 +42,13 @@ struct KakaoAPIManager {
             
             completion(books)
         }
+        
+        task.resume()
     }
     
     private func parseJSON(_ jsonData: Data) -> [Book]? {
         let decoder = JSONDecoder()
-        
+
         do {
             let decodedData = try decoder.decode(BookData.self, from: jsonData)
             let bookDatas = decodedData.documents
