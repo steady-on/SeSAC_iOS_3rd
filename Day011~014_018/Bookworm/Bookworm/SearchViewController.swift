@@ -48,6 +48,7 @@ extension SearchViewController {
     private func configureSearchTableView() {
         searchTableView.delegate = self
         searchTableView.dataSource = self
+        searchTableView.rowHeight = 160
         
         let nib = UINib(nibName: "SearchTableViewCell", bundle: nil)
         searchTableView.register(nib, forCellReuseIdentifier: "SearchTableViewCell")

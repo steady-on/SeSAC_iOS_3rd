@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 struct KakaoAPIManager {
     private static let urlString = "https://dapi.kakao.com/v3/search/book"

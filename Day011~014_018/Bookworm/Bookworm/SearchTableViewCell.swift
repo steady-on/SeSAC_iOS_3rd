@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var backgroundUIView: UIView!
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var bookTitleLabel: UILabel!
@@ -28,7 +28,7 @@ class SearchTableViewCell: UITableViewCell {
             bookTitleLabel.text = book.title
             authorLabel.text = book.author
             introduceTextView.text = book.introduce
-//            coverImageView.image = UIImage(named: book.title)
+            coverImageView.loadData(url: book.thumbnail)
         }
     }
     

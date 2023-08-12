@@ -15,4 +15,15 @@ extension UIImageView {
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(blurEffectView)
     }
+    
+    func loadData(url: String) {
+        DispatchQueue.global().async {
+            guard let url = URL(string: url),
+                  let data = try? Data(contentsOf: url) else { return }
+            
+            DispatchQueue.main.async {
+                self.image = UIImage(data: data)
+            }
+        }
+    }
 }
