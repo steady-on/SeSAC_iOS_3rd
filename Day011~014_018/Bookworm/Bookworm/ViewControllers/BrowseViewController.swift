@@ -24,7 +24,7 @@ class BrowseViewController: UIViewController {
     }
 
     func presentDetailView(for book: Book) {
-        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
         
         detailVC.book = book
         detailVC.modalPresentationStyle = .automatic
@@ -38,8 +38,8 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
         recentCollectionView.delegate = self
         recentCollectionView.dataSource = self
         
-        let nib = UINib(nibName: "BrowseCollectionViewCell", bundle: nil)
-        recentCollectionView.register(nib, forCellWithReuseIdentifier: "BrowseCollectionViewCell")
+        let nib = UINib(nibName: BrowseCollectionViewCell.identifier, bundle: nil)
+        recentCollectionView.register(nib, forCellWithReuseIdentifier: BrowseCollectionViewCell.identifier)
     }
     
     func setLayoutForCollectionView() {
@@ -56,7 +56,7 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = recentCollectionView.dequeueReusableCell(withReuseIdentifier: "BrowseCollectionViewCell", for: indexPath) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = recentCollectionView.dequeueReusableCell(withReuseIdentifier: BrowseCollectionViewCell.identifier, for: indexPath) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
         
         cell.book = data[indexPath.row]
         cell.configureCell()
@@ -75,8 +75,8 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
         bestTableView.dataSource = self
         bestTableView.delegate = self
         
-        let nib = UINib(nibName: "SearchTableViewCell", bundle: nil)
-        bestTableView.register(nib, forCellReuseIdentifier: "SearchTableViewCell")
+        let nib = UINib(nibName: SearchTableViewCell.identifier, bundle: nil)
+        bestTableView.register(nib, forCellReuseIdentifier: SearchTableViewCell.identifier)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,7 +84,7 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = bestTableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell") as? SearchTableViewCell else { return UITableViewCell() }
+        guard let cell = bestTableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier) as? SearchTableViewCell else { return UITableViewCell() }
         
         cell.book = data.reversed()[indexPath.row]
         

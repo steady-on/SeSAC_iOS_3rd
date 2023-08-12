@@ -50,8 +50,8 @@ extension SearchViewController {
         searchTableView.dataSource = self
         searchTableView.rowHeight = 160
         
-        let nib = UINib(nibName: "SearchTableViewCell", bundle: nil)
-        searchTableView.register(nib, forCellReuseIdentifier: "SearchTableViewCell")
+        let nib = UINib(nibName: SearchTableViewCell.identifier, bundle: nil)
+        searchTableView.register(nib, forCellReuseIdentifier: SearchTableViewCell.identifier)
     }
     
     private func configureNavigationBar() {
@@ -77,7 +77,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = searchTableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell") as? SearchTableViewCell else { return UITableViewCell() }
+        guard let cell = searchTableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier) as? SearchTableViewCell else { return UITableViewCell() }
         
         cell.book = searchResults[indexPath.row]
         

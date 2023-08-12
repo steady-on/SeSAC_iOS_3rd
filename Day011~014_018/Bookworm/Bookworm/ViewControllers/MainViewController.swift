@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     @IBOutlet weak var bookCollectionView: UICollectionView!
     @IBOutlet weak var bookTableView: UITableView!
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     @IBAction func searchBarButtonTapped(_ sender: UIBarButtonItem) {
         let searchViewStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
-        guard let searchViewController = searchViewStoryboard.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else { return }
+        guard let searchViewController = searchViewStoryboard.instantiateViewController(withIdentifier: SearchViewController.identifier) as? SearchViewController else { return }
         
         let navigationController = UINavigationController(rootViewController: searchViewController)
 
@@ -43,13 +43,13 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func configureCollectionView() {
         bookCollectionView.delegate = self
         bookCollectionView.dataSource = self
         
-        let collectionNib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
-        bookCollectionView.register(collectionNib, forCellWithReuseIdentifier: "BookCollectionViewCell")
+        let collectionNib = UINib(nibName: BookCollectionViewCell.identifier, bundle: nil)
+        bookCollectionView.register(collectionNib, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
         
         setCollectionViewLayout()
     }
@@ -73,7 +73,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = bookCollectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = bookCollectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
                 
         let row = localBookData[indexPath.row]
         cell.configureBookCell(for: row)
@@ -83,7 +83,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailViewStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let detailViewController = detailViewStoryboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+        guard let detailViewController = detailViewStoryboard.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
         
         detailViewController.book = localBookData[indexPath.row]
         
@@ -116,7 +116,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func setInitialTableView() {
         bookTableView.delegate = self
         bookTableView.dataSource = self
