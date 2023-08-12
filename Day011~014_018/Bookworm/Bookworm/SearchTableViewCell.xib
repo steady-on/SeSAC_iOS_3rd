@@ -26,27 +26,27 @@
                                     <constraint firstAttribute="width" secondItem="Evk-dE-GCi" secondAttribute="height" multiplier="2:3" id="6IE-Bs-BHI"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Fk-GZ-VLU">
-                                <rect key="frame" x="148.66666666666666" y="15" width="283.33333333333337" height="163"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="6Fk-GZ-VLU">
+                                <rect key="frame" x="143.66666666666666" y="10" width="288.33333333333337" height="173"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsK-7g-4iw">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="10"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsK-7g-4iw">
+                                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="14"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQO-cN-jdW">
-                                        <rect key="frame" x="0.0" y="18" width="41.333333333333336" height="8.3333333333333357"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <rect key="frame" x="0.0" y="17" width="39.666666666666664" height="13"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYp-dh-1kC">
-                                        <rect key="frame" x="0.0" y="34.333333333333329" width="283.33333333333331" height="128.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="33" width="288" height="140"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="systemGrayColor"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -54,14 +54,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Fk-GZ-VLU" firstAttribute="top" secondItem="ys8-r2-4u2" secondAttribute="top" constant="15" id="63y-f7-BPG"/>
+                            <constraint firstItem="6Fk-GZ-VLU" firstAttribute="top" secondItem="ys8-r2-4u2" secondAttribute="top" constant="10" id="63y-f7-BPG"/>
                             <constraint firstAttribute="bottom" secondItem="Evk-dE-GCi" secondAttribute="bottom" id="QVK-4w-6bu"/>
                             <constraint firstItem="Evk-dE-GCi" firstAttribute="height" secondItem="ys8-r2-4u2" secondAttribute="height" id="SmF-MM-Tw7"/>
                             <constraint firstItem="Evk-dE-GCi" firstAttribute="top" secondItem="ys8-r2-4u2" secondAttribute="top" id="WH0-Fj-z4I"/>
-                            <constraint firstAttribute="bottom" secondItem="6Fk-GZ-VLU" secondAttribute="bottom" constant="15" id="fEv-xk-SEZ"/>
+                            <constraint firstAttribute="bottom" secondItem="6Fk-GZ-VLU" secondAttribute="bottom" constant="10" id="fEv-xk-SEZ"/>
                             <constraint firstItem="Evk-dE-GCi" firstAttribute="leading" secondItem="ys8-r2-4u2" secondAttribute="leading" id="pnv-zs-eDf"/>
                             <constraint firstAttribute="trailing" secondItem="6Fk-GZ-VLU" secondAttribute="trailing" constant="10" id="v5F-KA-lK1"/>
-                            <constraint firstItem="6Fk-GZ-VLU" firstAttribute="leading" secondItem="Evk-dE-GCi" secondAttribute="trailing" constant="20" id="z15-BH-jjQ"/>
+                            <constraint firstItem="6Fk-GZ-VLU" firstAttribute="leading" secondItem="Evk-dE-GCi" secondAttribute="trailing" constant="15" id="z15-BH-jjQ"/>
                         </constraints>
                     </view>
                 </subviews>
