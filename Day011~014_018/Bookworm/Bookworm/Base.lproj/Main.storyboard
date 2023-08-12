@@ -378,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwx-xE-vdt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1982" y="-737"/>
+            <point key="canvasLocation" x="1982" y="-748"/>
         </scene>
         <!--내 책장-->
         <scene sceneID="ftc-gx-1RR">

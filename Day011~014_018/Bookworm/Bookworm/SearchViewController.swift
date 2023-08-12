@@ -21,15 +21,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setSearchBar()
-        setSearchTableView()
-        setNavigationThing()
-    }
-    
-    func setSearchBar() {
-        searchBar.delegate = self
-        searchBar.placeholder = "책제목을 입력하세요"
-        searchBar.searchTextField.clearButtonMode = .always
+        configureUI()
     }
     
     func searchBarReturnTapped() {
@@ -37,7 +29,21 @@ class SearchViewController: UIViewController {
         searchTableView.reloadData()
     }
     
-    func setSearchTableView() {
+    private func configureUI() {
+        configureSearchBar()
+        configureSearchTableView()
+        configureNavigationBar()
+    }
+}
+
+extension SearchViewController {
+    private func configureSearchBar() {
+        searchBar.delegate = self
+        searchBar.placeholder = "검색어를 입력하세요"
+        searchBar.searchTextField.clearButtonMode = .always
+    }
+    
+    private func configureSearchTableView() {
         searchTableView.delegate = self
         searchTableView.dataSource = self
         
@@ -45,13 +51,13 @@ class SearchViewController: UIViewController {
         searchTableView.register(nib, forCellReuseIdentifier: "SearchTableViewCell")
     }
     
-    func setNavigationThing() {
+    private func configureNavigationBar() {
         title = "도서 검색"
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeButtonTapped))
     }
     
-    @objc func closeButtonTapped(_ sender: UIBarButtonItem) {
+    @objc private func closeButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
 }
