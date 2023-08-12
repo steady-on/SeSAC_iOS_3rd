@@ -8,12 +8,7 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-    
-    private var searchKeyword: String?
-    private var filteredData: [Book] {
-        guard let searchKeyword, searchKeyword.isEmpty == false else { return bookData }
-        return bookData.filter { $0.title.contains(searchKeyword) }
-    }
+    private var searchResults = [Book]()
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
@@ -25,8 +20,15 @@ class SearchViewController: UIViewController {
     }
     
     func searchBarReturnTapped() {
-        searchKeyword = searchBar.text
-        searchTableView.reloadData()
+        guard let keyword = searchBar.text else { return }
+        
+        KakaoAPIManager.searchBook(query: keyword) { books in
+            guard let books else { return }
+            self.searchResults = books
+            DispatchQueue.main.async {
+                self.searchTableView.reloadData()
+            }
+        }
     }
     
     private func configureUI() {
@@ -66,22 +68,17 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBarReturnTapped()
     }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchBarReturnTapped()
-    }
 }
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredData.count
+        return searchResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = searchTableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell") as? SearchTableViewCell else { return UITableViewCell() }
         
-        cell.book = filteredData[indexPath.row]
-        cell.configureCell()
+        cell.book = searchResults[indexPath.row]
         
         return cell
     }
