@@ -48,6 +48,7 @@ extension SearchViewController {
     private func configureSearchTableView() {
         searchTableView.delegate = self
         searchTableView.dataSource = self
+        searchTableView.prefetchDataSource = self
         searchTableView.rowHeight = 160
         
         let nib = UINib(nibName: SearchTableViewCell.identifier, bundle: nil)
@@ -82,5 +83,19 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         cell.book = searchResults[indexPath.row]
         
         return cell
+    }
+}
+
+extension SearchViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths where indexPath.row == searchResults.count - 2 {
+            KakaoAPIManager.nextPageFetch { books in
+                guard let books else { return }
+                self.searchResults.append(contentsOf: books)
+                DispatchQueue.main.async {
+                    self.searchTableView.reloadData()
+                }
+            }
+        }
     }
 }
