@@ -87,7 +87,6 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = bestTableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell") as? SearchTableViewCell else { return UITableViewCell() }
         
         cell.book = data.reversed()[indexPath.row]
-        cell.configureCell()
         
         return cell
     }
