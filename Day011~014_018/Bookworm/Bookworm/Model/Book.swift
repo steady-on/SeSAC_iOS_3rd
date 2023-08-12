@@ -10,9 +10,10 @@ import Foundation
 struct Book: Codable {
     var title: String
     var author: String
-    var stateOfReading: StateOfReading
-    var isBookmark: Bool
     var introduce: String
+    var thumbnail: String
+    var stateOfReading: StateOfReading = .notYet
+    var isBookmark: Bool = false
 }
 
 enum StateOfReading: Int, Codable {
