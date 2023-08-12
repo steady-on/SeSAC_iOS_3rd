@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 struct KakaoAPIManager {
-    private let urlString = "https://dapi.kakao.com/v3/search/book"
+    private static let urlString = "https://dapi.kakao.com/v3/search/book"
     
-    func searchBook(query: String, completion: @escaping ([Book]?) -> Void) {
+    static func searchBook(query: String, completion: @escaping ([Book]?) -> Void) {
         guard var urlComponents = URLComponents(string: urlString) else { return }
 
         let paramaters = URLQueryItem(name: "query", value: query)
@@ -20,7 +20,7 @@ struct KakaoAPIManager {
         performRequest(with: urlComponents) { books in completion(books) }
     }
     
-    private func performRequest(with urlComponents: URLComponents, completion: @escaping ([Book]?) -> Void) {
+    private static func performRequest(with urlComponents: URLComponents, completion: @escaping ([Book]?) -> Void) {
         guard let url = urlComponents.url else { return }
 
         let session = URLSession(configuration: .default)
@@ -46,7 +46,7 @@ struct KakaoAPIManager {
         task.resume()
     }
     
-    private func parseJSON(_ jsonData: Data) -> [Book]? {
+    private static func parseJSON(_ jsonData: Data) -> [Book]? {
         let decoder = JSONDecoder()
 
         do {
