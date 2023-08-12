@@ -9,12 +9,29 @@ import Foundation
 
 struct KakaoAPIManager {
     private static let urlString = "https://dapi.kakao.com/v3/search/book"
+    private static var page = 1
+    private static var isEnd = false
+    private static var urlComponents: URLComponents?
     
     static func searchBook(query: String, completion: @escaping ([Book]?) -> Void) {
+        page = 1
         guard var urlComponents = URLComponents(string: urlString) else { return }
 
-        let paramaters = URLQueryItem(name: "query", value: query)
-        urlComponents.queryItems = [paramaters]
+        let query = URLQueryItem(name: "query", value: query)
+        let size = URLQueryItem(name: "size", value: "30")
+        urlComponents.queryItems = [query, size]
+        
+        self.urlComponents = urlComponents
+        
+        performRequest(with: urlComponents) { books in completion(books) }
+    }
+    
+    static func nextPageFetch(completion: @escaping ([Book]?) -> Void) {
+        guard var urlComponents, isEnd == false else { return }
+        page += 1
+        
+        let page = URLQueryItem(name: "page", value: "\(page)")
+        urlComponents.queryItems?.append(page)
         
         performRequest(with: urlComponents) { books in completion(books) }
     }
@@ -51,7 +68,8 @@ struct KakaoAPIManager {
         do {
             let decodedData = try decoder.decode(BookData.self, from: jsonData)
             let bookDatas = decodedData.documents
-            
+            isEnd = decodedData.meta.isEnd
+
             let books = bookDatas.map { data in
                 Book(title: data.title, author: data.authors.joined(), introduce: data.contents, thumbnail: data.thumbnail)
             }
