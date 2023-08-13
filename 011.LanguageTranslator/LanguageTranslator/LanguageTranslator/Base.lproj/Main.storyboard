@@ -24,7 +24,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="" imagePadding="0.0" cornerStyle="capsule">
-                                    <imageReference key="image" image="arrow.right.arrow.left" catalog="system" symbolScale="medium"/>
+                                    <imageReference key="image" image="arrow.left.arrow.right" catalog="system" symbolScale="medium"/>
                                     <backgroundConfiguration key="background"/>
                                     <color key="baseForegroundColor" systemColor="systemTealColor"/>
                                     <color key="baseBackgroundColor" systemColor="systemMintColor"/>
@@ -54,21 +54,21 @@
                                     <color key="baseBackgroundColor" systemColor="systemMintColor"/>
                                 </buttonConfiguration>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x0Q-1Q-PRo">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x0Q-1Q-PRo">
                                 <rect key="frame" x="20" y="289.33333333333331" width="353" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="P4n-ex-MTd"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="P4n-ex-MTd"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZMH-KX-rYP">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZMH-KX-rYP">
                                 <rect key="frame" x="20" y="124.33333333333331" width="353" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="HOp-rp-ote"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="HOp-rp-ote"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="vrR-eK-ahQ"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -102,6 +102,14 @@
                             <constraint firstItem="68G-K4-OZn" firstAttribute="top" secondItem="ZMH-KX-rYP" secondAttribute="bottom" constant="15" id="y2r-xs-scC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sourceLanguagePickTextField" destination="Rma-Cu-waq" id="s7E-3L-l8E"/>
+                        <outlet property="sourceTextView" destination="ZMH-KX-rYP" id="3Jg-ac-Vng"/>
+                        <outlet property="swapButton" destination="Dq2-UI-p16" id="ZOC-yT-zxd"/>
+                        <outlet property="targetLanguagePickTextField" destination="gOc-qR-nod" id="RMv-Fw-8Jt"/>
+                        <outlet property="targetTextView" destination="x0Q-1Q-PRo" id="2yG-7N-YSg"/>
+                        <outlet property="translateButton" destination="68G-K4-OZn" id="nzz-0w-ISy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,7 +117,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.right.arrow.left" catalog="system" width="120" height="128"/>
+        <image name="arrow.left.arrow.right" catalog="system" width="120" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
