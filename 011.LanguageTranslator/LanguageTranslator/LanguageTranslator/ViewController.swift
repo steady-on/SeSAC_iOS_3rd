@@ -7,11 +7,6 @@
 
 import UIKit
 
-fileprivate enum WhichLang {
-    case source
-    case target
-}
-
 class ViewController: UIViewController {
     
     let sourceLanguagePicker = UIPickerView()
@@ -35,21 +30,18 @@ class ViewController: UIViewController {
     }
 
     private func configureUI() {
-        configureTextField(sourceLanguagePickTextField, which: .source)
-        configureTextField(targetLanguagePickTextField, which: .target)
+        configureTextField()
+        configurePicker()
     }
 }
 
 extension ViewController: UITextFieldDelegate {
-    private func configureTextField(_ textField: UITextField, which: WhichLang) {
-        textField.delegate = self
+    private func configureTextField() {
+        sourceLanguagePickTextField.delegate = self
+        targetLanguagePickTextField.delegate = self
         
-        switch which {
-        case .source:
-            textField.inputView = sourceLanguagePicker
-        case .target:
-            textField.inputView = targetLanguagePicker
-        }
+        sourceLanguagePickTextField.inputView = sourceLanguagePicker
+        targetLanguagePickTextField.inputView = targetLanguagePicker
     }
     
     // MARK: 키보드 입력 막기
@@ -58,4 +50,42 @@ extension ViewController: UITextFieldDelegate {
     }
 }
 
-
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func configurePicker() {
+        sourceLanguagePicker.delegate = self
+        sourceLanguagePicker.dataSource = self
+        
+        targetLanguagePicker.delegate = self
+        targetLanguagePicker.dataSource = self
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch pickerView {
+        case sourceLanguagePicker: return sourceLanguage.count
+        case targetLanguagePicker: return targetLanguage.count
+        default: return 0
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch pickerView {
+        case sourceLanguagePicker: return sourceLanguage[row].expression
+        case targetLanguagePicker: return targetLanguage[row].expression
+        default: return ""
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch pickerView {
+        case sourceLanguagePicker:
+            sourceLanguagePickTextField.text = sourceLanguage[row].expression
+        case targetLanguagePicker:
+            targetLanguagePickTextField.text = targetLanguage[row].expression
+        default: break
+        }
+    }
+}
