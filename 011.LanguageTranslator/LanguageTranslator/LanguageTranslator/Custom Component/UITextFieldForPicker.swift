@@ -13,6 +13,7 @@ class UITextFieldForPicker: UITextField {
         set {  }
     }
     
+    // MARK: UITextField 메뉴(복사, 붙여넣기 등) 띄우지 않기
     open override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         return false
     }

@@ -52,6 +52,7 @@ extension ViewController: UITextFieldDelegate {
         }
     }
     
+    // MARK: 키보드 입력 막기
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return false
     }
