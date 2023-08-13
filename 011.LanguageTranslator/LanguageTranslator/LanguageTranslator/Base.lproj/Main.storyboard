@@ -56,6 +56,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="번역하기" cornerStyle="capsule">
                                     <color key="baseBackgroundColor" systemColor="systemMintColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="translationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tNH-ca-ero"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x0Q-1Q-PRo">
                                 <rect key="frame" x="20" y="289.33333333333331" width="353" height="100"/>

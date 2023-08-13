@@ -14,7 +14,10 @@ class ViewController: UIViewController {
     
     let sourceLanguage = SourceLanguageType.allCases
     let targetLanguage = TargetLanguageType.allCases
-
+    
+    var source: SourceLanguageType?
+    var target: TargetLanguageType?
+    
     @IBOutlet weak var sourceLanguagePickTextField: UITextField!
     @IBOutlet weak var targetLanguagePickTextField: UITextField!
     @IBOutlet weak var swapButton: UIButton!
@@ -35,6 +38,34 @@ class ViewController: UIViewController {
         
         sourceLanguagePickTextField.text = target
         targetLanguagePickTextField.text = source
+    }
+    
+    @IBAction func translationButtonTapped(_ sender: UIButton) {
+        guard var source, let target,
+              let text = sourceTextView.text else {
+            return
+        }
+        
+        if source == .detectLangs {
+            PapagoAPIManager.detectLanguage(text) { result in
+                DispatchQueue.main.async {
+                    source = result
+                    self.sourceLanguagePickTextField.text = source.expression
+                    
+                    PapagoAPIManager.translateText(text, source: source, target: target) { result in
+                        DispatchQueue.main.async {
+                            self.targetTextView.text = result.translatedText
+                        }
+                    }
+                }
+            }
+        }
+        
+        PapagoAPIManager.translateText(text, source: source, target: target) { result in
+            DispatchQueue.main.async {
+                self.targetTextView.text = result.translatedText
+            }
+        }
     }
     
     private func configureUI() {
@@ -82,6 +113,9 @@ extension ViewController {
 
 extension ViewController: UITextFieldDelegate {
     private func configureTextField() {
+        sourceLanguagePickTextField.textAlignment = .center
+        targetLanguagePickTextField.textAlignment = .center
+        
         sourceLanguagePickTextField.delegate = self
         targetLanguagePickTextField.delegate = self
         
@@ -127,11 +161,14 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView {
         case sourceLanguagePicker:
-            let source = sourceLanguage[row]
-            sourceLanguagePickTextField.text = source.expression
-            swapButton.isEnabled = source == .detectLangs ? false : true
+            let selectedSource = sourceLanguage[row]
+            sourceLanguagePickTextField.text = selectedSource.expression
+            swapButton.isEnabled = selectedSource == .detectLangs ? false : true
+            source = selectedSource
         case targetLanguagePicker:
+            let selectedTarget = targetLanguage[row]
             targetLanguagePickTextField.text = targetLanguage[row].expression
+            target = selectedTarget
         default: break
         }
         

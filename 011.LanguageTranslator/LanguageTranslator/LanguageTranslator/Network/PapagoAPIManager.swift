@@ -13,8 +13,8 @@ struct PapagoAPIManager {
         guard var urlComponents = URLComponents(string: PapagoAPIEndpoint.translate.requestURL) else { return }
         
         let queryItems = [
-            "source": source.expression,
-            "target": target.expression,
+            "source": source.rawValue,
+            "target": target.rawValue,
             "text": text
         ]
         
@@ -28,15 +28,15 @@ struct PapagoAPIManager {
         }
     }
     
-    static func detectLanguage(_ text: String, completion: @escaping (DetectLangsData) -> Void) {
+    static func detectLanguage(_ text: String, completion: @escaping (SourceLanguageType) -> Void) {
         guard var urlComponents = URLComponents(string: PapagoAPIEndpoint.detectLangs.requestURL) else { return }
         
         let query = URLQueryItem(name: "query", value: text)
         urlComponents.queryItems = [query]
         
         performRequest(with: urlComponents) { (detectLangsData: DetectLangsData?) in
-            guard let detectLangsData else { return }
-            completion(detectLangsData)
+            guard let langCode = detectLangsData?.langCode, let source = SourceLanguageType(rawValue: langCode) else { return }
+            completion(source)
         }
     }
     
@@ -58,7 +58,7 @@ struct PapagoAPIManager {
             }
             
             guard let safeData = data, let decodedData: T = self.parseJSON(safeData) else {
-                print(error!)
+                print(String(data: data!, encoding: .utf8))
                 completion(nil)
                 return
             }
