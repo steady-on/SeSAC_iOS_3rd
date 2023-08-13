@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         configureUI()
     }
     
-    @IBAction func swapButtonTapped(_ sender: UIButton) {        
+    @IBAction func swapButtonTapped(_ sender: UIButton) {
         let source = sourceLanguagePickTextField.text
         let target = targetLanguagePickTextField.text
         
@@ -127,10 +127,14 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView {
         case sourceLanguagePicker:
-            sourceLanguagePickTextField.text = sourceLanguage[row].expression
+            let source = sourceLanguage[row]
+            sourceLanguagePickTextField.text = source.expression
+            swapButton.isEnabled = source == .detectLangs ? false : true
         case targetLanguagePicker:
             targetLanguagePickTextField.text = targetLanguage[row].expression
         default: break
         }
+        
+        view.endEditing(true)
     }
 }
