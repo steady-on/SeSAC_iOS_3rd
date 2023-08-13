@@ -29,6 +29,9 @@
                                     <color key="baseForegroundColor" systemColor="systemTealColor"/>
                                     <color key="baseBackgroundColor" systemColor="systemMintColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="swapButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JzO-X3-Cc5"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gOc-qR-nod" customClass="UITextFieldForPicker" customModule="LanguageTranslator" customModuleProvider="target">
                                 <rect key="frame" x="234.33333333333337" y="74" width="118" height="34"/>
@@ -54,7 +57,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemMintColor"/>
                                 </buttonConfiguration>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x0Q-1Q-PRo">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x0Q-1Q-PRo">
                                 <rect key="frame" x="20" y="289.33333333333331" width="353" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>

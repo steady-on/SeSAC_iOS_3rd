@@ -28,6 +28,15 @@ class ViewController: UIViewController {
         
         configureUI()
     }
+    
+    @IBAction func swapButtonTapped(_ sender: UIButton) {        
+        let source = sourceLanguagePickTextField.text
+        let target = targetLanguagePickTextField.text
+        
+        sourceLanguagePickTextField.text = target
+        targetLanguagePickTextField.text = source
+    }
+    
     private func configureUI() {
         configureTextField()
         configurePicker()
