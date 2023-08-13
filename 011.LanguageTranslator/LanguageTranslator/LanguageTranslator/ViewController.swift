@@ -28,10 +28,46 @@ class ViewController: UIViewController {
         
         configureUI()
     }
-
     private func configureUI() {
         configureTextField()
         configurePicker()
+        configureSwapButton()
+        configureTextView()
+        configureTranslationButton()
+    }
+}
+
+extension ViewController {
+    func configureSwapButton() {
+        var config = UIButton.Configuration.borderedTinted()
+        
+        config.baseForegroundColor = .systemTeal
+        config.baseBackgroundColor = .systemMint
+        
+        let imageConfig = UIImage.SymbolConfiguration(scale: .medium)
+        let image = UIImage(systemName: "arrow.left.arrow.right", withConfiguration: imageConfig)
+        config.image = image
+        config.cornerStyle = .capsule
+        
+        swapButton.configuration = config
+    }
+    
+    func configureTextView() {
+        sourceTextView.isScrollEnabled = false
+        
+        targetTextView.isScrollEnabled = false
+        targetTextView.isEditable = false
+    }
+    
+    func configureTranslationButton() {
+        var config = UIButton.Configuration.filled()
+        
+        config.title = "번역하기"
+        config.baseBackgroundColor = .systemMint
+        config.cornerStyle = .capsule
+        config.buttonSize = .large
+        
+        translateButton.configuration = config
     }
 }
 
