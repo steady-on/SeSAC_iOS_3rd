@@ -19,6 +19,7 @@
 		639EE18A2A88983000A7B674 /* TranslationResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE1892A88983000A7B674 /* TranslationResultData.swift */; };
 		639EE1902A889B6300A7B674 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE18F2A889B6300A7B674 /* APIKey.swift */; };
 		639EE1922A889F3300A7B674 /* PapagoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE1912A889F3300A7B674 /* PapagoAPIManager.swift */; };
+		639EE1972A88BC6200A7B674 /* UITextFieldForPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE1962A88BC6200A7B674 /* UITextFieldForPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		639EE1892A88983000A7B674 /* TranslationResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationResultData.swift; sourceTree = "<group>"; };
 		639EE18F2A889B6300A7B674 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = ../../../../APIKey.swift; sourceTree = "<group>"; };
 		639EE1912A889F3300A7B674 /* PapagoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoAPIManager.swift; sourceTree = "<group>"; };
+		639EE1962A88BC6200A7B674 /* UITextFieldForPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldForPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				636B72432A87C078001817ED /* AppDelegate.swift */,
 				636B72452A87C078001817ED /* SceneDelegate.swift */,
 				636B72472A87C078001817ED /* ViewController.swift */,
+				639EE1982A88BDCF00A7B674 /* Custom Component */,
 				639EE1802A885E0400A7B674 /* Model */,
 				639EE1842A888FDD00A7B674 /* Network */,
 				636B72492A87C078001817ED /* Main.storyboard */,
@@ -99,6 +102,14 @@
 				639EE1912A889F3300A7B674 /* PapagoAPIManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		639EE1982A88BDCF00A7B674 /* Custom Component */ = {
+			isa = PBXGroup;
+			children = (
+				639EE1962A88BC6200A7B674 /* UITextFieldForPicker.swift */,
+			);
+			path = "Custom Component";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639EE1972A88BC6200A7B674 /* UITextFieldForPicker.swift in Sources */,
 				639EE1882A8896F500A7B674 /* DetectLangsData.swift in Sources */,
 				639EE1922A889F3300A7B674 /* PapagoAPIManager.swift in Sources */,
 				636B72482A87C078001817ED /* ViewController.swift in Sources */,
