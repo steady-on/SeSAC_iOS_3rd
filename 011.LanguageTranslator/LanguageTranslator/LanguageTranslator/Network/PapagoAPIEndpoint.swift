@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum NaverAPIEndpoint {
+enum PapagoAPIEndpoint {
     case translate
     case detectLangs
     
@@ -20,5 +20,5 @@ enum NaverAPIEndpoint {
         }
     }
     
-    var requestURL: String { NaverAPIEndpoint.baseURL + self.endPoint }
+    var requestURL: String { PapagoAPIEndpoint.baseURL + self.endPoint }
 }
