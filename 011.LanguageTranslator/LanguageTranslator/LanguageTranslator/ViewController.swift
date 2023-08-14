@@ -49,13 +49,14 @@ class ViewController: UIViewController {
         if source == .detectLangs {
             PapagoAPIManager.detectLanguage(text) { result in
                 DispatchQueue.main.async {
-                    source = result
                     self.sourceLanguagePickTextField.text = source.expression
-                    
-                    PapagoAPIManager.translateText(text, source: source, target: target) { result in
-                        DispatchQueue.main.async {
-                            self.targetTextView.text = result.translatedText
-                        }
+                }
+                
+                source = result
+                
+                PapagoAPIManager.translateText(text, source: source, target: target) { result in
+                    DispatchQueue.main.async {
+                        self.targetTextView.text = result.translatedText
                     }
                 }
             }
