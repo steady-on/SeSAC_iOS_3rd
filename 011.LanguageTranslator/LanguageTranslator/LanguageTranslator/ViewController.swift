@@ -41,26 +41,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func translationButtonTapped(_ sender: UIButton) {
-        guard var source, let target,
-              let text = sourceTextView.text else {
+        guard let source, let target, let text = sourceTextView.text else {
             return
         }
         
         if source == .detectLangs {
-            PapagoAPIManager.detectLanguage(text) { result in
-                DispatchQueue.main.async {
-                    self.sourceLanguagePickTextField.text = source.expression
-                }
-                
-                source = result
-                
-                PapagoAPIManager.translateText(text, source: source, target: target) { result in
+            PapagoAPIManager.detectLanguage(text) { sourceResult in
+                PapagoAPIManager.translateText(text, source: sourceResult, target: target) { translateResult in
                     DispatchQueue.main.async {
-                        self.targetTextView.text = result.translatedText
+                        self.sourceLanguagePickTextField.text = sourceResult.expression
+                        self.targetTextView.text = translateResult.translatedText
                     }
                 }
             }
-            
             return
         }
         
