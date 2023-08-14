@@ -123,3 +123,39 @@
 
 - [x] 1.  UISearchBar를 활용하여 실시간 검색 기능 구현
 - [x] 2.  상세화면에 UITextView를 추가하고 Placeholer 기능 구현
+
+<br>
+
+# Day 18: Kakao 도서 API를 활용하여 책 검색 화면을 재구성하기
+
+## STEP 1. 과제 기본 구현
+
+- [x] 1. 도서 검색기능 구현
+- [x] 2. 페이지네이션 기능
+
+## 고민한 점
+
+### Image data를 어디서 불러오면 좋을까?
+
+Kakao의 검색 API를 통해서 받아온 책의 정보에는 책 표지의 이미지가 URL로 들어있어서 해당 URL에서 data를 받아서 ImageView에 넣어줘야 했다. 그런데 이미지의 데이터를 받아오는 코드의 위치가 많이 고민되었다.
+
+처음으로 생각했던 것은 책의 정보 자체를 받아오는 작업이기 때문에 `KakaoAPIManager`에서 image 데이터를 받아오는 메서드를 작성할까 했으나 해당 작업은 KakaoAPI와는 직접적인 관련이 없어서 맞는 자리가 아니라는 생각이 들었다.
+
+두번째로는 책에 대한 정보이므로 `Book` 구조체에서 인스턴스 메서드로 작성하려고 했는데, 이 경우 구조체가 원시타입만이 아니라 프레임워크의 타입까지 가지고 가서 너무 무거워져 버리는 것 같았고, 단순히 책에 대한 정보를 담고있어야할 구조체가 쓸데 없는 일을 맡아서 하는 것 같았다.
+
+그래서 좀 더 고민해 본 결과 이것은 ImageView가 자신이 담을 이미지의 데이터를 책임지고 가지고 오는게 맞다는 생각이 들어서 최종적으로는 ImageView의 extension으로 인스턴스 메서드를 작성하게 되었다.
+
+```swift
+func loadData(url: String) {
+    DispatchQueue.global().async {
+        guard let url = URL(string: url),
+              let data = try? Data(contentsOf: url) else { return }
+
+        DispatchQueue.main.async {
+            self.image = UIImage(data: data)
+        }
+    }
+}
+```
+
+데이터를 불러오는 작업 자체는 main에서 할 필요가 없으므로 global 스레드에서 데이터를 가지고 오고, 마지막에 불러온 데이터로 view를 업데이트 할 때만 main 스레드에서 작업하도록 메서드를 구성했다.
