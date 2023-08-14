@@ -24,15 +24,15 @@ class RecommandBeerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.definesPresentationContext = true
         
         setUpDesignForUI()
         callRequest()
-        presentCoverView()
-//        self.definesPresentationContext = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        presentCoverView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
