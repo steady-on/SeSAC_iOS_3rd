@@ -58,7 +58,6 @@ struct PapagoAPIManager {
             }
             
             guard let safeData = data, let decodedData: T = self.parseJSON(safeData) else {
-                print(String(data: data!, encoding: .utf8))
                 completion(nil)
                 return
             }
