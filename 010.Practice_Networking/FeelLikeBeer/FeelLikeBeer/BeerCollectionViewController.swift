@@ -27,8 +27,8 @@ class BeerCollectionViewController: UICollectionViewController {
 //        let spacing: CGFloat = 20
 //        beerCollectionView.contentInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
 
-//        configureCollectionViewFlowLayout()
-        configureCollectionViewDynamicFlowLayout()
+        configureCollectionViewFlowLayout()
+//        configureCollectionViewDynamicFlowLayout()
     }
     
     func requestCall() {
@@ -38,31 +38,31 @@ class BeerCollectionViewController: UICollectionViewController {
         }
     }
     
-    func configureCollectionViewDynamicFlowLayout() {
-        let dynamicFlowLayout = DynamicFlowLayout()
-        let spacing: CGFloat = 20
-        
-        dynamicFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        dynamicFlowLayout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-        dynamicFlowLayout.minimumInteritemSpacing = spacing
-        dynamicFlowLayout.minimumLineSpacing = spacing
-        beerCollectionView.collectionViewLayout = dynamicFlowLayout
-        beerCollectionView.contentInsetAdjustmentBehavior = .always
-    }
-    
-//    func configureCollectionViewFlowLayout() {
-//        let layout = UICollectionViewFlowLayout()
-//
+//    func configureCollectionViewDynamicFlowLayout() {
+//        let dynamicFlowLayout = DynamicFlowLayout()
 //        let spacing: CGFloat = 20
-//        let width = UIScreen.main.bounds.width - (spacing * 3)
 //
-//        layout.itemSize = CGSize(width: width/2, height: width)
-//        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-//        layout.minimumLineSpacing = spacing
-//        layout.minimumInteritemSpacing = spacing
-//
-//        beerCollectionView.collectionViewLayout = layout
+//        dynamicFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+//        dynamicFlowLayout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+//        dynamicFlowLayout.minimumInteritemSpacing = spacing
+//        dynamicFlowLayout.minimumLineSpacing = spacing
+//        beerCollectionView.collectionViewLayout = dynamicFlowLayout
+//        beerCollectionView.contentInsetAdjustmentBehavior = .always
 //    }
+    
+    func configureCollectionViewFlowLayout() {
+        let layout = UICollectionViewFlowLayout()
+
+        let spacing: CGFloat = 20
+        let width = UIScreen.main.bounds.width - (spacing * 3)
+
+        layout.itemSize = CGSize(width: width/2, height: width)
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
+
+        beerCollectionView.collectionViewLayout = layout
+    }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return beers.count

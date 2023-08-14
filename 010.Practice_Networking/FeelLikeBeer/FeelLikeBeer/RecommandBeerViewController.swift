@@ -10,6 +10,7 @@ import UIKit
 class RecommandBeerViewController: UIViewController {
     
     let beerManager = BeerManager()
+    var isPresentModal = true
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -32,7 +33,10 @@ class RecommandBeerViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        presentCoverView()
+        if isPresentModal {
+            presentCoverView()
+            isPresentModal = false
+        }
     }
     
     @IBAction func pickAgainButtonTapped(_ sender: UIButton) {
@@ -43,9 +47,10 @@ class RecommandBeerViewController: UIViewController {
     func presentCoverView() {
         guard let coverViewController = storyboard?.instantiateViewController(withIdentifier: "CoverViewController") as? CoverViewController else { return }
         
-        coverViewController.modalPresentationStyle = .overCurrentContext
+        let navigationController = UINavigationController(rootViewController: coverViewController)
+        navigationController.modalPresentationStyle = .overCurrentContext
         
-        present(coverViewController, animated: false)
+        present(navigationController, animated: false)
     }
     
     func callRequest() {
