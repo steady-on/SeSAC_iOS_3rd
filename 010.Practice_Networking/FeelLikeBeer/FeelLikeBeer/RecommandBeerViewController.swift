@@ -35,10 +35,6 @@ class RecommandBeerViewController: UIViewController {
         presentCoverView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     @IBAction func pickAgainButtonTapped(_ sender: UIButton) {
         callRequest()
         scrollView.setContentOffset(.zero, animated: true)
