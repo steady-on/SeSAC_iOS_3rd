@@ -60,6 +60,8 @@ class ViewController: UIViewController {
                     }
                 }
             }
+            
+            return
         }
         
         PapagoAPIManager.translateText(text, source: source, target: target) { result in
