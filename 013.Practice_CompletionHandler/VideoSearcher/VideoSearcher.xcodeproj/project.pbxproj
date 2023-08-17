@@ -16,6 +16,8 @@
 		639EE22F2A8E0BDA00A7B674 /* KakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE22E2A8E0BDA00A7B674 /* KakaoAPIManager.swift */; };
 		639EE2312A8E111500A7B674 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE2302A8E111500A7B674 /* APIKey.swift */; };
 		639EE2342A8E1DF600A7B674 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE2332A8E1DF600A7B674 /* SearchResult.swift */; };
+		639EE2392A8E301B00A7B674 /* ReuseIdentifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE2382A8E301B00A7B674 /* ReuseIdentifying.swift */; };
+		639EE23B2A8E309000A7B674 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE23A2A8E309000A7B674 /* UIImageView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		639EE22E2A8E0BDA00A7B674 /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
 		639EE2302A8E111500A7B674 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = ../../../../APIKey.swift; sourceTree = "<group>"; };
 		639EE2332A8E1DF600A7B674 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		639EE2382A8E301B00A7B674 /* ReuseIdentifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifying.swift; sourceTree = "<group>"; };
+		639EE23A2A8E309000A7B674 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 				639EE22C2A8E09BE00A7B674 /* ViewController */,
 				639EE2322A8E1DD900A7B674 /* Model */,
 				639EE22B2A8E099F00A7B674 /* Network */,
+				639EE2372A8E2FEC00A7B674 /* Extension */,
 				639EE2232A8E048F00A7B674 /* Info.plist */,
 				639EE21E2A8E048F00A7B674 /* Assets.xcassets */,
 				639EE2202A8E048F00A7B674 /* LaunchScreen.storyboard */,
@@ -106,6 +111,15 @@
 				639EE2332A8E1DF600A7B674 /* SearchResult.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		639EE2372A8E2FEC00A7B674 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				639EE2382A8E301B00A7B674 /* ReuseIdentifying.swift */,
+				639EE23A2A8E309000A7B674 /* UIImageView+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,10 +193,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639EE2392A8E301B00A7B674 /* ReuseIdentifying.swift in Sources */,
 				639EE21A2A8E048E00A7B674 /* MainViewController.swift in Sources */,
 				639EE2162A8E048E00A7B674 /* AppDelegate.swift in Sources */,
 				639EE22F2A8E0BDA00A7B674 /* KakaoAPIManager.swift in Sources */,
 				639EE2312A8E111500A7B674 /* APIKey.swift in Sources */,
+				639EE23B2A8E309000A7B674 /* UIImageView+.swift in Sources */,
 				639EE2342A8E1DF600A7B674 /* SearchResult.swift in Sources */,
 				639EE2182A8E048E00A7B674 /* SceneDelegate.swift in Sources */,
 			);
