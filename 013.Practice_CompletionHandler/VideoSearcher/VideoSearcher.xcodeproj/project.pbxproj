@@ -20,6 +20,7 @@
 		639EE23B2A8E309000A7B674 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE23A2A8E309000A7B674 /* UIImageView+.swift */; };
 		639EE2402A8E317000A7B674 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE23E2A8E317000A7B674 /* VideoTableViewCell.swift */; };
 		639EE2412A8E317000A7B674 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639EE23F2A8E317000A7B674 /* VideoTableViewCell.xib */; };
+		639EE2482A8E41C600A7B674 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE2472A8E41C600A7B674 /* Date+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		639EE23A2A8E309000A7B674 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		639EE23E2A8E317000A7B674 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		639EE23F2A8E317000A7B674 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
+		639EE2472A8E41C600A7B674 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			children = (
 				639EE2382A8E301B00A7B674 /* ReuseIdentifying.swift */,
 				639EE23A2A8E309000A7B674 /* UIImageView+.swift */,
+				639EE2472A8E41C600A7B674 /* Date+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639EE2482A8E41C600A7B674 /* Date+.swift in Sources */,
 				639EE2392A8E301B00A7B674 /* ReuseIdentifying.swift in Sources */,
 				639EE21A2A8E048E00A7B674 /* MainViewController.swift in Sources */,
 				639EE2162A8E048E00A7B674 /* AppDelegate.swift in Sources */,
