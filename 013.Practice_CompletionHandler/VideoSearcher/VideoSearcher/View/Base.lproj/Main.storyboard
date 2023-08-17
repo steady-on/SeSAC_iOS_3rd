@@ -41,6 +41,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="377-kB-x8u" secondAttribute="trailing" id="qnj-W2-mOg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="NYV-rd-yc6" id="ht5-1b-YEj"/>
+                        <outlet property="videoTableView" destination="377-kB-x8u" id="dFT-qz-VmC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
