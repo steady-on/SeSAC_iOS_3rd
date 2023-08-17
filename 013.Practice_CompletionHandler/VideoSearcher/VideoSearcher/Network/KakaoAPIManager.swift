@@ -87,7 +87,7 @@ struct KakaoAPIManager {
 
 extension KakaoAPIManager {
     private static func convertTimeFormatString(_ time: Int) -> String {
-        return "\(String(format: "%2d", time/60)):\(String(format: "%2d", time%60))"
+        return "\(String(format: "%02d", time/60)):\(String(format: "%02d", time%60))"
     }
     
     private static func convertDateFormat(_ date: String) -> String {
