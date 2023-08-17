@@ -36,3 +36,26 @@ extension MainViewController: UISearchBarDelegate {
     }
 }
 
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    func configureVideoTableView() {
+        videoTableView.separatorStyle = .none
+        
+        videoTableView.delegate = self
+        videoTableView.dataSource = self
+        
+        let nib = UINib(nibName: VideoTableViewCell.identifier, bundle: nil)
+        videoTableView.register(nib, forCellReuseIdentifier: VideoTableViewCell.identifier)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return videos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = videoTableView.dequeueReusableCell(withIdentifier: VideoTableViewCell.identifier) as? VideoTableViewCell else { return UITableViewCell() }
+        
+        cell.video = videos[indexPath.item]
+        
+        return cell
+    }
+}
