@@ -14,4 +14,8 @@ struct Video {
     let playTime: String
     let thumbnail: String
     let url: String
+    
+    var detailInfo: String {
+        return "\(author) | \(playTime) | \(relativeDatetime)"
+    }
 }
