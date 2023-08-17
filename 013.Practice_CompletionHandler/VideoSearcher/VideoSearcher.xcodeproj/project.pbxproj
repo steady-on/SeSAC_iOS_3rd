@@ -18,6 +18,8 @@
 		639EE2342A8E1DF600A7B674 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE2332A8E1DF600A7B674 /* SearchResult.swift */; };
 		639EE2392A8E301B00A7B674 /* ReuseIdentifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE2382A8E301B00A7B674 /* ReuseIdentifying.swift */; };
 		639EE23B2A8E309000A7B674 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE23A2A8E309000A7B674 /* UIImageView+.swift */; };
+		639EE2402A8E317000A7B674 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE23E2A8E317000A7B674 /* VideoTableViewCell.swift */; };
+		639EE2412A8E317000A7B674 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639EE23F2A8E317000A7B674 /* VideoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		639EE2332A8E1DF600A7B674 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		639EE2382A8E301B00A7B674 /* ReuseIdentifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifying.swift; sourceTree = "<group>"; };
 		639EE23A2A8E309000A7B674 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		639EE23E2A8E317000A7B674 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		639EE23F2A8E317000A7B674 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				639EE21B2A8E048E00A7B674 /* Main.storyboard */,
+				639EE23E2A8E317000A7B674 /* VideoTableViewCell.swift */,
+				639EE23F2A8E317000A7B674 /* VideoTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				639EE2222A8E048F00A7B674 /* LaunchScreen.storyboard in Resources */,
+				639EE2412A8E317000A7B674 /* VideoTableViewCell.xib in Resources */,
 				639EE21F2A8E048F00A7B674 /* Assets.xcassets in Resources */,
 				639EE21D2A8E048E00A7B674 /* Main.storyboard in Resources */,
 			);
@@ -201,6 +208,7 @@
 				639EE23B2A8E309000A7B674 /* UIImageView+.swift in Sources */,
 				639EE2342A8E1DF600A7B674 /* SearchResult.swift in Sources */,
 				639EE2182A8E048E00A7B674 /* SceneDelegate.swift in Sources */,
+				639EE2402A8E317000A7B674 /* VideoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
