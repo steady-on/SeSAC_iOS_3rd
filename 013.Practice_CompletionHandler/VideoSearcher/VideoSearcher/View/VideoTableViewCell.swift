@@ -22,7 +22,16 @@ class VideoTableViewCell: UITableViewCell, ReuseIdentifying {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        thumbnailImageView.image = UIImage(systemName: "photo")
+//        thumbnailImageView.image = UIImage(systemName: "photo")
+    }
+    
+    var video: Video? {
+        didSet {
+            guard let video else { return }
+            thumbnailImageView.loadData(url: video.thumbnail)
+            titleLabel.text = video.title
+            detailLabel.text = video.detailInfo
+        }
     }
 
     func setUpDesignForUI() {
@@ -39,7 +48,7 @@ extension VideoTableViewCell {
     
     func designDetailLabel() {
         detailLabel.font = .preferredFont(forTextStyle: .caption1)
-        detailLabel.numberOfLines = 0
-        detailLabel.textColor = .systemGray3
+        detailLabel.numberOfLines = 1
+        detailLabel.textColor = .systemGray
     }
 }
