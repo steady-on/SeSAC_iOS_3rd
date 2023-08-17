@@ -24,22 +24,21 @@ enum NetworkError: Error, CustomDebugStringConvertible {
 struct KakaoAPIManager {
     private static let url = "https://dapi.kakao.com/v2/search/vclip"
     
-    static func search(for keyword: String, completionHandler: @escaping ([Document]) -> Void, errorHandler: @escaping (NetworkError) -> Void) {
+    static func search(for keyword: String, completionHandler: @escaping ([Video]) -> Void, errorHandler: @escaping (NetworkError) -> Void) {
         guard var urlComponents = URLComponents(string: KakaoAPIManager.url) else { return }
         
         let query = URLQueryItem(name: "query", value: keyword)
         let size = URLQueryItem(name: "size", value: "\(30)")
         urlComponents.queryItems = [query, size]
         
-        performRequest(with: urlComponents) { searchResult in
-            let videos = searchResult.documents
+        performRequest(with: urlComponents) { videos in
             completionHandler(videos)
         } errorHandler: { error in
             errorHandler(error)
         }
     }
     
-    private static func performRequest(with urlComponents: URLComponents, completionHandler: @escaping (SearchResult) -> Void, errorHandler: @escaping (NetworkError) -> Void) {
+    private static func performRequest(with urlComponents: URLComponents, completionHandler: @escaping ([Video]) -> Void, errorHandler: @escaping (NetworkError) -> Void) {
         guard let url = urlComponents.url else { return }
         
         let session = URLSession(configuration: .default)
@@ -56,24 +55,50 @@ struct KakaoAPIManager {
             }
             
             do {
-                let searchResult = try parseJSON(data)
-                completionHandler(searchResult)
+                let videos = try parseJSON(data)
+                completionHandler(videos)
             } catch {
-                errorHandler(error as! NetworkError)
+                errorHandler(NetworkError.jsonParsingError)
             }
         }
         
         task.resume()
     }
     
-    private static func parseJSON(_ jsonData: Data) throws -> SearchResult {
+    static func parseJSON(_ jsonData: Data) throws -> [Video] {
         let decoder = JSONDecoder()
 
         do {
-            let decodedData = try decoder.decode(SearchResult.self, from: jsonData)
-            return decodedData
+            let searchResult = try decoder.decode(SearchResult.self, from: jsonData)
+            let documents = searchResult.documents
+            let videos = documents.map { document in
+                let playTime = convertTimeFormatString(document.playTime)
+                let relativeDatetime = convertDateFormat(document.datetime)
+                
+                return Video(title: document.title, author: document.author, relativeDatetime: relativeDatetime, playTime: playTime, thumbnail: document.thumbnail, url: document.url)
+            }
+            
+            return videos
         } catch {
             throw NetworkError.jsonParsingError
         }
+    }
+}
+
+extension KakaoAPIManager {
+    private static func convertTimeFormatString(_ time: Int) -> String {
+        return "\(String(format: "%2d", time/60)):\(String(format: "%2d", time%60))"
+    }
+    
+    private static func convertDateFormat(_ date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"  // "2023-08-09T16:45:02.000+09:00"
+        dateFormatter.timeZone = TimeZone(identifier: "Asia/Korea")
+        
+        if let date = dateFormatter.date(from: date) {
+            return date.relativeTimeToAbbreviated
+        }
+
+        return "정보없음"
     }
 }

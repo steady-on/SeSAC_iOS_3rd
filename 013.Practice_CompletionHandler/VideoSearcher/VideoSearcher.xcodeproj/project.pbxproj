@@ -20,6 +20,7 @@
 		639EE23B2A8E309000A7B674 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE23A2A8E309000A7B674 /* UIImageView+.swift */; };
 		639EE2402A8E317000A7B674 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE23E2A8E317000A7B674 /* VideoTableViewCell.swift */; };
 		639EE2412A8E317000A7B674 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639EE23F2A8E317000A7B674 /* VideoTableViewCell.xib */; };
+		639EE2462A8E3B2200A7B674 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE2452A8E3B2200A7B674 /* Video.swift */; };
 		639EE2482A8E41C600A7B674 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE2472A8E41C600A7B674 /* Date+.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		639EE23A2A8E309000A7B674 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		639EE23E2A8E317000A7B674 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		639EE23F2A8E317000A7B674 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
+		639EE2452A8E3B2200A7B674 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		639EE2472A8E41C600A7B674 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				639EE2332A8E1DF600A7B674 /* SearchResult.swift */,
+				639EE2452A8E3B2200A7B674 /* Video.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				639EE2342A8E1DF600A7B674 /* SearchResult.swift in Sources */,
 				639EE2182A8E048E00A7B674 /* SceneDelegate.swift in Sources */,
 				639EE2402A8E317000A7B674 /* VideoTableViewCell.swift in Sources */,
+				639EE2462A8E3B2200A7B674 /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
