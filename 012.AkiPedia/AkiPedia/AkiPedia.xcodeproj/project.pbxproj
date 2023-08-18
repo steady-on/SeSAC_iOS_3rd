@@ -12,6 +12,7 @@
 		635459D92A8F6E3E00125296 /* ReuseIdentifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635459D82A8F6E3E00125296 /* ReuseIdentifying.swift */; };
 		635459DB2A8F7A8500125296 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635459DA2A8F7A8500125296 /* UIImageView+.swift */; };
 		635459DE2A8F815A00125296 /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635459DD2A8F815A00125296 /* MediaType.swift */; };
+		635459E02A8F866C00125296 /* TMDBData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635459DF2A8F866C00125296 /* TMDBData.swift */; };
 		639EE1DA2A8CD1BB00A7B674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE1D92A8CD1BB00A7B674 /* AppDelegate.swift */; };
 		639EE1DC2A8CD1BB00A7B674 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE1DB2A8CD1BB00A7B674 /* SceneDelegate.swift */; };
 		639EE1DE2A8CD1BB00A7B674 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE1DD2A8CD1BB00A7B674 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 		635459D82A8F6E3E00125296 /* ReuseIdentifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifying.swift; sourceTree = "<group>"; };
 		635459DA2A8F7A8500125296 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		635459DD2A8F815A00125296 /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
+		635459DF2A8F866C00125296 /* TMDBData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBData.swift; sourceTree = "<group>"; };
 		639EE1D62A8CD1BB00A7B674 /* AkiPedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AkiPedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639EE1D92A8CD1BB00A7B674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		639EE1DB2A8CD1BB00A7B674 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,7 +36,6 @@
 		639EE1E22A8CD1BD00A7B674 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		639EE1E52A8CD1BD00A7B674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		639EE1E72A8CD1BD00A7B674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		639EE1ED2A8CD1CF00A7B674 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = ../../../APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +202,7 @@
 				635459D92A8F6E3E00125296 /* ReuseIdentifying.swift in Sources */,
 				639EE1DE2A8CD1BB00A7B674 /* ViewController.swift in Sources */,
 				639EE1DA2A8CD1BB00A7B674 /* AppDelegate.swift in Sources */,
+				635459E02A8F866C00125296 /* TMDBData.swift in Sources */,
 				635459D42A8F4D5900125296 /* TintedLabel.swift in Sources */,
 				635459DB2A8F7A8500125296 /* UIImageView+.swift in Sources */,
 				639EE1DC2A8CD1BB00A7B674 /* SceneDelegate.swift in Sources */,
