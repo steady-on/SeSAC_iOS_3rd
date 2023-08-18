@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie {
+struct Movie: MediaProtocol {
     let id: Int
     let title, originalTitle: String
     let originalLanguage: String

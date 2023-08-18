@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct TV {
+struct TV: MediaProtocol {
     let id: Int
     let name, originalName: String
     let originalLanguage: String
     let originCountry: [String]
     let firstAirDate: String
-    let genreIDS: [Int]
+    let genreIDs: [Int]
     let backdropPath, posterPath: String
     let popularity: Double
     let adult: Bool
