@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		635459D42A8F4D5900125296 /* TintedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635459D32A8F4D5900125296 /* TintedLabel.swift */; };
 		639EE1DA2A8CD1BB00A7B674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE1D92A8CD1BB00A7B674 /* AppDelegate.swift */; };
 		639EE1DC2A8CD1BB00A7B674 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE1DB2A8CD1BB00A7B674 /* SceneDelegate.swift */; };
 		639EE1DE2A8CD1BB00A7B674 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE1DD2A8CD1BB00A7B674 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		635459D32A8F4D5900125296 /* TintedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintedLabel.swift; sourceTree = "<group>"; };
 		639EE1D62A8CD1BB00A7B674 /* AkiPedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AkiPedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639EE1D92A8CD1BB00A7B674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		639EE1DB2A8CD1BB00A7B674 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		635459CC2A8F41A100125296 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				639EE1DF2A8CD1BB00A7B674 /* Main.storyboard */,
+				635459CE2A8F489B00125296 /* MediaTableViewCell.swift */,
+				635459CF2A8F489B00125296 /* MediaTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		635459CD2A8F41B600125296 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				639EE1DD2A8CD1BB00A7B674 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		635459D22A8F4D3600125296 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				635459D32A8F4D5900125296 /* TintedLabel.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
 		639EE1CD2A8CD1BB00A7B674 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +91,7 @@
 				639EE1DD2A8CD1BB00A7B674 /* ViewController.swift */,
 				639EE1DF2A8CD1BB00A7B674 /* Main.storyboard */,
 				639EE1ED2A8CD1CF00A7B674 /* APIKey.swift */,
+				635459D22A8F4D3600125296 /* Product */,
 				639EE1E22A8CD1BD00A7B674 /* Assets.xcassets */,
 				639EE1E42A8CD1BD00A7B674 /* LaunchScreen.storyboard */,
 				639EE1E72A8CD1BD00A7B674 /* Info.plist */,
@@ -144,6 +173,7 @@
 				639EE1DE2A8CD1BB00A7B674 /* ViewController.swift in Sources */,
 				639EE1DA2A8CD1BB00A7B674 /* AppDelegate.swift in Sources */,
 				639EE1EE2A8CD1D000A7B674 /* APIKey.swift in Sources */,
+				635459D42A8F4D5900125296 /* TintedLabel.swift in Sources */,
 				639EE1DC2A8CD1BB00A7B674 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
