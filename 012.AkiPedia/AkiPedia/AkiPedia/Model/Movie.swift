@@ -1,0 +1,24 @@
+//
+//  Movie.swift
+//  AkiPedia
+//
+//  Created by Roen White on 2023/08/18.
+//
+
+import Foundation
+
+struct Movie {
+    let id: Int
+    let title, originalTitle: String
+    let originalLanguage: String
+    let releaseDate: String
+    let genreIDs: [Int]
+    let backdropPath, posterPath: String
+    let popularity: Double
+    let adult: Bool
+    let voteCount: Int
+    let voteAverage: Double
+    let overview: String
+    let video: Bool
+}
+
