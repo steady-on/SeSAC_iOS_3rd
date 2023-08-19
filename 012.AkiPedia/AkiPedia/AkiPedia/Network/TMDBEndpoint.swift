@@ -24,7 +24,6 @@ enum TMDBEndpoint {
     }
     
     var url: String {
-        
         let addedEndpointURLString = Self.baseURL + "/\(self.rawValue)/"
         
         switch self {
