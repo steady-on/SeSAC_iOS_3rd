@@ -75,7 +75,7 @@ struct KakaoAPIManager {
             let documents = searchResult.documents
             let videos = documents.map { document in
                 let playTime = document.playTime.convertTimeFormatString
-                let relativeDatetime = convertDateFormat(document.datetime)
+                let relativeDatetime = document.datetime.convertDateFormat ?? ""
                 
                 return Video(title: document.title, author: document.author, relativeDatetime: relativeDatetime, playTime: playTime, thumbnail: document.thumbnail, url: document.url)
             }
@@ -84,21 +84,5 @@ struct KakaoAPIManager {
         } catch {
             throw NetworkError.jsonParsingError
         }
-    }
-}
-
-extension KakaoAPIManager {
-    
-    
-    private static func convertDateFormat(_ date: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"  // "2023-08-09T16:45:02.000+09:00"
-        dateFormatter.timeZone = TimeZone(identifier: "Asia/Korea")
-        
-        if let date = dateFormatter.date(from: date) {
-            return date.relativeTimeToAbbreviated
-        }
-
-        return "정보없음"
     }
 }
