@@ -10,7 +10,7 @@ import Foundation
 protocol MediaProtocol {
     var id: Int { get }
     var originalLanguage: String { get }
-    var genreIDs: [Int] { get }
+    var genres: [String] { get }
     var backdropPath: String { get }
     var posterPath: String { get }
     var popularity: Double { get }
