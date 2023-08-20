@@ -28,7 +28,7 @@ enum TMDBEndpoint {
         
         switch self {
         case .genre(let mediaType):
-            return addedEndpointURLString + "\(mediaType.rawValue)"
+            return addedEndpointURLString + "\(mediaType.rawValue)/list"
         case .trending(let mediaType, let timeWindow):
             return addedEndpointURLString + "\(mediaType?.rawValue ?? "all")/\(timeWindow.rawValue)"
         case .detail(let mediaType, let id):
