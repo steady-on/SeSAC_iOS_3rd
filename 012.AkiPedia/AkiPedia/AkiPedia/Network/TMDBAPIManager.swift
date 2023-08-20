@@ -20,7 +20,32 @@ final class TMDBAPIManager {
     private var currentPage: Int = 1
     private var totalPage: Int = 0
     
-    func fetchTrendingAllData(pageUp: Bool = false, completionHandler: @escaping ([MediaProtocol]) -> Void,
+    private var genreForMovie = [Int: String]()
+    private var genreForTV = [Int: String]()
+    
+    private func fetchGenreData(for mediaType: MediaType) {
+        guard var urlComponents = URLComponents(string: TMDBEndpoint.genre(mediaType: mediaType).url) else { return }
+        
+        let language = URLQueryItem(name: "language", value: "ko")
+        urlComponents.queryItems = [language]
+        
+        performRequest(with: urlComponents) { (genres: [Genre]) in
+            switch mediaType {
+            case .movie:
+                genres.forEach { genre in
+                    self.genreForMovie[genre.id] = genre.name
+                }
+            case .tv:
+                genres.forEach { genre in
+                    self.genreForTV[genre.id] = genre.name
+                }
+            }
+        } errorHandler: { error in
+            print(error)
+        }
+    }
+    
+    private func fetchTrendingAllData(pageUp: Bool = false, completionHandler: @escaping ([MediaProtocol]) -> Void,
                               errorHandler: @escaping (TMDBAPINetworkError) -> Void) {
         guard var urlComponents = URLComponents(string: TMDBEndpoint.trending(mediaType: nil).url) else { return }
         
@@ -31,7 +56,7 @@ final class TMDBAPIManager {
         
         urlComponents.queryItems = [language]
         
-        performRequest(with: urlComponents) { [self] data in
+        performRequest(with: urlComponents) { [self] (data: TMDBData) in
             self.totalPage = data.totalPages
             let medium = convertResultToMediaProtocolStruct(data.results)
             completionHandler(medium)
@@ -53,10 +78,40 @@ final class TMDBAPIManager {
             
             switch mediaType {
             case .movie:
-                let movie = Movie(data: result)
+                let id = result.id
+                let title = result.title ?? ""
+                let originalTitle = result.originalTitle ?? ""
+                let originalLanguage = result.originalLanguage
+                let releaseDate = result.releaseDate ?? ""
+                let genre = result.genreIDS.map { genreForMovie[$0, default: ""] }
+                let backdropPath = result.backdropPath
+                let posterPath = result.posterPath
+                let popularity = result.popularity
+                let adult = result.adult
+                let voteCount = result.voteCount
+                let voteAverage = result.voteAverage
+                let overview = result.overview
+                let video = result.video ?? false
+                
+                let movie = Movie(id: id, title: title, originalTitle: originalTitle, originalLanguage: originalLanguage, releaseDate: releaseDate, genre: genre, backdropPath: backdropPath, posterPath: posterPath, popularity: popularity, adult: adult, voteCount: voteCount, voteAverage: voteAverage, overview: overview, video: video)
                 medium.append(movie)
             case .tv:
-                let tv = Movie(data: result)
+                let id = result.id
+                let name = result.name ?? ""
+                let originalName = result.originalName ?? ""
+                let originalLanguage = result.originalLanguage
+                let originCountry = result.originCountry ?? [String]()
+                let firstAirDate = result.firstAirDate ?? ""
+                let genre = result.genreIDS.map { genreForTV[$0, default: ""] }
+                let backdropPath = result.backdropPath
+                let posterPath = result.posterPath
+                let popularity = result.popularity
+                let adult = result.adult
+                let voteCount = result.voteCount
+                let voteAverage = result.voteAverage
+                let overview = result.overview
+                
+                let tv = TV(id: id, name: name, originalName: originalName, originalLanguage: originalLanguage, originCountry: originCountry, firstAirDate: firstAirDate, genre: genre, backdropPath: backdropPath, posterPath: posterPath, popularity: popularity, adult: adult, voteCount: voteCount, voteAverage: voteAverage, overview: overview)
                 medium.append(tv)
             }
         }
@@ -64,8 +119,8 @@ final class TMDBAPIManager {
         return medium
     }
     
-    private func performRequest(with urlComponents: URLComponents,
-                                completionHandler: @escaping (TMDBData) -> (),
+    private func performRequest<T:Decodable>(with urlComponents: URLComponents,
+                                completionHandler: @escaping (T) -> (),
                                 errorHandler: @escaping (TMDBAPINetworkError) -> ()) {
         
         guard let url = urlComponents.url else {
@@ -85,23 +140,23 @@ final class TMDBAPIManager {
                 return
             }
             
-            guard let tmdbData = parseJSON(data) else {
+            guard let decodedData: T = parseJSON(data) else {
                 errorHandler(.dataParsingError)
                 return
             }
             
-            completionHandler(tmdbData)
+            completionHandler(decodedData)
         }
 
         task.resume()
     }
     
-    private func parseJSON(_ jsonData: Data) -> TMDBData? {
+    private func parseJSON<T:Decodable>(_ jsonData: Data) -> T? {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
 
         do {
-            let decodedData = try decoder.decode(TMDBData.self, from: jsonData)
+            let decodedData = try decoder.decode(T.self, from: jsonData)
             return decodedData
         } catch {
             return nil
