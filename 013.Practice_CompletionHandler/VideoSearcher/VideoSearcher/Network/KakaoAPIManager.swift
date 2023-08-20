@@ -74,7 +74,7 @@ struct KakaoAPIManager {
             let searchResult = try decoder.decode(SearchResult.self, from: jsonData)
             let documents = searchResult.documents
             let videos = documents.map { document in
-                let playTime = convertTimeFormatString(document.playTime)
+                let playTime = document.playTime.convertTimeFormatString
                 let relativeDatetime = convertDateFormat(document.datetime)
                 
                 return Video(title: document.title, author: document.author, relativeDatetime: relativeDatetime, playTime: playTime, thumbnail: document.thumbnail, url: document.url)
@@ -88,9 +88,7 @@ struct KakaoAPIManager {
 }
 
 extension KakaoAPIManager {
-    private static func convertTimeFormatString(_ time: Int) -> String {
-        return "\(String(format: "%02d", time/60)):\(String(format: "%02d", time%60))"
-    }
+    
     
     private static func convertDateFormat(_ date: String) -> String {
         let dateFormatter = DateFormatter()
