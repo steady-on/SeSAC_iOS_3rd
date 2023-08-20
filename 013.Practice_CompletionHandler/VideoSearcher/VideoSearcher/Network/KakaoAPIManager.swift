@@ -32,7 +32,9 @@ struct KakaoAPIManager {
         urlComponents.queryItems = [query, size]
         
         performRequest(with: urlComponents) { videos in
-            completionHandler(videos)
+            DispatchQueue.main.async {
+                completionHandler(videos)
+            }
         } errorHandler: { error in
             errorHandler(error)
         }

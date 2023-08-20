@@ -27,9 +27,7 @@ extension MainViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else { return }
         KakaoAPIManager.search(for: query) { videos in
-            DispatchQueue.main.async {
-                self.videos = videos
-            }
+            self.videos = videos
         } errorHandler: { error in
             print(error)
         }
