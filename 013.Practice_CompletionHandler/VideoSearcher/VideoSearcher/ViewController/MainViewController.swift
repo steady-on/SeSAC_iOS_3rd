@@ -29,7 +29,7 @@ extension MainViewController: UISearchBarDelegate {
         KakaoAPIManager.search(for: query) { videos in
             self.videos = videos
         } errorHandler: { error in
-            print(error)
+            self.showErrorAlert(title: "Error", message: error.debugDescription)
         }
     }
 }
