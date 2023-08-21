@@ -8,55 +8,7 @@
 import UIKit
 
 class MediaTypeLabel: UILabel {
-    var mediaType = MediaType.movie
     var insetPadding = UIEdgeInsets(top: 4.0, left: 4.0, bottom: 4.0, right: 4.0)
-    
-    override var text: String? {
-        get { self.text }
-        set {
-            switch mediaType {
-            case .movie: self.text = mediaType.labelText
-            case .tv: self.text = mediaType.labelText
-            }
-        }
-    }
-    
-    override var backgroundColor: UIColor? {
-        get { self.backgroundColor }
-        set {
-            switch mediaType {
-            case .movie:
-                self.backgroundColor = UIColor.systemIndigo.withAlphaComponent(0.2)
-            case .tv:
-                self.backgroundColor = UIColor.systemPink.withAlphaComponent(0.2)
-            }
-        }
-    }
-    
-    override var font: UIFont! {
-        get { self.font }
-        set { self.font = .preferredFont(forTextStyle: .callout) }
-    }
-    
-    override var textColor: UIColor! {
-        get { self.textColor }
-        set {
-            switch mediaType {
-            case .movie: self.textColor = .systemIndigo
-            case .tv: self.textColor = .systemPink
-            }
-        }
-    }
-    
-    override var textAlignment: NSTextAlignment {
-        get { self.textAlignment }
-        set { self.textAlignment = .center }
-    }
-    
-    private var cornerRadius: CGFloat {
-        get { layer.cornerRadius }
-        set { layer.cornerRadius = 15 }
-    }
     
     override func drawText(in rect: CGRect) {
         super.drawText(in: rect.inset(by: insetPadding))
