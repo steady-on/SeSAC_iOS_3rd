@@ -16,9 +16,32 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="트렌드 랭킹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82F-SN-tFO">
+                                <rect key="frame" x="16" y="59" width="128" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mo2-zs-Xhu">
+                                <rect key="frame" x="0.0" y="93" width="393" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mo2-zs-Xhu" secondAttribute="trailing" id="FD9-xX-Ttt"/>
+                            <constraint firstItem="mo2-zs-Xhu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ni9-FB-neF"/>
+                            <constraint firstItem="mo2-zs-Xhu" firstAttribute="top" secondItem="82F-SN-tFO" secondAttribute="bottom" id="UYo-hf-ZF7"/>
+                            <constraint firstItem="82F-SN-tFO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bzc-nH-s5c"/>
+                            <constraint firstItem="82F-SN-tFO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sNk-gm-clk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mo2-zs-Xhu" secondAttribute="bottom" id="wrg-o2-TUW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="trendRankingTableView" destination="mo2-zs-Xhu" id="M0m-Gv-syj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,11 +9,11 @@ import UIKit
 
 class TrendRankingViewController: UIViewController {
 
+    @IBOutlet weak var trendRankingTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
 }
 
