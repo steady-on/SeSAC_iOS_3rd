@@ -15,5 +15,7 @@ class TrendRankingViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    
+
 }
 

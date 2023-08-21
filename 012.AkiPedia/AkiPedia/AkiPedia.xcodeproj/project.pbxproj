@@ -14,6 +14,8 @@
 		63545A332A93370800125296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63545A322A93370800125296 /* Assets.xcassets */; };
 		63545A362A93370800125296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63545A342A93370800125296 /* LaunchScreen.storyboard */; };
 		63545A3E2A9337C800125296 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A3D2A9337C800125296 /* APIKey.swift */; };
+		63545A462A933C9B00125296 /* TrendRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A442A933C9B00125296 /* TrendRankingTableViewCell.swift */; };
+		63545A472A933C9B00125296 /* TrendRankingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63545A452A933C9B00125296 /* TrendRankingTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		63545A352A93370800125296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63545A372A93370800125296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63545A3D2A9337C800125296 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		63545A442A933C9B00125296 /* TrendRankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendRankingTableViewCell.swift; sourceTree = "<group>"; };
+		63545A452A933C9B00125296 /* TrendRankingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendRankingTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 				63545A2B2A93370600125296 /* SceneDelegate.swift */,
 				63545A3F2A9337F900125296 /* View */,
 				63545A402A9337FF00125296 /* ViewController */,
+				63545A482A934FCF00125296 /* Product */,
 				63545A412A93380F00125296 /* Network */,
 				63545A322A93370800125296 /* Assets.xcassets */,
 				63545A342A93370800125296 /* LaunchScreen.storyboard */,
@@ -74,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				63545A2F2A93370600125296 /* Main.storyboard */,
+				63545A442A933C9B00125296 /* TrendRankingTableViewCell.swift */,
+				63545A452A933C9B00125296 /* TrendRankingTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -92,6 +99,13 @@
 				63545A3D2A9337C800125296 /* APIKey.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		63545A482A934FCF00125296 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Product;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63545A472A933C9B00125296 /* TrendRankingTableViewCell.xib in Resources */,
 				63545A362A93370800125296 /* LaunchScreen.storyboard in Resources */,
 				63545A332A93370800125296 /* Assets.xcassets in Resources */,
 				63545A312A93370600125296 /* Main.storyboard in Resources */,
@@ -165,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63545A462A933C9B00125296 /* TrendRankingTableViewCell.swift in Sources */,
 				63545A2E2A93370600125296 /* TrendRankingViewController.swift in Sources */,
 				63545A2A2A93370600125296 /* AppDelegate.swift in Sources */,
 				63545A3E2A9337C800125296 /* APIKey.swift in Sources */,
