@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,8 +25,8 @@
                             <constraint firstAttribute="width" secondItem="m73-QT-4P2" secondAttribute="height" multiplier="16:9" id="vp7-qz-eeF"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="경이로운 소문" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgL-54-eFU">
-                        <rect key="frame" x="16.000000000000007" y="220.66666666666666" width="108.66666666666669" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="경이로운 소문" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgL-54-eFU">
+                        <rect key="frame" x="16" y="220.66666666666666" width="307.33333333333331" height="24"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -49,15 +50,41 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="pG8-kd-UEr">
+                        <rect key="frame" x="333.33333333333331" y="222.66666666666666" width="46.666666666666686" height="22"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2va-T2-x72">
+                                <rect key="frame" x="0.0" y="-0.33333333333333215" width="22" height="21.666666666666664"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2va-T2-x72" secondAttribute="height" multiplier="1:1" id="g4J-qs-ffm"/>
+                                </constraints>
+                                <imageReference key="image" image="star.fill" catalog="system" renderingMode="hierarchical-single">
+                                    <hierarchicalColors>
+                                        <color systemColor="systemPinkColor"/>
+                                        <color systemColor="secondaryLabelColor"/>
+                                        <color systemColor="tertiaryLabelColor"/>
+                                    </hierarchicalColors>
+                                </imageReference>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcX-dN-slR">
+                                <rect key="frame" x="24" y="0.0" width="22.666666666666671" height="22"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="pG8-kd-UEr" firstAttribute="trailing" secondItem="m73-QT-4P2" secondAttribute="trailing" id="0JY-yg-M1k"/>
+                    <constraint firstItem="pG8-kd-UEr" firstAttribute="leading" secondItem="dgL-54-eFU" secondAttribute="trailing" constant="10" id="3sA-Lb-ay1"/>
                     <constraint firstItem="VKO-cv-04y" firstAttribute="top" secondItem="dgL-54-eFU" secondAttribute="bottom" id="574-Cd-UzV"/>
                     <constraint firstItem="dgL-54-eFU" firstAttribute="leading" secondItem="m73-QT-4P2" secondAttribute="leading" id="69U-c2-5ei"/>
                     <constraint firstItem="dmL-x4-bdJ" firstAttribute="leading" secondItem="m73-QT-4P2" secondAttribute="leading" id="7e5-Be-9XJ"/>
                     <constraint firstAttribute="trailing" secondItem="m73-QT-4P2" secondAttribute="trailing" constant="16" id="8G5-9n-io7"/>
+                    <constraint firstItem="pG8-kd-UEr" firstAttribute="bottom" secondItem="dgL-54-eFU" secondAttribute="bottom" id="FsW-3r-rJV"/>
                     <constraint firstItem="m73-QT-4P2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="KRt-Zk-Hc0"/>
                     <constraint firstItem="e8S-uY-7FW" firstAttribute="leading" secondItem="m73-QT-4P2" secondAttribute="leading" constant="8" id="PtZ-Tr-AHQ"/>
-                    <constraint firstItem="dgL-54-eFU" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="m73-QT-4P2" secondAttribute="trailing" id="Q0z-Ae-1wE"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dmL-x4-bdJ" secondAttribute="bottom" constant="8" id="QfA-D9-gTA"/>
                     <constraint firstItem="VKO-cv-04y" firstAttribute="trailing" secondItem="m73-QT-4P2" secondAttribute="trailing" id="W6a-qF-aGq"/>
                     <constraint firstItem="m73-QT-4P2" firstAttribute="bottom" secondItem="e8S-uY-7FW" secondAttribute="bottom" constant="8" id="bGe-Px-qRf"/>
@@ -74,17 +101,28 @@
                 <outlet property="genresLabel" destination="dmL-x4-bdJ" id="kh6-uK-ybn"/>
                 <outlet property="mediaTypeLabel" destination="e8S-uY-7FW" id="d9p-QO-wsB"/>
                 <outlet property="overviewTextView" destination="VKO-cv-04y" id="34o-d6-Nvx"/>
+                <outlet property="ratingLabel" destination="IcX-dN-slR" id="Ah7-TB-c9n"/>
                 <outlet property="titleLabel" destination="dgL-54-eFU" id="5Ap-TI-Eu7"/>
             </connections>
             <point key="canvasLocation" x="187.78625954198472" y="108.80281690140846"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

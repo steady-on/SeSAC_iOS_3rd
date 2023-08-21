@@ -14,6 +14,7 @@ class TrendRankingTableViewCell: UITableViewCell, ReuseIdentifying {
     @IBOutlet weak var overviewTextView: UITextView!
     @IBOutlet weak var genresLabel: UILabel!
     @IBOutlet weak var mediaTypeLabel: MediaTypeLabel!
+    @IBOutlet weak var ratingLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -61,6 +62,10 @@ extension TrendRankingTableViewCell {
     private func designGenresLabel() {
         genresLabel.font = .preferredFont(forTextStyle: .caption1)
         genresLabel.numberOfLines = 0
+    }
+    
+    private func designRatingLabel() {
+        ratingLabel.font = .preferredFont(forTextStyle: .callout)
     }
     
     func designMediaTypeLabel(_ mediaType: MediaType) {
