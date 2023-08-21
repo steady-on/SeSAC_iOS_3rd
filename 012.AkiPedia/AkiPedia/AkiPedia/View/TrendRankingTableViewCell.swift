@@ -13,6 +13,7 @@ class TrendRankingTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var overviewTextView: UITextView!
     @IBOutlet weak var genresLabel: UILabel!
+    @IBOutlet weak var mediaTypeLabel: MediaTypeLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

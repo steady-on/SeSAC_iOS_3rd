@@ -16,6 +16,7 @@
 		63545A3E2A9337C800125296 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A3D2A9337C800125296 /* APIKey.swift */; };
 		63545A462A933C9B00125296 /* TrendRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A442A933C9B00125296 /* TrendRankingTableViewCell.swift */; };
 		63545A472A933C9B00125296 /* TrendRankingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63545A452A933C9B00125296 /* TrendRankingTableViewCell.xib */; };
+		63545A4A2A9354A700125296 /* MediaTypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A492A9354A700125296 /* MediaTypeLabel.swift */; };
 		63545A4D2A93572B00125296 /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A4C2A93572B00125296 /* MediaType.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		63545A3D2A9337C800125296 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		63545A442A933C9B00125296 /* TrendRankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendRankingTableViewCell.swift; sourceTree = "<group>"; };
 		63545A452A933C9B00125296 /* TrendRankingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendRankingTableViewCell.xib; sourceTree = "<group>"; };
+		63545A492A9354A700125296 /* MediaTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTypeLabel.swift; sourceTree = "<group>"; };
 		63545A4C2A93572B00125296 /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 		63545A482A934FCF00125296 /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				63545A492A9354A700125296 /* MediaTypeLabel.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				63545A2A2A93370600125296 /* AppDelegate.swift in Sources */,
 				63545A3E2A9337C800125296 /* APIKey.swift in Sources */,
 				63545A2C2A93370600125296 /* SceneDelegate.swift in Sources */,
+				63545A4A2A9354A700125296 /* MediaTypeLabel.swift in Sources */,
 				63545A4D2A93572B00125296 /* MediaType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

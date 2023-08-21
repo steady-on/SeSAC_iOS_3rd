@@ -43,7 +43,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8S-uY-7FW">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8S-uY-7FW" customClass="MediaTypeLabel" customModule="AkiPedia" customModuleProvider="target">
                         <rect key="frame" x="24" y="190.33333333333334" width="34" height="14.333333333333343"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                         <nil key="textColor"/>
@@ -72,7 +72,7 @@
             <connections>
                 <outlet property="backdropImageView" destination="m73-QT-4P2" id="Glq-vm-tEF"/>
                 <outlet property="genresLabel" destination="dmL-x4-bdJ" id="kh6-uK-ybn"/>
-                <outlet property="mediaTypeLabel" destination="e8S-uY-7FW" id="GKB-W8-eXD"/>
+                <outlet property="mediaTypeLabel" destination="e8S-uY-7FW" id="d9p-QO-wsB"/>
                 <outlet property="overviewTextView" destination="VKO-cv-04y" id="34o-d6-Nvx"/>
                 <outlet property="titleLabel" destination="dgL-54-eFU" id="5Ap-TI-Eu7"/>
             </connections>
