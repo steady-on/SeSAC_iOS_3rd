@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TrendRankingTableViewCell: UITableViewCell {
+class TrendRankingTableViewCell: UITableViewCell, ReuseIdentifying {
 
     @IBOutlet weak var backdropImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
