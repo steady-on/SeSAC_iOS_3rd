@@ -25,14 +25,14 @@ class TrendRankingTableViewCell: UITableViewCell, ReuseIdentifying {
         resetCellInfo()
     }
     
-    func setUpDesignForUI() {
+    private func setUpDesignForUI() {
         designBackdropImageView()
         designTitleLabel()
         designOverviewTextView()
         designGenresLabel()
     }
     
-    func resetCellInfo() {
+    private func resetCellInfo() {
         backdropImageView.image = nil
         titleLabel.text = nil
         overviewTextView.text = ""
@@ -41,25 +41,69 @@ class TrendRankingTableViewCell: UITableViewCell, ReuseIdentifying {
 }
 
 extension TrendRankingTableViewCell {
-    func designBackdropImageView() {
+    private func designBackdropImageView() {
         backdropImageView.layer.cornerRadius = 15
     }
     
-    func designTitleLabel() {
-        titleLabel.font = .preferredFont(forTextStyle: .title2, compatibleWith: UITraitCollection(legibilityWeight: .bold))
+    private func designTitleLabel() {
+        titleLabel.font = .preferredFont(forTextStyle: .body)
         titleLabel.numberOfLines = 0
     }
     
-    func designOverviewTextView() {
-        overviewTextView.font = .preferredFont(forTextStyle: .body)
-        overviewTextView.textColor = .systemGray5
+    private func designOverviewTextView() {
+        overviewTextView.font = .preferredFont(forTextStyle: .callout)
+        overviewTextView.textColor = .lightGray
         overviewTextView.isScrollEnabled = false
         overviewTextView.isEditable = false
         overviewTextView.isSelectable = false
     }
     
-    func designGenresLabel() {
-        genresLabel.font = .preferredFont(forTextStyle: .callout)
+    private func designGenresLabel() {
+        genresLabel.font = .preferredFont(forTextStyle: .caption1)
         genresLabel.numberOfLines = 0
+    }
+    
+    func designMediaTypeLabel(_ mediaType: MediaType) {
+        let mediaType = MediaTypeLabelAttribute(mediaType: mediaType)
+        
+        mediaTypeLabel.text = mediaType.text
+        mediaTypeLabel.font = .preferredFont(forTextStyle: .caption1)
+        mediaTypeLabel.textColor = mediaType.textColor
+        mediaTypeLabel.backgroundColor = mediaType.backgroundColor
+        mediaTypeLabel.layer.cornerRadius = 5
+        mediaTypeLabel.layer.masksToBounds = true
+    }
+}
+
+fileprivate enum MediaTypeLabelAttribute: String {
+    case movie
+    case tv
+    
+    init(mediaType: MediaType) {
+        switch mediaType {
+        case .movie: self = .movie
+        case .tv: self = .tv
+        }
+    }
+    
+    var text: String {
+        switch self {
+        case .movie: return self.rawValue.capitalized
+        case .tv: return self.rawValue.uppercased()
+        }
+    }
+    
+    var backgroundColor: UIColor {
+        switch self {
+        case .movie: return .systemIndigo.withAlphaComponent(0.3)
+        case .tv: return .systemPink.withAlphaComponent(0.3)
+        }
+    }
+    
+    var textColor: UIColor {
+        switch self {
+        case .movie: return .systemIndigo
+        case .tv: return .systemPink
+        }
     }
 }
