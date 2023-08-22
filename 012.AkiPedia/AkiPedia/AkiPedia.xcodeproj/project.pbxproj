@@ -19,6 +19,8 @@
 		63545A4A2A9354A700125296 /* MediaTypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A492A9354A700125296 /* MediaTypeLabel.swift */; };
 		63545A4D2A93572B00125296 /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A4C2A93572B00125296 /* MediaType.swift */; };
 		63545A502A93682D00125296 /* ReuseIdentifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A4F2A93682D00125296 /* ReuseIdentifying.swift */; };
+		63545A522A93922900125296 /* AllTrendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A512A93922900125296 /* AllTrendData.swift */; };
+		63545A552A93940400125296 /* GenreGenreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A542A93940400125296 /* GenreGenreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		63545A492A9354A700125296 /* MediaTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTypeLabel.swift; sourceTree = "<group>"; };
 		63545A4C2A93572B00125296 /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
 		63545A4F2A93682D00125296 /* ReuseIdentifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifying.swift; sourceTree = "<group>"; };
+		63545A512A93922900125296 /* AllTrendData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTrendData.swift; sourceTree = "<group>"; };
+		63545A542A93940400125296 /* GenreGenreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreGenreData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				63545A3D2A9337C800125296 /* APIKey.swift */,
+				63545A532A93934700125296 /* NetworkingModel */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -131,6 +136,15 @@
 				63545A4F2A93682D00125296 /* ReuseIdentifying.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		63545A532A93934700125296 /* NetworkingModel */ = {
+			isa = PBXGroup;
+			children = (
+				63545A512A93922900125296 /* AllTrendData.swift */,
+				63545A542A93940400125296 /* GenreGenreData.swift */,
+			);
+			path = NetworkingModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,8 +225,10 @@
 				63545A3E2A9337C800125296 /* APIKey.swift in Sources */,
 				63545A2C2A93370600125296 /* SceneDelegate.swift in Sources */,
 				63545A4A2A9354A700125296 /* MediaTypeLabel.swift in Sources */,
+				63545A522A93922900125296 /* AllTrendData.swift in Sources */,
 				63545A4D2A93572B00125296 /* MediaType.swift in Sources */,
 				63545A502A93682D00125296 /* ReuseIdentifying.swift in Sources */,
+				63545A552A93940400125296 /* GenreGenreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
