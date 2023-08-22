@@ -14,6 +14,7 @@
 		63545A9C2A949CC900125296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63545A9B2A949CC900125296 /* Assets.xcassets */; };
 		63545A9F2A949CC900125296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63545A9D2A949CC900125296 /* LaunchScreen.storyboard */; };
 		63545AA92A94A38300125296 /* FirstExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545AA82A94A38300125296 /* FirstExampleViewController.swift */; };
+		63545AAB2A94AEDA00125296 /* SecondExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545AAA2A94AEDA00125296 /* SecondExampleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		63545A9E2A949CC900125296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63545AA02A949CC900125296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63545AA82A94A38300125296 /* FirstExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstExampleViewController.swift; sourceTree = "<group>"; };
+		63545AAA2A94AEDA00125296 /* SecondExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondExampleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				63545A962A949CC800125296 /* ViewController.swift */,
 				63545AA82A94A38300125296 /* FirstExampleViewController.swift */,
+				63545AAA2A94AEDA00125296 /* SecondExampleViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			files = (
 				63545AA92A94A38300125296 /* FirstExampleViewController.swift in Sources */,
 				63545A972A949CC800125296 /* ViewController.swift in Sources */,
+				63545AAB2A94AEDA00125296 /* SecondExampleViewController.swift in Sources */,
 				63545A932A949CC800125296 /* AppDelegate.swift in Sources */,
 				63545A952A949CC800125296 /* SceneDelegate.swift in Sources */,
 			);

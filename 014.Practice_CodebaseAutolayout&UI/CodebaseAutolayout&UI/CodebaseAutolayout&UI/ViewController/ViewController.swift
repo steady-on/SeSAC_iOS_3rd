@@ -45,10 +45,17 @@ class ViewController: UIViewController {
         setUpConstraints()
         
         firstExampleViewButton.addTarget(self, action: #selector(presentFirstExampleView), for: .touchUpInside)
+        secondExampleViewButton.addTarget(self, action: #selector(moveToSecondExampleView), for: .touchUpInside)
     }
     
     @objc func presentFirstExampleView() {
         present(FirstExampleViewController(), animated: true)
+    }
+    
+    @objc func moveToSecondExampleView() {
+        navigationItem.backBarButtonItem = nil
+        navigationController?.navigationBar.barTintColor = .clear
+        navigationController?.pushViewController(SecondExampleViewController(), animated: true)
     }
     
     func setUpConstraints() {
