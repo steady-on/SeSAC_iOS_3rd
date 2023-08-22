@@ -21,6 +21,9 @@
 		63545A502A93682D00125296 /* ReuseIdentifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A4F2A93682D00125296 /* ReuseIdentifying.swift */; };
 		63545A522A93922900125296 /* AllTrendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A512A93922900125296 /* AllTrendData.swift */; };
 		63545A552A93940400125296 /* GenreGenreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A542A93940400125296 /* GenreGenreData.swift */; };
+		63545A572A94347600125296 /* MediaProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A562A94347600125296 /* MediaProtocol.swift */; };
+		63545A592A9435F300125296 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A582A9435F300125296 /* Movie.swift */; };
+		63545A5B2A94385F00125296 /* Tv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545A5A2A94385F00125296 /* Tv.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		63545A4F2A93682D00125296 /* ReuseIdentifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifying.swift; sourceTree = "<group>"; };
 		63545A512A93922900125296 /* AllTrendData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTrendData.swift; sourceTree = "<group>"; };
 		63545A542A93940400125296 /* GenreGenreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreGenreData.swift; sourceTree = "<group>"; };
+		63545A562A94347600125296 /* MediaProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaProtocol.swift; sourceTree = "<group>"; };
+		63545A582A9435F300125296 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		63545A5A2A94385F00125296 /* Tv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tv.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				63545A4C2A93572B00125296 /* MediaType.swift */,
+				63545A562A94347600125296 /* MediaProtocol.swift */,
+				63545A582A9435F300125296 /* Movie.swift */,
+				63545A5A2A94385F00125296 /* Tv.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +230,7 @@
 			files = (
 				63545A462A933C9B00125296 /* TrendRankingTableViewCell.swift in Sources */,
 				63545A2E2A93370600125296 /* TrendRankingViewController.swift in Sources */,
+				63545A592A9435F300125296 /* Movie.swift in Sources */,
 				63545A2A2A93370600125296 /* AppDelegate.swift in Sources */,
 				63545A3E2A9337C800125296 /* APIKey.swift in Sources */,
 				63545A2C2A93370600125296 /* SceneDelegate.swift in Sources */,
@@ -228,6 +238,8 @@
 				63545A522A93922900125296 /* AllTrendData.swift in Sources */,
 				63545A4D2A93572B00125296 /* MediaType.swift in Sources */,
 				63545A502A93682D00125296 /* ReuseIdentifying.swift in Sources */,
+				63545A572A94347600125296 /* MediaProtocol.swift in Sources */,
+				63545A5B2A94385F00125296 /* Tv.swift in Sources */,
 				63545A552A93940400125296 /* GenreGenreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
