@@ -43,6 +43,12 @@ class ViewController: UIViewController {
         }
         
         setUpConstraints()
+        
+        firstExampleViewButton.addTarget(self, action: #selector(presentFirstExampleView), for: .touchUpInside)
+    }
+    
+    @objc func presentFirstExampleView() {
+        present(FirstExampleViewController(), animated: true)
     }
     
     func setUpConstraints() {
