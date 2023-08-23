@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MapKit
 
-class ViewController: UIViewController {
+class TheaterMapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
