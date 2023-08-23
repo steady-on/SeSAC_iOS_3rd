@@ -19,6 +19,7 @@
 		63545AB12A94DABD00125296 /* Cafe24Supermagic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63545AAF2A94DAB900125296 /* Cafe24Supermagic-Bold.ttf */; };
 		63545AB22A94DAC100125296 /* Cafe24Supermagic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63545AB02A94DAB900125296 /* Cafe24Supermagic-Regular.ttf */; };
 		63545AB52A94DB6F00125296 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545AB42A94DB6F00125296 /* UIFont+.swift */; };
+		63FAAAA42A95EEAA0050BF9F /* MessageBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAAA32A95EEAA0050BF9F /* MessageBubbleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		63545AAF2A94DAB900125296 /* Cafe24Supermagic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cafe24Supermagic-Bold.ttf"; sourceTree = "<group>"; };
 		63545AB02A94DAB900125296 /* Cafe24Supermagic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cafe24Supermagic-Regular.ttf"; sourceTree = "<group>"; };
 		63545AB42A94DB6F00125296 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		63FAAAA32A95EEAA0050BF9F /* MessageBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubbleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				63545A942A949CC800125296 /* SceneDelegate.swift */,
 				63545AA62A94A36A00125296 /* View */,
 				63545AA72A94A37000125296 /* ViewController */,
+				63FAAAA52A95EEB00050BF9F /* Product */,
 				63545AB32A94DB5D00125296 /* Extension */,
 				63545AAE2A94DA9F00125296 /* Fonts */,
 				63545A9B2A949CC900125296 /* Assets.xcassets */,
@@ -115,6 +118,14 @@
 				63545AB42A94DB6F00125296 /* UIFont+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		63FAAAA52A95EEB00050BF9F /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				63FAAAA32A95EEAA0050BF9F /* MessageBubbleView.swift */,
+			);
+			path = Product;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +207,7 @@
 				63545AB52A94DB6F00125296 /* UIFont+.swift in Sources */,
 				63545A932A949CC800125296 /* AppDelegate.swift in Sources */,
 				63545AAD2A94D7F800125296 /* ThirdExampleViewController.swift in Sources */,
+				63FAAAA42A95EEAA0050BF9F /* MessageBubbleView.swift in Sources */,
 				63545A952A949CC800125296 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
