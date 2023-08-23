@@ -33,6 +33,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.definesPresentationContext = true
         
         view.backgroundColor = .systemBackground
         
@@ -46,6 +47,7 @@ class ViewController: UIViewController {
         
         firstExampleViewButton.addTarget(self, action: #selector(presentFirstExampleView), for: .touchUpInside)
         secondExampleViewButton.addTarget(self, action: #selector(moveToSecondExampleView), for: .touchUpInside)
+        thirdExampleViewButton.addTarget(self, action: #selector(presentThirdExampleView), for: .touchUpInside)
     }
     
     @objc func presentFirstExampleView() {
@@ -56,6 +58,12 @@ class ViewController: UIViewController {
         navigationItem.backBarButtonItem = nil
         navigationController?.navigationBar.barTintColor = .clear
         navigationController?.pushViewController(SecondExampleViewController(), animated: true)
+    }
+    
+    @objc func presentThirdExampleView() {
+        let thirdExampleViewController = ThirdExampleViewController()
+        thirdExampleViewController.modalPresentationStyle = .overFullScreen
+        present(thirdExampleViewController, animated: true)
     }
     
     func setUpConstraints() {

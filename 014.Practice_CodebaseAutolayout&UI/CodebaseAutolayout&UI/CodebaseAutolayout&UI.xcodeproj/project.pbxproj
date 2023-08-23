@@ -15,6 +15,10 @@
 		63545A9F2A949CC900125296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63545A9D2A949CC900125296 /* LaunchScreen.storyboard */; };
 		63545AA92A94A38300125296 /* FirstExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545AA82A94A38300125296 /* FirstExampleViewController.swift */; };
 		63545AAB2A94AEDA00125296 /* SecondExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545AAA2A94AEDA00125296 /* SecondExampleViewController.swift */; };
+		63545AAD2A94D7F800125296 /* ThirdExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545AAC2A94D7F800125296 /* ThirdExampleViewController.swift */; };
+		63545AB12A94DABD00125296 /* Cafe24Supermagic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63545AAF2A94DAB900125296 /* Cafe24Supermagic-Bold.ttf */; };
+		63545AB22A94DAC100125296 /* Cafe24Supermagic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63545AB02A94DAB900125296 /* Cafe24Supermagic-Regular.ttf */; };
+		63545AB52A94DB6F00125296 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63545AB42A94DB6F00125296 /* UIFont+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		63545AA02A949CC900125296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63545AA82A94A38300125296 /* FirstExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstExampleViewController.swift; sourceTree = "<group>"; };
 		63545AAA2A94AEDA00125296 /* SecondExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondExampleViewController.swift; sourceTree = "<group>"; };
+		63545AAC2A94D7F800125296 /* ThirdExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdExampleViewController.swift; sourceTree = "<group>"; };
+		63545AAF2A94DAB900125296 /* Cafe24Supermagic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cafe24Supermagic-Bold.ttf"; sourceTree = "<group>"; };
+		63545AB02A94DAB900125296 /* Cafe24Supermagic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cafe24Supermagic-Regular.ttf"; sourceTree = "<group>"; };
+		63545AB42A94DB6F00125296 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,8 @@
 				63545A942A949CC800125296 /* SceneDelegate.swift */,
 				63545AA62A94A36A00125296 /* View */,
 				63545AA72A94A37000125296 /* ViewController */,
+				63545AB32A94DB5D00125296 /* Extension */,
+				63545AAE2A94DA9F00125296 /* Fonts */,
 				63545A9B2A949CC900125296 /* Assets.xcassets */,
 				63545A9D2A949CC900125296 /* LaunchScreen.storyboard */,
 				63545AA02A949CC900125296 /* Info.plist */,
@@ -85,8 +95,26 @@
 				63545A962A949CC800125296 /* ViewController.swift */,
 				63545AA82A94A38300125296 /* FirstExampleViewController.swift */,
 				63545AAA2A94AEDA00125296 /* SecondExampleViewController.swift */,
+				63545AAC2A94D7F800125296 /* ThirdExampleViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		63545AAE2A94DA9F00125296 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				63545AAF2A94DAB900125296 /* Cafe24Supermagic-Bold.ttf */,
+				63545AB02A94DAB900125296 /* Cafe24Supermagic-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		63545AB32A94DB5D00125296 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				63545AB42A94DB6F00125296 /* UIFont+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +175,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63545AB12A94DABD00125296 /* Cafe24Supermagic-Bold.ttf in Resources */,
 				63545A9F2A949CC900125296 /* LaunchScreen.storyboard in Resources */,
+				63545AB22A94DAC100125296 /* Cafe24Supermagic-Regular.ttf in Resources */,
 				63545A9C2A949CC900125296 /* Assets.xcassets in Resources */,
 				63545A9A2A949CC800125296 /* Main.storyboard in Resources */,
 			);
@@ -163,7 +193,9 @@
 				63545AA92A94A38300125296 /* FirstExampleViewController.swift in Sources */,
 				63545A972A949CC800125296 /* ViewController.swift in Sources */,
 				63545AAB2A94AEDA00125296 /* SecondExampleViewController.swift in Sources */,
+				63545AB52A94DB6F00125296 /* UIFont+.swift in Sources */,
 				63545A932A949CC800125296 /* AppDelegate.swift in Sources */,
+				63545AAD2A94D7F800125296 /* ThirdExampleViewController.swift in Sources */,
 				63545A952A949CC800125296 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
