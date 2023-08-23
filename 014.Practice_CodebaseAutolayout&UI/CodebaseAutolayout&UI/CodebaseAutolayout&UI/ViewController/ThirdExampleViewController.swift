@@ -186,4 +186,23 @@ class ThirdExampleViewController: UIViewController {
             messageStackView.addArrangedSubview(view)
         }
     }
+    
+    func putInBubble(for subview: UIView) -> UIView {
+        let bubbleView = UIView()
+        
+        bubbleView.backgroundColor = .white
+        bubbleView.layer.cornerRadius = 15
+        
+        bubbleView.addSubview(subview)
+        
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            subview.topAnchor.constraint(equalTo: bubbleView.layoutMarginsGuide.topAnchor),
+            subview.leadingAnchor.constraint(equalTo: bubbleView.layoutMarginsGuide.leadingAnchor),
+            subview.trailingAnchor.constraint(equalTo: bubbleView.layoutMarginsGuide.trailingAnchor),
+            subview.bottomAnchor.constraint(equalTo: bubbleView.layoutMarginsGuide.bottomAnchor)
+        ])
+        
+        return bubbleView
+    }
 }
