@@ -41,7 +41,7 @@ class ThirdExampleViewController: UIViewController {
     lazy var locationLabel: UILabel = {
         let label = UILabel()
         label.text = "서울, 신림동"
-        label.font = UIFont(customFont: .cafe24SupermagicRegular, size: 20)
+        label.font = UIFont(customFont: .cafe24SupermagicRegular, size: 24)
         label.textColor = .white
         return label
     }()
@@ -67,25 +67,11 @@ class ThirdExampleViewController: UIViewController {
         return stack
     }()
     
-    lazy var messageViewGroup: [UIView] = {
-        var viewGroup = [UIView]()
-        
-        for chat in chats {
-            let label = UILabel()
-            label.text = chat
-            label.font = UIFont(customFont: .cafe24SupermagicRegular, size: 17)
-            label.numberOfLines = 0
-            
-            viewGroup.append(label)
-        }
-        
-        let weatherImageView = UIImageView()
-        weatherImageView.image = UIImage(named: "cloud")
-        weatherImageView.contentMode = .scaleAspectFit
-        
-        viewGroup.insert(weatherImageView, at: viewGroup.endIndex - 1)
-        
-        return viewGroup
+    lazy var weatherImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "cloud")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
 
     override func viewDidLoad() {
@@ -94,7 +80,6 @@ class ThirdExampleViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setUpConstraints()
     }
-    
     
     private func setUpConstraints() {
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -146,7 +131,6 @@ class ThirdExampleViewController: UIViewController {
             rewindButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor)
         ])
         
-        
         shareButton.translatesAutoresizingMaskIntoConstraints = false
         headerView.addSubview(shareButton)
         NSLayoutConstraint.activate([
@@ -162,28 +146,16 @@ class ThirdExampleViewController: UIViewController {
             messageStackView.trailingAnchor.constraint(equalTo: currentTimeLabel.trailingAnchor)
         ])
         
-        messageViewGroup.forEach { message in
-            message.translatesAutoresizingMaskIntoConstraints = false
-            let view = UIView()
-            view.backgroundColor = .white
-            view.layer.cornerRadius = 10
-            
-            view.addSubview(message)
-            NSLayoutConstraint.activate([
-                message.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
-                message.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-                message.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-                message.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor)
-            ])
-            
-            if message is UIImageView {
-                NSLayoutConstraint.activate([
-                    message.widthAnchor.constraint(equalToConstant: 100),
-                    message.heightAnchor.constraint(equalTo: message.widthAnchor, multiplier: 1)
-                ])
-            }
-            
-            messageStackView.addArrangedSubview(view)
+        messageStackView.addArrangedSubview(putInBubble(for: weatherImageView))
+        NSLayoutConstraint.activate([
+            weatherImageView.heightAnchor.constraint(equalTo: weatherImageView.widthAnchor, multiplier: 1),
+            weatherImageView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.2)
+        ])
+        
+        chats.forEach { message in
+            let messageView = MessageBubbleView(text: message)
+            messageView.labelFont = UIFont(customFont: .cafe24SupermagicRegular, size: 17)
+            messageStackView.addArrangedSubview(messageView)
         }
     }
     
