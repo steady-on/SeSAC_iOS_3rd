@@ -82,7 +82,11 @@ class TheaterMapViewController: UIViewController {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
+        
         setUpConstraints()
+        
+        let allAnotations = convertCoordinateToAnnotation(for: TheaterStore.theaterList)
+        addAnnotionToMapView(list: allAnotations)
         
         requestCurrentAuthorizationStatusOfLocation()
     }
