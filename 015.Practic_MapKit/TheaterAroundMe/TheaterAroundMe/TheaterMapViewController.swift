@@ -42,6 +42,7 @@ class TheaterMapViewController: UIViewController {
         config.cornerStyle = .medium
         
         button.configuration = config
+        button.addTarget(self, action: #selector(showActionButtonForFilterTheater), for: .touchUpInside)
         
         return button
     }()
@@ -84,6 +85,31 @@ class TheaterMapViewController: UIViewController {
         setUpConstraints()
         
         requestCurrentAuthorizationStatusOfLocation()
+    }
+    
+    @objc private func showActionButtonForFilterTheater() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let allTheater = UIAlertAction(title: "전체보기", style: .default)
+        let lotteCinema = UIAlertAction(title: "롯데시네마", style: .default)
+        let megabox = UIAlertAction(title: "메가박스", style: .default)
+        let cgv = UIAlertAction(title: "CGV", style: .default)
+        
+        alert.addAction(allTheater)
+        alert.addAction(lotteCinema)
+        alert.addAction(megabox)
+        alert.addAction(cgv)
+        
+        present(alert, animated: true)
+    }
+    
+    private func filterTheater(for company: TheaterStore.Company? = nil) -> [TheaterStore.Theater] {
+        switch company {
+        case .none: return TheaterStore.theaterList
+        case .lotte: return TheaterStore.theaterList.filter { $0.company == .lotte }
+        case .megabox: return TheaterStore.theaterList.filter { $0.company == .megabox }
+        case .cgv: return TheaterStore.theaterList.filter { $0.company == .cgv }
+        }
     }
     
     
