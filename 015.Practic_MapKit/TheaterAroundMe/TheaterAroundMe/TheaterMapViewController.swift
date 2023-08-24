@@ -90,10 +90,22 @@ class TheaterMapViewController: UIViewController {
     @objc private func showActionButtonForFilterTheater() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let allTheater = UIAlertAction(title: "전체보기", style: .default)
-        let lotteCinema = UIAlertAction(title: "롯데시네마", style: .default)
-        let megabox = UIAlertAction(title: "메가박스", style: .default)
-        let cgv = UIAlertAction(title: "CGV", style: .default)
+        let allTheater = UIAlertAction(title: "전체보기", style: .default) { _ in
+            let theaterList = self.filterTheater()
+            let annotations = self.convertCoordinateToAnnotation(for: theaterList)
+        }
+        let lotteCinema = UIAlertAction(title: "롯데시네마", style: .default) { _ in
+            let theaterList = self.filterTheater(for: .lotte)
+            let annotations = self.convertCoordinateToAnnotation(for: theaterList)
+        }
+        let megabox = UIAlertAction(title: "메가박스", style: .default) { _ in
+            let theaterList = self.filterTheater(for: .megabox)
+            let annotations = self.convertCoordinateToAnnotation(for: theaterList)
+        }
+        let cgv = UIAlertAction(title: "CGV", style: .default) { _ in
+            let theaterList = self.filterTheater(for: .cgv)
+            let annotations = self.convertCoordinateToAnnotation(for: theaterList)
+        }
         
         alert.addAction(allTheater)
         alert.addAction(lotteCinema)
@@ -110,6 +122,21 @@ class TheaterMapViewController: UIViewController {
         case .megabox: return TheaterStore.theaterList.filter { $0.company == .megabox }
         case .cgv: return TheaterStore.theaterList.filter { $0.company == .cgv }
         }
+    }
+    
+    private func convertCoordinateToAnnotation(for theaterList: [TheaterStore.Theater]) -> [MKPointAnnotation] {
+        var locations = [MKPointAnnotation]()
+        
+        theaterList.forEach {
+            let theaterCoordinate = CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)
+            let annotation = MKPointAnnotation()
+            annotation.title = $0.name
+            annotation.coordinate = theaterCoordinate
+            
+            locations.append(annotation)
+        }
+        
+        return locations
     }
     
     
