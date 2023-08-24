@@ -69,6 +69,8 @@ class TheaterMapViewController: UIViewController {
         button.configuration = config
 
         button.setTitleColor(.systemBlue, for: .highlighted)
+        button.addTarget(self, action: #selector(showAuthorizationSettingsAlert), for: .touchUpInside)
+        button.isHidden = false
         
         return button
     }()
@@ -85,14 +87,56 @@ class TheaterMapViewController: UIViewController {
         }
         setUpConstraints()
     }
+    
+    
+    @objc private func showAuthorizationSettingsCompactAlert() {
+        let alert = UIAlertController(title: "앱에서 사용자의 위치 정보를 확인하도록 허용하려면 위치 서비스를 켜십시오.", message: nil, preferredStyle: .alert)
+        
+        let moveToSettings = UIAlertAction(title: "설정으로 이동", style: .default) { _ in
+            guard let settings = URL(string: UIApplication.openSettingsURLString) else {
+                return
+            }
+            
+            UIApplication.shared.open(settings)
+        }
+        
+        let notUseLocationService = UIAlertAction(title: "위치 사용 안함", style: .default)
+        
+        alert.addAction(moveToSettings)
+        alert.addAction(notUseLocationService)
+        
+        present(alert, animated: true)
+        
+    }
+    
+    @objc private func showAuthorizationSettingsAlert() {
+        let alert = UIAlertController(title: "이 앱은 위치 서비스가 켜져 있을 때 최적으로 동작합니다.", message: "이 앱에서 위치 서비스를 켜면 주변 영화관 정보를 가져올 수 있습니다.", preferredStyle: .alert)
+        
+        let moveToSettings = UIAlertAction(title: "설정에서 켜기", style: .default) { _ in
+            guard let settings = URL(string: UIApplication.openSettingsURLString) else {
+                return
+            }
+            
+            UIApplication.shared.open(settings)
+        }
+        
+        let stayLocationServiceOffStatus = UIAlertAction(title: "위치 서비스 끔 상태 유지", style: .default)
+        
+        alert.addAction(moveToSettings)
+        alert.addAction(stayLocationServiceOffStatus)
+        
+        present(alert, animated: true)
+    }
 
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
             mapView.topAnchor.constraint(equalTo: view.topAnchor),
             mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
+            mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
             warningStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             warningStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             warningStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
@@ -106,8 +150,10 @@ class TheaterMapViewController: UIViewController {
             
             filterButton.topAnchor.constraint(equalTo: warningButton.bottomAnchor, constant: 16),
             filterButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            filterButton.heightAnchor.constraint(equalTo: hereButton.widthAnchor, multiplier: 1),
-            
+            filterButton.heightAnchor.constraint(equalTo: hereButton.widthAnchor, multiplier: 1)
+        ])
+        
+        NSLayoutConstraint.activate([
             hereButton.topAnchor.constraint(equalTo: filterButton.bottomAnchor, constant: 8),
             hereButton.trailingAnchor.constraint(equalTo: filterButton.trailingAnchor),
             hereButton.heightAnchor.constraint(equalTo: hereButton.widthAnchor)
