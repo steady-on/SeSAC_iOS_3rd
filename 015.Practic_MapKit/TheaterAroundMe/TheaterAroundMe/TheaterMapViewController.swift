@@ -202,6 +202,10 @@ extension TheaterMapViewController: CLLocationManagerDelegate {
         }
     }
     
+    private func requestAuthorizationToUser() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+    }
     
 }
 
