@@ -207,6 +207,23 @@ extension TheaterMapViewController: CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
     }
     
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        requestCurrentAuthorizationStatusOfLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let coordinate = locations.last?.coordinate else { return }
+        
+        presentCurrentLocationOnMap(for: coordinate)
+        locationManager.stopUpdatingLocation()
+    }
+}
+
+extension TheaterMapViewController: MKMapViewDelegate {
+    func presentCurrentLocationOnMap(for coordinate: CLLocationCoordinate2D) {
+        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 1600, longitudinalMeters: 1600)
+        mapView.setRegion(region, animated: true)
+    }
 }
 
 
