@@ -93,18 +93,22 @@ class TheaterMapViewController: UIViewController {
         let allTheater = UIAlertAction(title: "전체보기", style: .default) { _ in
             let theaterList = self.filterTheater()
             let annotations = self.convertCoordinateToAnnotation(for: theaterList)
+            self.addAnnotionToMapView(list: annotations)
         }
         let lotteCinema = UIAlertAction(title: "롯데시네마", style: .default) { _ in
             let theaterList = self.filterTheater(for: .lotte)
             let annotations = self.convertCoordinateToAnnotation(for: theaterList)
+            self.addAnnotionToMapView(list: annotations)
         }
         let megabox = UIAlertAction(title: "메가박스", style: .default) { _ in
             let theaterList = self.filterTheater(for: .megabox)
             let annotations = self.convertCoordinateToAnnotation(for: theaterList)
+            self.addAnnotionToMapView(list: annotations)
         }
         let cgv = UIAlertAction(title: "CGV", style: .default) { _ in
             let theaterList = self.filterTheater(for: .cgv)
             let annotations = self.convertCoordinateToAnnotation(for: theaterList)
+            self.addAnnotionToMapView(list: annotations)
         }
         
         alert.addAction(allTheater)
@@ -139,6 +143,10 @@ class TheaterMapViewController: UIViewController {
         return locations
     }
     
+    private func addAnnotionToMapView(list: [MKPointAnnotation]) {
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.addAnnotations(list)
+    }
     
     @objc private func showAuthorizationSettingsCompactAlert() {
         let alert = UIAlertController(title: "앱에서 사용자의 위치 정보를 확인하도록 허용하려면 위치 서비스를 켜십시오.", message: nil, preferredStyle: .alert)
