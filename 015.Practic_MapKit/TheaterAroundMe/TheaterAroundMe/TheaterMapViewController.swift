@@ -104,7 +104,6 @@ class TheaterMapViewController: UIViewController {
         alert.addAction(notUseLocationService)
         
         present(alert, animated: true)
-        
     }
     
     @objc private func showAuthorizationSettingsAlert() {
@@ -124,6 +123,10 @@ class TheaterMapViewController: UIViewController {
         alert.addAction(stayLocationServiceOffStatus)
         
         present(alert, animated: true)
+    }
+    
+    @objc private func fetchingCurrentLocation() {
+        locationManager.startUpdatingLocation()
     }
 
     private func setUpConstraints() {
@@ -187,19 +190,17 @@ extension TheaterMapViewController: CLLocationManagerDelegate {
         case .notDetermined:
             requestAuthorizationToUser()
         case .restricted:
-            break
+            requestAuthorizationToUser()
+        case .authorizedAlways, .authorizedWhenInUse, .authorized:
+            self.hereButton.addTarget(self, action: #selector(fetchingCurrentLocation), for: .touchUpInside)
         case .denied:
             self.warningButton.isHidden = false
             self.hereButton.addTarget(self, action: #selector(showAuthorizationSettingsCompactAlert), for: .touchUpInside)
-        case .authorizedAlways:
-            locationManager.startUpdatingLocation()
-        case .authorizedWhenInUse:
-            locationManager.startUpdatingLocation()
-        case .authorized:
-            locationManager.startUpdatingLocation()
         @unknown default:
             break
         }
+        
+        locationManager.startUpdatingLocation()
     }
     
     private func requestAuthorizationToUser() {
@@ -212,8 +213,8 @@ extension TheaterMapViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let coordinate = locations.last?.coordinate else { return }
-        
+        let coordinate = locations.last?.coordinate ?? CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270)
+            
         presentCurrentLocationOnMap(for: coordinate)
         locationManager.stopUpdatingLocation()
     }
@@ -221,7 +222,7 @@ extension TheaterMapViewController: CLLocationManagerDelegate {
 
 extension TheaterMapViewController: MKMapViewDelegate {
     func presentCurrentLocationOnMap(for coordinate: CLLocationCoordinate2D) {
-        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 1600, longitudinalMeters: 1600)
+        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
         mapView.setRegion(region, animated: true)
     }
 }
