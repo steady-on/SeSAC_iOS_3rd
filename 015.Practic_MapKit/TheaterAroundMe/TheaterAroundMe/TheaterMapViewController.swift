@@ -11,11 +11,13 @@ import MapKit
 
 class TheaterMapViewController: UIViewController {
     
-    let locationManager = CLLocationManager()
+    private let locationManager = CLLocationManager()
+    private var authorizationStatus: CLAuthorizationStatus {
+        locationManager.authorizationStatus
+    }
+    private let mapView = MKMapView()
     
-    let mapView = MKMapView()
-    
-    lazy var hereButton: UIButton = {
+    private lazy var hereButton: UIButton = {
         let button = UIButton()
         
         var config = UIButton.Configuration.filled()
@@ -29,8 +31,7 @@ class TheaterMapViewController: UIViewController {
     
         return button
     }()
-    
-    lazy var filterButton: UIButton = {
+    private lazy var filterButton: UIButton = {
         let button = UIButton()
         
         var config = UIButton.Configuration.filled()
@@ -42,11 +43,9 @@ class TheaterMapViewController: UIViewController {
         
         button.configuration = config
         
-        
         return button
     }()
-    
-    lazy var warningStackView: UIStackView = {
+    private lazy var warningStackView: UIStackView = {
         let stackView = UIStackView()
         
         stackView.axis = .vertical
@@ -55,22 +54,19 @@ class TheaterMapViewController: UIViewController {
         
         return stackView
     }()
-    
-    lazy var warningButton: UIButton = {
+    private lazy var warningButton: UIButton = {
         let button = UIButton()
         
-        var config = UIButton.Configuration.plain()
+        var config = UIButton.Configuration.filled()
         config.title = "위치서비스가 꺼져 있음"
         config.image = UIImage(systemName: "chevron.right")
         config.imagePlacement = .trailing
         config.imagePadding = 4
         config.buttonSize = .mini
-        config.baseForegroundColor = .label
         button.configuration = config
-
-        button.setTitleColor(.systemBlue, for: .highlighted)
+        
         button.addTarget(self, action: #selector(showAuthorizationSettingsAlert), for: .touchUpInside)
-        button.isHidden = false
+        button.isHidden = true
         
         return button
     }()
@@ -86,6 +82,8 @@ class TheaterMapViewController: UIViewController {
             view.addSubview($0)
         }
         setUpConstraints()
+        
+        requestCurrentAuthorizationStatusOfLocation()
     }
     
     
@@ -162,5 +160,49 @@ class TheaterMapViewController: UIViewController {
 }
 
 extension TheaterMapViewController: CLLocationManagerDelegate {
+    private func requestCurrentAuthorizationStatusOfLocation() {
+        DispatchQueue.global().async {
+            guard CLLocationManager.locationServicesEnabled() else {
+                self.warningButton.isHidden = false
+                self.warningButton.isHighlighted = true
+                return
+            }
+            
+            let authorizaion: CLAuthorizationStatus
+            
+            if #available(iOS 14.0, *) {
+                authorizaion = self.locationManager.authorizationStatus
+            } else {
+                authorizaion = CLLocationManager.authorizationStatus()
+            }
+            
+            DispatchQueue.main.async {
+                self.handleAuthorizationStatusOfLocation(status: authorizaion)
+            }
+        }
+    }
+    
+    private func handleAuthorizationStatusOfLocation(status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            requestAuthorizationToUser()
+        case .restricted:
+            break
+        case .denied:
+            self.warningButton.isHidden = false
+            self.hereButton.addTarget(self, action: #selector(showAuthorizationSettingsCompactAlert), for: .touchUpInside)
+        case .authorizedAlways:
+            locationManager.startUpdatingLocation()
+        case .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+        case .authorized:
+            locationManager.startUpdatingLocation()
+        @unknown default:
+            break
+        }
+    }
+    
     
 }
+
+
