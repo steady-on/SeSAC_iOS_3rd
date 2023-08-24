@@ -90,31 +90,15 @@ class TheaterMapViewController: UIViewController {
     @objc private func showActionButtonForFilterTheater() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let allTheater = UIAlertAction(title: "전체보기", style: .default) { _ in
-            let theaterList = self.filterTheater()
-            let annotations = self.convertCoordinateToAnnotation(for: theaterList)
-            self.addAnnotionToMapView(list: annotations)
+        for type in TheaterFilter.allCases {
+            let action = UIAlertAction(title: type.actionTitle, style: .default) { _ in
+                let theaterList = self.filterTheater(for: type.filterType)
+                let annotations = self.convertCoordinateToAnnotation(for: theaterList)
+                self.addAnnotionToMapView(list: annotations)
+            }
+            
+            alert.addAction(action)
         }
-        let lotteCinema = UIAlertAction(title: "롯데시네마", style: .default) { _ in
-            let theaterList = self.filterTheater(for: .lotte)
-            let annotations = self.convertCoordinateToAnnotation(for: theaterList)
-            self.addAnnotionToMapView(list: annotations)
-        }
-        let megabox = UIAlertAction(title: "메가박스", style: .default) { _ in
-            let theaterList = self.filterTheater(for: .megabox)
-            let annotations = self.convertCoordinateToAnnotation(for: theaterList)
-            self.addAnnotionToMapView(list: annotations)
-        }
-        let cgv = UIAlertAction(title: "CGV", style: .default) { _ in
-            let theaterList = self.filterTheater(for: .cgv)
-            let annotations = self.convertCoordinateToAnnotation(for: theaterList)
-            self.addAnnotionToMapView(list: annotations)
-        }
-        
-        alert.addAction(allTheater)
-        alert.addAction(lotteCinema)
-        alert.addAction(megabox)
-        alert.addAction(cgv)
         
         present(alert, animated: true)
     }
@@ -288,4 +272,27 @@ extension TheaterMapViewController: MKMapViewDelegate {
     }
 }
 
-
+fileprivate enum TheaterFilter: CaseIterable {
+    case all
+    case lotte
+    case megabox
+    case cgv
+    
+    var actionTitle: String {
+        switch self {
+        case .all: return "전체보기"
+        case .lotte: return "롯데시네마"
+        case .megabox: return "메가박스"
+        case .cgv: return "CGV"
+        }
+    }
+    
+    var filterType: TheaterStore.Company? {
+        switch self {
+        case .all: return nil
+        case .lotte: return .lotte
+        case .megabox: return .megabox
+        case .cgv: return .cgv
+        }
+    }
+}
