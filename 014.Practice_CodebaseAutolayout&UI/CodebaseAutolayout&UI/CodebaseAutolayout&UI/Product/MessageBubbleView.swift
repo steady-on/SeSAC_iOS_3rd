@@ -26,9 +26,9 @@ class MessageBubbleView: UIView {
         set { label.numberOfLines = newValue }
     }
     
-    var margins: UIEdgeInsets {
-        get { layoutMargins }
-        set { layoutMargins = newValue }
+    var margins: NSDirectionalEdgeInsets {
+        get { directionalLayoutMargins }
+        set { directionalLayoutMargins = newValue }
     }
     
     var cornerRadius: CGFloat {
@@ -57,10 +57,10 @@ class MessageBubbleView: UIView {
         self.label.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            self.label.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
-            self.label.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
-            self.label.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
-            self.label.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor)
+            self.label.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            self.label.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
+            self.label.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
+            self.label.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor)
         ])
     }
 }
