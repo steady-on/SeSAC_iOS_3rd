@@ -53,28 +53,27 @@ class SecondExampleViewController: UIViewController {
     
     lazy var bottomButtonGroup: [UIButton] = {
         var buttonGroup = [UIButton]()
-        
+                
         for type in BottomButtonType.allCases {
             let button = UIButton()
-            button.translatesAutoresizingMaskIntoConstraints = false
-            
+
             var config = UIButton.Configuration.plain()
-            
+
             var attributedTitle = AttributedString(type.buttonTitle)
             attributedTitle.font = .preferredFont(forTextStyle: .caption1)
-            
+
             config.attributedTitle = attributedTitle
             config.baseForegroundColor = .white
             config.buttonSize = .small
-            
+
             config.image = UIImage(systemName: type.systemImageName)
             config.imagePlacement = .top
             config.imagePadding = 15
-            
+
             button.configuration = config
             buttonGroup.append(button)
         }
-        
+        dump(buttonGroup)
         return buttonGroup
     }()
     
