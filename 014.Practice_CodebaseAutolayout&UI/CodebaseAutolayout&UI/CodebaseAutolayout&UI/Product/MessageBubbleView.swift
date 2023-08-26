@@ -11,17 +11,17 @@ class MessageBubbleView: UIView {
     
     private var label = UILabel()
     
-    var labelText: String? {
+    var text: String? {
         get { label.text }
         set { label.text = newValue }
     }
     
-    var labelFont: UIFont! {
+    var font: UIFont! {
         get { label.font }
         set { label.font = newValue }
     }
     
-    var labelNumberOfLines: Int {
+    var numberOfLines: Int {
         get { label.numberOfLines }
         set { label.numberOfLines = newValue }
     }
@@ -39,7 +39,7 @@ class MessageBubbleView: UIView {
     convenience init(text: String) {
         self.init()
     
-        self.labelText = text
+        self.text = text
         
         setDefaultDesign()
         setUpSubView()
@@ -48,7 +48,8 @@ class MessageBubbleView: UIView {
     private func setDefaultDesign() {
         backgroundColor = .white
         self.cornerRadius = 10
-        self.labelFont = UIFont(customFont: .cafe24SupermagicRegular, size: 17)
+        self.font = UIFont(customFont: .cafe24SupermagicRegular, size: 17)
+        self.numberOfLines = 0
     }
     
     private func setUpSubView() {
