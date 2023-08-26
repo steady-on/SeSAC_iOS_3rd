@@ -9,7 +9,7 @@ import UIKit
 
 class MessageBubbleView: UIView {
     
-    var label = UILabel()
+    private var label = UILabel()
     
     var labelText: String? {
         get { label.text }
