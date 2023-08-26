@@ -73,7 +73,7 @@ class SecondExampleViewController: UIViewController {
             button.configuration = config
             buttonGroup.append(button)
         }
-        dump(buttonGroup)
+
         return buttonGroup
     }()
     

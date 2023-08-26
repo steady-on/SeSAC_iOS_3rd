@@ -26,19 +26,29 @@ class MessageBubbleView: UIView {
         set { label.numberOfLines = newValue }
     }
     
-    convenience init(text: String,
-                     backgroundColor: UIColor = .white,
-                     cornerRadius:CGFloat = 10,
-                     margins: UIEdgeInsets = .init(top: 8, left: 8, bottom: 8, right: 8)) {
+    var margins: UIEdgeInsets {
+        get { layoutMargins }
+        set { layoutMargins = newValue }
+    }
+    
+    var cornerRadius: CGFloat {
+        get { layer.cornerRadius }
+        set { layer.cornerRadius = newValue }
+    }
+    
+    convenience init(text: String) {
         self.init()
     
-        self.label.text = text
-
-        self.backgroundColor = backgroundColor
-        self.layer.cornerRadius = cornerRadius
-        self.layoutMargins = margins
+        self.labelText = text
         
+        setDefaultDesign()
         setUpSubView()
+    }
+    
+    private func setDefaultDesign() {
+        backgroundColor = .white
+        self.cornerRadius = 10
+        self.labelFont = UIFont(customFont: .cafe24SupermagicRegular, size: 17)
     }
     
     private func setUpSubView() {

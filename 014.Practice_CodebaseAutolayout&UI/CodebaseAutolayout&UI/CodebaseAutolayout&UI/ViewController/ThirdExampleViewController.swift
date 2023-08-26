@@ -154,7 +154,6 @@ class ThirdExampleViewController: UIViewController {
         
         chats.forEach { message in
             let messageView = MessageBubbleView(text: message)
-            messageView.labelFont = UIFont(customFont: .cafe24SupermagicRegular, size: 17)
             messageStackView.addArrangedSubview(messageView)
         }
     }
