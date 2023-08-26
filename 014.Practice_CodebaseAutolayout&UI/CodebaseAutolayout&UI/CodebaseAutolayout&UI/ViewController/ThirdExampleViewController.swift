@@ -9,7 +9,7 @@ import UIKit
 
 class ThirdExampleViewController: UIViewController {
     
-    let chats = ["지금은 9°C에요", "78% 만큼 습해요", "1m/s의 바람이 불어요", "오늘도 행복한 하루 보내세요"]
+    let chats = ["지금은 9°C에요", "78% 만큼 습해요", "1m/s의 바람이 불어요", "오늘도 행복한 하루 보내세요", "지금은 9°C에요. 78% 만큼 습해요. 1m/s의 바람이 불어요. 오늘도 행복한 하루 보내세요"]
     
     lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
@@ -96,7 +96,7 @@ class ThirdExampleViewController: UIViewController {
         NSLayoutConstraint.activate([
             currentTimeLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             currentTimeLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            currentTimeLabel.trailingAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+            currentTimeLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
         
         headerView.translatesAutoresizingMaskIntoConstraints = false
