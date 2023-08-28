@@ -11,6 +11,12 @@ import Foundation
 struct AllTrendData: Codable {
     let results: [Result]
     let page, totalPages, totalResults: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case page, results
+        case totalPages = "total_pages"
+        case totalResults = "total_results"
+    }
 }
 
 // MARK: - Result
@@ -35,4 +41,25 @@ struct Result: Codable {
     let name, originalName: String?
     let firstAirDate: String?
     let originCountry: [String]?
+    
+    enum CodingKeys: String, CodingKey {
+        case adult
+        case backdropPath = "backdrop_path"
+        case id, title
+        case originalLanguage = "original_language"
+        case originalTitle = "original_title"
+        case overview
+        case posterPath = "poster_path"
+        case mediaType = "media_type"
+        case genreIDS = "genre_ids"
+        case popularity
+        case releaseDate = "release_date"
+        case video
+        case voteAverage = "vote_average"
+        case voteCount = "vote_count"
+        case name
+        case originalName = "original_name"
+        case firstAirDate = "first_air_date"
+        case originCountry = "origin_country"
+    }
 }

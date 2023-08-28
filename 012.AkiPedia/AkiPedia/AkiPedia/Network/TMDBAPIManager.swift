@@ -18,7 +18,59 @@ final class TMDBAPIManager {
     ]
     
     private let language = URLQueryItem(name: "language", value: "ko")
+    private func fetchTrendingAllData(for mediaType: MediaType?, timeWindow: URLManager.TimeWindow = .day, completionHandler: @escaping ([MediaProtocol]) -> ()) {
+        guard var urlComponents = URLComponents(string: URLManager.trending(mediaType: mediaType).url) else { return }
+        
+        urlComponents.queryItems = [language]
+        
+        performRequest(to: urlComponents) { (trendData: AllTrendData) in
+            let results = trendData.results
+            let mediaList = self.convertResultToMediaProtocolStruct(results)
+            DispatchQueue.main.async {
+                completionHandler(mediaList)
+            }
+        }
+    }
+    
+    private func convertResultToMediaProtocolStruct(_ results: [Result]) -> [MediaProtocol] {
+        var mediaList = [MediaProtocol?]()
+        
+        for result in results {
+            guard let mediaType = MediaType(rawValue: result.mediaType) else { continue }
+            
+            switch mediaType {
+            case .movie:
+                let movie = Movie(data: result)
+                mediaList.append(movie)
+            case .tv:
+                let tv = Movie(data: result)
+                mediaList.append(tv)
+            }
+        }
+        
+        return mediaList.compactMap { $0 }
+    }
+    
+    private func fetchGenreData(for mediaType: MediaType) {
+        guard var urlComponents = URLComponents(string: URLManager.genre(mediaType: mediaType).url) else { return }
 
+        urlComponents.queryItems = [language]
+        
+        performRequest(to: urlComponents) { (genreData: GenreData) in
+            let genres = genreData.genres
+            
+            switch mediaType {
+            case .movie:
+                var movieGenres = [Int:String]()
+                genres.forEach { genre in movieGenres[genre.id] = genre.name }
+                Movie.genreDictionary = movieGenres
+            case .tv:
+                var tvGenres = [Int:String]()
+                genres.forEach { genre in tvGenres[genre.id] = genre.name }
+                Tv.genreDictionary = tvGenres
+            }
+        }
+    }
     
     private func performRequest<T:Codable>(to urlComponents: URLComponents, completionHandler: @escaping (T) -> ()) {
         guard let url = urlComponents.url else { return }
@@ -47,7 +99,7 @@ final class TMDBAPIManager {
     
     private func parseJSON<T:Codable>(_ jsonData: Data) -> T? {
         let decoder = JSONDecoder()
-        
+//        decoder.keyDecodingStrategy = .convertFromSnakeCase
         do {
             let decodedData = try decoder.decode(T.self, from: jsonData)
             return decodedData
