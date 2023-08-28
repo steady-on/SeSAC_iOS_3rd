@@ -22,6 +22,34 @@ class TrendRankingTableViewCell: UITableViewCell, ReuseIdentifying {
         setUpDesignForUI()
     }
     
+    var media: MediaProtocol? {
+        didSet {
+            guard let media else { return }
+            
+            switch media.mediaType {
+            case .movie:
+                guard let movie = media as? Movie else { return }
+                
+                self.backdropImageView.loadTMDBData(url: movie.backdropPath)
+                self.titleLabel.text = movie.title
+                self.overviewTextView.text = movie.overview
+                self.genresLabel.text = movie.genres.map { "#" + $0 }.joined(separator: " ")
+                self.designMediaTypeLabel(.movie)
+                self.ratingLabel.text = "\(String(format: "%.1f", movie.voteAverage))"
+                
+            case .tv:
+                guard let tv = media as? Tv else { return }
+                self.backdropImageView.loadTMDBData(url: tv.backdropPath)
+                self.titleLabel.text = tv.name
+                self.overviewTextView.text = tv.overview
+                self.genresLabel.text = tv.genres.map { "#" + $0 }.joined(separator: " ")
+                self.designMediaTypeLabel(.tv)
+                self.ratingLabel.text = "\(String(format: "%.1f", tv.voteAverage))"
+            }
+            
+        }
+    }
+    
     override func prepareForReuse() {
         resetCellInfo()
     }
@@ -60,7 +88,7 @@ extension TrendRankingTableViewCell {
     }
     
     private func designGenresLabel() {
-        genresLabel.font = .preferredFont(forTextStyle: .caption1)
+        genresLabel.font = .preferredFont(forTextStyle: .callout)
         genresLabel.numberOfLines = 0
     }
     

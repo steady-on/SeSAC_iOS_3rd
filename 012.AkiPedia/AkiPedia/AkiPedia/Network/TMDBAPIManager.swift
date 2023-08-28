@@ -57,13 +57,12 @@ final class TMDBAPIManager {
         
         for result in results {
             guard let mediaType = MediaType(rawValue: result.mediaType) else { continue }
-            
             switch mediaType {
             case .movie:
                 let movie = Movie(data: result)
                 mediaList.append(movie)
             case .tv:
-                let tv = Movie(data: result)
+                let tv = Tv(data: result)
                 mediaList.append(tv)
             }
         }
