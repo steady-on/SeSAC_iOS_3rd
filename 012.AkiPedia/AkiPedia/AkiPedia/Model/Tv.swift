@@ -8,7 +8,7 @@
 import Foundation
 
 struct Tv: MediaProtocol {
-    static let mediaType: MediaType = .tv
+    let mediaType: MediaType = .tv
     static var genreDictionary: [Int : String]?
     
     /// media protocol property
@@ -28,8 +28,8 @@ struct Tv: MediaProtocol {
     let firstAirDate: String
     let originCountry: [String]
     
-    init(data: Result) {
-        guard let genreDictionary = Tv.genreDictionary else { return }
+    init?(data: Result) {
+        guard let genreDictionary = Tv.genreDictionary else { return nil }
         let genres = data.genreIDS.map { genreDictionary[$0] ?? "" }
         
         self.id = data.id

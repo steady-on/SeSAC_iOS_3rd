@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MediaProtocol {
-    static var mediaType: MediaType { get }
+    var mediaType: MediaType { get }
     static var genreDictionary: [Int:String]? { get set }
     
     var id: Int { get }
