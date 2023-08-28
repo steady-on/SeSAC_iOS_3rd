@@ -18,6 +18,26 @@ final class TMDBAPIManager {
     ]
     
     private let language = URLQueryItem(name: "language", value: "ko")
+    
+    func getTrendAllRanking(completionHandler: @escaping ([MediaProtocol]) -> ()) {
+        let genreFetcher = DispatchWorkItem() {
+            self.fetchGenreData(for: .movie)
+            self.fetchGenreData(for: .tv)
+        }
+        
+        let trendFetcher = DispatchWorkItem() {
+            self.fetchTrendingAllData(for: nil, completionHandler: completionHandler)
+        }
+        
+        if Movie.genreDictionary != nil && Tv.genreDictionary != nil {
+            genreFetcher.cancel()
+        }
+        
+        genreFetcher.notify(queue: DispatchQueue.global(), execute: trendFetcher)
+        
+        DispatchQueue.global().async(execute: genreFetcher)
+    }
+    
     private func fetchTrendingAllData(for mediaType: MediaType?, timeWindow: URLManager.TimeWindow = .day, completionHandler: @escaping ([MediaProtocol]) -> ()) {
         guard var urlComponents = URLComponents(string: URLManager.trending(mediaType: mediaType).url) else { return }
         
