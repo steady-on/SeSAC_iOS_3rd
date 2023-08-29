@@ -22,3 +22,13 @@ protocol MediaProtocol {
     var voteCount: Int { get }
     var adult: Bool { get }
 }
+
+extension MediaProtocol {
+    var genreHashtag: String {
+        genres.map { "#" + $0 }.joined(separator: " ")
+    }
+    
+    var rating: String {
+        String(format: "%.1f", voteAverage)
+    }
+}

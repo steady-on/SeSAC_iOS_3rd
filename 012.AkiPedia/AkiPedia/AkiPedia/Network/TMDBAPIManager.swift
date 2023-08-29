@@ -77,7 +77,7 @@ final class TMDBAPIManager {
         
         performRequest(to: urlComponents) { (genreData: GenreData) in
             let genres = genreData.genres
-            
+
             switch mediaType {
             case .movie:
                 var movieGenres = [Int:String]()
@@ -118,7 +118,7 @@ final class TMDBAPIManager {
     
     private func parseJSON<T:Codable>(_ jsonData: Data) -> T? {
         let decoder = JSONDecoder()
-//        decoder.keyDecodingStrategy = .convertFromSnakeCase
+
         do {
             let decodedData = try decoder.decode(T.self, from: jsonData)
             return decodedData
