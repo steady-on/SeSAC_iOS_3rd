@@ -29,6 +29,7 @@
 		63FAAB1D2A9CC7B30050BF9F /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB1C2A9CC7B30050BF9F /* UIImageView+.swift */; };
 		63FAAB7B2A9DD9440050BF9F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB7A2A9DD9440050BF9F /* BaseView.swift */; };
 		63FAAB802A9DDA830050BF9F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB7F2A9DDA830050BF9F /* BaseViewController.swift */; };
+		63FAAB862A9DEFFC0050BF9F /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB852A9DEFFC0050BF9F /* ProfileImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		63FAAB1C2A9CC7B30050BF9F /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		63FAAB7A2A9DD9440050BF9F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		63FAAB7F2A9DDA830050BF9F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		63FAAB852A9DEFFC0050BF9F /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				63545A492A9354A700125296 /* MediaTypeLabel.swift */,
+				63FAAB852A9DEFFC0050BF9F /* ProfileImageView.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				63545A522A93922900125296 /* AllTrendData.swift in Sources */,
 				63545A4D2A93572B00125296 /* MediaType.swift in Sources */,
 				63545A502A93682D00125296 /* ReuseIdentifying.swift in Sources */,
+				63FAAB862A9DEFFC0050BF9F /* ProfileImageView.swift in Sources */,
 				63545A572A94347600125296 /* MediaProtocol.swift in Sources */,
 				63545A5B2A94385F00125296 /* Tv.swift in Sources */,
 				63545A552A93940400125296 /* GenreData.swift in Sources */,
