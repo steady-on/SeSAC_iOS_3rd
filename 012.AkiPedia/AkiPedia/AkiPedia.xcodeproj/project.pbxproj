@@ -27,6 +27,8 @@
 		63FAAB192A9C9E6B0050BF9F /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB182A9C9E6B0050BF9F /* URLManager.swift */; };
 		63FAAB1B2A9C9FC00050BF9F /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB1A2A9C9FC00050BF9F /* TMDBAPIManager.swift */; };
 		63FAAB1D2A9CC7B30050BF9F /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB1C2A9CC7B30050BF9F /* UIImageView+.swift */; };
+		63FAAB7B2A9DD9440050BF9F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB7A2A9DD9440050BF9F /* BaseView.swift */; };
+		63FAAB802A9DDA830050BF9F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB7F2A9DDA830050BF9F /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		63FAAB182A9C9E6B0050BF9F /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
 		63FAAB1A2A9C9FC00050BF9F /* TMDBAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIManager.swift; sourceTree = "<group>"; };
 		63FAAB1C2A9CC7B30050BF9F /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		63FAAB7A2A9DD9440050BF9F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		63FAAB7F2A9DDA830050BF9F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			children = (
 				63545A292A93370600125296 /* AppDelegate.swift */,
 				63545A2B2A93370600125296 /* SceneDelegate.swift */,
+				63FAAB792A9DD8500050BF9F /* Base */,
 				63545A3F2A9337F900125296 /* View */,
 				63545A402A9337FF00125296 /* ViewController */,
 				63545A482A934FCF00125296 /* Product */,
@@ -165,6 +170,15 @@
 			path = NetworkingModel;
 			sourceTree = "<group>";
 		};
+		63FAAB792A9DD8500050BF9F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				63FAAB7A2A9DD9440050BF9F /* BaseView.swift */,
+				63FAAB7F2A9DDA830050BF9F /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -240,7 +254,9 @@
 				63545A462A933C9B00125296 /* TrendRankingTableViewCell.swift in Sources */,
 				63545A2E2A93370600125296 /* TrendRankingViewController.swift in Sources */,
 				63545A592A9435F300125296 /* Movie.swift in Sources */,
+				63FAAB7B2A9DD9440050BF9F /* BaseView.swift in Sources */,
 				63545A2A2A93370600125296 /* AppDelegate.swift in Sources */,
+				63FAAB802A9DDA830050BF9F /* BaseViewController.swift in Sources */,
 				63FAAB1D2A9CC7B30050BF9F /* UIImageView+.swift in Sources */,
 				63545A3E2A9337C800125296 /* APIKey.swift in Sources */,
 				63545A2C2A93370600125296 /* SceneDelegate.swift in Sources */,
