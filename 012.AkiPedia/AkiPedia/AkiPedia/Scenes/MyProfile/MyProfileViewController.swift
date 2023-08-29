@@ -11,14 +11,27 @@ class MyProfileViewController: BaseViewController {
     
     let mainView = MyProfileView()
     
+    var userId: String = "아이디를 설정해주세요"
+    
+    lazy var userIdLabel: UIBarButtonItem = {
+        let label = UILabel()
+        label.text = userId
+        label.font = .boldSystemFont(ofSize: 22)
+        
+        return UIBarButtonItem(customView: label)
+    }()
+    
     override func loadView() {
         view = mainView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
 
-
+    override func configureView() {
+        navigationItem.hidesBackButton = true
+        navigationItem.setLeftBarButton(userIdLabel, animated: true)
+    }
 }
