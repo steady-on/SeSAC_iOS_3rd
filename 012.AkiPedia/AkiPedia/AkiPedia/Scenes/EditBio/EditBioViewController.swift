@@ -12,6 +12,7 @@ class EditBioViewController: BaseViewController {
     let mainView = EditBioView()
     
     var oldValue: String!
+    var changeBioHandler: ((String) -> Void)?
     
     override func loadView() {
         view = mainView
@@ -28,6 +29,9 @@ class EditBioViewController: BaseViewController {
     }
     
     @objc func tappedSaveButton() {
+        guard let text = mainView.bioTextView.text else { return }
+        changeBioHandler?(text)
         
+        navigationController?.popViewController(animated: true)
     }
 }

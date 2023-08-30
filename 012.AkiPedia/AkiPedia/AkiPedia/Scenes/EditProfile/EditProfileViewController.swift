@@ -13,6 +13,7 @@ class EditProfileViewController: BaseViewController {
     
     var userProfile: UserProfile!
     var delegate: DataPassDelegate?
+    var changeBioHandler: ((String) -> Void)?
     
     override func loadView() {
         view = mainView
@@ -79,6 +80,15 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
             let vc = EditBioViewController()
             self.navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
             vc.oldValue = profileInfo.getValue(from: userProfile)
+            
+            vc.changeBioHandler = { changedValue in
+                DispatchQueue.main.async {
+                    self.mainView.infoTableView.reloadRows(at: [IndexPath(item: 2, section: 0)], with: .automatic)
+                }
+                
+                self.changeBioHandler?(changedValue)
+            }
+            
             navigationController?.pushViewController(vc, animated: true)
         }
     }

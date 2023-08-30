@@ -58,6 +58,10 @@ class MyProfileViewController: BaseViewController {
         let vc = EditProfileViewController()
         vc.userProfile = userProfile
         vc.delegate = self
+        vc.changeBioHandler = { chagedBio in
+            self.userProfile.bio = chagedBio
+            self.mainView.bioTextView.text = chagedBio
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
     
