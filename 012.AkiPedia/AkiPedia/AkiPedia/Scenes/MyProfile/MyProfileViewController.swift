@@ -7,10 +7,16 @@
 
 import UIKit
 
-struct UserProfile {
+class UserProfile {
     var name: String
     var userName: String
     var bio: String
+    
+    init(name: String, userName: String, bio: String) {
+        self.name = name
+        self.userName = userName
+        self.bio = bio
+    }
 }
 
 class MyProfileViewController: BaseViewController {
