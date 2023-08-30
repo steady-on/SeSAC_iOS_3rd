@@ -80,7 +80,8 @@ class MyProfileView: BaseView {
             editProfileButton.topAnchor.constraint(equalTo: bioTextView.bottomAnchor, constant: 16),
             editProfileButton.leadingAnchor.constraint(equalTo: bioTextView.leadingAnchor),
             editProfileButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            editProfileButton.heightAnchor.constraint(equalToConstant: 40)
+            editProfileButton.heightAnchor.constraint(equalToConstant: 40),
+            editProfileButton.bottomAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.bottomAnchor, constant: -16)
         ])
     }
 }

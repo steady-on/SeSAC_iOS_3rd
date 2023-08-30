@@ -36,6 +36,7 @@
 		63FAAB962A9F04430050BF9F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB952A9F04430050BF9F /* EditProfileViewController.swift */; };
 		63FAAB992A9F21C90050BF9F /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB982A9F21C90050BF9F /* ChangeNameView.swift */; };
 		63FAAB9B2A9F27590050BF9F /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB9A2A9F27590050BF9F /* ChangeNameViewController.swift */; };
+		63FAAB9E2A9F38950050BF9F /* EditBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB9D2A9F38950050BF9F /* EditBioView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		63FAAB952A9F04430050BF9F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		63FAAB982A9F21C90050BF9F /* ChangeNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
 		63FAAB9A2A9F27590050BF9F /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
+		63FAAB9D2A9F38950050BF9F /* EditBioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBioView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				63FAAB782A9DD6D70050BF9F /* MyProfile */,
 				63FAAB872A9DF3AE0050BF9F /* EditProfile */,
 				63FAAB972A9F21A60050BF9F /* ChangeName */,
+				63FAAB9C2A9F38720050BF9F /* EditBio */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -230,6 +233,14 @@
 				63FAAB9A2A9F27590050BF9F /* ChangeNameViewController.swift */,
 			);
 			path = ChangeName;
+			sourceTree = "<group>";
+		};
+		63FAAB9C2A9F38720050BF9F /* EditBio */ = {
+			isa = PBXGroup;
+			children = (
+				63FAAB9D2A9F38950050BF9F /* EditBioView.swift */,
+			);
+			path = EditBio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +338,7 @@
 				63545A572A94347600125296 /* MediaProtocol.swift in Sources */,
 				63545A5B2A94385F00125296 /* Tv.swift in Sources */,
 				63545A552A93940400125296 /* GenreData.swift in Sources */,
+				63FAAB9E2A9F38950050BF9F /* EditBioView.swift in Sources */,
 				63FAAB1B2A9C9FC00050BF9F /* TMDBAPIManager.swift in Sources */,
 				63FAAB192A9C9E6B0050BF9F /* URLManager.swift in Sources */,
 			);
