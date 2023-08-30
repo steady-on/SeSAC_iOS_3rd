@@ -34,6 +34,7 @@
 		63FAAB862A9DEFFC0050BF9F /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB852A9DEFFC0050BF9F /* ProfileImageView.swift */; };
 		63FAAB892A9DF3D30050BF9F /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB882A9DF3D30050BF9F /* EditProfileView.swift */; };
 		63FAAB962A9F04430050BF9F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB952A9F04430050BF9F /* EditProfileViewController.swift */; };
+		63FAAB992A9F21C90050BF9F /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB982A9F21C90050BF9F /* ChangeNameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		63FAAB852A9DEFFC0050BF9F /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		63FAAB882A9DF3D30050BF9F /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		63FAAB952A9F04430050BF9F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		63FAAB982A9F21C90050BF9F /* ChangeNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			children = (
 				63FAAB782A9DD6D70050BF9F /* MyProfile */,
 				63FAAB872A9DF3AE0050BF9F /* EditProfile */,
+				63FAAB972A9F21A60050BF9F /* ChangeName */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -216,6 +219,14 @@
 				63FAAB952A9F04430050BF9F /* EditProfileViewController.swift */,
 			);
 			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		63FAAB972A9F21A60050BF9F /* ChangeName */ = {
+			isa = PBXGroup;
+			children = (
+				63FAAB982A9F21C90050BF9F /* ChangeNameView.swift */,
+			);
+			path = ChangeName;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63545A462A933C9B00125296 /* TrendRankingTableViewCell.swift in Sources */,
+				63FAAB992A9F21C90050BF9F /* ChangeNameView.swift in Sources */,
 				63545A2E2A93370600125296 /* TrendRankingViewController.swift in Sources */,
 				63545A592A9435F300125296 /* Movie.swift in Sources */,
 				63FAAB7B2A9DD9440050BF9F /* BaseView.swift in Sources */,
