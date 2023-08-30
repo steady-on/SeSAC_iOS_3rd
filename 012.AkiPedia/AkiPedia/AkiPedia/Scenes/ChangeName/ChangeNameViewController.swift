@@ -11,6 +11,8 @@ class ChangeNameViewController: BaseViewController {
     
     let mainView = ChangeNameView()
     
+    var oldValue: String!
+    
     override func loadView() {
         view = mainView
     }
@@ -25,6 +27,7 @@ class ChangeNameViewController: BaseViewController {
         didSet {
             title = profileInfo.labelText
             mainView.fieldLabel.text = profileInfo.labelText
+            mainView.textField.text = self.oldValue
         }
     }
     

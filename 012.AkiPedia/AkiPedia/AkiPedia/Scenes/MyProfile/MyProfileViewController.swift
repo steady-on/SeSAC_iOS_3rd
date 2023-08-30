@@ -7,11 +7,21 @@
 
 import UIKit
 
+struct UserProfile {
+    var name: String
+    var userName: String
+    var bio: String
+}
+
 class MyProfileViewController: BaseViewController {
+    
+    var userProfile = UserProfile(name: "Roen", userName: "_steady_on", bio: "I'm Roen and Apple platform developer.")
     
     let mainView = MyProfileView()
     
-    var userId: String = "아이디를 설정해주세요"
+    var userId: String {
+        userProfile.userName
+    }
     
     lazy var userIdLabel: UIBarButtonItem = {
         let label = UILabel()
@@ -34,10 +44,14 @@ class MyProfileViewController: BaseViewController {
         navigationItem.setLeftBarButton(userIdLabel, animated: true)
         
         mainView.editProfileButton.addTarget(self, action: #selector(tappedEditProfileButton), for: .touchUpInside)
+        
+        mainView.nicknameLabel.text = userProfile.name
+        mainView.bioTextView.text = userProfile.bio
     }
     
     @objc func tappedEditProfileButton() {
         let vc = EditProfileViewController()
+        vc.userProfile = userProfile
         navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -23,6 +23,7 @@ class MyProfileView: BaseView {
     
     let bioTextView: UITextView = {
         let textView = UITextView()
+        textView.text = "자기소개를 적어주세요."
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.textColor = .secondaryLabel

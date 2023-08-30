@@ -11,6 +11,8 @@ class EditBioViewController: BaseViewController {
     
     let mainView = EditBioView()
     
+    var oldValue: String!
+    
     override func loadView() {
         view = mainView
     }
@@ -21,6 +23,8 @@ class EditBioViewController: BaseViewController {
     
     override func configureView() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .done, target: self, action: #selector(tappedSaveButton))
+        
+        mainView.bioTextView.text = oldValue
     }
     
     @objc func tappedSaveButton() {

@@ -12,6 +12,7 @@ class EditBioView: BaseView {
     let bioTextView: UITextView = {
         let textView = UITextView()
         textView.isScrollEnabled = false
+        textView.font = .preferredFont(forTextStyle: .body)
         return textView
     }()
     

@@ -11,6 +11,8 @@ class EditProfileViewController: BaseViewController {
     
     private let mainView = EditProfileView()
     
+    var userProfile: UserProfile!
+    
     override func loadView() {
         view = mainView
     }
@@ -50,7 +52,7 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
         
         var content = UIListContentConfiguration.valueCell()
         content.text = profileInfo.labelText
-        content.secondaryText = "프로필 내용이 들어갈 자리"
+        content.secondaryText = profileInfo.getValue(from: userProfile)
         content.secondaryTextProperties.color = .label
         cell.contentConfiguration = content
         
@@ -64,10 +66,14 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
         case .name, .userName:
             let vc = ChangeNameViewController()
             self.navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
+            vc.oldValue = profileInfo.getValue(from: userProfile)
             vc.profileInfo = profileInfo
             navigationController?.pushViewController(vc, animated: true)
         case .bio:
-            break
+            let vc = EditBioViewController()
+            self.navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
+            vc.oldValue = profileInfo.getValue(from: userProfile)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
@@ -82,6 +88,14 @@ enum ProfileInfo: Int, CaseIterable {
         case .name: return "이름"
         case .userName: return "사용자 이름"
         case .bio: return "소개"
+        }
+    }
+    
+    func getValue(from userProfile: UserProfile) -> String {
+        switch self {
+        case .name: return userProfile.name
+        case .userName: return userProfile.userName
+        case .bio: return userProfile.bio
         }
     }
 }
