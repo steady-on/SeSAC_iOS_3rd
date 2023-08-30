@@ -21,6 +21,17 @@ class MyProfileView: BaseView {
         return label
     }()
     
+    let bioTextView: UITextView = {
+        let textView = UITextView()
+        textView.isScrollEnabled = false
+        textView.isEditable = false
+        textView.textColor = .secondaryLabel
+        textView.font = .preferredFont(forTextStyle: .callout)
+        textView.textContainerInset = .zero
+        textView.textContainer.lineFragmentPadding = .zero
+        return textView
+    }()
+    
     let editProfileButton: UIButton = {
         let button = UIButton()
         
@@ -38,7 +49,7 @@ class MyProfileView: BaseView {
 
     override func configureView() {
         super.configureView()
-        let components = [profileImageView, nicknameLabel, editProfileButton]
+        let components = [profileImageView, nicknameLabel, bioTextView, editProfileButton]
         components.forEach { component in
             component.translatesAutoresizingMaskIntoConstraints = false
             addSubview(component)
@@ -59,9 +70,15 @@ class MyProfileView: BaseView {
             nicknameLabel.trailingAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.trailingAnchor, constant: -16)
         ])
         
+        NSLayoutConstraint.activate([
+            bioTextView.topAnchor.constraint(equalTo: nicknameLabel.bottomAnchor, constant: 4),
+            bioTextView.leadingAnchor.constraint(equalTo: nicknameLabel.leadingAnchor),
+            bioTextView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+        ])
+        
         NSLayoutConstraint .activate([
-            editProfileButton.topAnchor.constraint(equalTo: nicknameLabel.bottomAnchor, constant: 16),
-            editProfileButton.leadingAnchor.constraint(equalTo: nicknameLabel.leadingAnchor),
+            editProfileButton.topAnchor.constraint(equalTo: bioTextView.bottomAnchor, constant: 16),
+            editProfileButton.leadingAnchor.constraint(equalTo: bioTextView.leadingAnchor),
             editProfileButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
             editProfileButton.heightAnchor.constraint(equalToConstant: 40)
         ])
