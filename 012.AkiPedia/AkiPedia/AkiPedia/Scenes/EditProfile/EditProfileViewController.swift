@@ -9,7 +9,7 @@ import UIKit
 
 class EditProfileViewController: BaseViewController {
     
-    let mainView = EditProfileView()
+    private let mainView = EditProfileView()
     
     override func loadView() {
         view = mainView
@@ -29,11 +29,11 @@ class EditProfileViewController: BaseViewController {
         mainView.infoTableView.dataSource = self
     }
     
-    @objc func tappedCancelButton() {
+    @objc private func tappedCancelButton() {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func tappedDoneButton() {
+    @objc private func tappedDoneButton() {
         
     }
 }
@@ -53,5 +53,23 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
         cell.contentConfiguration = content
         
         return cell
+    }
+}
+
+fileprivate enum ProfileInfo {
+    case name
+    case userName
+    case bio
+    case links
+    case gender
+    
+    var labelText: String {
+        switch self {
+        case .name: return "이름"
+        case .userName: return "사용자 이름"
+        case .bio: return "소개"
+        case .links: return "링크"
+        case .gender: return "성별"
+        }
     }
 }
