@@ -17,11 +17,19 @@ class ChangeNameViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainView.textField.becomeFirstResponder()
     }
-
+    
+    var profileInfo: ProfileInfo! {
+        didSet {
+            title = profileInfo.labelText
+            mainView.fieldLabel.text = profileInfo.labelText
+        }
+    }
+    
     override func configureView() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .done, target: self, action: #selector(tappedSaveButton))
-        navigationItem.backButtonTitle = nil
     }
     
     @objc func tappedSaveButton() {

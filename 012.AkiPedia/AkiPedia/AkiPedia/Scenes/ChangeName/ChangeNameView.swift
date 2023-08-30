@@ -11,7 +11,7 @@ class ChangeNameView: BaseView {
     
     let fieldLabel: UILabel = {
         let label = UILabel()
-        label.font = .preferredFont(forTextStyle: .caption1)
+        label.font = .preferredFont(forTextStyle: .callout)
         label.textColor = .secondaryLabel
         return label
     }()
@@ -56,7 +56,7 @@ class ChangeNameView: BaseView {
         
         NSLayoutConstraint.activate([
             divider.heightAnchor.constraint(equalToConstant: 0.5),
-            divider.topAnchor.constraint(equalTo: textField.bottomAnchor),
+            divider.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 4),
             divider.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             divider.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
