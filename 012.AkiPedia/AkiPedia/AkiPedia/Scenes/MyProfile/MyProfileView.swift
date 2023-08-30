@@ -16,12 +16,12 @@ class MyProfileView: BaseView {
     let nicknameLabel: UILabel = {
         let label = UILabel()
         label.text = "Nickname"
-        label.font = .preferredFont(forTextStyle: .title3)
+        label.font = .preferredFont(forTextStyle: .body)
         label.numberOfLines = 1
         return label
     }()
     
-    let profileEditButton: UIButton = {
+    let editProfileButton: UIButton = {
         let button = UIButton()
         
         var config = UIButton.Configuration.borderedTinted()
@@ -35,10 +35,10 @@ class MyProfileView: BaseView {
         
         return button
     }()
-    
+
     override func configureView() {
         super.configureView()
-        let components = [profileImageView, nicknameLabel, profileEditButton]
+        let components = [profileImageView, nicknameLabel, editProfileButton]
         components.forEach { component in
             component.translatesAutoresizingMaskIntoConstraints = false
             addSubview(component)
@@ -60,10 +60,10 @@ class MyProfileView: BaseView {
         ])
         
         NSLayoutConstraint .activate([
-            profileEditButton.topAnchor.constraint(equalTo: nicknameLabel.bottomAnchor, constant: 16),
-            profileEditButton.leadingAnchor.constraint(equalTo: nicknameLabel.leadingAnchor),
-            profileEditButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            profileEditButton.heightAnchor.constraint(equalToConstant: 40)
+            editProfileButton.topAnchor.constraint(equalTo: nicknameLabel.bottomAnchor, constant: 16),
+            editProfileButton.leadingAnchor.constraint(equalTo: nicknameLabel.leadingAnchor),
+            editProfileButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            editProfileButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
 }

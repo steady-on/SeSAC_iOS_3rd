@@ -32,6 +32,8 @@
 		63FAAB822A9DDC340050BF9F /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB812A9DDC340050BF9F /* MyProfileView.swift */; };
 		63FAAB842A9DE8E70050BF9F /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB832A9DE8E70050BF9F /* MyProfileViewController.swift */; };
 		63FAAB862A9DEFFC0050BF9F /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB852A9DEFFC0050BF9F /* ProfileImageView.swift */; };
+		63FAAB892A9DF3D30050BF9F /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB882A9DF3D30050BF9F /* EditProfileView.swift */; };
+		63FAAB962A9F04430050BF9F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB952A9F04430050BF9F /* EditProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		63FAAB812A9DDC340050BF9F /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		63FAAB832A9DE8E70050BF9F /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		63FAAB852A9DEFFC0050BF9F /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		63FAAB882A9DF3D30050BF9F /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		63FAAB952A9F04430050BF9F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				63FAAB782A9DD6D70050BF9F /* MyProfile */,
+				63FAAB872A9DF3AE0050BF9F /* EditProfile */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -202,6 +207,15 @@
 				63FAAB7F2A9DDA830050BF9F /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		63FAAB872A9DF3AE0050BF9F /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				63FAAB882A9DF3D30050BF9F /* EditProfileView.swift */,
+				63FAAB952A9F04430050BF9F /* EditProfileViewController.swift */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,10 +300,12 @@
 				63545A3E2A9337C800125296 /* APIKey.swift in Sources */,
 				63545A2C2A93370600125296 /* SceneDelegate.swift in Sources */,
 				63FAAB822A9DDC340050BF9F /* MyProfileView.swift in Sources */,
+				63FAAB962A9F04430050BF9F /* EditProfileViewController.swift in Sources */,
 				63FAAB842A9DE8E70050BF9F /* MyProfileViewController.swift in Sources */,
 				63545A4A2A9354A700125296 /* MediaTypeLabel.swift in Sources */,
 				63545A522A93922900125296 /* AllTrendData.swift in Sources */,
 				63545A4D2A93572B00125296 /* MediaType.swift in Sources */,
+				63FAAB892A9DF3D30050BF9F /* EditProfileView.swift in Sources */,
 				63545A502A93682D00125296 /* ReuseIdentifying.swift in Sources */,
 				63FAAB862A9DEFFC0050BF9F /* ProfileImageView.swift in Sources */,
 				63545A572A94347600125296 /* MediaProtocol.swift in Sources */,
