@@ -35,6 +35,7 @@
 		63FAAB892A9DF3D30050BF9F /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB882A9DF3D30050BF9F /* EditProfileView.swift */; };
 		63FAAB962A9F04430050BF9F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB952A9F04430050BF9F /* EditProfileViewController.swift */; };
 		63FAAB992A9F21C90050BF9F /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB982A9F21C90050BF9F /* ChangeNameView.swift */; };
+		63FAAB9B2A9F27590050BF9F /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB9A2A9F27590050BF9F /* ChangeNameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		63FAAB882A9DF3D30050BF9F /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		63FAAB952A9F04430050BF9F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		63FAAB982A9F21C90050BF9F /* ChangeNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
+		63FAAB9A2A9F27590050BF9F /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				63FAAB982A9F21C90050BF9F /* ChangeNameView.swift */,
+				63FAAB9A2A9F27590050BF9F /* ChangeNameViewController.swift */,
 			);
 			path = ChangeName;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				63FAAB7B2A9DD9440050BF9F /* BaseView.swift in Sources */,
 				63545A2A2A93370600125296 /* AppDelegate.swift in Sources */,
 				63FAAB802A9DDA830050BF9F /* BaseViewController.swift in Sources */,
+				63FAAB9B2A9F27590050BF9F /* ChangeNameViewController.swift in Sources */,
 				63FAAB1D2A9CC7B30050BF9F /* UIImageView+.swift in Sources */,
 				63545A3E2A9337C800125296 /* APIKey.swift in Sources */,
 				63545A2C2A93370600125296 /* SceneDelegate.swift in Sources */,
