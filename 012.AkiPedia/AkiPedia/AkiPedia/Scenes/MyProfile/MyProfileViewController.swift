@@ -24,14 +24,20 @@ class MyProfileViewController: BaseViewController {
     override func loadView() {
         view = mainView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
-    override func configureView() {
+    override func configureView() {        
         navigationItem.hidesBackButton = true
         navigationItem.setLeftBarButton(userIdLabel, animated: true)
+        
+        mainView.editProfileButton.addTarget(self, action: #selector(tappedEditProfileButton), for: .touchUpInside)
+    }
+    
+    @objc func tappedEditProfileButton() {
+        let vc = EditProfileViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
