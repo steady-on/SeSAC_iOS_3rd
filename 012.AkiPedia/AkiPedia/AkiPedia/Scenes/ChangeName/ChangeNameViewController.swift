@@ -12,6 +12,7 @@ class ChangeNameViewController: BaseViewController {
     let mainView = ChangeNameView()
     
     var oldValue: String!
+    var delegate: DataPassDelegate?
     
     override func loadView() {
         view = mainView
@@ -36,9 +37,15 @@ class ChangeNameViewController: BaseViewController {
     }
     
     @objc func tappedSaveButton() {
-        guard let name = mainView.textField.text else { return }
+        guard let inputName = mainView.textField.text else { return }
         
-        NotificationCenter.default.post(name: NSNotification.Name.name, object: nil, userInfo: ["name": name])
+        switch profileInfo {
+        case .name:
+            NotificationCenter.default.post(name: NSNotification.Name.name, object: nil, userInfo: ["name": inputName])
+        case .userName:
+            delegate?.receiveChanged(data: inputName)
+        default: break
+        }
         
         navigationController?.popViewController(animated: true)
     }

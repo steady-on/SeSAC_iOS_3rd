@@ -25,17 +25,7 @@ class MyProfileViewController: BaseViewController {
     
     let mainView = MyProfileView()
     
-    var userId: String {
-        userProfile.userName
-    }
-    
-    lazy var userIdLabel: UIBarButtonItem = {
-        let label = UILabel()
-        label.text = userId
-        label.font = .boldSystemFont(ofSize: 22)
-        
-        return UIBarButtonItem(customView: label)
-    }()
+    var userId: String { userProfile.userName }
     
     override func loadView() {
         view = mainView
@@ -49,6 +39,7 @@ class MyProfileViewController: BaseViewController {
 
     override func configureView() {        
         navigationItem.hidesBackButton = true
+        let userIdLabel = makeNavigationBarUserNameLabel()
         navigationItem.setLeftBarButton(userIdLabel, animated: true)
         
         mainView.editProfileButton.addTarget(self, action: #selector(tappedEditProfileButton), for: .touchUpInside)
@@ -66,6 +57,23 @@ class MyProfileViewController: BaseViewController {
     @objc func tappedEditProfileButton() {
         let vc = EditProfileViewController()
         vc.userProfile = userProfile
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func makeNavigationBarUserNameLabel() -> UIBarButtonItem {
+        let label = UILabel()
+        label.text = userId
+        label.font = .boldSystemFont(ofSize: 22)
+        
+        return UIBarButtonItem(customView: label)
+    }
+}
+
+extension MyProfileViewController: DataPassDelegate {
+    func receiveChanged(data: String) {
+        userProfile.userName = data
+        let userIdLabel = makeNavigationBarUserNameLabel()
+        navigationItem.setLeftBarButton(userIdLabel, animated: true)
     }
 }

@@ -12,6 +12,7 @@ class EditProfileViewController: BaseViewController {
     private let mainView = EditProfileView()
     
     var userProfile: UserProfile!
+    var delegate: DataPassDelegate?
     
     override func loadView() {
         view = mainView
@@ -61,11 +62,18 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
         guard let profileInfo = ProfileInfo(rawValue: indexPath.row) else { return }
         
         switch profileInfo {
-        case .name, .userName:
+        case .name:
             let vc = ChangeNameViewController()
             self.navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
             vc.oldValue = profileInfo.getValue(from: userProfile)
             vc.profileInfo = profileInfo
+            navigationController?.pushViewController(vc, animated: true)
+        case .userName:
+            let vc = ChangeNameViewController()
+            self.navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
+            vc.oldValue = profileInfo.getValue(from: userProfile)
+            vc.profileInfo = profileInfo
+            vc.delegate = self
             navigationController?.pushViewController(vc, animated: true)
         case .bio:
             let vc = EditBioViewController()
@@ -73,6 +81,16 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
             vc.oldValue = profileInfo.getValue(from: userProfile)
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+}
+
+extension EditProfileViewController: DataPassDelegate {
+    func receiveChanged(data: String) {
+        DispatchQueue.main.async {
+            self.mainView.infoTableView.reloadRows(at: [IndexPath(item: 1, section: 0)], with: .automatic)
+        }
+        
+        delegate?.receiveChanged(data: data)
     }
 }
 
