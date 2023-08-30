@@ -37,6 +37,7 @@
 		63FAAB992A9F21C90050BF9F /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB982A9F21C90050BF9F /* ChangeNameView.swift */; };
 		63FAAB9B2A9F27590050BF9F /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB9A2A9F27590050BF9F /* ChangeNameViewController.swift */; };
 		63FAAB9E2A9F38950050BF9F /* EditBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB9D2A9F38950050BF9F /* EditBioView.swift */; };
+		63FAABA02A9F3A700050BF9F /* EditBioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB9F2A9F3A700050BF9F /* EditBioViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		63FAAB982A9F21C90050BF9F /* ChangeNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
 		63FAAB9A2A9F27590050BF9F /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
 		63FAAB9D2A9F38950050BF9F /* EditBioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBioView.swift; sourceTree = "<group>"; };
+		63FAAB9F2A9F3A700050BF9F /* EditBioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBioViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				63FAAB9D2A9F38950050BF9F /* EditBioView.swift */,
+				63FAAB9F2A9F3A700050BF9F /* EditBioViewController.swift */,
 			);
 			path = EditBio;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				63FAAB1D2A9CC7B30050BF9F /* UIImageView+.swift in Sources */,
 				63545A3E2A9337C800125296 /* APIKey.swift in Sources */,
 				63545A2C2A93370600125296 /* SceneDelegate.swift in Sources */,
+				63FAABA02A9F3A700050BF9F /* EditBioViewController.swift in Sources */,
 				63FAAB822A9DDC340050BF9F /* MyProfileView.swift in Sources */,
 				63FAAB962A9F04430050BF9F /* EditProfileViewController.swift in Sources */,
 				63FAAB842A9DE8E70050BF9F /* MyProfileViewController.swift in Sources */,
