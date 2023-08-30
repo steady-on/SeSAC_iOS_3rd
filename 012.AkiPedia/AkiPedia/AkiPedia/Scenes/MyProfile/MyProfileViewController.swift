@@ -21,7 +21,7 @@ class UserProfile {
 
 class MyProfileViewController: BaseViewController {
     
-    var userProfile = UserProfile(name: "Roen", userName: "_steady_on", bio: "I'm Roen and Apple platform developer.")
+    let userProfile = UserProfile(name: "Roen", userName: "_steady_on", bio: "I'm Roen and Apple platform developer.")
     
     let mainView = MyProfileView()
     
@@ -43,6 +43,8 @@ class MyProfileViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(changeNameNotificationHandler), name: NSNotification.Name.name, object: nil)
     }
 
     override func configureView() {        
@@ -53,6 +55,12 @@ class MyProfileViewController: BaseViewController {
         
         mainView.nicknameLabel.text = userProfile.name
         mainView.bioTextView.text = userProfile.bio
+    }
+    
+    @objc func changeNameNotificationHandler(_ notification: NSNotification) {
+        guard let name = notification.userInfo?["name"] as? String else { return }
+        userProfile.name = name
+        mainView.nicknameLabel.text = name
     }
     
     @objc func tappedEditProfileButton() {

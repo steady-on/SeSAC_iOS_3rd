@@ -36,6 +36,10 @@ class ChangeNameViewController: BaseViewController {
     }
     
     @objc func tappedSaveButton() {
+        guard let name = mainView.textField.text else { return }
         
+        NotificationCenter.default.post(name: NSNotification.Name.name, object: nil, userInfo: ["name": name])
+        
+        navigationController?.popViewController(animated: true)
     }
 }

@@ -19,17 +19,22 @@ class EditProfileViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(changeNameNotificationHandler), name: NSNotification.Name.name, object: nil)
     }
 
     override func configureView() {
         title = "프로필 편집"
-        navigationItem.hidesBackButton = true
         
         mainView.infoTableView.delegate = self
         mainView.infoTableView.dataSource = self
     }
     
-        
+    @objc func changeNameNotificationHandler(_ notification: NSNotification) {
+        guard let _ = notification.userInfo?["name"] as? String else { return }
+        DispatchQueue.main.async {
+            self.mainView.infoTableView.reloadRows(at: [IndexPath(item: 0, section: 0)], with: .automatic)
+        }
     }
 }
 

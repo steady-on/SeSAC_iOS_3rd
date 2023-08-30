@@ -28,7 +28,6 @@ class EditProfileView: BaseView {
     lazy var infoTableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.isScrollEnabled = false
         return tableView
     }()
     
@@ -38,8 +37,8 @@ class EditProfileView: BaseView {
         let components = [profileImageView, editPictureButton, infoTableView]
         
         components.forEach { component in
-            component.translatesAutoresizingMaskIntoConstraints = false
             addSubview(component)
+            component.translatesAutoresizingMaskIntoConstraints = false
         }
     }
     
@@ -61,7 +60,7 @@ class EditProfileView: BaseView {
             infoTableView.topAnchor.constraint(equalTo: editPictureButton.bottomAnchor, constant: 16),
             infoTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             infoTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            infoTableView.heightAnchor.constraint(equalToConstant: 250)
+            infoTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16)
         ])
     }
 }

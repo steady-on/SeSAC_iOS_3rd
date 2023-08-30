@@ -38,6 +38,7 @@
 		63FAAB9B2A9F27590050BF9F /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB9A2A9F27590050BF9F /* ChangeNameViewController.swift */; };
 		63FAAB9E2A9F38950050BF9F /* EditBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB9D2A9F38950050BF9F /* EditBioView.swift */; };
 		63FAABA02A9F3A700050BF9F /* EditBioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB9F2A9F3A700050BF9F /* EditBioViewController.swift */; };
+		63FAABA22A9F53BB0050BF9F /* NotificationConter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAABA12A9F53BB0050BF9F /* NotificationConter+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		63FAAB9A2A9F27590050BF9F /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
 		63FAAB9D2A9F38950050BF9F /* EditBioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBioView.swift; sourceTree = "<group>"; };
 		63FAAB9F2A9F3A700050BF9F /* EditBioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBioViewController.swift; sourceTree = "<group>"; };
+		63FAABA12A9F53BB0050BF9F /* NotificationConter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationConter+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			children = (
 				63545A4F2A93682D00125296 /* ReuseIdentifying.swift */,
 				63FAAB1C2A9CC7B30050BF9F /* UIImageView+.swift */,
+				63FAABA12A9F53BB0050BF9F /* NotificationConter+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				63FAAB842A9DE8E70050BF9F /* MyProfileViewController.swift in Sources */,
 				63545A4A2A9354A700125296 /* MediaTypeLabel.swift in Sources */,
 				63545A522A93922900125296 /* AllTrendData.swift in Sources */,
+				63FAABA22A9F53BB0050BF9F /* NotificationConter+.swift in Sources */,
 				63545A4D2A93572B00125296 /* MediaType.swift in Sources */,
 				63FAAB892A9DF3D30050BF9F /* EditProfileView.swift in Sources */,
 				63545A502A93682D00125296 /* ReuseIdentifying.swift in Sources */,
