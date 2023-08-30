@@ -24,18 +24,11 @@ class EditProfileViewController: BaseViewController {
     override func configureView() {
         title = "프로필 편집"
         navigationItem.hidesBackButton = true
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(tappedCancelButton))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(tappedDoneButton))
         
         mainView.infoTableView.delegate = self
         mainView.infoTableView.dataSource = self
     }
     
-    @objc private func tappedCancelButton() {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    @objc private func tappedDoneButton() {
         
     }
 }
