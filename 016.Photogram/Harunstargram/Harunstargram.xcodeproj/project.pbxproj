@@ -9,19 +9,43 @@
 /* Begin PBXBuildFile section */
 		63FAABFC2AA011A90050BF9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAABFB2AA011A90050BF9F /* AppDelegate.swift */; };
 		63FAABFE2AA011A90050BF9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAABFD2AA011A90050BF9F /* SceneDelegate.swift */; };
-		63FAAC002AA011A90050BF9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAABFF2AA011A90050BF9F /* ViewController.swift */; };
 		63FAAC052AA011AA0050BF9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FAAC042AA011AA0050BF9F /* Assets.xcassets */; };
 		63FAAC082AA011AA0050BF9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63FAAC062AA011AA0050BF9F /* LaunchScreen.storyboard */; };
+		63FAAC1C2AA012A10050BF9F /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAC112AA012A10050BF9F /* EditProfileView.swift */; };
+		63FAAC1D2AA012A10050BF9F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAC122AA012A10050BF9F /* EditProfileViewController.swift */; };
+		63FAAC1E2AA012A10050BF9F /* EditBioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAC142AA012A10050BF9F /* EditBioViewController.swift */; };
+		63FAAC1F2AA012A10050BF9F /* EditBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAC152AA012A10050BF9F /* EditBioView.swift */; };
+		63FAAC202AA012A10050BF9F /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAC172AA012A10050BF9F /* MyProfileView.swift */; };
+		63FAAC212AA012A10050BF9F /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAC182AA012A10050BF9F /* MyProfileViewController.swift */; };
+		63FAAC222AA012A10050BF9F /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAC1A2AA012A10050BF9F /* ChangeNameViewController.swift */; };
+		63FAAC232AA012A10050BF9F /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAC1B2AA012A10050BF9F /* ChangeNameView.swift */; };
+		63FAAC272AA013590050BF9F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAC252AA013590050BF9F /* BaseViewController.swift */; };
+		63FAAC282AA013590050BF9F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAC262AA013590050BF9F /* BaseView.swift */; };
+		63FAAC2B2AA013AE0050BF9F /* NotificationConter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAC2A2AA013AE0050BF9F /* NotificationConter+.swift */; };
+		63FAAC2E2AA014570050BF9F /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAC2D2AA014570050BF9F /* ProfileImageView.swift */; };
+		63FAAC312AA0147F0050BF9F /* DataPassDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAC302AA0147F0050BF9F /* DataPassDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		63FAABF82AA011A90050BF9F /* Harunstargram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harunstargram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FAABFB2AA011A90050BF9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63FAABFD2AA011A90050BF9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		63FAABFF2AA011A90050BF9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		63FAAC042AA011AA0050BF9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63FAAC072AA011AA0050BF9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63FAAC092AA011AA0050BF9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63FAAC112AA012A10050BF9F /* EditProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		63FAAC122AA012A10050BF9F /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		63FAAC142AA012A10050BF9F /* EditBioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBioViewController.swift; sourceTree = "<group>"; };
+		63FAAC152AA012A10050BF9F /* EditBioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBioView.swift; sourceTree = "<group>"; };
+		63FAAC172AA012A10050BF9F /* MyProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		63FAAC182AA012A10050BF9F /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		63FAAC1A2AA012A10050BF9F /* ChangeNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
+		63FAAC1B2AA012A10050BF9F /* ChangeNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
+		63FAAC252AA013590050BF9F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		63FAAC262AA013590050BF9F /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		63FAAC2A2AA013AE0050BF9F /* NotificationConter+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationConter+.swift"; sourceTree = "<group>"; };
+		63FAAC2D2AA014570050BF9F /* ProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		63FAAC302AA0147F0050BF9F /* DataPassDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPassDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +80,97 @@
 			children = (
 				63FAABFB2AA011A90050BF9F /* AppDelegate.swift */,
 				63FAABFD2AA011A90050BF9F /* SceneDelegate.swift */,
-				63FAABFF2AA011A90050BF9F /* ViewController.swift */,
+				63FAAC0F2AA012A10050BF9F /* Scenes */,
+				63FAAC242AA013590050BF9F /* Base */,
+				63FAAC2C2AA013FC0050BF9F /* Product */,
+				63FAAC2F2AA0147F0050BF9F /* Protocol */,
+				63FAAC292AA0137F0050BF9F /* Extension */,
 				63FAAC042AA011AA0050BF9F /* Assets.xcassets */,
 				63FAAC062AA011AA0050BF9F /* LaunchScreen.storyboard */,
 				63FAAC092AA011AA0050BF9F /* Info.plist */,
 			);
 			path = Harunstargram;
+			sourceTree = "<group>";
+		};
+		63FAAC0F2AA012A10050BF9F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				63FAAC102AA012A10050BF9F /* EditProfile */,
+				63FAAC132AA012A10050BF9F /* EditBio */,
+				63FAAC162AA012A10050BF9F /* MyProfile */,
+				63FAAC192AA012A10050BF9F /* ChangeName */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		63FAAC102AA012A10050BF9F /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				63FAAC112AA012A10050BF9F /* EditProfileView.swift */,
+				63FAAC122AA012A10050BF9F /* EditProfileViewController.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		63FAAC132AA012A10050BF9F /* EditBio */ = {
+			isa = PBXGroup;
+			children = (
+				63FAAC142AA012A10050BF9F /* EditBioViewController.swift */,
+				63FAAC152AA012A10050BF9F /* EditBioView.swift */,
+			);
+			path = EditBio;
+			sourceTree = "<group>";
+		};
+		63FAAC162AA012A10050BF9F /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				63FAAC172AA012A10050BF9F /* MyProfileView.swift */,
+				63FAAC182AA012A10050BF9F /* MyProfileViewController.swift */,
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		63FAAC192AA012A10050BF9F /* ChangeName */ = {
+			isa = PBXGroup;
+			children = (
+				63FAAC1A2AA012A10050BF9F /* ChangeNameViewController.swift */,
+				63FAAC1B2AA012A10050BF9F /* ChangeNameView.swift */,
+			);
+			path = ChangeName;
+			sourceTree = "<group>";
+		};
+		63FAAC242AA013590050BF9F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				63FAAC252AA013590050BF9F /* BaseViewController.swift */,
+				63FAAC262AA013590050BF9F /* BaseView.swift */,
+			);
+			name = Base;
+			path = Harunstargram/Base;
+			sourceTree = SOURCE_ROOT;
+		};
+		63FAAC292AA0137F0050BF9F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				63FAAC2A2AA013AE0050BF9F /* NotificationConter+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		63FAAC2C2AA013FC0050BF9F /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				63FAAC2D2AA014570050BF9F /* ProfileImageView.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		63FAAC2F2AA0147F0050BF9F /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				63FAAC302AA0147F0050BF9F /* DataPassDelegate.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +243,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63FAAC002AA011A90050BF9F /* ViewController.swift in Sources */,
+				63FAAC202AA012A10050BF9F /* MyProfileView.swift in Sources */,
+				63FAAC282AA013590050BF9F /* BaseView.swift in Sources */,
+				63FAAC2B2AA013AE0050BF9F /* NotificationConter+.swift in Sources */,
+				63FAAC1F2AA012A10050BF9F /* EditBioView.swift in Sources */,
+				63FAAC232AA012A10050BF9F /* ChangeNameView.swift in Sources */,
+				63FAAC212AA012A10050BF9F /* MyProfileViewController.swift in Sources */,
+				63FAAC272AA013590050BF9F /* BaseViewController.swift in Sources */,
 				63FAABFC2AA011A90050BF9F /* AppDelegate.swift in Sources */,
+				63FAAC1C2AA012A10050BF9F /* EditProfileView.swift in Sources */,
+				63FAAC1D2AA012A10050BF9F /* EditProfileViewController.swift in Sources */,
+				63FAAC222AA012A10050BF9F /* ChangeNameViewController.swift in Sources */,
+				63FAAC2E2AA014570050BF9F /* ProfileImageView.swift in Sources */,
+				63FAAC312AA0147F0050BF9F /* DataPassDelegate.swift in Sources */,
 				63FAABFE2AA011A90050BF9F /* SceneDelegate.swift in Sources */,
+				63FAAC1E2AA012A10050BF9F /* EditBioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
