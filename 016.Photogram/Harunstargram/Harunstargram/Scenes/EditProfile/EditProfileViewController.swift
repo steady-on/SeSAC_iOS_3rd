@@ -30,6 +30,23 @@ class EditProfileViewController: BaseViewController {
         
         mainView.infoTableView.delegate = self
         mainView.infoTableView.dataSource = self
+        mainView.editPictureButton.addTarget(self, action: #selector(editProfilePhotoButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func editProfilePhotoButtonTapped() {
+        let actionSheet = UIAlertController(title: "프로필 사진 변경", message: nil, preferredStyle: .actionSheet)
+        
+        let galary = UIAlertAction(title: "갤러리에서 가져오기", style: .default)
+        
+        let unsplash = UIAlertAction(title: "Unsplash에서 검색하기", style: .default)
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        actionSheet.addAction(galary)
+        actionSheet.addAction(unsplash)
+        actionSheet.addAction(cancel)
+        
+        present(actionSheet, animated: true)
     }
     
     @objc func changeNameNotificationHandler(_ notification: NSNotification) {
