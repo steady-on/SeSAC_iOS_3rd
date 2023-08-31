@@ -27,19 +27,6 @@
 		63FAAB192A9C9E6B0050BF9F /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB182A9C9E6B0050BF9F /* URLManager.swift */; };
 		63FAAB1B2A9C9FC00050BF9F /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB1A2A9C9FC00050BF9F /* TMDBAPIManager.swift */; };
 		63FAAB1D2A9CC7B30050BF9F /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB1C2A9CC7B30050BF9F /* UIImageView+.swift */; };
-		63FAAB7B2A9DD9440050BF9F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB7A2A9DD9440050BF9F /* BaseView.swift */; };
-		63FAAB802A9DDA830050BF9F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB7F2A9DDA830050BF9F /* BaseViewController.swift */; };
-		63FAAB822A9DDC340050BF9F /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB812A9DDC340050BF9F /* MyProfileView.swift */; };
-		63FAAB842A9DE8E70050BF9F /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB832A9DE8E70050BF9F /* MyProfileViewController.swift */; };
-		63FAAB862A9DEFFC0050BF9F /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB852A9DEFFC0050BF9F /* ProfileImageView.swift */; };
-		63FAAB892A9DF3D30050BF9F /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB882A9DF3D30050BF9F /* EditProfileView.swift */; };
-		63FAAB962A9F04430050BF9F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB952A9F04430050BF9F /* EditProfileViewController.swift */; };
-		63FAAB992A9F21C90050BF9F /* ChangeNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB982A9F21C90050BF9F /* ChangeNameView.swift */; };
-		63FAAB9B2A9F27590050BF9F /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB9A2A9F27590050BF9F /* ChangeNameViewController.swift */; };
-		63FAAB9E2A9F38950050BF9F /* EditBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB9D2A9F38950050BF9F /* EditBioView.swift */; };
-		63FAABA02A9F3A700050BF9F /* EditBioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAAB9F2A9F3A700050BF9F /* EditBioViewController.swift */; };
-		63FAABA22A9F53BB0050BF9F /* NotificationConter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAABA12A9F53BB0050BF9F /* NotificationConter+.swift */; };
-		63FAABA82A9F60D60050BF9F /* DataPassDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAABA72A9F60D60050BF9F /* DataPassDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,19 +52,6 @@
 		63FAAB182A9C9E6B0050BF9F /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
 		63FAAB1A2A9C9FC00050BF9F /* TMDBAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIManager.swift; sourceTree = "<group>"; };
 		63FAAB1C2A9CC7B30050BF9F /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
-		63FAAB7A2A9DD9440050BF9F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		63FAAB7F2A9DDA830050BF9F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		63FAAB812A9DDC340050BF9F /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
-		63FAAB832A9DE8E70050BF9F /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
-		63FAAB852A9DEFFC0050BF9F /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
-		63FAAB882A9DF3D30050BF9F /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
-		63FAAB952A9F04430050BF9F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		63FAAB982A9F21C90050BF9F /* ChangeNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameView.swift; sourceTree = "<group>"; };
-		63FAAB9A2A9F27590050BF9F /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
-		63FAAB9D2A9F38950050BF9F /* EditBioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBioView.swift; sourceTree = "<group>"; };
-		63FAAB9F2A9F3A700050BF9F /* EditBioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBioViewController.swift; sourceTree = "<group>"; };
-		63FAABA12A9F53BB0050BF9F /* NotificationConter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationConter+.swift"; sourceTree = "<group>"; };
-		63FAABA72A9F60D60050BF9F /* DataPassDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPassDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,14 +86,11 @@
 			children = (
 				63545A292A93370600125296 /* AppDelegate.swift */,
 				63545A2B2A93370600125296 /* SceneDelegate.swift */,
-				63FAAB772A9DD6C60050BF9F /* Scenes */,
-				63FAAB792A9DD8500050BF9F /* Base */,
 				63545A3F2A9337F900125296 /* View */,
 				63545A402A9337FF00125296 /* ViewController */,
 				63545A482A934FCF00125296 /* Product */,
 				63545A4B2A93572000125296 /* Model */,
 				63545A412A93380F00125296 /* Network */,
-				63FAABA62A9F60AC0050BF9F /* Protocol */,
 				63545A4E2A93681A00125296 /* Extension */,
 				63545A322A93370800125296 /* Assets.xcassets */,
 				63545A342A93370800125296 /* LaunchScreen.storyboard */,
@@ -161,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				63545A492A9354A700125296 /* MediaTypeLabel.swift */,
-				63FAAB852A9DEFFC0050BF9F /* ProfileImageView.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -182,7 +152,6 @@
 			children = (
 				63545A4F2A93682D00125296 /* ReuseIdentifying.swift */,
 				63FAAB1C2A9CC7B30050BF9F /* UIImageView+.swift */,
-				63FAABA12A9F53BB0050BF9F /* NotificationConter+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -194,70 +163,6 @@
 				63545A542A93940400125296 /* GenreData.swift */,
 			);
 			path = NetworkingModel;
-			sourceTree = "<group>";
-		};
-		63FAAB772A9DD6C60050BF9F /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				63FAAB782A9DD6D70050BF9F /* MyProfile */,
-				63FAAB872A9DF3AE0050BF9F /* EditProfile */,
-				63FAAB972A9F21A60050BF9F /* ChangeName */,
-				63FAAB9C2A9F38720050BF9F /* EditBio */,
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
-		63FAAB782A9DD6D70050BF9F /* MyProfile */ = {
-			isa = PBXGroup;
-			children = (
-				63FAAB812A9DDC340050BF9F /* MyProfileView.swift */,
-				63FAAB832A9DE8E70050BF9F /* MyProfileViewController.swift */,
-			);
-			path = MyProfile;
-			sourceTree = "<group>";
-		};
-		63FAAB792A9DD8500050BF9F /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				63FAAB7A2A9DD9440050BF9F /* BaseView.swift */,
-				63FAAB7F2A9DDA830050BF9F /* BaseViewController.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		63FAAB872A9DF3AE0050BF9F /* EditProfile */ = {
-			isa = PBXGroup;
-			children = (
-				63FAAB882A9DF3D30050BF9F /* EditProfileView.swift */,
-				63FAAB952A9F04430050BF9F /* EditProfileViewController.swift */,
-			);
-			path = EditProfile;
-			sourceTree = "<group>";
-		};
-		63FAAB972A9F21A60050BF9F /* ChangeName */ = {
-			isa = PBXGroup;
-			children = (
-				63FAAB982A9F21C90050BF9F /* ChangeNameView.swift */,
-				63FAAB9A2A9F27590050BF9F /* ChangeNameViewController.swift */,
-			);
-			path = ChangeName;
-			sourceTree = "<group>";
-		};
-		63FAAB9C2A9F38720050BF9F /* EditBio */ = {
-			isa = PBXGroup;
-			children = (
-				63FAAB9D2A9F38950050BF9F /* EditBioView.swift */,
-				63FAAB9F2A9F3A700050BF9F /* EditBioViewController.swift */,
-			);
-			path = EditBio;
-			sourceTree = "<group>";
-		};
-		63FAABA62A9F60AC0050BF9F /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				63FAABA72A9F60D60050BF9F /* DataPassDelegate.swift */,
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,32 +238,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				63545A462A933C9B00125296 /* TrendRankingTableViewCell.swift in Sources */,
-				63FAAB992A9F21C90050BF9F /* ChangeNameView.swift in Sources */,
 				63545A2E2A93370600125296 /* TrendRankingViewController.swift in Sources */,
 				63545A592A9435F300125296 /* Movie.swift in Sources */,
-				63FAAB7B2A9DD9440050BF9F /* BaseView.swift in Sources */,
 				63545A2A2A93370600125296 /* AppDelegate.swift in Sources */,
-				63FAAB802A9DDA830050BF9F /* BaseViewController.swift in Sources */,
-				63FAAB9B2A9F27590050BF9F /* ChangeNameViewController.swift in Sources */,
 				63FAAB1D2A9CC7B30050BF9F /* UIImageView+.swift in Sources */,
 				63545A3E2A9337C800125296 /* APIKey.swift in Sources */,
 				63545A2C2A93370600125296 /* SceneDelegate.swift in Sources */,
-				63FAABA02A9F3A700050BF9F /* EditBioViewController.swift in Sources */,
-				63FAAB822A9DDC340050BF9F /* MyProfileView.swift in Sources */,
-				63FAAB962A9F04430050BF9F /* EditProfileViewController.swift in Sources */,
-				63FAAB842A9DE8E70050BF9F /* MyProfileViewController.swift in Sources */,
 				63545A4A2A9354A700125296 /* MediaTypeLabel.swift in Sources */,
 				63545A522A93922900125296 /* AllTrendData.swift in Sources */,
-				63FAABA22A9F53BB0050BF9F /* NotificationConter+.swift in Sources */,
 				63545A4D2A93572B00125296 /* MediaType.swift in Sources */,
-				63FAABA82A9F60D60050BF9F /* DataPassDelegate.swift in Sources */,
-				63FAAB892A9DF3D30050BF9F /* EditProfileView.swift in Sources */,
 				63545A502A93682D00125296 /* ReuseIdentifying.swift in Sources */,
-				63FAAB862A9DEFFC0050BF9F /* ProfileImageView.swift in Sources */,
 				63545A572A94347600125296 /* MediaProtocol.swift in Sources */,
 				63545A5B2A94385F00125296 /* Tv.swift in Sources */,
 				63545A552A93940400125296 /* GenreData.swift in Sources */,
-				63FAAB9E2A9F38950050BF9F /* EditBioView.swift in Sources */,
 				63FAAB1B2A9C9FC00050BF9F /* TMDBAPIManager.swift in Sources */,
 				63FAAB192A9C9E6B0050BF9F /* URLManager.swift in Sources */,
 			);
