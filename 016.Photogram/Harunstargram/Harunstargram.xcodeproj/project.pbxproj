@@ -95,10 +95,10 @@
 		63FAAC0F2AA012A10050BF9F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				63FAAC102AA012A10050BF9F /* EditProfile */,
-				63FAAC132AA012A10050BF9F /* EditBio */,
 				63FAAC162AA012A10050BF9F /* MyProfile */,
+				63FAAC102AA012A10050BF9F /* EditProfile */,
 				63FAAC192AA012A10050BF9F /* ChangeName */,
+				63FAAC132AA012A10050BF9F /* EditBio */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -133,8 +133,8 @@
 		63FAAC192AA012A10050BF9F /* ChangeName */ = {
 			isa = PBXGroup;
 			children = (
-				63FAAC1A2AA012A10050BF9F /* ChangeNameViewController.swift */,
 				63FAAC1B2AA012A10050BF9F /* ChangeNameView.swift */,
+				63FAAC1A2AA012A10050BF9F /* ChangeNameViewController.swift */,
 			);
 			path = ChangeName;
 			sourceTree = "<group>";
