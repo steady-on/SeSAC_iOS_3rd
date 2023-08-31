@@ -11,6 +11,8 @@ class EditProfileViewController: BaseViewController {
     
     private let mainView = EditProfileView()
     
+    let imagePicker = UIImagePickerController()
+    
     var userProfile: UserProfile!
     var delegate: DataPassDelegate?
     var changeBioHandler: ((String) -> Void)?
@@ -26,6 +28,8 @@ class EditProfileViewController: BaseViewController {
     }
 
     override func configureView() {
+        imagePicker.delegate = self
+        
         title = "프로필 편집"
         
         mainView.infoTableView.delegate = self
@@ -36,7 +40,9 @@ class EditProfileViewController: BaseViewController {
     @objc func editProfilePhotoButtonTapped() {
         let actionSheet = UIAlertController(title: "프로필 사진 변경", message: nil, preferredStyle: .actionSheet)
         
-        let galary = UIAlertAction(title: "갤러리에서 가져오기", style: .default)
+        let galary = UIAlertAction(title: "갤러리에서 가져오기", style: .default) { _ in
+            self.checkAuthorizationForGalary()
+        }
         
         let unsplash = UIAlertAction(title: "Unsplash에서 검색하기", style: .default)
         
@@ -54,6 +60,14 @@ class EditProfileViewController: BaseViewController {
         DispatchQueue.main.async {
             self.mainView.infoTableView.reloadRows(at: [IndexPath(item: 0, section: 0)], with: .automatic)
         }
+    }
+    
+    func checkAuthorizationForGalary() {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
+        
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true)
     }
 }
 
@@ -109,6 +123,20 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
             navigationController?.pushViewController(vc, animated: true)
         }
     }
+}
+
+extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
+        
+        self.mainView.profileImageView.image = image
+        dismiss(animated: true)
+    }
+    
 }
 
 extension EditProfileViewController: DataPassDelegate {
