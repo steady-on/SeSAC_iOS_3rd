@@ -49,11 +49,11 @@ struct UnsplashAPIManager {
                 return
             }
             
-            guard let response = response as? HTTPURLResponse else {
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 completionHandler(nil)
                 return
             }
-            
+
             guard let data, let decodeData = parseJSON(data) else {
                 completionHandler(nil)
                 return
@@ -61,6 +61,8 @@ struct UnsplashAPIManager {
             
             completionHandler(decodeData)
         }
+        
+        task.resume()
     }
     
     private static func parseJSON(_ jsonData: Data) -> [UnsplashPhoto]? {
