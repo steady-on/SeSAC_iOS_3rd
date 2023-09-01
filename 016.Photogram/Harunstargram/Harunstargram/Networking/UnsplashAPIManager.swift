@@ -8,10 +8,31 @@
 import Foundation
 
 struct UnsplashAPIManager {
+    
+    private static let baseUrl = "https://api.unsplash.com/photos/random"
     private static let headers = [
         "Accept-Version": "v1",
         "Authorization": "Client-ID \(APIKey.unsplashAccessKey)"
     ]
+    
+    static func fetchRandomImage(for query: String?, completionHandler: @escaping ([UnsplashPhoto]?) -> Void) {
+        guard var urlComponents = URLComponents(string: baseUrl) else { return }
+        
+        let count = URLQueryItem(name: "count", value: "30")
+        let query = URLQueryItem(name: "query", value: query ?? "")
+        
+        urlComponents.queryItems = [count, query]
+        
+        performRequest(for: urlComponents) { photos in
+            guard let photos else {
+                completionHandler(nil)
+                return
+            }
+            DispatchQueue.main.async {
+                completionHandler(photos)
+            }
+        }
+    }
     
     private static func performRequest(for urlComponents: URLComponents, completionHandler: @escaping ([UnsplashPhoto]?) -> Void) {
         guard let url = urlComponents.url else { return }
