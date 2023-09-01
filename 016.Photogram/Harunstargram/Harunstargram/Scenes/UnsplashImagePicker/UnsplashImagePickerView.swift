@@ -9,7 +9,7 @@ import UIKit
 
 class UnsplashImagePickerView: BaseView {
     
-    weak var delegate: HomeViewDelegate?
+    weak var delegate: UnsplashImagePickerViewDelegate?
     
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
