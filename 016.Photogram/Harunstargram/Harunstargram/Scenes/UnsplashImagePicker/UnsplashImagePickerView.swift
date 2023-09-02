@@ -29,10 +29,27 @@ class UnsplashImagePickerView: BaseView {
     
     override func configureView() {
         super.configureView()
+        
+        let components = [searchBar, imageCollectionView]
+        components.forEach { component in
+            addSubview(component)
+            component.translatesAutoresizingMaskIntoConstraints = false
+        }
     }
     
     override func setConstraints() {
+        NSLayoutConstraint.activate([
+            searchBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            searchBar.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            searchBar.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor)
+        ])
         
+        NSLayoutConstraint.activate([
+            imageCollectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            imageCollectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            imageCollectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            imageCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
     
     func setCollectionViewLayout() -> UICollectionViewFlowLayout {
