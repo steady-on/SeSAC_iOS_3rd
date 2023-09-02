@@ -39,7 +39,7 @@ class UnsplashImagePickerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fetchRandomImageAtFirstLoad()
+        fetchImageToUnsplash()
     }
     
     override func configureView() {
@@ -65,20 +65,27 @@ class UnsplashImagePickerViewController: BaseViewController {
         ])
     }
     
-    private func fetchRandomImageAtFirstLoad() {
-        UnsplashAPIManager.fetchRandomImage(for: nil) { photos in
+    private func fetchImageToUnsplash(for query: String? = nil) {
+        
+        UnsplashAPIManager.fetchRandomImage(for: query) { photos in
             guard let photos else {
-                self.imageCollectionView.isHidden = true
+                DispatchQueue.main.async {
+                    self.photos = []
+                    self.imageCollectionView.isHidden = true
+                }
                 return
             }
-            
+
             self.photos = photos
+            self.imageCollectionView.isHidden = false
         }
     }
 }
 
 extension UnsplashImagePickerViewController: UISearchBarDelegate {
-
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        fetchImageToUnsplash(for: searchBar.text)
+    }
 }
 
 extension UnsplashImagePickerViewController: UICollectionViewDataSource, UICollectionViewDelegate {
