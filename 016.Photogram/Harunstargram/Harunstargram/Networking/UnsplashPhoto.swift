@@ -1,5 +1,5 @@
 //
-//  UnsplashData.swift
+//  UnsplashPhoto.swift
 //  Harunstargram
 //
 //  Created by Roen White on 2023/09/01.

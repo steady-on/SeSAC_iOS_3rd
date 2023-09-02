@@ -11,7 +11,7 @@ class EditProfileViewController: BaseViewController {
     
     private let mainView = EditProfileView()
     
-    let imagePicker = UIImagePickerController()
+    private let imagePicker = UIImagePickerController()
     
     var userProfile: UserProfile!
     var delegate: DataPassDelegate?
@@ -44,7 +44,9 @@ class EditProfileViewController: BaseViewController {
             self.checkAuthorizationForGalary()
         }
         
-        let unsplash = UIAlertAction(title: "Unsplash에서 검색하기", style: .default)
+        let unsplash = UIAlertAction(title: "Unsplash에서 검색하기", style: .default) { _ in
+            self.presentUnsplashImagePickerView()
+        }
         
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         
@@ -62,7 +64,12 @@ class EditProfileViewController: BaseViewController {
         }
     }
     
-    func checkAuthorizationForGalary() {
+    private func presentUnsplashImagePickerView() {
+        let vc = UnsplashImagePickerViewController()
+        present(vc, animated: true)
+    }
+    
+    private func checkAuthorizationForGalary() {
         guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
         
         imagePicker.sourceType = .photoLibrary

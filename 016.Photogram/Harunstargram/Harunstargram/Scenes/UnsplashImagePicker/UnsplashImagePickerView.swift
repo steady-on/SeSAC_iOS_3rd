@@ -10,8 +10,8 @@ import UIKit
 class UnsplashImagePickerView: BaseView {
     
     weak var delegate: UnsplashImagePickerViewDelegate?
-    
-    lazy var searchBar: UISearchBar = {
+
+    private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = "검색어를 입력하세요"
         searchBar.searchTextField.clearButtonMode = .always
@@ -19,7 +19,7 @@ class UnsplashImagePickerView: BaseView {
         return searchBar
     }()
     
-    lazy var imageCollectionView: UICollectionView = {
+    private lazy var imageCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: setCollectionViewLayout())
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -29,6 +29,8 @@ class UnsplashImagePickerView: BaseView {
     
     override func configureView() {
         super.configureView()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(isReloadTimingNotificationObserver), name: NSNotification.Name("isReloadTiming"), object: nil)
         
         let components = [searchBar, imageCollectionView]
         components.forEach { component in
@@ -52,7 +54,7 @@ class UnsplashImagePickerView: BaseView {
         ])
     }
     
-    func setCollectionViewLayout() -> UICollectionViewFlowLayout {
+    private func setCollectionViewLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
@@ -61,6 +63,11 @@ class UnsplashImagePickerView: BaseView {
         layout.itemSize = .init(width: width/3, height: width/3)
         
         return layout
+    }
+    
+    @objc func isReloadTimingNotificationObserver(_ notification: NSNotification) {
+        
+        imageCollectionView.reloadData()
     }
 }
 
@@ -80,7 +87,7 @@ extension UnsplashImagePickerView: UICollectionViewDelegate, UICollectionViewDat
         guard let imageUrl = delegate?.collectionViewCellForItem(at: indexPath) else { return cell }
         
         cell.imageView.getDataFromUrl(url: imageUrl)
-        
+
         return cell
     }
     
