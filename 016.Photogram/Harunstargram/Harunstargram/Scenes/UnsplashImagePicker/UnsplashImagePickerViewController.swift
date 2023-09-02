@@ -31,6 +31,20 @@ class UnsplashImagePickerViewController: BaseViewController {
         return collectionView
     }()
     
+    private let indicatorView: UIActivityIndicatorView = {
+        let indicatorView = UIActivityIndicatorView()
+        indicatorView.hidesWhenStopped = true
+        indicatorView.style = .large
+        return indicatorView
+    }()
+    
+    private let indicatorBackgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray.withAlphaComponent(0.5)
+        view.isHidden = true
+        return view
+    }()
+    
     override func loadView() {
         mainView = UnsplashImagePickerView()
         self.view = mainView
@@ -48,6 +62,12 @@ class UnsplashImagePickerViewController: BaseViewController {
         
         mainView.addSubview(imageCollectionView)
         imageCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        mainView.addSubview(indicatorBackgroundView)
+        indicatorBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+        
+        mainView.addSubview(indicatorView)
+        indicatorView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     override func setConstraints() {
@@ -63,21 +83,41 @@ class UnsplashImagePickerViewController: BaseViewController {
             imageCollectionView.trailingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.trailingAnchor),
             imageCollectionView.bottomAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.bottomAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            indicatorBackgroundView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            indicatorBackgroundView.leadingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.leadingAnchor),
+            indicatorBackgroundView.trailingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.trailingAnchor),
+            indicatorBackgroundView.bottomAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            indicatorView.centerXAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.centerXAnchor),
+            indicatorView.centerYAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.centerYAnchor)
+        ])
     }
     
     private func fetchImageToUnsplash(for query: String? = nil) {
+        indicatorBackgroundView.isHidden = false
+        indicatorView.startAnimating()
         
         UnsplashAPIManager.fetchRandomImage(for: query) { photos in
             guard let photos else {
                 DispatchQueue.main.async {
                     self.photos = []
                     self.imageCollectionView.isHidden = true
+                    
+                    self.indicatorBackgroundView.isHidden.toggle()
+                    self.indicatorView.stopAnimating()
                 }
                 return
             }
 
             self.photos = photos
             self.imageCollectionView.isHidden = false
+            
+            self.indicatorBackgroundView.isHidden.toggle()
+            self.indicatorView.stopAnimating()
         }
     }
 }
