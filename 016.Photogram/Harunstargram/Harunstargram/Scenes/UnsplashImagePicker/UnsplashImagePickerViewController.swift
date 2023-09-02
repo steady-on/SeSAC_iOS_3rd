@@ -9,40 +9,105 @@ import UIKit
 
 class UnsplashImagePickerViewController: BaseViewController {
     
-    private var photos = [UnsplashPhoto]()
+    private var mainView: UnsplashImagePickerView!
+    
+    private var photos = [UnsplashPhoto]() {
+        didSet { imageCollectionView.reloadData() }
+    }
+    
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "검색어를 입력하세요"
+        searchBar.searchTextField.clearButtonMode = .always
+        searchBar.delegate = self
+        return searchBar
+    }()
+    
+    private lazy var imageCollectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: setCollectionViewLayout())
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
+        return collectionView
+    }()
     
     override func loadView() {
-        let view = UnsplashImagePickerView()
-        self.view = view
-        view.delegate = self
+        mainView = UnsplashImagePickerView()
+        self.view = mainView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        fetchRandomImageAtFirstLoad()
+    }
+    
+    override func configureView() {
+        mainView.addSubview(searchBar)
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        
+        mainView.addSubview(imageCollectionView)
+        imageCollectionView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    override func setConstraints() {
+        NSLayoutConstraint.activate([
+            searchBar.topAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.topAnchor),
+            searchBar.leadingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.leadingAnchor),
+            searchBar.trailingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.trailingAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            imageCollectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            imageCollectionView.leadingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.leadingAnchor),
+            imageCollectionView.trailingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.trailingAnchor),
+            imageCollectionView.bottomAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
+    private func fetchRandomImageAtFirstLoad() {
         UnsplashAPIManager.fetchRandomImage(for: nil) { photos in
             guard let photos else {
-                // TODO: collectionView hidden하고, "검색결과가 없습니다."
+                self.imageCollectionView.isHidden = true
                 return
             }
             
             self.photos = photos
-            NotificationCenter.default.post(name: NSNotification.Name("isReloadTiming"), object: nil)
         }
     }
 }
 
-extension UnsplashImagePickerViewController: UnsplashImagePickerViewDelegate {
-    func numberOfItemsInSectionForCollectionView() -> Int {
+extension UnsplashImagePickerViewController: UISearchBarDelegate {
+
+}
+
+extension UnsplashImagePickerViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    private func setCollectionViewLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        
+        let width = UIScreen.main.bounds.width
+        layout.itemSize = .init(width: width/3, height: width/3)
+        
+        return layout
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
     
-    func collectionViewCellForItem(at indexPath: IndexPath) -> String {
-        return photos[indexPath.item].urls.thumb
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.identifier, for: indexPath) as? ImageCollectionViewCell else { return UICollectionViewCell() }
+        
+        let data = photos[indexPath.item].urls.thumb
+        cell.imageView.getDataFromUrl(url: data)
+        
+        return cell
     }
     
-    func didSelectCollectionViewCellItem(at indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(#function)
-        // TODO: 사진 편집 화면 present
     }
 }

@@ -14,7 +14,6 @@
 		6350DC362AA22932002A5195 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350DC352AA22932002A5195 /* ImageCollectionViewCell.swift */; };
 		6350DC382AA229CB002A5195 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350DC372AA229CB002A5195 /* ReuseIdentifiable.swift */; };
 		6350DC3A2AA22B15002A5195 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350DC392AA22B15002A5195 /* BaseCollectionViewCell.swift */; };
-		6350DC3C2AA22CE2002A5195 /* UnsplashImagePickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350DC3B2AA22CE2002A5195 /* UnsplashImagePickerViewDelegate.swift */; };
 		6350DC3E2AA22FB1002A5195 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350DC3D2AA22FB1002A5195 /* UIImageView+.swift */; };
 		6350DC422AA2CA93002A5195 /* UnsplashImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350DC412AA2CA93002A5195 /* UnsplashImagePickerViewController.swift */; };
 		63FAABFC2AA011A90050BF9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FAABFB2AA011A90050BF9F /* AppDelegate.swift */; };
@@ -44,7 +43,6 @@
 		6350DC352AA22932002A5195 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		6350DC372AA229CB002A5195 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 		6350DC392AA22B15002A5195 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		6350DC3B2AA22CE2002A5195 /* UnsplashImagePickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashImagePickerViewDelegate.swift; sourceTree = "<group>"; };
 		6350DC3D2AA22FB1002A5195 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		6350DC412AA2CA93002A5195 /* UnsplashImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashImagePickerViewController.swift; sourceTree = "<group>"; };
 		63FAABF82AA011A90050BF9F /* Harunstargram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harunstargram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,7 +92,6 @@
 			children = (
 				6350DC302AA224BD002A5195 /* UnsplashImagePickerView.swift */,
 				6350DC412AA2CA93002A5195 /* UnsplashImagePickerViewController.swift */,
-				6350DC3B2AA22CE2002A5195 /* UnsplashImagePickerViewDelegate.swift */,
 				6350DC352AA22932002A5195 /* ImageCollectionViewCell.swift */,
 			);
 			path = UnsplashImagePicker;
@@ -313,7 +310,6 @@
 				63FAABFE2AA011A90050BF9F /* SceneDelegate.swift in Sources */,
 				63FAAC1E2AA012A10050BF9F /* EditBioViewController.swift in Sources */,
 				6350DC2A2AA1E9D1002A5195 /* APIKey.swift in Sources */,
-				6350DC3C2AA22CE2002A5195 /* UnsplashImagePickerViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
