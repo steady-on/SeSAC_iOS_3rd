@@ -9,8 +9,6 @@ import UIKit
 
 class UnsplashImagePickerViewController: BaseViewController {
     
-    private var mainView: UnsplashImagePickerView!
-    
     private var photos = [UnsplashPhoto]() {
         didSet { imageCollectionView.reloadData() }
     }
@@ -31,6 +29,16 @@ class UnsplashImagePickerViewController: BaseViewController {
         return collectionView
     }()
     
+    private let nothingLabel: UILabel = {
+        let label = UILabel()
+        label.text = "검색 결과가 없습니다."
+        label.font = .preferredFont(forTextStyle: .body)
+        label.textColor = .secondaryLabel
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        return label
+    }()
+    
     private let indicatorView: UIActivityIndicatorView = {
         let indicatorView = UIActivityIndicatorView()
         indicatorView.hidesWhenStopped = true
@@ -44,11 +52,6 @@ class UnsplashImagePickerViewController: BaseViewController {
         view.isHidden = true
         return view
     }()
-    
-    override func loadView() {
-        mainView = UnsplashImagePickerView()
-        self.view = mainView
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,43 +60,45 @@ class UnsplashImagePickerViewController: BaseViewController {
     }
     
     override func configureView() {
-        mainView.addSubview(searchBar)
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemBackground
         
-        mainView.addSubview(imageCollectionView)
-        imageCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        let components = [searchBar, nothingLabel, imageCollectionView, indicatorBackgroundView, indicatorView]
         
-        mainView.addSubview(indicatorBackgroundView)
-        indicatorBackgroundView.translatesAutoresizingMaskIntoConstraints = false
-        
-        mainView.addSubview(indicatorView)
-        indicatorView.translatesAutoresizingMaskIntoConstraints = false
+        components.forEach { component in
+            component.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(component)
+        }
     }
     
     override func setConstraints() {
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.topAnchor),
-            searchBar.leadingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.leadingAnchor),
-            searchBar.trailingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.trailingAnchor)
+            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            searchBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            searchBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            nothingLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            nothingLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
             imageCollectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
-            imageCollectionView.leadingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.leadingAnchor),
-            imageCollectionView.trailingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.trailingAnchor),
-            imageCollectionView.bottomAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.bottomAnchor)
+            imageCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            imageCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            imageCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
             indicatorBackgroundView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
-            indicatorBackgroundView.leadingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.leadingAnchor),
-            indicatorBackgroundView.trailingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.trailingAnchor),
-            indicatorBackgroundView.bottomAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.bottomAnchor)
+            indicatorBackgroundView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            indicatorBackgroundView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            indicatorBackgroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            indicatorView.centerXAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.centerXAnchor),
-            indicatorView.centerYAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.centerYAnchor)
+            indicatorView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            indicatorView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
         ])
     }
     

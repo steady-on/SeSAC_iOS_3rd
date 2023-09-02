@@ -10,7 +10,6 @@
 		6350DC282AA1E85C002A5195 /* UnsplashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350DC272AA1E85C002A5195 /* UnsplashAPIManager.swift */; };
 		6350DC2A2AA1E9D1002A5195 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350DC292AA1E9D1002A5195 /* APIKey.swift */; };
 		6350DC2C2AA1EA0B002A5195 /* UnsplashPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350DC2B2AA1EA0B002A5195 /* UnsplashPhoto.swift */; };
-		6350DC312AA224BD002A5195 /* UnsplashImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350DC302AA224BD002A5195 /* UnsplashImagePickerView.swift */; };
 		6350DC362AA22932002A5195 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350DC352AA22932002A5195 /* ImageCollectionViewCell.swift */; };
 		6350DC382AA229CB002A5195 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350DC372AA229CB002A5195 /* ReuseIdentifiable.swift */; };
 		6350DC3A2AA22B15002A5195 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350DC392AA22B15002A5195 /* BaseCollectionViewCell.swift */; };
@@ -39,7 +38,6 @@
 		6350DC272AA1E85C002A5195 /* UnsplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIManager.swift; sourceTree = "<group>"; };
 		6350DC292AA1E9D1002A5195 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = ../../../../APIKey.swift; sourceTree = "<group>"; };
 		6350DC2B2AA1EA0B002A5195 /* UnsplashPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhoto.swift; sourceTree = "<group>"; };
-		6350DC302AA224BD002A5195 /* UnsplashImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashImagePickerView.swift; sourceTree = "<group>"; };
 		6350DC352AA22932002A5195 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		6350DC372AA229CB002A5195 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 		6350DC392AA22B15002A5195 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 		6350DC2D2AA2240C002A5195 /* UnsplashImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				6350DC302AA224BD002A5195 /* UnsplashImagePickerView.swift */,
 				6350DC412AA2CA93002A5195 /* UnsplashImagePickerViewController.swift */,
 				6350DC352AA22932002A5195 /* ImageCollectionViewCell.swift */,
 			);
@@ -290,7 +287,6 @@
 				6350DC382AA229CB002A5195 /* ReuseIdentifiable.swift in Sources */,
 				63FAAC282AA013590050BF9F /* BaseView.swift in Sources */,
 				63FAAC2B2AA013AE0050BF9F /* NotificationConter+.swift in Sources */,
-				6350DC312AA224BD002A5195 /* UnsplashImagePickerView.swift in Sources */,
 				6350DC2C2AA1EA0B002A5195 /* UnsplashPhoto.swift in Sources */,
 				63FAAC1F2AA012A10050BF9F /* EditBioView.swift in Sources */,
 				6350DC422AA2CA93002A5195 /* UnsplashImagePickerViewController.swift in Sources */,
