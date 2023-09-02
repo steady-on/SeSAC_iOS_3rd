@@ -15,7 +15,10 @@ class EditProfileViewController: BaseViewController {
     
     var userProfile: UserProfile!
     var delegate: DataPassDelegate?
+    var profileImage: UIImage?
     var changeBioHandler: ((String) -> Void)?
+    var selectImageFromUnsplashHandler: ((String) -> Void)?
+    var selectImageFromGalaryHandler: ((UIImage) -> Void)?
     
     override func loadView() {
         view = mainView
@@ -34,6 +37,9 @@ class EditProfileViewController: BaseViewController {
         
         mainView.infoTableView.delegate = self
         mainView.infoTableView.dataSource = self
+        
+        mainView.profileImageView.image = profileImage
+        
         mainView.editPictureButton.addTarget(self, action: #selector(editProfilePhotoButtonTapped), for: .touchUpInside)
     }
     
@@ -66,6 +72,11 @@ class EditProfileViewController: BaseViewController {
     
     private func presentUnsplashImagePickerView() {
         let vc = UnsplashImagePickerViewController()
+        vc.selectImageHandler = { url in
+            self.mainView.profileImageView.getDataFromUrl(url: url)
+            
+            self.selectImageFromUnsplashHandler?(url)
+        }
         present(vc, animated: true)
     }
     
@@ -141,6 +152,8 @@ extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigati
         guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
         
         self.mainView.profileImageView.image = image
+        selectImageFromGalaryHandler?(image)
+        
         dismiss(animated: true)
     }
     

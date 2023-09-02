@@ -9,6 +9,8 @@ import UIKit
 
 class UnsplashImagePickerViewController: BaseViewController {
     
+    var selectImageHandler: ((String) -> Void)?
+    
     private var photos = [UnsplashPhoto]() {
         didSet { imageCollectionView.reloadData() }
     }
@@ -160,6 +162,8 @@ extension UnsplashImagePickerViewController: UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(#function)
+        let data = photos[indexPath.item].urls.thumb
+        selectImageHandler?(data)
+        dismiss(animated: true)
     }
 }

@@ -62,6 +62,17 @@ class MyProfileViewController: BaseViewController {
             self.userProfile.bio = chagedBio
             self.mainView.bioTextView.text = chagedBio
         }
+        
+        vc.selectImageFromUnsplashHandler = { url in
+            self.mainView.profileImageView.getDataFromUrl(url: url)
+        }
+        
+        vc.selectImageFromGalaryHandler = { image in
+            self.mainView.profileImageView.image = image
+        }
+        
+        vc.profileImage = mainView.profileImageView.image
+        
         navigationController?.pushViewController(vc, animated: true)
     }
     
