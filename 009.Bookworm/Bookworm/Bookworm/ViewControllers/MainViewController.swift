@@ -113,12 +113,24 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             let bookmarkMenuImage = UIImage(systemName: selectedBook.isBookmark ? "bookmark.slash.fill" : "bookmark.fill")
             
             let bookmark = UIAction(title: bookmarkMenuTitle, image: bookmarkMenuImage) { _ in
-                localBookData[indexPath.row].isBookmark.toggle()
-                collectionView.reloadData()
+                let realm = try! Realm()
+                
+                try! realm.write {
+                    selectedBook.isBookmark.toggle()
+                    collectionView.reloadData()
+                }
+//                self.myBookShelf[indexPath.row].isBookmark.toggle()
             }
             
             let delete = UIAction(title: "삭제", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
-                localBookData.remove(at: indexPath.row)
+                let selectedBook = self.myBookShelf[indexPath.row]
+                
+                let realm = try! Realm()
+                try! realm.write {
+                    realm.delete(selectedBook)
+                }
+                
+//                localBookData.remove(at: indexPath.row)
                 collectionView.reloadData()
             }
             
