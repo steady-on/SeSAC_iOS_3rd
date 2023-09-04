@@ -188,13 +188,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="800"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="phw-es-MQE">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="262"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="phw-es-MQE" secondAttribute="height" multiplier="1:1" id="4dY-yf-JG6"/>
+                                                    <constraint firstAttribute="width" secondItem="phw-es-MQE" secondAttribute="height" multiplier="3:2" id="4dY-yf-JG6"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIX-5K-JZT">
-                                                <rect key="frame" x="0.0" y="243" width="393" height="557"/>
+                                                <rect key="frame" x="0.0" y="243.66666666666669" width="393" height="556.33333333333326"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qQt-FD-0SB">
                                                         <rect key="frame" x="15" y="29.999999999999996" width="363" height="54.666666666666657"/>
@@ -214,20 +214,20 @@
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcJ-bL-WO3">
-                                                        <rect key="frame" x="15" y="94.666666666666686" width="363" height="0.6666666666666714"/>
+                                                        <rect key="frame" x="15" y="94.666666666666629" width="363" height="0.3333333333333286"/>
                                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="0.5" id="HB4-fn-25Z"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="책 소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8G-Jf-b8p">
-                                                        <rect key="frame" x="15" y="115.33333333333331" width="57" height="24"/>
+                                                        <rect key="frame" x="15" y="115" width="57" height="24"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTk-Wq-ZWk">
-                                                        <rect key="frame" x="15" y="147.33333333333331" width="363" height="268"/>
+                                                        <rect key="frame" x="15" y="147" width="363" height="268"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <color key="textColor" systemColor="labelColor"/>
@@ -235,13 +235,13 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나만의 메모" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9l-cj-eAm">
-                                                        <rect key="frame" x="15" y="445.66666666666663" width="91.333333333333329" height="24"/>
+                                                        <rect key="frame" x="15" y="445.66666666666669" width="91.333333333333329" height="24"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AD1-Vj-SNo">
-                                                        <rect key="frame" x="15" y="477.66666666666663" width="363" height="130"/>
+                                                        <rect key="frame" x="15" y="477.66666666666674" width="363" height="130"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="130" id="iYY-RT-4eY"/>
@@ -251,7 +251,7 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0P-9L-LqP">
-                                                        <rect key="frame" x="15" y="425.33333333333337" width="363" height="0.33333333333331439"/>
+                                                        <rect key="frame" x="15" y="424.99999999999994" width="363" height="0.66666666666668561"/>
                                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="0.5" id="OXJ-Cz-MIv"/>
@@ -290,7 +290,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="mIX-5K-JZT" firstAttribute="top" secondItem="phw-es-MQE" secondAttribute="bottom" constant="-150" id="4vg-wX-Hyx"/>
+                                            <constraint firstItem="mIX-5K-JZT" firstAttribute="top" secondItem="akD-pk-vfh" secondAttribute="bottom" constant="-16" id="4vg-wX-Hyx"/>
                                             <constraint firstItem="akD-pk-vfh" firstAttribute="centerX" secondItem="HhM-ys-TZb" secondAttribute="centerX" id="Il9-zS-L8c"/>
                                             <constraint firstItem="phw-es-MQE" firstAttribute="leading" secondItem="HhM-ys-TZb" secondAttribute="leading" id="QL2-Ua-kJM"/>
                                             <constraint firstAttribute="trailing" secondItem="mIX-5K-JZT" secondAttribute="trailing" id="RjG-2g-jEB"/>
