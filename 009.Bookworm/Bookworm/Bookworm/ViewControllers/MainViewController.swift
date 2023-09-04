@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MainViewController: UIViewController {
 
@@ -13,11 +14,22 @@ class MainViewController: UIViewController {
     @IBOutlet weak var bookTableView: UITableView!
     @IBOutlet weak var mainView: UIView!
     
+    var myBookShelf: Results<MyBook>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let realm = try! Realm()
+        myBookShelf = realm.objects(MyBook.self) as Results<MyBook>
+
         configureCollectionView()
         setInitialTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        bookCollectionView.reloadData()
     }
     
     @IBAction func segmentValueChenged(_ sender: UISegmentedControl) {
@@ -69,13 +81,13 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return localBookData.count
+        return myBookShelf.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = bookCollectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
                 
-        let row = localBookData[indexPath.row]
+        let row = myBookShelf[indexPath.row]
         cell.configureBookCell(for: row)
         
         return cell
@@ -85,7 +97,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let detailViewStoryboard = UIStoryboard(name: "Main", bundle: nil)
         guard let detailViewController = detailViewStoryboard.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
         
-        detailViewController.book = localBookData[indexPath.row]
+        let row = myBookShelf[indexPath.row]
+        detailViewController.myBook = row
         
         navigationController?.pushViewController(detailViewController, animated: true)
     }
@@ -93,7 +106,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
         guard let indexPath = indexPaths.first else { return nil }
         
-        let selectedBook = localBookData[indexPath.row]
+        let selectedBook = myBookShelf[indexPath.row]
         
         let contextMenuConfig = UIContextMenuConfiguration(previewProvider: nil) { _ in
             let bookmarkMenuTitle = selectedBook.isBookmark ? "북마크 해제" : "북마크 하기"

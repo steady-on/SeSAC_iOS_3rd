@@ -16,14 +16,14 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bookmarkImageView: UIImageView!
     
     
-    func configureBookCell(for data: Book) {
+    func configureBookCell(for data: MyBook) {
         self.layer.cornerRadius = 15
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.darkGray.cgColor
         
         titleLabel.text = data.title
         authorLabel.text = data.author
-        coverImageView.image = UIImage(named: data.title)
+        coverImageView.loadData(url: data.thumbnail)
         coverImageView.contentMode = .scaleAspectFill
         
         stateOfReadingLabel.text = data.stateOfReading.expression
