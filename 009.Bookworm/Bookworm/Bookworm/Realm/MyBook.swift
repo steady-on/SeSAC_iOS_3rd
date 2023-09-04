@@ -14,17 +14,17 @@ class MyBook: Object {
     @Persisted var author: String
     @Persisted var introduce: String
     @Persisted var thumbnail: String
-    @Persisted var stateOfReading: StateOfReading
+    @Persisted var statusOfReading: StatusOfReading
     @Persisted var isBookmark: Bool
     
-    convenience init(title: String, author: String, introduce: String, thumbnail: String, stateOfReading: StateOfReading = .notYet, isBookmark: Bool = false) {
+    convenience init(title: String, author: String, introduce: String, thumbnail: String, stateOfReading: StatusOfReading = .notYet, isBookmark: Bool = false) {
         self.init()
         
         self.title = title
         self.author = author
         self.introduce = introduce
         self.thumbnail = thumbnail
-        self.stateOfReading = stateOfReading
+        self.statusOfReading = stateOfReading
         self.isBookmark = isBookmark
     }
     

@@ -17,7 +17,7 @@ class BookTableViewCell: UITableViewCell {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var bookmarkImage: UIImageView!
     @IBOutlet weak var stateOfReadingButton: UIButton!
-    
+     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = .systemGray6
@@ -37,7 +37,7 @@ class BookTableViewCell: UITableViewCell {
         stateOfReadingButton.menu = makeMenuforStateOfReading(for: stateOfReadingButton.tag, defaultValue: data.stateOfReading)
     }
     
-    func makeMenuforStateOfReading(for row: Int, defaultValue: StateOfReading) -> UIMenu {
+    func makeMenuforStateOfReading(for row: Int, defaultValue: StatusOfReading) -> UIMenu {
         
         let notYet = UIAction(title: "아직 안읽음", image: UIImage(systemName: "book.closed")) { _ in
             localBookData[row].stateOfReading = .notYet

@@ -13,11 +13,11 @@ struct Book: Codable {
     var author: String
     var introduce: String
     var thumbnail: String
-    var stateOfReading: StateOfReading = .notYet
+    var stateOfReading: StatusOfReading = .notYet
     var isBookmark: Bool = false
 }
 
-enum StateOfReading: Int, Codable, PersistableEnum {
+enum StatusOfReading: Int, Codable, CaseIterable, PersistableEnum {
     case notYet
     case reading
     case finished
@@ -27,6 +27,14 @@ enum StateOfReading: Int, Codable, PersistableEnum {
         case .notYet: return "아직 안 읽음"
         case .reading: return "읽는 중"
         case .finished: return "다 읽음"
+        }
+    }
+    
+    var iconName: String {
+        switch self {
+        case .notYet: return "book.closed"
+        case .reading: return "book."
+        case .finished: return "book.closed.fill"
         }
     }
 }
