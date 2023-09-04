@@ -17,6 +17,7 @@ class BrowseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.isHidden = true
         bestTableView.separatorStyle = .none
         configureTableView()
         configureCollectionView()
@@ -77,6 +78,7 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
         
         let nib = UINib(nibName: SearchTableViewCell.identifier, bundle: nil)
         bestTableView.register(nib, forCellReuseIdentifier: SearchTableViewCell.identifier)
+        bestTableView.rowHeight = 140
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
