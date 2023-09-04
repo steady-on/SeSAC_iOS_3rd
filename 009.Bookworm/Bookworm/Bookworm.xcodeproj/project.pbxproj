@@ -15,6 +15,7 @@
 		63BEC8A52AA5AC5500E37EAC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 63BEC8A42AA5AC5500E37EAC /* RealmSwift */; };
 		63BEC8A82AA5AD6600E37EAC /* MyBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC8A72AA5AD6600E37EAC /* MyBook.swift */; };
 		63BEC8AB2AA5C62100E37EAC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC8AA2AA5C62100E37EAC /* MainTabBarController.swift */; };
+		63BEC8B02AA5DEC000E37EAC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC8AF2AA5DEC000E37EAC /* BaseViewController.swift */; };
 		63C85A6B2A8624330007F1B0 /* KakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A6A2A8624330007F1B0 /* KakaoAPIManager.swift */; };
 		63C85A742A8637090007F1B0 /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A732A8637090007F1B0 /* BookData.swift */; };
 		63C85A782A8799000007F1B0 /* ReusableIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A772A8799000007F1B0 /* ReusableIdentifiable.swift */; };
@@ -45,6 +46,7 @@
 		639EE18D2A889AB100A7B674 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = ../../../../APIKey.swift; sourceTree = "<group>"; };
 		63BEC8A72AA5AD6600E37EAC /* MyBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBook.swift; sourceTree = "<group>"; };
 		63BEC8AA2AA5C62100E37EAC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		63BEC8AF2AA5DEC000E37EAC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		63C85A6A2A8624330007F1B0 /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
 		63C85A732A8637090007F1B0 /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
 		63C85A772A8799000007F1B0 /* ReusableIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdentifiable.swift; sourceTree = "<group>"; };
@@ -99,6 +101,14 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+		63BEC8AE2AA5DEA800E37EAC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				63BEC8AF2AA5DEC000E37EAC /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		63C85A712A8628090007F1B0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,10 +157,10 @@
 		63E2C9702A77A90D0064163A /* Bookworm */ = {
 			isa = PBXGroup;
 			children = (
-				63BEC8A92AA5C5EA00E37EAC /* Scene */,
 				63E2C9712A77A90D0064163A /* AppDelegate.swift */,
 				63E2C9732A77A90D0064163A /* SceneDelegate.swift */,
 				63E2C9772A77A90D0064163A /* Main.storyboard */,
+				63BEC8A92AA5C5EA00E37EAC /* Scene */,
 				63C85A792A87995A0007F1B0 /* ViewControllers */,
 				633FCBB22A7A4FF900873965 /* BrowseCollectionViewCell.swift */,
 				633FCBB32A7A4FF900873965 /* BrowseCollectionViewCell.xib */,
@@ -160,6 +170,7 @@
 				63E2C9A82A797B2E0064163A /* SearchTableViewCell.xib */,
 				63E2C9892A77B0650064163A /* BookCollectionViewCell.swift */,
 				63E2C98A2A77B0650064163A /* BookCollectionViewCell.xib */,
+				63BEC8AE2AA5DEA800E37EAC /* Base */,
 				63C85A722A8636EE0007F1B0 /* Model */,
 				63BEC8A62AA5AD0200E37EAC /* Realm */,
 				63C85A712A8628090007F1B0 /* Network */,
@@ -270,6 +281,7 @@
 				633FCBB42A7A4FF900873965 /* BrowseCollectionViewCell.swift in Sources */,
 				63E2C9962A77CE640064163A /* SearchViewController.swift in Sources */,
 				63E2C98B2A77B0650064163A /* BookCollectionViewCell.swift in Sources */,
+				63BEC8B02AA5DEC000E37EAC /* BaseViewController.swift in Sources */,
 				63C85A6B2A8624330007F1B0 /* KakaoAPIManager.swift in Sources */,
 				63E2C9942A77C81D0064163A /* JSONBookData.swift in Sources */,
 				63E2C9A92A797B2E0064163A /* SearchTableViewCell.swift in Sources */,
