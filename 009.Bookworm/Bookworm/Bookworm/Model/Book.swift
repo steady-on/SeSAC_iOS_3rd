@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct Book: Codable {
     var title: String
@@ -16,7 +17,7 @@ struct Book: Codable {
     var isBookmark: Bool = false
 }
 
-enum StateOfReading: Int, Codable {
+enum StateOfReading: Int, Codable, PersistableEnum {
     case notYet
     case reading
     case finished
