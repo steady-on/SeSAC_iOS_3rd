@@ -14,9 +14,10 @@
 		63BEC8A32AA5AC5500E37EAC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 63BEC8A22AA5AC5500E37EAC /* Realm */; };
 		63BEC8A52AA5AC5500E37EAC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 63BEC8A42AA5AC5500E37EAC /* RealmSwift */; };
 		63BEC8A82AA5AD6600E37EAC /* MyBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC8A72AA5AD6600E37EAC /* MyBook.swift */; };
+		63BEC8AB2AA5C62100E37EAC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC8AA2AA5C62100E37EAC /* MainTabBarController.swift */; };
 		63C85A6B2A8624330007F1B0 /* KakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A6A2A8624330007F1B0 /* KakaoAPIManager.swift */; };
 		63C85A742A8637090007F1B0 /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A732A8637090007F1B0 /* BookData.swift */; };
-		63C85A782A8799000007F1B0 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A772A8799000007F1B0 /* ReusableViewProtocol.swift */; };
+		63C85A782A8799000007F1B0 /* ReusableIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A772A8799000007F1B0 /* ReusableIdentifiable.swift */; };
 		63E2C9722A77A90D0064163A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C9712A77A90D0064163A /* AppDelegate.swift */; };
 		63E2C9742A77A90D0064163A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C9732A77A90D0064163A /* SceneDelegate.swift */; };
 		63E2C9762A77A90D0064163A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C9752A77A90D0064163A /* MainViewController.swift */; };
@@ -43,9 +44,10 @@
 		633FCBB32A7A4FF900873965 /* BrowseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowseCollectionViewCell.xib; sourceTree = "<group>"; };
 		639EE18D2A889AB100A7B674 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = ../../../../APIKey.swift; sourceTree = "<group>"; };
 		63BEC8A72AA5AD6600E37EAC /* MyBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBook.swift; sourceTree = "<group>"; };
+		63BEC8AA2AA5C62100E37EAC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		63C85A6A2A8624330007F1B0 /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
 		63C85A732A8637090007F1B0 /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
-		63C85A772A8799000007F1B0 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		63C85A772A8799000007F1B0 /* ReusableIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdentifiable.swift; sourceTree = "<group>"; };
 		63E2C96E2A77A90D0064163A /* Bookworm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookworm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E2C9712A77A90D0064163A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E2C9732A77A90D0064163A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 				63BEC8A72AA5AD6600E37EAC /* MyBook.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		63BEC8A92AA5C5EA00E37EAC /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				63BEC8AA2AA5C62100E37EAC /* MainTabBarController.swift */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		63C85A712A8628090007F1B0 /* Network */ = {
@@ -137,6 +147,7 @@
 		63E2C9702A77A90D0064163A /* Bookworm */ = {
 			isa = PBXGroup;
 			children = (
+				63BEC8A92AA5C5EA00E37EAC /* Scene */,
 				63E2C9712A77A90D0064163A /* AppDelegate.swift */,
 				63E2C9732A77A90D0064163A /* SceneDelegate.swift */,
 				63E2C9772A77A90D0064163A /* Main.storyboard */,
@@ -165,8 +176,8 @@
 		63E2C9A32A7970230064163A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				63C85A772A8799000007F1B0 /* ReusableIdentifiable.swift */,
 				63E2C9A12A7970010064163A /* UIImageView+.swift */,
-				63C85A772A8799000007F1B0 /* ReusableViewProtocol.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -254,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63C85A782A8799000007F1B0 /* ReusableViewProtocol.swift in Sources */,
+				63C85A782A8799000007F1B0 /* ReusableIdentifiable.swift in Sources */,
 				63E2C9762A77A90D0064163A /* MainViewController.swift in Sources */,
 				633FCBB42A7A4FF900873965 /* BrowseCollectionViewCell.swift in Sources */,
 				63E2C9962A77CE640064163A /* SearchViewController.swift in Sources */,
@@ -267,6 +278,7 @@
 				63E2C99F2A77E3820064163A /* BookTableViewCell.swift in Sources */,
 				63E2C9722A77A90D0064163A /* AppDelegate.swift in Sources */,
 				63BEC8A82AA5AD6600E37EAC /* MyBook.swift in Sources */,
+				63BEC8AB2AA5C62100E37EAC /* MainTabBarController.swift in Sources */,
 				63E2C9922A77C6740064163A /* Book.swift in Sources */,
 				63E2C9742A77A90D0064163A /* SceneDelegate.swift in Sources */,
 				63C85A742A8637090007F1B0 /* BookData.swift in Sources */,
