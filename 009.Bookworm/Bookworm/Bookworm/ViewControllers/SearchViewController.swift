@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SearchViewController: UIViewController {
     private var searchResults = [Book]()
@@ -87,6 +88,17 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         cell.book = searchResults[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedBook = searchResults[indexPath.row]
+        let book = MyBook(data: selectedBook)
+        
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(book)
+        }
     }
 }
 
