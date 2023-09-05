@@ -23,7 +23,7 @@ class BookCollectionViewCell: UICollectionViewCell {
         
         titleLabel.text = data.title
         authorLabel.text = data.author
-        coverImageView.loadData(url: data.thumbnail)
+        coverImageView.image = UIImage(data: data.thumbnail)
         coverImageView.contentMode = .scaleAspectFill
         
         stateOfReadingLabel.text = data.statusOfReading.expression

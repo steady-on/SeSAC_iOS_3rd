@@ -13,11 +13,11 @@ class MyBook: Object {
     @Persisted var title: String
     @Persisted var author: String
     @Persisted var introduce: String
-    @Persisted var thumbnail: String
+    @Persisted var thumbnail: Data
     @Persisted var statusOfReading: StatusOfReading
     @Persisted var isBookmark: Bool
     
-    convenience init(title: String, author: String, introduce: String, thumbnail: String, stateOfReading: StatusOfReading = .notYet, isBookmark: Bool = false) {
+    convenience init(title: String, author: String, introduce: String, thumbnail: Data, stateOfReading: StatusOfReading = .notYet, isBookmark: Bool = false) {
         self.init()
         
         self.title = title
@@ -28,11 +28,11 @@ class MyBook: Object {
         self.isBookmark = isBookmark
     }
     
-    convenience init(data: Book) {
+    convenience init(data: Book, thumbnail: Data) {
         self.init(title: data.title,
                   author: data.author,
                   introduce: data.overview,
-                  thumbnail: data.thumbnail)
+                  thumbnail: thumbnail)
     }
 }
 

@@ -14,7 +14,7 @@ class BWTableViewCell: BaseTableViewCell {
         didSet {
             guard let myBook else { return }
             
-            coverImageView.loadData(url: myBook.thumbnail)
+            coverImageView.image = UIImage(data: myBook.thumbnail)
             titleLabel.text = myBook.title
             authorLabel.text = myBook.author
             bookmarkImageView.isHidden = !myBook.isBookmark

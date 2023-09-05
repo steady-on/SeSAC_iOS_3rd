@@ -86,16 +86,22 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedBook = searchResults[indexPath.row]
-        let book = MyBook(data: selectedBook)
         
-        let realm = try! Realm()
-        
-        do {
-            try realm.write {
-                realm.add(book)
+        DispatchQueue.global().async {
+            guard let url = URL(string: selectedBook.thumbnail),
+                  let thumbnailData = try? Data(contentsOf: url) else { return }
+            
+            let book = MyBook(data: selectedBook, thumbnail: thumbnailData)
+            
+            let realm = try! Realm()
+            
+            do {
+                try realm.write {
+                    realm.add(book)
+                }
+            } catch {
+                print(error)
             }
-        } catch {
-            print(error)
         }
     }
 }
