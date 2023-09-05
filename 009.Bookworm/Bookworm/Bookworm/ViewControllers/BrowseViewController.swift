@@ -76,9 +76,8 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
         bestTableView.dataSource = self
         bestTableView.delegate = self
         
-        let nib = UINib(nibName: SearchTableViewCell.identifier, bundle: nil)
-        bestTableView.register(nib, forCellReuseIdentifier: SearchTableViewCell.identifier)
-        bestTableView.rowHeight = 140
+        bestTableView.register(BWTableViewCell.self, forCellReuseIdentifier: BWTableViewCell.identifier)
+        bestTableView.rowHeight = 144
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,9 +85,9 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = bestTableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier) as? SearchTableViewCell else { return UITableViewCell() }
-        
-        cell.book = data.reversed()[indexPath.row]
+        guard let cell = bestTableView.dequeueReusableCell(withIdentifier: BWTableViewCell.identifier) as? BWTableViewCell else { return UITableViewCell() }
+
+        cell.book = data[indexPath.row]
         
         return cell
     }

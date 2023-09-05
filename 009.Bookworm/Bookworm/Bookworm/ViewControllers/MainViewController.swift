@@ -9,6 +9,8 @@ import UIKit
 import RealmSwift
 
 class MainViewController: UIViewController {
+    
+    let realm = try! Realm()
 
     @IBOutlet weak var bookCollectionView: UICollectionView!
     @IBOutlet weak var bookTableView: UITableView!
@@ -87,8 +89,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = bookCollectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
                 
-        let row = myBookShelf[indexPath.row]
-        cell.configureBookCell(for: row)
+        let item = myBookShelf[indexPath.item]
+        cell.configureBookCell(for: item)
         
         return cell
     }
@@ -97,8 +99,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let detailViewStoryboard = UIStoryboard(name: "Main", bundle: nil)
         guard let detailViewController = detailViewStoryboard.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
         
-        let row = myBookShelf[indexPath.row]
-        detailViewController.myBook = row
+        let item = myBookShelf[indexPath.item]
+        detailViewController.myBook = item
         
         navigationController?.pushViewController(detailViewController, animated: true)
     }
@@ -113,25 +115,26 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             let bookmarkMenuImage = UIImage(systemName: selectedBook.isBookmark ? "bookmark.slash.fill" : "bookmark.fill")
             
             let bookmark = UIAction(title: bookmarkMenuTitle, image: bookmarkMenuImage) { _ in
-                let realm = try! Realm()
-                
-                try! realm.write {
-                    selectedBook.isBookmark.toggle()
+                do {
+                    try self.realm.write {
+                        selectedBook.isBookmark.toggle()
+                    }
                     collectionView.reloadData()
+                } catch {
+                    print(error)
                 }
-//                self.myBookShelf[indexPath.row].isBookmark.toggle()
             }
             
             let delete = UIAction(title: "삭제", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
-                let selectedBook = self.myBookShelf[indexPath.row]
                 
-                let realm = try! Realm()
-                try! realm.write {
-                    realm.delete(selectedBook)
-                }
-                
-//                localBookData.remove(at: indexPath.row)
-                collectionView.reloadData()
+                do {
+                    try self.realm.write {
+                        self.realm.delete(selectedBook)
+                    }
+                    collectionView.reloadData()
+                } catch {
+                    print(error)
+                }                
             }
             
             return UIMenu(children: [bookmark, delete])
@@ -146,30 +149,36 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         bookTableView.delegate = self
         bookTableView.dataSource = self
         
-        let tableNib = UINib(nibName: "BookTableViewCell", bundle: nil)
-        bookTableView.register(tableNib, forCellReuseIdentifier: "BookTableViewCell")
-        bookTableView.rowHeight = 150
+        bookTableView.rowHeight = 144
+        bookTableView.register(BWTableViewCell.self, forCellReuseIdentifier: BWTableViewCell.identifier)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return localBookData.count
+        return myBookShelf.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = bookTableView.dequeueReusableCell(withIdentifier: "BookTableViewCell") as? BookTableViewCell else { return UITableViewCell() }
+        guard let cell = bookTableView.dequeueReusableCell(withIdentifier: BWTableViewCell.identifier) as? BWTableViewCell else { return UITableViewCell() }
         
-        let row = localBookData[indexPath.row]
-        cell.data = row
-        cell.stateOfReadingButton.tag = indexPath.row
-        cell.configureCell()
+        let data = myBookShelf[indexPath.row]
+        cell.myBook = data
                 
         return cell
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let selectedBook = myBookShelf[indexPath.row]
+        
         let delete = UIContextualAction(style: .destructive, title: nil) { _, _, _ in
-            localBookData.remove(at: indexPath.row)
-            tableView.reloadData()
+            do {
+                try self.realm.write {
+                    self.realm.delete(selectedBook)
+                }
+                tableView.reloadData()
+            } catch {
+                print(error)
+            }
         }
         delete.image = UIImage(systemName: "trash")
         
@@ -178,9 +187,18 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let selectedBook = myBookShelf[indexPath.row]
+        
         let bookmark = UIContextualAction(style: .normal, title: nil) { _, _, _ in
-            localBookData[indexPath.row].isBookmark.toggle()
-            tableView.reloadData()
+            do {
+                try self.realm.write {
+                    selectedBook.isBookmark.toggle()
+                }
+                tableView.reloadData()
+            } catch {
+                print(error)
+            }
         }
         
         bookmark.image = localBookData[indexPath.row].isBookmark ? UIImage(systemName: "bookmark.slash.fill") : UIImage(systemName: "bookmark.fill")
