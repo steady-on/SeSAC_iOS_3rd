@@ -101,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				63BEC8AA2AA5C62100E37EAC /* MainTabBarController.swift */,
+				63BEC8B52AA5E89100E37EAC /* Cell */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
