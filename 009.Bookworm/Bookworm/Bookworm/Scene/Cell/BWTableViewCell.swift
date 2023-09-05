@@ -90,7 +90,6 @@ class BWTableViewCell: BaseTableViewCell {
         textView.textColor = .darkGray
         textView.isScrollEnabled = false
         textView.isEditable = false
-        textView.textContainer.maximumNumberOfLines = 3
         textView.textContainer.lineBreakMode = .byTruncatingTail
         textView.textContainerInset = .zero
         textView.textContainer.lineFragmentPadding = .zero
