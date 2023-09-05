@@ -30,7 +30,12 @@ class BWTableViewCell: BaseTableViewCell {
         didSet {
             guard let book else { return }
             
-            coverImageView.image = UIImage(named: book.title)
+            if let image = UIImage(named: book.title) {
+                coverImageView.image = image
+            } else {
+                coverImageView.loadData(url: book.thumbnail)
+            }
+            
             titleLabel.text = book.title
             authorLabel.text = book.author
             overviewTextView.text = book.overview
