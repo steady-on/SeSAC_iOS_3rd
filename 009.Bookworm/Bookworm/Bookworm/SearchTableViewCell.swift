@@ -27,11 +27,11 @@ class SearchTableViewCell: UITableViewCell {
             
             bookTitleLabel.text = book.title
             authorLabel.text = book.author
-            introduceTextView.text = book.introduce
+            introduceTextView.text = book.overview
             coverImageView.loadData(url: book.thumbnail)
         }
     }
-    
+     
     private func configureCell() {
         self.backgroundColor = .systemGray6
         

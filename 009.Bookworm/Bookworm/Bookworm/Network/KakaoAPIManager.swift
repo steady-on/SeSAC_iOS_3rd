@@ -79,7 +79,7 @@ struct KakaoAPIManager {
             isEnd = decodedData.meta.isEnd
 
             let books = bookDatas.map { data in
-                Book(title: data.title, author: data.authors.joined(), introduce: data.contents, thumbnail: data.thumbnail)
+                Book(title: data.title, author: data.authors.joined(), overview: data.contents, thumbnail: data.thumbnail)
             }
             
             return books

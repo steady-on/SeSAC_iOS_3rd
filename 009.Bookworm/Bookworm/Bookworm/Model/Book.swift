@@ -11,9 +11,9 @@ import RealmSwift
 struct Book: Codable {
     var title: String
     var author: String
-    var introduce: String
+    var overview: String
     var thumbnail: String
-    var stateOfReading: StatusOfReading = .notYet
+    var statusOfReading: StatusOfReading = .notYet
     var isBookmark: Bool = false
 }
 
@@ -33,7 +33,7 @@ enum StatusOfReading: Int, Codable, CaseIterable, PersistableEnum {
     var iconName: String {
         switch self {
         case .notYet: return "book.closed"
-        case .reading: return "book."
+        case .reading: return "book"
         case .finished: return "book.closed.fill"
         }
     }

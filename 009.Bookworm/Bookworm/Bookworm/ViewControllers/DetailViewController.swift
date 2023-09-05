@@ -59,7 +59,7 @@ class DetailViewController: UIViewController {
             titleLabel.text = book.title
             authorLabel.text = book.author
             
-            introduceTextView.text = book.introduce
+            introduceTextView.text = book.overview
         }
     }
     

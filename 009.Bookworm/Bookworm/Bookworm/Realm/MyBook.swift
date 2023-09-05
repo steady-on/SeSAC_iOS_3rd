@@ -31,7 +31,7 @@ class MyBook: Object {
     convenience init(data: Book) {
         self.init(title: data.title,
                   author: data.author,
-                  introduce: data.introduce,
+                  introduce: data.overview,
                   thumbnail: data.thumbnail)
     }
 }
