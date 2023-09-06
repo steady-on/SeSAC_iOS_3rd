@@ -31,7 +31,11 @@ struct KakaoAPIManager {
         
         self.urlComponents = urlComponents
         
-        performRequest(with: urlComponents) { books in completion(books) }
+        performRequest(with: urlComponents) { books in
+            DispatchQueue.main.async {
+                completion(books)
+            }
+        }
     }
     
     static func nextPageFetch(completion: @escaping ([Book]?) -> Void) {
@@ -41,7 +45,11 @@ struct KakaoAPIManager {
         let page = URLQueryItem(name: KakaoQueryItem.page.rawValue, value: "\(page)")
         urlComponents.queryItems?.append(page)
         
-        performRequest(with: urlComponents) { books in completion(books) }
+        performRequest(with: urlComponents) { books in
+            DispatchQueue.main.async {
+                completion(books)
+            }
+        }
     }
     
     private static func performRequest(with urlComponents: URLComponents, completion: @escaping ([Book]?) -> Void) {
