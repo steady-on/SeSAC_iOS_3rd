@@ -96,17 +96,7 @@ class BWTableViewCell: BaseTableViewCell {
         return textView
     }()
     
-    private let bookmarkImageView: UIImageView = {
-        let imageView = UIImageView()
-        
-        let sfConfig = UIImage.SymbolConfiguration(scale: .large)
-        let image = UIImage(systemName: "bookmark.fill", withConfiguration: sfConfig)
-        
-        imageView.image = image
-        imageView.tintColor = .systemRed
-        imageView.contentMode = .scaleToFill
-        return imageView
-    }()
+    private let bookmarkImageView: UIImageView = BWBookmarkImageView(frame: .zero)
     
     private let changeStatusOfReadingButton: UIButton = {
         let button = UIButton()
