@@ -49,13 +49,18 @@ class DetailViewController: UIViewController {
         
         if let book {
             title = book.title
-
-            backgroundImageView.image = UIImage(named: book.title)
-            backgroundImageView.contentMode = .bottom
-            backgroundImageView.applyBlurEffect()
             
-            coverImageView.image = UIImage(named: book.title)
+            if let localImgage = UIImage(named: book.title) {
+                backgroundImageView.image = localImgage
+                coverImageView.image = localImgage
+            } else {
+                backgroundImageView.loadData(url: book.thumbnail)
+                coverImageView.loadData(url: book.thumbnail)
+            }
 
+            backgroundImageView.applyBlurEffect()
+            backgroundImageView.contentMode = .scaleToFill
+            
             titleLabel.text = book.title
             authorLabel.text = book.author
             
