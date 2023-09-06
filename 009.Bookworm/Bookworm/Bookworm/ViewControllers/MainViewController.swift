@@ -45,11 +45,9 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func searchBarButtonTapped(_ sender: UIBarButtonItem) {
-        let searchViewStoryboard = UIStoryboard(name: "Main", bundle: nil)
-
-        guard let searchViewController = searchViewStoryboard.instantiateViewController(withIdentifier: SearchViewController.identifier) as? SearchViewController else { return }
+        let searchVC = TempSearchViewController()
         
-        let navigationController = UINavigationController(rootViewController: searchViewController)
+        let navigationController = UINavigationController(rootViewController: searchVC)
 
         navigationController.modalPresentationStyle = .fullScreen
         
