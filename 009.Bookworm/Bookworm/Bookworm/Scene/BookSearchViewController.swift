@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TempSearchViewController: BaseViewController {
+class BookSearchViewController: BaseViewController {
     
     private var searchResults = [Book]() {
         didSet { searchResultTableView.reloadData() }
@@ -120,7 +120,7 @@ class TempSearchViewController: BaseViewController {
     }
 }
 
-extension TempSearchViewController: UISearchBarDelegate {
+extension BookSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let keyword = searchBar.text else { return }
         
@@ -140,7 +140,7 @@ extension TempSearchViewController: UISearchBarDelegate {
     }
 }
 
-extension TempSearchViewController:  UITableViewDataSource, UITableViewDelegate {
+extension BookSearchViewController:  UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResults.count
     }
@@ -165,7 +165,7 @@ extension TempSearchViewController:  UITableViewDataSource, UITableViewDelegate 
     }
 }
 
-extension TempSearchViewController: UITableViewDataSourcePrefetching {
+extension BookSearchViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths where indexPath.row == searchResults.count - 2 {
             KakaoAPIManager.nextPageFetch { books in

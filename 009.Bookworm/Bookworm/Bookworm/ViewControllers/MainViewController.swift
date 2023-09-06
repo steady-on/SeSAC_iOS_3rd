@@ -45,7 +45,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func searchBarButtonTapped(_ sender: UIBarButtonItem) {
-        let searchVC = TempSearchViewController()
+        let searchVC = BookSearchViewController()
         
         let navigationController = UINavigationController(rootViewController: searchVC)
 
