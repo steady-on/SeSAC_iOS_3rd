@@ -199,8 +199,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
         
-        bookmark.image = localBookData[indexPath.row].isBookmark ? UIImage(systemName: "bookmark.slash.fill") : UIImage(systemName: "bookmark.fill")
-        bookmark.backgroundColor = localBookData[indexPath.row].isBookmark ? .systemGray : .systemRed
+        bookmark.image = myBookShelf[indexPath.row].isBookmark ? UIImage(systemName: "bookmark.slash.fill") : UIImage(systemName: "bookmark.fill")
+        bookmark.backgroundColor = myBookShelf[indexPath.row].isBookmark ? .systemGray : .systemYellow
         
         let leadingSwipeActions = UISwipeActionsConfiguration(actions: [bookmark])
         return leadingSwipeActions
