@@ -116,8 +116,6 @@ class BWTableViewCell: BaseTableViewCell {
         return button
     }()
     
-    
-    
     override func configureView() {
         contentView.backgroundColor = .systemGroupedBackground
         contentView.addSubview(backdropView)
@@ -135,6 +133,9 @@ class BWTableViewCell: BaseTableViewCell {
         stackComponents.forEach { component in
             infoTextStackView.addArrangedSubview(component)
         }
+        
+        titleLabel.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
+        overviewTextView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
     }
     
     override func setConstraints() {
