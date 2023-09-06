@@ -59,10 +59,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func configureCollectionView() {
         bookCollectionView.delegate = self
         bookCollectionView.dataSource = self
-        
-        let collectionNib = UINib(nibName: BookCollectionViewCell.identifier, bundle: nil)
-        bookCollectionView.register(collectionNib, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
-        
+        bookCollectionView.register(BWCollectionViewCell.self, forCellWithReuseIdentifier: BWCollectionViewCell.identifier)
         setCollectionViewLayout()
     }
     
@@ -85,10 +82,10 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = bookCollectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell else { return UICollectionViewCell() }
-                
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BWCollectionViewCell.identifier, for: indexPath) as? BWCollectionViewCell else { return UICollectionViewCell() }
+         
         let item = myBookShelf[indexPath.item]
-        cell.configureBookCell(for: item)
+        cell.myBook = item
         
         return cell
     }

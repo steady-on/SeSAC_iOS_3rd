@@ -21,7 +21,6 @@ class BrowseViewController: UIViewController {
         bestTableView.separatorStyle = .none
         configureTableView()
         configureCollectionView()
-        setLayoutForCollectionView()
     }
 
     func presentDetailView(for book: Book) {
@@ -38,16 +37,20 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func configureCollectionView() {
         recentCollectionView.delegate = self
         recentCollectionView.dataSource = self
+        recentCollectionView.register(BWCollectionViewCell.self, forCellWithReuseIdentifier: BWCollectionViewCell.identifier)
         
-        let nib = UINib(nibName: BrowseCollectionViewCell.identifier, bundle: nil)
-        recentCollectionView.register(nib, forCellWithReuseIdentifier: BrowseCollectionViewCell.identifier)
+        setLayoutForCollectionView()
     }
     
     func setLayoutForCollectionView() {
         let layout = UICollectionViewFlowLayout()
+        
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 120, height: 180)
+        
+        let height = recentCollectionView.frame.height * 0.9
+        layout.itemSize = CGSize(width: height * 3 / 4 , height: height)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        layout.minimumInteritemSpacing = 10
         
         recentCollectionView.collectionViewLayout = layout
     }
@@ -57,10 +60,9 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = recentCollectionView.dequeueReusableCell(withReuseIdentifier: BrowseCollectionViewCell.identifier, for: indexPath) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BWCollectionViewCell.identifier, for: indexPath) as? BWCollectionViewCell else { return UICollectionViewCell() }
         
         cell.book = data[indexPath.row]
-        cell.configureCell()
         
         return cell
     }
