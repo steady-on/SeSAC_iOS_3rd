@@ -29,9 +29,7 @@ class BookSearchViewController: BaseViewController {
         return label
     }()
     
-    private let searchResultTableView: UITableView = {
-        return BWTableView(frame: .zero, style: .plain)
-    }()
+    private let searchResultTableView: UITableView = BWTableView(frame: .zero, style: .plain)
     
     private let emptyResultLabel: UILabel = {
         let label = UILabel()
