@@ -30,12 +30,7 @@ class BookSearchViewController: BaseViewController {
     }()
     
     private let searchResultTableView: UITableView = {
-        let tableView = UITableView()
-        tableView.backgroundColor = .systemGroupedBackground
-        tableView.separatorStyle = .none
-        tableView.rowHeight = 144
-        tableView.register(BWTableViewCell.self, forCellReuseIdentifier: BWTableViewCell.identifier)
-        return tableView
+        return BWTableView(frame: .zero, style: .plain)
     }()
     
     private let emptyResultLabel: UILabel = {
