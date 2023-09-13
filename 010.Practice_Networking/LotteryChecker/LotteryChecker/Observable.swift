@@ -9,16 +9,17 @@ import Foundation
 
 final class Observable<T> {
     var value: T {
-        didSet { completion?(value) }
+        didSet { listener?(value) }
     }
     
-    var completion: ((T) -> Void)?
+    var listener: ((T) -> Void)?
     
     init(_ value: T) {
         self.value = value
     }
     
     func bind(completion: @escaping (T) -> ()) {
-        self.completion = completion
+        completion(value)
+        self.listener = completion
     }
 }

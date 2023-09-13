@@ -30,7 +30,15 @@ class LottoViewController: UIViewController {
         drawingNumberPicker.delegate = self
         drawingNumberPicker.dataSource = self
         
-        drawingNumberTextField.text = "\(1084)"
+        viewModel.selectedNumber.bind { value in
+            self.drawingNumberTextField.text = value
+            self.viewModel.textForDrawingNumberLabel()
+        }
+        
+        viewModel.seletedDrawingNumberLable.bind { text in
+            self.drawingNumberLabel.text = text
+        }
+        
         drawingNumberTextField.inputView = drawingNumberPicker
         drawingNumberTextField.tintColor = .clear
         
@@ -47,7 +55,7 @@ class LottoViewController: UIViewController {
             }
             
             DispatchQueue.main.async { [self] in
-                drawingNumberLabel.text = "\(lotto.drawingNumber)회 당첨결과"
+//                drawingNumberLabel.text = "\(lotto.drawingNumber)회 당첨결과"
                 drawingDate.text = lotto.drawingDate
                 
                 for (label, number) in zip(lotteryNumberLabels, lotto.loteryNumber) {
@@ -95,17 +103,17 @@ extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return viewModel.drawingNumbers.count
+        return viewModel.numberOfDrawingNumbers
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return viewModel.titleForRow(row)
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        drawingNumberTextField.text = viewModel.titleForRow(row)
-        requestLotto()
+        viewModel.setPickerValueToSelectedNumber(for: row)
     }
 }
