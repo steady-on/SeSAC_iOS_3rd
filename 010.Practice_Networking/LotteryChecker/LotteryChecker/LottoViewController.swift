@@ -9,17 +9,16 @@ import UIKit
 
 class LottoViewController: UIViewController {
     
+    private let viewModel = LottoViewModel()
     let lottoManager = LottoManager()
     
     let drawingNumberPicker = UIPickerView()
-    let drawingNumbers: [Int] = Array(1...1079).reversed()
     
     @IBOutlet var wrappingViews: [UIView]!
     
     @IBOutlet weak var drawingNumberTextField: UITextField!
     @IBOutlet weak var drawingNumberLabel: UILabel!
     @IBOutlet weak var drawingDate: UILabel!
-    
     @IBOutlet var lotteryNumberLabels: [UILabel]!
     @IBOutlet weak var bonusNumberLabel: UILabel!
     
@@ -31,7 +30,7 @@ class LottoViewController: UIViewController {
         drawingNumberPicker.delegate = self
         drawingNumberPicker.dataSource = self
         
-        drawingNumberTextField.text = "\(1079)"
+        drawingNumberTextField.text = "\(1084)"
         drawingNumberTextField.inputView = drawingNumberPicker
         drawingNumberTextField.tintColor = .clear
         
@@ -98,15 +97,15 @@ extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return drawingNumbers.count
+        return viewModel.drawingNumbers.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(drawingNumbers[row])"
+        return viewModel.titleForRow(row)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        drawingNumberTextField.text = "\(drawingNumbers[row])"
+        drawingNumberTextField.text = viewModel.titleForRow(row)
         requestLotto()
     }
 }
