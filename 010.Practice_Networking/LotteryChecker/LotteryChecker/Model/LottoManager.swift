@@ -14,14 +14,14 @@ struct LottoManager {
     func fetchLotto(drawingNumber: Int, completion: @escaping (Lotto?) -> ()) {
         let urlString = "\(lottoURL)&drwNo=\(drawingNumber)"
         performRequest(with: urlString) { lotto in
-            completion(lotto)
+            DispatchQueue.main.async { completion(lotto) }
         }
     }
     
     private func performRequest(with urlString: String, completion: @escaping (Lotto?) -> ()) {
         
         guard let url = URL(string: urlString) else { return }
-        let session = URLSession(configuration: .default)
+        let session = URLSession.shared
         let task = session.dataTask(with: url) { (data, _, error) in
             if error != nil {
                 print(#function, "error :", error!)
@@ -46,10 +46,7 @@ struct LottoManager {
         do {
             let lottoData = try decoder.decode(LottoData.self, from: jsonData)
             
-            let lotteryNumber = [lottoData.drwtNo1, lottoData.drwtNo2, lottoData.drwtNo3, lottoData.drwtNo4, lottoData.drwtNo5, lottoData.drwtNo6]
-            
-            let lotto = Lotto(drawingNumber: lottoData.drwNo, drawingDate: lottoData.drwNoDate, loteryNumber: lotteryNumber, bonusNumber: lottoData.bnusNo)
-            
+            let lotto = Lotto(from: lottoData)
             return lotto
         } catch {
             print("Fail Parsing")
