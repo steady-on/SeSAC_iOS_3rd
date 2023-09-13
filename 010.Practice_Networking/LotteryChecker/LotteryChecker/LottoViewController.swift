@@ -10,7 +10,6 @@ import UIKit
 class LottoViewController: UIViewController {
     
     private let viewModel = LottoViewModel()
-    let lottoManager = LottoManager()
     
     let drawingNumberPicker = UIPickerView()
     
@@ -30,40 +29,27 @@ class LottoViewController: UIViewController {
         drawingNumberPicker.delegate = self
         drawingNumberPicker.dataSource = self
         
+        drawingNumberTextField.inputView = drawingNumberPicker
+        drawingNumberTextField.tintColor = .clear
+        
         viewModel.selectedNumber.bind { value in
             self.drawingNumberTextField.text = value
             self.viewModel.textForDrawingNumberLabel()
+            self.viewModel.requestLotto()
         }
         
         viewModel.seletedDrawingNumberLable.bind { text in
             self.drawingNumberLabel.text = text
         }
         
-        drawingNumberTextField.inputView = drawingNumberPicker
-        drawingNumberTextField.tintColor = .clear
-        
-        requestLotto()
-    }
-    
-    func requestLotto() {
-        guard let drawingNumber = Int(drawingNumberTextField.text ?? "") else { return }
-        
-        lottoManager.fetchLotto(drawingNumber: drawingNumber) { [self] lotto in
-            guard let lotto else {
-                print(#function, "error: 해당 회차에 대한 데이터가 없거나 서버 연결에 실패했습니다.")
-                return
-            }
+        viewModel.lotto.bind { [self] lotto in
+            drawingDate.text = lotto?.drawingDate
             
-            DispatchQueue.main.async { [self] in
-//                drawingNumberLabel.text = "\(lotto.drawingNumber)회 당첨결과"
-                drawingDate.text = lotto.drawingDate
-                
-                for (label, number) in zip(lotteryNumberLabels, lotto.loteryNumber) {
-                    configureLabel(label, for: number)
-                }
-                
-                configureLabel(bonusNumberLabel, for: lotto.bonusNumber)
+            for (label, number) in zip(lotteryNumberLabels, lotto?.loteryNumber ?? []) {
+                configureLabel(label, for: number)
             }
+
+            configureLabel(bonusNumberLabel, for: lotto?.bonusNumber ?? 0)
         }
     }
     
