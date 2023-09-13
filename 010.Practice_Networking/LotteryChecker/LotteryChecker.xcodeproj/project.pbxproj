@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630927FD2AB18AB6009E9EB0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630927FC2AB18AB6009E9EB0 /* Observable.swift */; };
 		6386EF7E2A82421B00F1EBB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6386EF7D2A82421B00F1EBB1 /* AppDelegate.swift */; };
 		6386EF802A82421B00F1EBB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6386EF7F2A82421B00F1EBB1 /* SceneDelegate.swift */; };
 		6386EF822A82421B00F1EBB1 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6386EF812A82421B00F1EBB1 /* LottoViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		630927FC2AB18AB6009E9EB0 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		6386EF7A2A82421B00F1EBB1 /* LotteryChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LotteryChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6386EF7D2A82421B00F1EBB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6386EF7F2A82421B00F1EBB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				6386EF7F2A82421B00F1EBB1 /* SceneDelegate.swift */,
 				6386EF812A82421B00F1EBB1 /* LottoViewController.swift */,
 				6386EF832A82421B00F1EBB1 /* Main.storyboard */,
+				630927FC2AB18AB6009E9EB0 /* Observable.swift */,
 				6386EF962A82A4B500F1EBB1 /* Model */,
 				6386EF932A829C2200F1EBB1 /* extension */,
 				6386EF862A82421C00F1EBB1 /* Assets.xcassets */,
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630927FD2AB18AB6009E9EB0 /* Observable.swift in Sources */,
 				6386EF9C2A830C5700F1EBB1 /* LottoManager.swift in Sources */,
 				6386EF9A2A830A2500F1EBB1 /* Lotto.swift in Sources */,
 				6386EF952A829C3300F1EBB1 /* UIView+.swift in Sources */,
