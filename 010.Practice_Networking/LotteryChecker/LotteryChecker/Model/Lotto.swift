@@ -22,4 +22,17 @@ struct Lotto {
         default: return "lottoGreen"
         }
     }
+    
+    init(drawingNumber: Int, drawingDate: String, loteryNumber: [Int], bonusNumber: Int) {
+        self.drawingNumber = drawingNumber
+        self.drawingDate = drawingDate
+        self.loteryNumber = loteryNumber
+        self.bonusNumber = bonusNumber
+    }
+    
+    init(from data: LottoData) {
+        let numbers = [data.drwtNo1, data.drwtNo2, data.drwtNo3, data.drwtNo4, data.drwtNo5, data.drwtNo6]
+        
+        self.init(drawingNumber: data.drwNo, drawingDate: data.drwNoDate, loteryNumber: numbers, bonusNumber: data.bnusNo)
+    }
 }
