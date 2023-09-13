@@ -11,7 +11,7 @@ struct LottoManager {
 
     private let lottoURL: String = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber"
     
-    func fetchLotto(drawingNumber: Int, completion: @escaping (Lotto?) -> ()) {
+    func fetchLotto(drawingNumber: String, completion: @escaping (Lotto?) -> ()) {
         let urlString = "\(lottoURL)&drwNo=\(drawingNumber)"
         performRequest(with: urlString) { lotto in
             DispatchQueue.main.async { completion(lotto) }
