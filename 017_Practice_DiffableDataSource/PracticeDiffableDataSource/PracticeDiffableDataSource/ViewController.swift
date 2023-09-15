@@ -7,7 +7,16 @@
 
 import UIKit
 
+struct FocusMode: Hashable {
+    let id = UUID().uuidString
+    let title: String
+    let subTitle: String?
+    let icon: String
+    let iconColor: UIColor?
+}
+
 class ViewController: UIViewController {
+    
     enum SectionType: Int, CaseIterable {
         case modeSettings
         case shareToAllDevices
@@ -24,6 +33,14 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    private let focusModes = [
+        FocusMode(title: "방해금지 모드", subTitle: nil, icon: "moon.fill", iconColor: .systemIndigo),
+        FocusMode(title: "개인 시간", subTitle: nil, icon: "person.fill", iconColor: .systemPurple),
+        FocusMode(title: "수면", subTitle: nil, icon: "bed.double.fill", iconColor: .systemMint),
+        FocusMode(title: "업무", subTitle: "설정", icon: "lanyardcard.fill", iconColor: .systemTeal)
+    ]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
