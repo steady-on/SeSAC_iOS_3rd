@@ -52,6 +52,12 @@ class ViewController: UIViewController {
         configureHierarchy()
         configureDataSource()
         
+        var snapshot = NSDiffableDataSourceSnapshot<SectionType, FocusMode>()
+        snapshot.appendSections(SectionType.allCases)
+        snapshot.appendItems(focusModes, toSection: .modeSettings)
+        dataSource.apply(snapshot)
+    }
+    
     private func configureHierarchy() {
         view.backgroundColor = .systemBackground
         
