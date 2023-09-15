@@ -45,10 +45,13 @@ class ViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
         return collectionView
     }()
+    private var dataSource: UICollectionViewDiffableDataSource<SectionType, FocusMode>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierarchy()
+        configureDataSource()
+        
     private func configureHierarchy() {
         view.backgroundColor = .systemBackground
         
@@ -69,8 +72,39 @@ class ViewController: UIViewController {
         return layout
     }
     
+    private func configureDataSource() {
+        let footerRegistration = UICollectionView.SupplementaryRegistration<UICollectionViewListCell>(elementKind: UICollectionView.elementKindSectionFooter) { footerView, elementKind, indexPath in
+            
+            let footerItem = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
+            
+            var configuration = footerView.defaultContentConfiguration()
+            configuration.text = footerItem.footer
+            
+            footerView.contentConfiguration = configuration
+        }
+        
+        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, FocusMode> { cell, indexPath, itemIdentifier in
+            var content = UIListContentConfiguration.valueCell()
+            content.text = itemIdentifier.title
+            content.secondaryText = itemIdentifier.subTitle
+            content.image = UIImage(systemName: itemIdentifier.icon)
+            
+            content.textProperties.font = .preferredFont(forTextStyle: .body)
+            content.secondaryTextProperties.font = .preferredFont(forTextStyle: .body)
+            content.imageProperties.tintColor = itemIdentifier.iconColor
+            
+            cell.contentConfiguration = content
+            cell.accessories = [.disclosureIndicator()]
+        }
+        
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
+            let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
+            return cell
+        }
+        
+        dataSource.supplementaryViewProvider = { (collectionView, elementKind, indexPath) -> UICollectionReusableView in
+            return collectionView.dequeueConfiguredReusableSupplementary(using: footerRegistration, for: indexPath)
+        }
     }
-
-
 }
 
