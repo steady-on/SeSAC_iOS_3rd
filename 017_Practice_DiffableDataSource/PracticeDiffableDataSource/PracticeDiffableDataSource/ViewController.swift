@@ -41,10 +41,34 @@ class ViewController: UIViewController {
         FocusMode(title: "업무", subTitle: "설정", icon: "lanyardcard.fill", iconColor: .systemTeal)
     ]
     
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
+        return collectionView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        configureHierarchy()
+    private func configureHierarchy() {
+        view.backgroundColor = .systemBackground
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(collectionView)
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
+    private func createCollectionViewLayout() -> UICollectionViewLayout {
+        var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        configuration.footerMode = .supplementary
+        let layout = UICollectionViewCompositionalLayout.list(using: configuration)
+        return layout
+    }
+    
     }
 
 
