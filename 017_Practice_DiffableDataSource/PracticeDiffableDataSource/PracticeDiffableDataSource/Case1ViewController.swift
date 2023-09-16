@@ -15,7 +15,7 @@ struct FocusMode: Hashable {
     let iconColor: UIColor?
 }
 
-class ViewController: UIViewController {
+class Case1ViewController: UIViewController {
     
     enum SectionType: Int, CaseIterable {
         case modeSettings

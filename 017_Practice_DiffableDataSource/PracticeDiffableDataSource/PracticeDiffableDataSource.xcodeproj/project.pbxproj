@@ -9,19 +9,23 @@
 /* Begin PBXBuildFile section */
 		639E68722AB492B400210CAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E68712AB492B400210CAA /* AppDelegate.swift */; };
 		639E68742AB492B400210CAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E68732AB492B400210CAA /* SceneDelegate.swift */; };
-		639E68762AB492B400210CAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E68752AB492B400210CAA /* ViewController.swift */; };
+		639E68762AB492B400210CAA /* Case1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E68752AB492B400210CAA /* Case1ViewController.swift */; };
 		639E687B2AB492B400210CAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639E687A2AB492B400210CAA /* Assets.xcassets */; };
 		639E687E2AB492B400210CAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639E687C2AB492B400210CAA /* LaunchScreen.storyboard */; };
+		639E68882AB5DC3D00210CAA /* Case2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E68872AB5DC3D00210CAA /* Case2ViewController.swift */; };
+		639E688A2AB5DC5400210CAA /* Case2SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E68892AB5DC5400210CAA /* Case2SectionType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		639E686E2AB492B400210CAA /* PracticeDiffableDataSource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticeDiffableDataSource.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639E68712AB492B400210CAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		639E68732AB492B400210CAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		639E68752AB492B400210CAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		639E68752AB492B400210CAA /* Case1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case1ViewController.swift; sourceTree = "<group>"; };
 		639E687A2AB492B400210CAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		639E687D2AB492B400210CAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		639E687F2AB492B400210CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		639E68872AB5DC3D00210CAA /* Case2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case2ViewController.swift; sourceTree = "<group>"; };
+		639E68892AB5DC5400210CAA /* Case2SectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case2SectionType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +60,9 @@
 			children = (
 				639E68712AB492B400210CAA /* AppDelegate.swift */,
 				639E68732AB492B400210CAA /* SceneDelegate.swift */,
-				639E68752AB492B400210CAA /* ViewController.swift */,
+				639E68752AB492B400210CAA /* Case1ViewController.swift */,
+				639E68872AB5DC3D00210CAA /* Case2ViewController.swift */,
+				639E68892AB5DC5400210CAA /* Case2SectionType.swift */,
 				639E687A2AB492B400210CAA /* Assets.xcassets */,
 				639E687C2AB492B400210CAA /* LaunchScreen.storyboard */,
 				639E687F2AB492B400210CAA /* Info.plist */,
@@ -134,7 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				639E68762AB492B400210CAA /* ViewController.swift in Sources */,
+				639E68762AB492B400210CAA /* Case1ViewController.swift in Sources */,
+				639E68882AB5DC3D00210CAA /* Case2ViewController.swift in Sources */,
+				639E688A2AB5DC5400210CAA /* Case2SectionType.swift in Sources */,
 				639E68722AB492B400210CAA /* AppDelegate.swift in Sources */,
 				639E68742AB492B400210CAA /* SceneDelegate.swift in Sources */,
 			);
