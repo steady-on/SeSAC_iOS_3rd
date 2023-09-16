@@ -11,7 +11,7 @@ struct FocusMode: Hashable {
     let id = UUID().uuidString
     let title: String
     let subTitle: String?
-    let icon: String
+    let icon: String?
     let iconColor: UIColor?
 }
 
@@ -41,6 +41,10 @@ class ViewController: UIViewController {
         FocusMode(title: "업무", subTitle: "설정", icon: "lanyardcard.fill", iconColor: .systemTeal)
     ]
     
+    private let shareToAllDevice = [FocusMode(title: "모든 기기에서 공유", subTitle: nil, icon: nil, iconColor: nil)]
+    
+    private let statusOfFocus = [FocusMode(title: "집중 모드 상태", subTitle: "켬", icon: nil, iconColor: nil)]
+    
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
         return collectionView
@@ -55,6 +59,8 @@ class ViewController: UIViewController {
         var snapshot = NSDiffableDataSourceSnapshot<SectionType, FocusMode>()
         snapshot.appendSections(SectionType.allCases)
         snapshot.appendItems(focusModes, toSection: .modeSettings)
+        snapshot.appendItems(shareToAllDevice, toSection: .shareToAllDevices)
+        snapshot.appendItems(statusOfFocus, toSection: .statusOfFocus)
         dataSource.apply(snapshot)
     }
     
@@ -90,17 +96,34 @@ class ViewController: UIViewController {
         }
         
         let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, FocusMode> { cell, indexPath, itemIdentifier in
-            var content = UIListContentConfiguration.valueCell()
-            content.text = itemIdentifier.title
-            content.secondaryText = itemIdentifier.subTitle
-            content.image = UIImage(systemName: itemIdentifier.icon)
             
-            content.textProperties.font = .preferredFont(forTextStyle: .body)
-            content.secondaryTextProperties.font = .preferredFont(forTextStyle: .body)
-            content.imageProperties.tintColor = itemIdentifier.iconColor
+            switch indexPath.section {
+            case 0, 2:
+                var content = UIListContentConfiguration.valueCell()
+                content.text = itemIdentifier.title
+                content.secondaryText = itemIdentifier.subTitle
+                
+                if let systemName = itemIdentifier.icon {
+                    content.image = UIImage(systemName: systemName)
+                }
+                
+                content.textProperties.font = .preferredFont(forTextStyle: .body)
+                content.secondaryTextProperties.font = .preferredFont(forTextStyle: .body)
+                content.imageProperties.tintColor = itemIdentifier.iconColor
+                
+                cell.contentConfiguration = content
+                cell.accessories = [.disclosureIndicator()]
+            case 1:
+                var content = UIListContentConfiguration.valueCell()
+                content.text = itemIdentifier.title
+                cell.contentConfiguration = content
+                
+                let accessoryConfig = UICellAccessory.CustomViewConfiguration(customView: UISwitch(), placement: .trailing())
+                cell.accessories = [.customView(configuration: accessoryConfig)]
+            default:
+                break
+            }
             
-            cell.contentConfiguration = content
-            cell.accessories = [.disclosureIndicator()]
         }
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
