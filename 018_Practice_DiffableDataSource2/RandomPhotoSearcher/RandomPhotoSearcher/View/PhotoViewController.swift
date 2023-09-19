@@ -9,6 +9,8 @@ import UIKit
 
 class PhotoViewController: UIViewController {
     
+    private let photoViewModel = PhotoViewModel()
+    
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
         return collectionView
@@ -31,7 +33,11 @@ class PhotoViewController: UIViewController {
         configureHierarchy()
         configureDataSource()
         
+        photoViewModel.unsplashPhotos.bind { photos in
+            self.updateSnapshot(for: photos)
+        }
         
+        photoViewModel.fetchRandomImage(for: nil)
     }
     
     private func configureNavigationBar() {
@@ -60,8 +66,10 @@ class PhotoViewController: UIViewController {
             content.imageProperties.maximumSize = .init(width: 120, height: 80)
             DispatchQueue.global().async {
                 if let url = URL(string: itemIdentifier.urls.thumb), let data = try? Data(contentsOf: url) {
-                    content.image = UIImage(data: data)
-                    cell.contentConfiguration = content
+                    DispatchQueue.main.async {
+                        content.image = UIImage(data: data)
+                        cell.contentConfiguration = content
+                    }
                 }
             }
         }

@@ -39,7 +39,6 @@ struct UnsplashAPIManager {
         
         let session = URLSession.shared
         var request = URLRequest(url: url, timeoutInterval: 10)
-        request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
         
         let task = session.dataTask(with: request) { data, response, error in
