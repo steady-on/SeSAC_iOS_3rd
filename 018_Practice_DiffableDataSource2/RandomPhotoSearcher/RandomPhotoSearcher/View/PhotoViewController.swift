@@ -63,7 +63,7 @@ class PhotoViewController: UIViewController {
             content.secondaryText = itemIdentifier.description
             
             content.imageProperties.cornerRadius = 15
-            content.imageProperties.maximumSize = .init(width: 120, height: 80)
+            content.imageProperties.maximumSize = .init(width: 300, height: 300)
             DispatchQueue.global().async {
                 if let url = URL(string: itemIdentifier.urls.thumb), let data = try? Data(contentsOf: url) {
                     DispatchQueue.main.async {
@@ -95,5 +95,8 @@ class PhotoViewController: UIViewController {
 }
 
 extension PhotoViewController: UISearchBarDelegate {
-    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let keyword = searchBar.text else { return }
+        photoViewModel.fetchRandomImage(for: keyword)
+    }
 }
