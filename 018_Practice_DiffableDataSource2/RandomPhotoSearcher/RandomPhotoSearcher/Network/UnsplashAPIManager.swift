@@ -58,7 +58,7 @@ struct UnsplashAPIManager {
                 completionHandler(nil)
                 return
             }
-            
+
             completionHandler(decodeData)
         }
         
@@ -67,8 +67,7 @@ struct UnsplashAPIManager {
     
     private static func parseJSON(_ jsonData: Data) -> [UnsplashPhoto]? {
         let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        
+
         do {
             let decodedData = try decoder.decode([UnsplashPhoto].self, from: jsonData)
             return decodedData

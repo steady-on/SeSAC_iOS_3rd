@@ -62,7 +62,8 @@
 			children = (
 				639E68A12AB8A4D000210CAA /* AppDelegate.swift */,
 				639E68A32AB8A4D000210CAA /* SceneDelegate.swift */,
-				639E68A52AB8A4D000210CAA /* PhotoCollectionViewController.swift */,
+				639E68BD2AB8A73400210CAA /* View */,
+				639E68BE2AB8A73C00210CAA /* ViewModel */,
 				639E68B62AB8A67F00210CAA /* Network */,
 				639E68AA2AB8A4D000210CAA /* Assets.xcassets */,
 				639E68AC2AB8A4D000210CAA /* LaunchScreen.storyboard */,
@@ -79,6 +80,21 @@
 				639E68BB2AB8A6E600210CAA /* UnsplashAPIManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		639E68BD2AB8A73400210CAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				639E68A52AB8A4D000210CAA /* PhotoCollectionViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		639E68BE2AB8A73C00210CAA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
