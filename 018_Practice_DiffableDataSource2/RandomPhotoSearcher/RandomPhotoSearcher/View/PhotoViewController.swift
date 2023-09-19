@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PhotoCollectionViewController: UIViewController {
+class PhotoViewController: UIViewController {
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
@@ -30,6 +30,8 @@ class PhotoCollectionViewController: UIViewController {
         configureNavigationBar()
         configureHierarchy()
         configureDataSource()
+        
+        
     }
     
     private func configureNavigationBar() {
@@ -84,6 +86,6 @@ class PhotoCollectionViewController: UIViewController {
     }
 }
 
-extension PhotoCollectionViewController: UISearchBarDelegate {
+extension PhotoViewController: UISearchBarDelegate {
     
 }
