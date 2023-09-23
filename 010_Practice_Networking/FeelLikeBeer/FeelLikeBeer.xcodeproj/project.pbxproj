@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		639AF8242ABF396C00A88A97 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639AF8232ABF396C00A88A97 /* Router.swift */; };
+		639AF8272ABF539500A88A97 /* DetailBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639AF8262ABF539500A88A97 /* DetailBeerViewController.swift */; };
 		63AB57462A839C7A00A138C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB57452A839C7A00A138C7 /* AppDelegate.swift */; };
 		63AB57482A839C7A00A138C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB57472A839C7A00A138C7 /* SceneDelegate.swift */; };
 		63AB574A2A839C7A00A138C7 /* RecommandBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB57492A839C7A00A138C7 /* RecommandBeerViewController.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		639AF8232ABF396C00A88A97 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		639AF8262ABF539500A88A97 /* DetailBeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBeerViewController.swift; sourceTree = "<group>"; };
 		63AB57422A839C7A00A138C7 /* FeelLikeBeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeelLikeBeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63AB57452A839C7A00A138C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63AB57472A839C7A00A138C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				63C85A512A848CB90007F1B0 /* BeerCollectionViewController.swift */,
 				63C85A4F2A848C430007F1B0 /* BeerCollectionViewCell.swift */,
 				63C85A4D2A83FEB80007F1B0 /* CoverViewController.swift */,
+				639AF8262ABF539500A88A97 /* DetailBeerViewController.swift */,
 				63C85A552A8491CF0007F1B0 /* Model */,
 				63AB57592A83A0CC00A138C7 /* extension */,
 				639AF8252ABF514A00A88A97 /* etc */,
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63C85A572A8496E60007F1B0 /* BeerManager.swift in Sources */,
+				639AF8272ABF539500A88A97 /* DetailBeerViewController.swift in Sources */,
 				63AB574A2A839C7A00A138C7 /* RecommandBeerViewController.swift in Sources */,
 				63AB575B2A83A10400A138C7 /* UIColor+.swift in Sources */,
 				63C85A522A848CB90007F1B0 /* BeerCollectionViewController.swift in Sources */,

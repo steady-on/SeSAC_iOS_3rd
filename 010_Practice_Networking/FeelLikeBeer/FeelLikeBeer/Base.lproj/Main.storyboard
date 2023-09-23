@@ -186,7 +186,7 @@
             </objects>
             <point key="canvasLocation" x="2684.7328244274809" y="-29.577464788732396"/>
         </scene>
-        <!--BeerBox-->
+        <!--Beer Collection View Controller-->
         <scene sceneID="kFI-UU-QgN">
             <objects>
                 <collectionViewController id="eR5-bz-VIu" customClass="BeerCollectionViewController" customModule="FeelLikeBeer" customModuleProvider="target" sceneMemberID="viewController">
@@ -263,14 +263,14 @@
                             <outlet property="delegate" destination="eR5-bz-VIu" id="S29-k1-scP"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="BeerBox" image="shippingbox.fill" catalog="system" id="f1M-Jd-mxt"/>
+                    <navigationItem key="navigationItem" id="eGW-za-KEZ"/>
                     <connections>
                         <outlet property="beerCollectionView" destination="LsV-SW-nre" id="lPa-SV-D46"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JzQ-j8-e5E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756.4885496183206" y="695.77464788732402"/>
+            <point key="canvasLocation" x="2683.2061068702287" y="695.77464788732402"/>
         </scene>
         <!--Cover View Controller-->
         <scene sceneID="Bg9-kv-FjK">
@@ -335,7 +335,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="5yL-zX-Ac2" kind="relationship" relationship="viewControllers" id="RtG-D3-8Cq"/>
-                        <segue destination="eR5-bz-VIu" kind="relationship" relationship="viewControllers" id="KyA-kg-DXf"/>
+                        <segue destination="ZFm-F7-3CN" kind="relationship" relationship="viewControllers" id="KyA-kg-DXf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQg-HD-RxV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -361,6 +361,183 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pX-fW-j8y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1758.0152671755725" y="-29.577464788732396"/>
+        </scene>
+        <!--BeerBox-->
+        <scene sceneID="D7D-68-x9z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZFm-F7-3CN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="BeerBox" image="shippingbox.fill" catalog="system" id="f1M-Jd-mxt"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fyn-6y-a3c">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eR5-bz-VIu" kind="relationship" relationship="rootViewController" id="pO2-8g-Q1a"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XJ9-uS-Hdr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756.4885496183206" y="695.77464788732402"/>
+        </scene>
+        <!--Detail Beer View Controller-->
+        <scene sceneID="QZl-Jj-65T">
+            <objects>
+                <viewController storyboardIdentifier="DetailBeerViewController" id="s8n-D8-vmD" customClass="DetailBeerViewController" customModule="FeelLikeBeer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VP2-Kw-JFZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7R-Wn-BJc">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5C-OW-WTE">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="876.33333333333337"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VJy-Yi-tlW">
+                                                <rect key="frame" x="30" y="20" width="333" height="856.33333333333337"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cheers" translatesAutoresizingMaskIntoConstraints="NO" id="QSM-IK-3fa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="333" height="227.66666666666663"/>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="36M-qx-Xx8">
+                                                        <rect key="frame" x="0.0" y="242.66666666666669" width="333" height="231.66666666666669"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zeitgeist" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UF-LD-XyH">
+                                                                <rect key="frame" x="0.0" y="0.0" width="333" height="33.666666666666664"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rn1-hR-Uqu">
+                                                                <rect key="frame" x="0.0" y="33.666666666666629" width="333" height="198"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <string key="text">Zeitgeist is an idiosyncratic alternative black lager. Its inspiration is found more than 200 years ago. Zeitgeist takes an age old classic, a forgotten masterpiece, and gives it relevance and an avant-garde edge.</string>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="rn1-hR-Uqu" firstAttribute="top" secondItem="5UF-LD-XyH" secondAttribute="bottom" id="0SJ-OP-TcM"/>
+                                                            <constraint firstItem="5UF-LD-XyH" firstAttribute="top" secondItem="36M-qx-Xx8" secondAttribute="top" id="1hY-P7-4PL"/>
+                                                            <constraint firstAttribute="trailing" secondItem="5UF-LD-XyH" secondAttribute="trailing" id="KC6-9D-EIb"/>
+                                                            <constraint firstAttribute="bottom" secondItem="rn1-hR-Uqu" secondAttribute="bottom" id="Pul-hD-M4G"/>
+                                                            <constraint firstItem="rn1-hR-Uqu" firstAttribute="leading" secondItem="36M-qx-Xx8" secondAttribute="leading" id="r9Z-bp-VMw"/>
+                                                            <constraint firstItem="5UF-LD-XyH" firstAttribute="leading" secondItem="36M-qx-Xx8" secondAttribute="leading" id="u4R-SL-gaq"/>
+                                                            <constraint firstAttribute="trailing" secondItem="rn1-hR-Uqu" secondAttribute="trailing" id="wUc-KN-btT"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUh-sd-KJC">
+                                                        <rect key="frame" x="0.0" y="489.33333333333337" width="333" height="178"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Food Pairing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dzq-7l-O22">
+                                                                <rect key="frame" x="0.0" y="0.0" width="333" height="24"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xTX-bn-ZXH">
+                                                                <rect key="frame" x="0.0" y="24" width="333" height="154"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <string key="text">"Spicy cajun fried chicken",
+"Pork dumplings with rich soy sauce",
+"Cinnamon carrot cake with creamy cheese frosting"</string>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Dzq-7l-O22" firstAttribute="top" secondItem="RUh-sd-KJC" secondAttribute="top" id="Vly-1y-ZIs"/>
+                                                            <constraint firstAttribute="bottom" secondItem="xTX-bn-ZXH" secondAttribute="bottom" id="XmD-Eq-cNh"/>
+                                                            <constraint firstItem="xTX-bn-ZXH" firstAttribute="top" secondItem="Dzq-7l-O22" secondAttribute="bottom" id="ZBr-P7-HeG"/>
+                                                            <constraint firstAttribute="trailing" secondItem="xTX-bn-ZXH" secondAttribute="trailing" id="ZF9-GU-CW0"/>
+                                                            <constraint firstItem="Dzq-7l-O22" firstAttribute="leading" secondItem="RUh-sd-KJC" secondAttribute="leading" id="f6i-CO-nnC"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Dzq-7l-O22" secondAttribute="trailing" id="oDP-bi-8DJ"/>
+                                                            <constraint firstItem="xTX-bn-ZXH" firstAttribute="leading" secondItem="RUh-sd-KJC" secondAttribute="leading" id="pvo-Yw-5NH"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zW3-ms-GQ6">
+                                                        <rect key="frame" x="0.0" y="682.33333333333337" width="333" height="174"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ed-5c-mE9">
+                                                                <rect key="frame" x="0.0" y="0.0" width="333" height="24"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gbj-dt-cG4">
+                                                                <rect key="frame" x="0.0" y="24" width="333" height="150"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <string key="text">Inspect the colour of the wort during boiling. If it is not quite dark enough, extend the boil by 10 - 15 mins and check again. The wort will darken during the boiling process.</string>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="1ed-5c-mE9" secondAttribute="trailing" id="00Q-yb-Diw"/>
+                                                            <constraint firstItem="1ed-5c-mE9" firstAttribute="leading" secondItem="zW3-ms-GQ6" secondAttribute="leading" id="1H8-iF-FP5"/>
+                                                            <constraint firstAttribute="trailing" secondItem="gbj-dt-cG4" secondAttribute="trailing" id="5XR-lm-mXF"/>
+                                                            <constraint firstItem="gbj-dt-cG4" firstAttribute="top" secondItem="1ed-5c-mE9" secondAttribute="bottom" id="6e1-Lk-bFE"/>
+                                                            <constraint firstItem="gbj-dt-cG4" firstAttribute="leading" secondItem="zW3-ms-GQ6" secondAttribute="leading" id="CPk-nW-EGg"/>
+                                                            <constraint firstItem="1ed-5c-mE9" firstAttribute="top" secondItem="zW3-ms-GQ6" secondAttribute="top" id="oEZ-YT-uUg"/>
+                                                            <constraint firstAttribute="bottom" secondItem="gbj-dt-cG4" secondAttribute="bottom" id="uRX-ye-Sa5"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="VJy-Yi-tlW" secondAttribute="bottom" id="3YJ-hV-WOi"/>
+                                            <constraint firstItem="VJy-Yi-tlW" firstAttribute="top" secondItem="o5C-OW-WTE" secondAttribute="top" constant="20" id="5YE-uC-XAd"/>
+                                            <constraint firstItem="VJy-Yi-tlW" firstAttribute="leading" secondItem="o5C-OW-WTE" secondAttribute="leading" constant="30" id="iHU-CJ-q09"/>
+                                            <constraint firstAttribute="trailing" secondItem="VJy-Yi-tlW" secondAttribute="trailing" constant="30" id="w6o-Co-HJu"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="o5C-OW-WTE" firstAttribute="top" secondItem="Oji-gC-rS1" secondAttribute="top" id="0yh-JW-bst"/>
+                                    <constraint firstItem="o5C-OW-WTE" firstAttribute="leading" secondItem="Oji-gC-rS1" secondAttribute="leading" id="DRA-5X-OXI"/>
+                                    <constraint firstItem="o5C-OW-WTE" firstAttribute="trailing" secondItem="Oji-gC-rS1" secondAttribute="trailing" id="Gfi-J1-lEJ"/>
+                                    <constraint firstItem="o5C-OW-WTE" firstAttribute="width" secondItem="TUl-Nl-pAV" secondAttribute="width" id="ZEW-cW-fiZ"/>
+                                    <constraint firstItem="o5C-OW-WTE" firstAttribute="bottom" secondItem="Oji-gC-rS1" secondAttribute="bottom" id="vLU-9Y-ZZM"/>
+                                    <constraint firstItem="QSM-IK-3fa" firstAttribute="height" secondItem="TUl-Nl-pAV" secondAttribute="height" multiplier="0.3" id="vZq-ZD-eM1"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Oji-gC-rS1"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="TUl-Nl-pAV"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="19V-Kr-dZ9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Y7R-Wn-BJc" firstAttribute="top" secondItem="19V-Kr-dZ9" secondAttribute="top" id="D94-fz-1zc"/>
+                            <constraint firstItem="19V-Kr-dZ9" firstAttribute="bottom" secondItem="Y7R-Wn-BJc" secondAttribute="bottom" id="J5S-sO-pCw"/>
+                            <constraint firstItem="Y7R-Wn-BJc" firstAttribute="leading" secondItem="19V-Kr-dZ9" secondAttribute="leading" id="L2u-qD-ljz"/>
+                            <constraint firstItem="19V-Kr-dZ9" firstAttribute="trailing" secondItem="Y7R-Wn-BJc" secondAttribute="trailing" id="Sts-2d-QP3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="NST-fK-pX0"/>
+                    <connections>
+                        <outlet property="bestFoodPairTextView" destination="xTX-bn-ZXH" id="I1T-Zy-cTV"/>
+                        <outlet property="bestFoodPairingLabel" destination="Dzq-7l-O22" id="ysx-sL-vlM"/>
+                        <outlet property="descriptionTextView" destination="rn1-hR-Uqu" id="34p-7w-Jok"/>
+                        <outlet property="imageView" destination="QSM-IK-3fa" id="aRU-Aa-eQh"/>
+                        <outlet property="nameLabel" destination="5UF-LD-XyH" id="JEM-hz-bur"/>
+                        <outlet property="tipLabel" destination="1ed-5c-mE9" id="q83-nd-EtQ"/>
+                        <outlet property="tipTextView" destination="gbj-dt-cG4" id="soP-q9-Rbf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GtC-Px-evl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3616" y="696"/>
         </scene>
     </scenes>
     <resources>

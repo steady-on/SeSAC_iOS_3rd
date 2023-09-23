@@ -59,6 +59,12 @@ class BeerCollectionViewController: UICollectionViewController {
         
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let detailBeerController = storyboard?.instantiateViewController(withIdentifier: "DetailBeerViewController") as? DetailBeerViewController else { return }
+        detailBeerController.beer = beers[indexPath.item]
+        navigationController?.pushViewController(detailBeerController, animated: true)
+    }
 }
 
 extension BeerCollectionViewController: UICollectionViewDataSourcePrefetching {
