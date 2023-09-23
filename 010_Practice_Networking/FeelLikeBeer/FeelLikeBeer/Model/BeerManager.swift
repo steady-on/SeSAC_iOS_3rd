@@ -23,6 +23,17 @@ struct BeerManager {
         BeerManager.page += 1
     }
     
+    func request<T: Decodable>(type: T.Type, api: Router, completion: @escaping (Result<T, Error>) -> Void) {
+        AF.request(api).responseDecodable(of: T.self, decoder: decoder) { response in
+            switch response.result {
+            case .success(let data):
+                completion(.success(data))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
     // Get a Single Beer
     func requestSpecifiedBeer(for id: Int, completion: @escaping (Result<Beer, Error>) -> Void) {
         let url = url + "\(id)"
