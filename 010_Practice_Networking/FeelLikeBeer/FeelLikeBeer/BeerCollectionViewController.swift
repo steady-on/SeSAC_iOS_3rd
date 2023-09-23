@@ -32,9 +32,14 @@ class BeerCollectionViewController: UICollectionViewController {
     }
     
     func requestCall() {
-        beerManager.fetchPagingBeerData { beers in
-            self.beers.append(contentsOf: beers)
-            self.beerCollectionView.reloadData()
+        beerManager.fetchPagingBeerData { result in
+            switch result {
+            case .success(let beers):
+                self.beers.append(contentsOf: beers)
+                self.beerCollectionView.reloadData()
+            case .failure(let failure):
+                print(failure)
+            }
         }
     }
     
@@ -82,9 +87,14 @@ extension BeerCollectionViewController: UICollectionViewDataSourcePrefetching {
         for indexPath in indexPaths {
             if beers.count - 4 == indexPath.item {
                 beerManager.goToNextPage()
-                beerManager.fetchPagingBeerData { beers in
-                    self.beers.append(contentsOf: beers)
-                    self.beerCollectionView.reloadData()
+                beerManager.fetchPagingBeerData { result in
+                    switch result {
+                    case .success(let beers):
+                        self.beers.append(contentsOf: beers)
+                        self.beerCollectionView.reloadData()
+                    case .failure(let failure):
+                        print(failure)
+                    }
                 }
             }
         }

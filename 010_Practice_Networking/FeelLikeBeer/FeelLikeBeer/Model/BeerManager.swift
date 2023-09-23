@@ -7,7 +7,6 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 struct BeerManager {
     private let url = "https://api.punkapi.com/v2/beers"

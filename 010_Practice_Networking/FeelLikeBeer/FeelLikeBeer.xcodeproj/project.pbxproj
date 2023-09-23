@@ -15,7 +15,6 @@
 		63AB57522A839C7A00A138C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AB57502A839C7A00A138C7 /* LaunchScreen.storyboard */; };
 		63AB575B2A83A10400A138C7 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB575A2A83A10400A138C7 /* UIColor+.swift */; };
 		63C85A492A83F1BD0007F1B0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 63C85A482A83F1BD0007F1B0 /* Alamofire */; };
-		63C85A4C2A83F1C80007F1B0 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 63C85A4B2A83F1C80007F1B0 /* SwiftyJSON */; };
 		63C85A4E2A83FEB80007F1B0 /* CoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A4D2A83FEB80007F1B0 /* CoverViewController.swift */; };
 		63C85A502A848C430007F1B0 /* BeerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A4F2A848C430007F1B0 /* BeerCollectionViewCell.swift */; };
 		63C85A522A848CB90007F1B0 /* BeerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C85A512A848CB90007F1B0 /* BeerCollectionViewController.swift */; };
@@ -49,7 +48,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63C85A4C2A83F1C80007F1B0 /* SwiftyJSON in Frameworks */,
 				63C85A492A83F1BD0007F1B0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,7 +127,6 @@
 			name = FeelLikeBeer;
 			packageProductDependencies = (
 				63C85A482A83F1BD0007F1B0 /* Alamofire */,
-				63C85A4B2A83F1C80007F1B0 /* SwiftyJSON */,
 			);
 			productName = FeelLikeBeer;
 			productReference = 63AB57422A839C7A00A138C7 /* FeelLikeBeer.app */;
@@ -143,7 +140,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					63AB57412A839C7A00A138C7 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -161,7 +158,6 @@
 			mainGroup = 63AB57392A839C7A00A138C7;
 			packageReferences = (
 				63C85A472A83F1BD0007F1B0 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				63C85A4A2A83F1C80007F1B0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 63AB57432A839C7A00A138C7 /* Products */;
 			projectDirPath = "";
@@ -230,6 +226,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -262,6 +259,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -290,6 +288,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -322,6 +321,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -426,14 +426,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		63C85A4A2A83F1C80007F1B0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -441,11 +433,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 63C85A472A83F1BD0007F1B0 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		63C85A4B2A83F1C80007F1B0 /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 63C85A4A2A83F1C80007F1B0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

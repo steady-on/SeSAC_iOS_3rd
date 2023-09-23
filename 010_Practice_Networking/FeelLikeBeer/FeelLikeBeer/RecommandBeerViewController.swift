@@ -49,15 +49,20 @@ class RecommandBeerViewController: UIViewController {
     }
     
     func callRequest() {
-        beerManager.fetchRandomBeer { [self] beer in
-            nameLabel.text = beer.name
-            descriptionTextView.text = beer.description
-            bestFoodPairTextView.text = beer.pairingFoodsString
-            tipTextView.text = beer.tip
-            beer.getBeerImage { image in
-                DispatchQueue.main.async {
-                    self.imageView.image = image
+        beerManager.fetchRandomBeer { result in
+            switch result {
+            case .success(let beer):
+                self.nameLabel.text = beer.name
+                self.descriptionTextView.text = beer.description
+                self.bestFoodPairTextView.text = beer.pairingFoodsString
+                self.tipTextView.text = beer.tip
+                beer.getBeerImage { image in
+                    DispatchQueue.main.async {
+                        self.imageView.image = image
+                    }
                 }
+            case .failure(let failure):
+                print(failure)
             }
         }
     }
