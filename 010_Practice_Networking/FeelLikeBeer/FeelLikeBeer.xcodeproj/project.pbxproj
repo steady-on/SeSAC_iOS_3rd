@@ -57,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		639AF8252ABF514A00A88A97 /* etc */ = {
+			isa = PBXGroup;
+			children = (
+				63C85A582A8512090007F1B0 /* DynamicCollectionViewLayout.swift */,
+				63C85A5A2A85B62A0007F1B0 /* DynamicFlowLayout.swift */,
+			);
+			path = etc;
+			sourceTree = "<group>";
+		};
 		63AB57392A839C7A00A138C7 = {
 			isa = PBXGroup;
 			children = (
@@ -78,15 +87,14 @@
 			children = (
 				63AB57452A839C7A00A138C7 /* AppDelegate.swift */,
 				63AB57472A839C7A00A138C7 /* SceneDelegate.swift */,
-				63AB57492A839C7A00A138C7 /* RecommandBeerViewController.swift */,
 				63AB574B2A839C7A00A138C7 /* Main.storyboard */,
+				63AB57492A839C7A00A138C7 /* RecommandBeerViewController.swift */,
 				63C85A512A848CB90007F1B0 /* BeerCollectionViewController.swift */,
 				63C85A4F2A848C430007F1B0 /* BeerCollectionViewCell.swift */,
 				63C85A4D2A83FEB80007F1B0 /* CoverViewController.swift */,
-				63C85A582A8512090007F1B0 /* DynamicCollectionViewLayout.swift */,
-				63C85A5A2A85B62A0007F1B0 /* DynamicFlowLayout.swift */,
 				63C85A552A8491CF0007F1B0 /* Model */,
 				63AB57592A83A0CC00A138C7 /* extension */,
+				639AF8252ABF514A00A88A97 /* etc */,
 				63AB574E2A839C7A00A138C7 /* Assets.xcassets */,
 				63AB57502A839C7A00A138C7 /* LaunchScreen.storyboard */,
 				63AB57532A839C7A00A138C7 /* Info.plist */,
