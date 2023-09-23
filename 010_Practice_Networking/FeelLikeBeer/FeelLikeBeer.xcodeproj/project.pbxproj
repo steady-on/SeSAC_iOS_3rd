@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		639AF8242ABF396C00A88A97 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639AF8232ABF396C00A88A97 /* Router.swift */; };
 		63AB57462A839C7A00A138C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB57452A839C7A00A138C7 /* AppDelegate.swift */; };
 		63AB57482A839C7A00A138C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB57472A839C7A00A138C7 /* SceneDelegate.swift */; };
 		63AB574A2A839C7A00A138C7 /* RecommandBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB57492A839C7A00A138C7 /* RecommandBeerViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		639AF8232ABF396C00A88A97 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		63AB57422A839C7A00A138C7 /* FeelLikeBeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeelLikeBeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63AB57452A839C7A00A138C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63AB57472A839C7A00A138C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				63C85A532A8490E10007F1B0 /* Beer.swift */,
 				63C85A562A8496E60007F1B0 /* BeerManager.swift */,
+				639AF8232ABF396C00A88A97 /* Router.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				63AB574A2A839C7A00A138C7 /* RecommandBeerViewController.swift in Sources */,
 				63AB575B2A83A10400A138C7 /* UIColor+.swift in Sources */,
 				63C85A522A848CB90007F1B0 /* BeerCollectionViewController.swift in Sources */,
+				639AF8242ABF396C00A88A97 /* Router.swift in Sources */,
 				63C85A5B2A85B62A0007F1B0 /* DynamicFlowLayout.swift in Sources */,
 				63C85A592A8512090007F1B0 /* DynamicCollectionViewLayout.swift in Sources */,
 				63C85A542A8490E10007F1B0 /* Beer.swift in Sources */,
