@@ -10,8 +10,11 @@ import Alamofire
 
 enum Router: URLRequestConvertible {
     case random
-    case beers(page: Int)
+    case beers
     case singleBeer(id: Int)
+    case nextPage
+    
+    static private var page = 1
     
     private var baseURL: URL? {
         URL(string: "https://api.punkapi.com/v2/beers/")
@@ -22,6 +25,7 @@ enum Router: URLRequestConvertible {
         case .random: return "random"
         case .beers: return ""
         case .singleBeer(let id): return "\(id)"
+        case .nextPage: return ""
         }
     }
     
@@ -31,9 +35,18 @@ enum Router: URLRequestConvertible {
         switch self {
         case .random, .singleBeer:
             return [:]
-        case .beers(let page):
-            return ["page":"\(page)"]
+        case .beers:
+            Router.page = 1
+            return [:]
+        case .nextPage:
+            Router.goToNextPage()
+            return ["page":"\(Router.page)"]
         }
+    }
+    
+    static private func goToNextPage() {
+        guard Router.page < 13 else { return }
+        Router.page += 1
     }
     
     func asURLRequest() throws -> URLRequest {
