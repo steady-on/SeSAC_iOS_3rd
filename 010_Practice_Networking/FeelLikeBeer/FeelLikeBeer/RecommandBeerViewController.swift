@@ -55,7 +55,7 @@ class RecommandBeerViewController: UIViewController {
                 self.nameLabel.text = beer.name
                 self.descriptionTextView.text = beer.description
                 self.bestFoodPairTextView.text = beer.pairingFoodsString
-                self.tipTextView.text = beer.tip
+                self.tipTextView.text = beer.brewersTips
                 beer.getBeerImage { image in
                     DispatchQueue.main.async {
                         self.imageView.image = image

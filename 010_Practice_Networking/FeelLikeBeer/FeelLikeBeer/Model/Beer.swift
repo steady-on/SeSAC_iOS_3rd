@@ -12,7 +12,7 @@ struct Beer: Decodable, Hashable {
     let name: String
     let description: String
     let foodPairing: [String]
-    let tip: String
+    let brewersTips: String
     let imageUrl: String
     
     var pairingFoodsString: String {

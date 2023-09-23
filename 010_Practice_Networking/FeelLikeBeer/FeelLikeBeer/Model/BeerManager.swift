@@ -40,10 +40,10 @@ struct BeerManager {
     // Get Random Beer
     func fetchRandomBeer(completion: @escaping (Result<Beer, Error>) -> ()) {
         let url = url + "/random"
-        AF.request(url, method: .get).responseDecodable(of: Beer.self, decoder: decoder) { response in
+        AF.request(url, method: .get).responseDecodable(of: [Beer].self, decoder: decoder) { response in
             switch response.result {
             case .success(let data):
-                completion(.success(data))
+                completion(.success(data[0]))
             case .failure(let failure):
                 completion(.failure(failure))
             }
