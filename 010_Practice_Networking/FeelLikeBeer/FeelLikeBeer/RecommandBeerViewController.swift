@@ -9,7 +9,6 @@ import UIKit
 
 class RecommandBeerViewController: UIViewController {
     
-    let beerManager = BeerManager()
     var closeCoverView = false
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -54,7 +53,7 @@ class RecommandBeerViewController: UIViewController {
     }
     
     func callRequest() {
-        beerManager.request(type: [Beer].self, api: .random) { result in
+        BeerManager.request(type: [Beer].self, api: .random) { result in
             switch result {
             case .success(let data):
                 guard let beer = data.first else { return }

@@ -9,7 +9,6 @@ import UIKit
 
 class BeerCollectionViewController: UICollectionViewController {
 
-    var beerManager = BeerManager()
     var beers = [Beer]()
     
     @IBOutlet var beerCollectionView: UICollectionView!
@@ -24,7 +23,7 @@ class BeerCollectionViewController: UICollectionViewController {
     }
     
     func requestCall() {
-        beerManager.request(type: [Beer].self, api: .beers) { result in
+        BeerManager.request(type: [Beer].self, api: .beers) { result in
             switch result {
             case .success(let data):
                 self.beers.append(contentsOf: data)
@@ -66,7 +65,7 @@ extension BeerCollectionViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
             if beers.count - 4 == indexPath.item {
-                beerManager.request(type: [Beer].self, api: .nextPage) { result in
+                BeerManager.request(type: [Beer].self, api: .nextPage) { result in
                     switch result {
                     case .success(let beers):
                         self.beers.append(contentsOf: beers)
