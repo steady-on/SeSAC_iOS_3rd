@@ -31,7 +31,7 @@ struct BeerManager {
                 let tip = json["brewers_tips"].stringValue
                 let imageUrl = json["image_url"].stringValue
                 
-                let beer = Beer(name: name, description: description, pairingFoods: pairingFoods, tip: tip, imageUrl: imageUrl)
+                let beer = Beer(name: name, description: description, foodPairing: pairingFoods, tip: tip, imageUrl: imageUrl)
                 
                 completion(beer)
                 
@@ -54,11 +54,11 @@ struct BeerManager {
                 for item in json {
                     let name = item["name"].stringValue
                     let description = item["description"].stringValue
-                    let pairingFoods = item["food_pairing"].arrayValue.map { $0.stringValue }
+                    let foodPairing = item["food_pairing"].arrayValue.map { $0.stringValue }
                     let tip = item["brewers_tips"].stringValue
                     let imageUrl = item["image_url"].stringValue
                     
-                    let beer = Beer(name: name, description: description, pairingFoods: pairingFoods, tip: tip, imageUrl: imageUrl)
+                    let beer = Beer(name: name, description: description, foodPairing: foodPairing, tip: tip, imageUrl: imageUrl)
                     
                     beers.append(beer)
                 }

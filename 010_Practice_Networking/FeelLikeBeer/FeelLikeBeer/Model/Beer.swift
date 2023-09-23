@@ -7,15 +7,16 @@
 
 import UIKit
 
-struct Beer {
+struct Beer: Decodable, Hashable {
+    let id: Int
     let name: String
     let description: String
-    let pairingFoods: [String]
+    let foodPairing: [String]
     let tip: String
     let imageUrl: String
     
     var pairingFoodsString: String {
-        pairingFoods.joined(separator: ",\n")
+        foodPairing.joined(separator: ",\n")
     }
     
     func getBeerImage(completionHandler: @escaping (UIImage?) -> Void) {
