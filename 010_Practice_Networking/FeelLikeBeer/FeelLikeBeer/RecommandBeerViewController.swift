@@ -10,6 +10,7 @@ import UIKit
 class RecommandBeerViewController: UIViewController {
     
     let beerManager = BeerManager()
+    var closeCoverView = false
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -32,7 +33,11 @@ class RecommandBeerViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presentCoverView()
+        
+        if closeCoverView == false {
+            closeCoverView = true
+            presentCoverView()
+        }
     }
     
     @IBAction func pickAgainButtonTapped(_ sender: UIButton) {
@@ -49,9 +54,10 @@ class RecommandBeerViewController: UIViewController {
     }
     
     func callRequest() {
-        beerManager.fetchRandomBeer { result in
+        beerManager.request(type: [Beer].self, api: .random) { result in
             switch result {
-            case .success(let beer):
+            case .success(let data):
+                guard let beer = data.first else { return }
                 self.nameLabel.text = beer.name
                 self.descriptionTextView.text = beer.description
                 self.bestFoodPairTextView.text = beer.pairingFoodsString
