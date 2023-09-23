@@ -9,25 +9,26 @@ import UIKit
 
 class RecommandBeerViewController: UIViewController {
     
-    var closeCoverView = false
+    private let viewModel = RecommandBeerViewModel()
+    private var closeCoverView = false
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var bestFoodPairingLabel: UILabel!
-    @IBOutlet weak var bestFoodPairTextView: UITextView!
-    @IBOutlet weak var tipLabel: UILabel!
-    @IBOutlet weak var tipTextView: UITextView!
-    @IBOutlet weak var pickAgainButton: UIButton!
+    @IBOutlet weak private var scrollView: UIScrollView!
+    @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var imageView: UIImageView!
+    @IBOutlet weak private var nameLabel: UILabel!
+    @IBOutlet weak private var descriptionTextView: UITextView!
+    @IBOutlet weak private var bestFoodPairingLabel: UILabel!
+    @IBOutlet weak private var bestFoodPairTextView: UITextView!
+    @IBOutlet weak private var tipLabel: UILabel!
+    @IBOutlet weak private var tipTextView: UITextView!
+    @IBOutlet weak private var pickAgainButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.definesPresentationContext = true
         
         setUpDesignForUI()
-        callRequest()
+        setBeerInfo()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,7 +41,7 @@ class RecommandBeerViewController: UIViewController {
     }
     
     @IBAction func pickAgainButtonTapped(_ sender: UIButton) {
-        callRequest()
+        viewModel.requestRandomBeer()
         scrollView.setContentOffset(.zero, animated: true)
     }
     
@@ -52,22 +53,19 @@ class RecommandBeerViewController: UIViewController {
         present(coverViewController, animated: false)
     }
     
-    func callRequest() {
-        BeerManager.request(type: [Beer].self, api: .random) { result in
-            switch result {
-            case .success(let data):
-                guard let beer = data.first else { return }
-                self.nameLabel.text = beer.name
-                self.descriptionTextView.text = beer.description
-                self.bestFoodPairTextView.text = beer.pairingFoodsString
-                self.tipTextView.text = beer.brewersTips
-                beer.getBeerImage { image in
-                    DispatchQueue.main.async {
-                        self.imageView.image = image
-                    }
+    func setBeerInfo() {
+        viewModel.requestRandomBeer()
+        viewModel.beerOfToday.bind { beer in
+            guard let beer else { return }
+            
+            self.nameLabel.text = beer.name
+            self.descriptionTextView.text = beer.description
+            self.bestFoodPairTextView.text = beer.pairingFoodsString
+            self.tipTextView.text = beer.brewersTips
+            beer.getBeerImage { image in
+                DispatchQueue.main.async {
+                    self.imageView.image = image
                 }
-            case .failure(let failure):
-                print(failure)
             }
         }
     }
