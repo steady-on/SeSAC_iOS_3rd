@@ -12,12 +12,13 @@ final class BeerCollectionViewController: UICollectionViewController {
     private let viewModel = BeerCollectionViewModel()
     
     @IBOutlet weak private var beerCollectionView: UICollectionView!
+    private var dataSource: UICollectionViewDiffableDataSource<Int, Beer>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         beerCollectionView.prefetchDataSource = self
-        configureCollectionViewFlowLayout()
+        beerCollectionView.collectionViewLayout = createLayout()
         
         viewModel.request()
         viewModel.beers.bind { [weak self] _ in
@@ -25,18 +26,42 @@ final class BeerCollectionViewController: UICollectionViewController {
         }
     }
     
-    private func configureCollectionViewFlowLayout() {
-        let layout = UICollectionViewFlowLayout()
-
-        let spacing: CGFloat = 20
-        let width = UIScreen.main.bounds.width - (spacing * 3)
-
-        layout.itemSize = CGSize(width: width/2, height: width)
-        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-        layout.minimumLineSpacing = spacing
-        layout.minimumInteritemSpacing = spacing
-
-        beerCollectionView.collectionViewLayout = layout
+    private func createLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+            
+            let leadingTopItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(2/3))
+            let leadingTopItem = NSCollectionLayoutItem(layoutSize: leadingTopItemSize)
+            leadingTopItem.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
+            
+            let leadingBottomGroupItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1.0))
+            let leadingBottomGroupItem = NSCollectionLayoutItem(layoutSize: leadingBottomGroupItemSize)
+            leadingBottomGroupItem.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
+            
+            let leadingBottomGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1/3))
+            let leadingBottomGroup = NSCollectionLayoutGroup.horizontal(layoutSize: leadingBottomGroupSize, repeatingSubitem: leadingBottomGroupItem, count: 2)
+            
+            let leadingGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(2/3), heightDimension: .fractionalHeight(1.0))
+            let leadingGroup = NSCollectionLayoutGroup.vertical(layoutSize: leadingGroupSize, subitems: [leadingTopItem, leadingBottomGroup])
+            
+            let trailingItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1/3))
+            let trailingItem = NSCollectionLayoutItem(layoutSize: trailingItemSize)
+            trailingItem.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
+            
+            let trailingGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1.0))
+            let trailingGroup = NSCollectionLayoutGroup.vertical(layoutSize: trailingGroupSize, repeatingSubitem: trailingItem, count: 3)
+            
+            let subContainerGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1/2))
+            let topContainerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: subContainerGroupSize, subitems: [leadingGroup, trailingGroup])
+            let bottomContainerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: subContainerGroupSize, subitems: [trailingGroup, leadingGroup])
+            
+            let containerGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+            let containerGroup = NSCollectionLayoutGroup.vertical(layoutSize: containerGroupSize, subitems: [topContainerGroup, bottomContainerGroup])
+            
+            let section = NSCollectionLayoutSection(group: containerGroup)
+            return section
+        }
+        
+        return layout
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
