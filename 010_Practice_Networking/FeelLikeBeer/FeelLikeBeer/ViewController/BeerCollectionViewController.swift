@@ -29,13 +29,16 @@ final class BeerCollectionViewController: UICollectionViewController {
     private func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             
+            let spacing: CGFloat = 10
+            let contenInsets = NSDirectionalEdgeInsets(top: spacing, leading: spacing, bottom: spacing, trailing: spacing)
+            
             let leadingTopItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(2/3))
             let leadingTopItem = NSCollectionLayoutItem(layoutSize: leadingTopItemSize)
-            leadingTopItem.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
+            leadingTopItem.contentInsets = contenInsets
             
             let leadingBottomGroupItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1.0))
             let leadingBottomGroupItem = NSCollectionLayoutItem(layoutSize: leadingBottomGroupItemSize)
-            leadingBottomGroupItem.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
+            leadingBottomGroupItem.contentInsets = contenInsets
             
             let leadingBottomGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1/3))
             let leadingBottomGroup = NSCollectionLayoutGroup.horizontal(layoutSize: leadingBottomGroupSize, repeatingSubitem: leadingBottomGroupItem, count: 2)
@@ -45,7 +48,7 @@ final class BeerCollectionViewController: UICollectionViewController {
             
             let trailingItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1/3))
             let trailingItem = NSCollectionLayoutItem(layoutSize: trailingItemSize)
-            trailingItem.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
+            trailingItem.contentInsets = contenInsets
             
             let trailingGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1.0))
             let trailingGroup = NSCollectionLayoutGroup.vertical(layoutSize: trailingGroupSize, repeatingSubitem: trailingItem, count: 3)
