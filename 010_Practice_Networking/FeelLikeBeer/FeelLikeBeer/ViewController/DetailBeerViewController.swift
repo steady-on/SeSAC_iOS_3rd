@@ -7,17 +7,17 @@
 
 import UIKit
 
-class DetailBeerViewController: UIViewController {
+final class DetailBeerViewController: UIViewController {
     
     var beer: Beer?
     
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var bestFoodPairingLabel: UILabel!
-    @IBOutlet weak var bestFoodPairTextView: UITextView!
-    @IBOutlet weak var tipLabel: UILabel!
-    @IBOutlet weak var tipTextView: UITextView!
+    @IBOutlet weak private var imageView: UIImageView!
+    @IBOutlet weak private var nameLabel: UILabel!
+    @IBOutlet weak private var descriptionTextView: UITextView!
+    @IBOutlet weak private var bestFoodPairingLabel: UILabel!
+    @IBOutlet weak private var bestFoodPairTextView: UITextView!
+    @IBOutlet weak private var tipLabel: UILabel!
+    @IBOutlet weak private var tipTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

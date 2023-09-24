@@ -7,11 +7,11 @@
 
 import UIKit
 
-class BeerCollectionViewController: UICollectionViewController {
+final class BeerCollectionViewController: UICollectionViewController {
 
-    var beers = [Beer]()
+    private let viewModel = BeerCollectionViewModel()
     
-    @IBOutlet var beerCollectionView: UICollectionView!
+    @IBOutlet weak private var beerCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,22 +19,13 @@ class BeerCollectionViewController: UICollectionViewController {
         beerCollectionView.prefetchDataSource = self
         configureCollectionViewFlowLayout()
         
-        requestCall()
-    }
-    
-    func requestCall() {
-        BeerManager.request(type: [Beer].self, api: .beers) { result in
-            switch result {
-            case .success(let data):
-                self.beers.append(contentsOf: data)
-                self.beerCollectionView.reloadData()
-            case .failure(let failure):
-                print(failure)
-            }
+        viewModel.request()
+        viewModel.beers.bind { [weak self] _ in
+            self?.beerCollectionView.reloadData()
         }
     }
     
-    func configureCollectionViewFlowLayout() {
+    private func configureCollectionViewFlowLayout() {
         let layout = UICollectionViewFlowLayout()
 
         let spacing: CGFloat = 20
@@ -49,38 +40,28 @@ class BeerCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return beers.count
+        return viewModel.numberOfCount
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BeerCollectionViewCell", for: indexPath) as? BeerCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.beer = beers[indexPath.item]
+        cell.beer = viewModel.cellForItem(at: indexPath)
         
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let detailBeerController = storyboard?.instantiateViewController(withIdentifier: "DetailBeerViewController") as? DetailBeerViewController else { return }
-        detailBeerController.beer = beers[indexPath.item]
+        detailBeerController.beer = viewModel.cellForItem(at: indexPath)
         navigationController?.pushViewController(detailBeerController, animated: true)
     }
 }
 
 extension BeerCollectionViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            if beers.count - 4 == indexPath.item {
-                BeerManager.request(type: [Beer].self, api: .nextPage) { result in
-                    switch result {
-                    case .success(let beers):
-                        self.beers.append(contentsOf: beers)
-                        self.beerCollectionView.reloadData()
-                    case .failure(let failure):
-                        print(failure)
-                    }
-                }
-            }
+        for indexPath in indexPaths where viewModel.numberOfCount - 4 == indexPath.item {
+            viewModel.requestNextPage()
         }
     }
 }

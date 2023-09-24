@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecommandBeerViewController: UIViewController {
+final class RecommandBeerViewController: UIViewController {
     
     private let viewModel = RecommandBeerViewModel()
     private var closeCoverView = false
@@ -45,7 +45,7 @@ class RecommandBeerViewController: UIViewController {
         scrollView.setContentOffset(.zero, animated: true)
     }
     
-    func presentCoverView() {
+    private func presentCoverView() {
         guard let coverViewController = storyboard?.instantiateViewController(withIdentifier: "CoverViewController") as? CoverViewController else { return }
         
         coverViewController.modalPresentationStyle = .overCurrentContext
@@ -53,7 +53,7 @@ class RecommandBeerViewController: UIViewController {
         present(coverViewController, animated: false)
     }
     
-    func setBeerInfo() {
+    private func setBeerInfo() {
         viewModel.requestRandomBeer()
         viewModel.beerOfToday.bind { beer in
             guard let beer else { return }
@@ -70,7 +70,7 @@ class RecommandBeerViewController: UIViewController {
         }
     }
 
-    func setUpDesignForUI() {
+    private func setUpDesignForUI() {
         desingView()
         designTitleLabel()
         designNameLabel()
@@ -84,11 +84,11 @@ class RecommandBeerViewController: UIViewController {
 }
 
 extension RecommandBeerViewController {
-    func desingView() {
+    private func desingView() {
         view.backgroundColor = UIColor.backgroundColor
     }
     
-    func designTitleLabel() {
+    private func designTitleLabel() {
         titleLabel.text = "Today's Pick For You!"
         titleLabel.numberOfLines = 0
         titleLabel.font = .boldSystemFont(ofSize: 22)
@@ -96,13 +96,13 @@ extension RecommandBeerViewController {
         titleLabel.textAlignment = .center
     }
     
-    func designNameLabel() {
+    private func designNameLabel() {
         nameLabel.font = .boldSystemFont(ofSize: 28)
         nameLabel.textColor = .pointColor
         nameLabel.textAlignment = .center
     }
     
-    func designCommonTextView(_ textView: UITextView) {
+    private func designCommonTextView(_ textView: UITextView) {
         textView.font = .systemFont(ofSize: 17)
         textView.textColor = UIColor.fontColor
         textView.textAlignment = .center
@@ -111,7 +111,7 @@ extension RecommandBeerViewController {
         textView.backgroundColor = .clear
     }
     
-    func designLabel(_ label: UILabel) {
+    private func designLabel(_ label: UILabel) {
         label.font = .boldSystemFont(ofSize: 20)
         label.textColor = .accentColor
         label.textAlignment = .center
@@ -120,7 +120,7 @@ extension RecommandBeerViewController {
         label.layer.masksToBounds = true
     }
     
-    func designOneMorePickButton() {
+    private func designOneMorePickButton() {
         var config = UIButton.Configuration.filled()
         
         config.title = "Pick Again!"

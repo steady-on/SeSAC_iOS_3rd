@@ -11,6 +11,7 @@
 		639AF8272ABF539500A88A97 /* DetailBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639AF8262ABF539500A88A97 /* DetailBeerViewController.swift */; };
 		639AF8292ABF58BF00A88A97 /* RecommandBeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639AF8282ABF58BF00A88A97 /* RecommandBeerViewModel.swift */; };
 		639AF82B2ABF58DB00A88A97 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639AF82A2ABF58DB00A88A97 /* Observable.swift */; };
+		639AF8302ABFCC6700A88A97 /* BeerCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639AF82F2ABFCC6700A88A97 /* BeerCollectionViewModel.swift */; };
 		63AB57462A839C7A00A138C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB57452A839C7A00A138C7 /* AppDelegate.swift */; };
 		63AB57482A839C7A00A138C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB57472A839C7A00A138C7 /* SceneDelegate.swift */; };
 		63AB574A2A839C7A00A138C7 /* RecommandBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB57492A839C7A00A138C7 /* RecommandBeerViewController.swift */; };
@@ -33,6 +34,7 @@
 		639AF8262ABF539500A88A97 /* DetailBeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBeerViewController.swift; sourceTree = "<group>"; };
 		639AF8282ABF58BF00A88A97 /* RecommandBeerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandBeerViewModel.swift; sourceTree = "<group>"; };
 		639AF82A2ABF58DB00A88A97 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		639AF82F2ABFCC6700A88A97 /* BeerCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewModel.swift; sourceTree = "<group>"; };
 		63AB57422A839C7A00A138C7 /* FeelLikeBeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeelLikeBeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63AB57452A839C7A00A138C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63AB57472A839C7A00A138C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,26 @@
 			path = etc;
 			sourceTree = "<group>";
 		};
+		639AF82D2ABFCC0D00A88A97 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				63AB57492A839C7A00A138C7 /* RecommandBeerViewController.swift */,
+				63C85A512A848CB90007F1B0 /* BeerCollectionViewController.swift */,
+				63C85A4D2A83FEB80007F1B0 /* CoverViewController.swift */,
+				639AF8262ABF539500A88A97 /* DetailBeerViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		639AF82E2ABFCC4F00A88A97 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				639AF8282ABF58BF00A88A97 /* RecommandBeerViewModel.swift */,
+				639AF82F2ABFCC6700A88A97 /* BeerCollectionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		63AB57392A839C7A00A138C7 = {
 			isa = PBXGroup;
 			children = (
@@ -94,12 +116,9 @@
 				63AB57452A839C7A00A138C7 /* AppDelegate.swift */,
 				63AB57472A839C7A00A138C7 /* SceneDelegate.swift */,
 				63AB574B2A839C7A00A138C7 /* Main.storyboard */,
-				63AB57492A839C7A00A138C7 /* RecommandBeerViewController.swift */,
-				639AF8282ABF58BF00A88A97 /* RecommandBeerViewModel.swift */,
-				63C85A512A848CB90007F1B0 /* BeerCollectionViewController.swift */,
+				639AF82D2ABFCC0D00A88A97 /* ViewController */,
+				639AF82E2ABFCC4F00A88A97 /* ViewModel */,
 				63C85A4F2A848C430007F1B0 /* BeerCollectionViewCell.swift */,
-				63C85A4D2A83FEB80007F1B0 /* CoverViewController.swift */,
-				639AF8262ABF539500A88A97 /* DetailBeerViewController.swift */,
 				639AF82A2ABF58DB00A88A97 /* Observable.swift */,
 				63C85A552A8491CF0007F1B0 /* Model */,
 				63AB57592A83A0CC00A138C7 /* extension */,
@@ -220,6 +239,7 @@
 				63C85A502A848C430007F1B0 /* BeerCollectionViewCell.swift in Sources */,
 				63C85A4E2A83FEB80007F1B0 /* CoverViewController.swift in Sources */,
 				63AB57462A839C7A00A138C7 /* AppDelegate.swift in Sources */,
+				639AF8302ABFCC6700A88A97 /* BeerCollectionViewModel.swift in Sources */,
 				63AB57482A839C7A00A138C7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
