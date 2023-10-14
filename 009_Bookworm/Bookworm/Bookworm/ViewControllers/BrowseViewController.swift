@@ -37,8 +37,8 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func configureCollectionView() {
         recentCollectionView.delegate = self
         recentCollectionView.dataSource = self
+        recentCollectionView.backgroundColor = .secondarySystemGroupedBackground
         recentCollectionView.register(BWCollectionViewCell.self, forCellWithReuseIdentifier: BWCollectionViewCell.identifier)
-        
         setLayoutForCollectionView()
     }
     
@@ -77,9 +77,8 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
     func configureTableView() {
         bestTableView.dataSource = self
         bestTableView.delegate = self
-        
         bestTableView.register(BWTableViewCell.self, forCellReuseIdentifier: BWTableViewCell.identifier)
-        bestTableView.rowHeight = 144
+        bestTableView.rowHeight = 152
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
