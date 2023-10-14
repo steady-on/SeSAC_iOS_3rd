@@ -65,7 +65,7 @@ class BWTableViewCell: BaseTableViewCell {
         stackView.axis = .vertical
         stackView.spacing = 4
         stackView.alignment = .leading
-        stackView.distribution = .equalSpacing
+//        stackView.distribution = .equalSpacing
         return stackView
     }()
     
@@ -87,7 +87,7 @@ class BWTableViewCell: BaseTableViewCell {
     private let overviewTextView: UITextView = {
         let textView = UITextView()
         textView.font = .preferredFont(forTextStyle: .callout)
-        textView.textColor = .darkGray
+        textView.textColor = .secondaryLabel
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.textContainer.lineBreakMode = .byTruncatingTail
@@ -117,7 +117,7 @@ class BWTableViewCell: BaseTableViewCell {
     }()
     
     override func configureView() {
-        contentView.backgroundColor = .systemGroupedBackground
+        contentView.backgroundColor = .secondarySystemGroupedBackground
         contentView.addSubview(backdropView)
         backdropView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -140,10 +140,10 @@ class BWTableViewCell: BaseTableViewCell {
     
     override func setConstraints() {
         NSLayoutConstraint.activate([
-            backdropView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            backdropView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            backdropView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            backdropView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            backdropView.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
+            backdropView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            backdropView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+            backdropView.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -157,7 +157,7 @@ class BWTableViewCell: BaseTableViewCell {
         NSLayoutConstraint.activate([
             infoTextStackView.topAnchor.constraint(equalTo: backdropView.layoutMarginsGuide.topAnchor),
             infoTextStackView.leadingAnchor.constraint(equalTo: coverImageView.trailingAnchor, constant: 12),
-            infoTextStackView.trailingAnchor.constraint(equalTo: backdropView.layoutMarginsGuide.trailingAnchor, constant: -8),
+            infoTextStackView.trailingAnchor.constraint(equalTo: backdropView.layoutMarginsGuide.trailingAnchor),
             infoTextStackView.bottomAnchor.constraint(lessThanOrEqualTo: backdropView.layoutMarginsGuide.bottomAnchor)
         ])
         
