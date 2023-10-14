@@ -9,14 +9,18 @@ import UIKit
 
 class BWBookmarkImageView: UIImageView {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        configureView()
-    }
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        
+//        configureView()
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func draw(_ rect: CGRect) {
+        configureView()
     }
     
     func configureView() {
