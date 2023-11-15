@@ -69,5 +69,12 @@ final class SimpleTableViewController: BaseViewController {
             .map { "\($0) Clicked" }
             .bind(to: label.rx.text)
             .disposed(by: disposeBag)
+        
+        tableView.rx
+            .itemAccessoryButtonTapped
+            .subscribe(onNext: { indexPath in
+                print("Tapped Detail @ \(indexPath.section),\(indexPath.row)")
+            })
+            .disposed(by: disposeBag)
     }
 }
