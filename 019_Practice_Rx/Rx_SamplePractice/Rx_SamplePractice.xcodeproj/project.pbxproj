@@ -15,6 +15,7 @@
 		637427BD2B0362B200F52E4C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 637427BC2B0362B200F52E4C /* RxCocoa */; };
 		637427C42B03651400F52E4C /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637427C32B03651400F52E4C /* SimpleTableViewController.swift */; };
 		637427C62B0369EF00F52E4C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637427C52B0369EF00F52E4C /* BaseViewController.swift */; };
+		63C0EF102B063A7D0041CFFD /* LaboratoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C0EF0F2B063A7D0041CFFD /* LaboratoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		637427B52B03628B00F52E4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		637427C32B03651400F52E4C /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		637427C52B0369EF00F52E4C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		63C0EF0F2B063A7D0041CFFD /* LaboratoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaboratoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				637427A92B03628A00F52E4C /* SceneDelegate.swift */,
 				637427AB2B03628A00F52E4C /* MainTabViewContoller.swift */,
 				637427C32B03651400F52E4C /* SimpleTableViewController.swift */,
+				63C0EF0F2B063A7D0041CFFD /* LaboratoryViewController.swift */,
 				637427C52B0369EF00F52E4C /* BaseViewController.swift */,
 				637427B02B03628B00F52E4C /* Assets.xcassets */,
 				637427B22B03628B00F52E4C /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 				637427C62B0369EF00F52E4C /* BaseViewController.swift in Sources */,
 				637427AC2B03628A00F52E4C /* MainTabViewContoller.swift in Sources */,
 				637427A82B03628A00F52E4C /* AppDelegate.swift in Sources */,
+				63C0EF102B063A7D0041CFFD /* LaboratoryViewController.swift in Sources */,
 				637427AA2B03628A00F52E4C /* SceneDelegate.swift in Sources */,
 				637427C42B03651400F52E4C /* SimpleTableViewController.swift in Sources */,
 			);

@@ -40,6 +40,7 @@ final class SimpleTableViewController: BaseViewController {
             view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
+
     }
     
     override func setConstraints() {

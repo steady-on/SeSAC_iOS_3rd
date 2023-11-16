@@ -10,6 +10,8 @@ import UIKit
 final class MainTabViewContoller: UITabBarController {
     
     private let simpleTableView = SimpleTableViewController()
+    private let laboratoryView = LaboratoryViewController()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +21,9 @@ final class MainTabViewContoller: UITabBarController {
 
     private func configureTabBar() {
         simpleTableView.tabBarItem.image = UIImage(systemName: "tablecells")
+        laboratoryView.tabBarItem.image = UIImage(systemName: "slider.horizontal.below.rectangle")
         
-        let viewControllers = [simpleTableView].map { UINavigationController(rootViewController: $0) }
+        let viewControllers = [simpleTableView, laboratoryView].map { UINavigationController(rootViewController: $0) }
         
         setViewControllers(viewControllers, animated: true)
     }
