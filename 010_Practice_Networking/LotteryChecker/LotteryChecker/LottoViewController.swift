@@ -33,23 +33,11 @@ class LottoViewController: UIViewController {
         
         drawingNumberTextField.inputView = drawingNumberPicker
         drawingNumberTextField.tintColor = .clear
-        
-//        viewModel.seletedDrawingNumberLable.bind { text in
-//            self.drawingNumberLabel.text = text
-//        }
-        
-        viewModel.lotto.bind { [self] lotto in
-            drawingDate.text = lotto?.drawingDate
-            
-            for (label, number) in zip(lotteryNumberLabels, lotto?.loteryNumber ?? []) {
-                configureLabel(label, for: number)
-            }
-
-            configureLabel(bonusNumberLabel, for: lotto?.bonusNumber ?? 0)
-        }
     }
     
     private func bind() {
+        // ???: 근데 맨처음 기본 값은 어떻게 넣지?
+        
         // UIPickerViewDataSource; numberOfRowsInComponent, titleForRow
         viewModel.drawingNumbers
             .bind(to: drawingNumberPicker.rx.itemTitles) { _, item in
@@ -66,10 +54,25 @@ class LottoViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        // ???: 근데 맨처음 기본 값은 어떻게 넣지?
-        /// Published로 선언한 다음 next로 초기값을 넣어준다면?
-        
-        
+        drawingNumberPicker.rx.modelSelected(String.self)
+            .debounce(.seconds(1), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .map { $0[0] }
+            .flatMap {
+                self.viewModel.requestLotto(selectedNumber: $0)
+            }
+            .subscribe(with: self) { owner, lotto in
+                owner.drawingDate.text = lotto.drawingDate
+                
+                for (label, number) in zip(owner.lotteryNumberLabels, lotto.loteryNumber) {
+                    owner.configureLabel(label, for: number)
+                }
+                
+                owner.configureLabel(owner.bonusNumberLabel, for: lotto.bonusNumber)
+            } onError: { owner, error in
+                owner.drawingNumberLabel.text = "회차 정보를 불러오지 못했습니다."
+            }
+            .disposed(by: disposeBag)
     }
     
     func setUpDesignForUI() {
