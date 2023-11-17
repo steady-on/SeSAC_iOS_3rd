@@ -61,6 +61,9 @@ final class LottoViewModel {
             }
             .subscribe(with: self) { owner, lotto in
                 publishedLotto.onNext(lotto)
+            } onError: { owner, error in
+                // 여기서 requestLotto에 대해서 onError로 보내면, view에서 onError를 UI적으로 처리가능
+                publishedLotto.onError(error)
             }
             .disposed(by: disposeBag)
         
