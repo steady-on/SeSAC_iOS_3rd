@@ -24,15 +24,56 @@ class LottoViewController: UIViewController {
     @IBOutlet weak var bonusNumberLabel: UILabel!
     
     private let disposeBag = DisposeBag()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDesignForUI()
         
-        bind()
+        bind2()
         
         drawingNumberTextField.inputView = drawingNumberPicker
         drawingNumberTextField.tintColor = .clear
+    }
+    
+    private func bind2() {
+        let selectedDrawingNumber = BehaviorRelay(value: "1093")
+        
+        drawingNumberPicker.rx.modelSelected(String.self)
+            .map { $0[0] }
+            .bind(to: selectedDrawingNumber)
+            .disposed(by: disposeBag)
+        
+        selectedDrawingNumber
+            .bind(to: drawingNumberTextField.rx.text)
+            .disposed(by: disposeBag)
+        
+        let input = LottoViewModel.Input(
+            selectedDrawingNumber: selectedDrawingNumber
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        output.drawingNumbersObservable
+            .bind(to: drawingNumberPicker.rx.itemTitles) { _, item in
+                return item
+            }
+            .disposed(by: disposeBag)
+        
+        output.lotto
+            .subscribe(with: self) { owner, lotto in
+                owner.drawingNumberTextField.resignFirstResponder()
+                owner.drawingNumberLabel.text = "\(lotto.drawingNumber)회 당첨 결과"
+                owner.drawingDate.text = lotto.drawingDate
+                
+                for (label, number) in zip(owner.lotteryNumberLabels, lotto.loteryNumber) {
+                    owner.configureLabel(label, for: number)
+                }
+                
+                owner.configureLabel(owner.bonusNumberLabel, for: lotto.bonusNumber)
+            } onError: { owner, error in
+                owner.drawingNumberLabel.text = "회차 정보를 불러오지 못했습니다."
+            }
+            .disposed(by: disposeBag)
     }
     
     private func bind() {
@@ -41,7 +82,7 @@ class LottoViewController: UIViewController {
         /// 그 값을 textField와 label이 구독하도록 함
         
         // UIPickerViewDataSource; numberOfRowsInComponent, titleForRow
-        viewModel.drawingNumbers
+        viewModel.drawingNumbersObservable
             .bind(to: drawingNumberPicker.rx.itemTitles) { _, item in
                 return item
             }
@@ -101,6 +142,7 @@ extension LottoViewController {
     }
     
     func designNumberLabel(_ label: UILabel) {
+        label.text = "0"
         label.textColor = .white
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 17)
