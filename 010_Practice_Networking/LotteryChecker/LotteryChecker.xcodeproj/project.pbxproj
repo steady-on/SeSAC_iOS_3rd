@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		630927FD2AB18AB6009E9EB0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630927FC2AB18AB6009E9EB0 /* Observable.swift */; };
+		630927FD2AB18AB6009E9EB0 /* CustomObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630927FC2AB18AB6009E9EB0 /* CustomObservable.swift */; };
 		630927FF2AB18D50009E9EB0 /* LottoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630927FE2AB18D50009E9EB0 /* LottoViewModel.swift */; };
 		6386EF7E2A82421B00F1EBB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6386EF7D2A82421B00F1EBB1 /* AppDelegate.swift */; };
 		6386EF802A82421B00F1EBB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6386EF7F2A82421B00F1EBB1 /* SceneDelegate.swift */; };
@@ -19,10 +19,12 @@
 		6386EF982A82A50300F1EBB1 /* LottoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6386EF972A82A50300F1EBB1 /* LottoData.swift */; };
 		6386EF9A2A830A2500F1EBB1 /* Lotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6386EF992A830A2500F1EBB1 /* Lotto.swift */; };
 		6386EF9C2A830C5700F1EBB1 /* LottoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6386EF9B2A830C5700F1EBB1 /* LottoManager.swift */; };
+		63C0EF492B079D980041CFFD /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 63C0EF482B079D980041CFFD /* RxCocoa */; };
+		63C0EF4B2B079D980041CFFD /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 63C0EF4A2B079D980041CFFD /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		630927FC2AB18AB6009E9EB0 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		630927FC2AB18AB6009E9EB0 /* CustomObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomObservable.swift; sourceTree = "<group>"; };
 		630927FE2AB18D50009E9EB0 /* LottoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewModel.swift; sourceTree = "<group>"; };
 		6386EF7A2A82421B00F1EBB1 /* LotteryChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LotteryChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6386EF7D2A82421B00F1EBB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C0EF4B2B079D980041CFFD /* RxSwift in Frameworks */,
+				63C0EF492B079D980041CFFD /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +77,7 @@
 				6386EF832A82421B00F1EBB1 /* Main.storyboard */,
 				6386EF812A82421B00F1EBB1 /* LottoViewController.swift */,
 				630927FE2AB18D50009E9EB0 /* LottoViewModel.swift */,
-				630927FC2AB18AB6009E9EB0 /* Observable.swift */,
+				630927FC2AB18AB6009E9EB0 /* CustomObservable.swift */,
 				6386EF962A82A4B500F1EBB1 /* Model */,
 				6386EF932A829C2200F1EBB1 /* extension */,
 				6386EF862A82421C00F1EBB1 /* Assets.xcassets */,
@@ -118,6 +122,10 @@
 			dependencies = (
 			);
 			name = LotteryChecker;
+			packageProductDependencies = (
+				63C0EF482B079D980041CFFD /* RxCocoa */,
+				63C0EF4A2B079D980041CFFD /* RxSwift */,
+			);
 			productName = PracticeNetworking;
 			productReference = 6386EF7A2A82421B00F1EBB1 /* LotteryChecker.app */;
 			productType = "com.apple.product-type.application";
@@ -146,6 +154,9 @@
 				Base,
 			);
 			mainGroup = 6386EF712A82421B00F1EBB1;
+			packageReferences = (
+				63C0EF472B079D980041CFFD /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 6386EF7B2A82421B00F1EBB1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -173,7 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630927FD2AB18AB6009E9EB0 /* Observable.swift in Sources */,
+				630927FD2AB18AB6009E9EB0 /* CustomObservable.swift in Sources */,
 				6386EF9C2A830C5700F1EBB1 /* LottoManager.swift in Sources */,
 				630927FF2AB18D50009E9EB0 /* LottoViewModel.swift in Sources */,
 				6386EF9A2A830A2500F1EBB1 /* Lotto.swift in Sources */,
@@ -335,6 +346,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -362,6 +374,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -397,6 +410,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63C0EF472B079D980041CFFD /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63C0EF482B079D980041CFFD /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63C0EF472B079D980041CFFD /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		63C0EF4A2B079D980041CFFD /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63C0EF472B079D980041CFFD /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6386EF722A82421B00F1EBB1 /* Project object */;
 }

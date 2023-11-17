@@ -14,10 +14,10 @@ final class LottoViewModel {
     private let drawingNumbers = Array(1...1084).reversed().map { String($0) }
     var numberOfDrawingNumbers: Int { drawingNumbers.count }
     
-    let selectedNumber: Observable<String?> = Observable("1084")
-    let seletedDrawingNumberLable = Observable("")
+    let selectedNumber: CustomObservable<String?> = CustomObservable("1084")
+    let seletedDrawingNumberLable = CustomObservable("")
     
-    let lotto: Observable<Lotto?> = Observable(nil)
+    let lotto: CustomObservable<Lotto?> = CustomObservable(nil)
 
     func titleForRow(_ row: Int) -> String {
         return drawingNumbers[row]

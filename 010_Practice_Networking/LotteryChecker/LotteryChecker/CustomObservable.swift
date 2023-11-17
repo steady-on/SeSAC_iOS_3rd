@@ -1,5 +1,5 @@
 //
-//  Observable.swift
+//  CustomObservable.swift
 //  LotteryChecker
 //
 //  Created by Roen White on 2023/09/13.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Observable<T> {
+final class CustomObservable<T> {
     var value: T {
         didSet { listener?(value) }
     }
