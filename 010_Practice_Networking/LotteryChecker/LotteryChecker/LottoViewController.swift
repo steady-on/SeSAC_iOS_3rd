@@ -31,21 +31,12 @@ class LottoViewController: UIViewController {
         
         bind()
         
-//        drawingNumberPicker.delegate = self
-//        drawingNumberPicker.dataSource = self
-        
         drawingNumberTextField.inputView = drawingNumberPicker
         drawingNumberTextField.tintColor = .clear
         
-        viewModel.selectedNumber.bind { value in
-            self.drawingNumberTextField.text = value
-            self.viewModel.textForDrawingNumberLabel()
-            self.viewModel.requestLotto()
-        }
-        
-        viewModel.seletedDrawingNumberLable.bind { text in
-            self.drawingNumberLabel.text = text
-        }
+//        viewModel.seletedDrawingNumberLable.bind { text in
+//            self.drawingNumberLabel.text = text
+//        }
         
         viewModel.lotto.bind { [self] lotto in
             drawingDate.text = lotto?.drawingDate
@@ -59,12 +50,26 @@ class LottoViewController: UIViewController {
     }
     
     private func bind() {
+        // UIPickerViewDataSource; numberOfRowsInComponent, titleForRow
         viewModel.drawingNumbers
-            .bind(to: drawingNumberPicker.rx.itemTitles) { row, item in
-                print(row, item)
+            .bind(to: drawingNumberPicker.rx.itemTitles) { _, item in
                 return item
             }
             .disposed(by: disposeBag)
+        
+        // UIPickerViewDelegate; didSelectRow
+        drawingNumberPicker.rx.modelSelected(String.self)
+            .map { $0[0] }
+            .bind(with: self) { owner, value in
+                owner.drawingNumberTextField.text = value
+                owner.drawingNumberLabel.text = "\(value)회 당첨 결과"
+            }
+            .disposed(by: disposeBag)
+        
+        // ???: 근데 맨처음 기본 값은 어떻게 넣지?
+        /// Published로 선언한 다음 next로 초기값을 넣어준다면?
+        
+        
     }
     
     func setUpDesignForUI() {
@@ -98,22 +103,3 @@ extension LottoViewController {
         label.layer.masksToBounds = true
     }
 }
-
-//extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        return 1
-//    }
-//
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        return viewModel.numberOfDrawingNumbers
-//    }
-//
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return viewModel.titleForRow(row)
-//    }
-//    
-//    
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        viewModel.setPickerValueToSelectedNumber(for: row)
-//    }
-//}
