@@ -37,6 +37,8 @@ class LottoViewController: UIViewController {
     
     private func bind() {
         // ???: 근데 맨처음 기본 값은 어떻게 넣지?
+        /// picker에서 선택되는 값을 viewModel에 따로 프로퍼티를 만들어주고,
+        /// 그 값을 textField와 label이 구독하도록 함
         
         // UIPickerViewDataSource; numberOfRowsInComponent, titleForRow
         viewModel.drawingNumbers
@@ -48,21 +50,22 @@ class LottoViewController: UIViewController {
         // UIPickerViewDelegate; didSelectRow
         drawingNumberPicker.rx.modelSelected(String.self)
             .map { $0[0] }
-            .bind(with: self) { owner, value in
-                owner.drawingNumberTextField.text = value
-                owner.drawingNumberLabel.text = "\(value)회 당첨 결과"
-            }
+            .bind(to: viewModel.selectedDrawingNumber)
             .disposed(by: disposeBag)
         
-        drawingNumberPicker.rx.modelSelected(String.self)
+        viewModel.selectedDrawingNumber
+            .bind(to: drawingNumberTextField.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.selectedDrawingNumber
             .debounce(.seconds(1), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
-            .map { $0[0] }
             .flatMap {
                 self.viewModel.requestLotto(selectedNumber: $0)
             }
             .subscribe(with: self) { owner, lotto in
                 owner.drawingNumberTextField.resignFirstResponder()
+                owner.drawingNumberLabel.text = "\(lotto.drawingNumber)회 당첨 결과"
                 owner.drawingDate.text = lotto.drawingDate
                 
                 for (label, number) in zip(owner.lotteryNumberLabels, lotto.loteryNumber) {

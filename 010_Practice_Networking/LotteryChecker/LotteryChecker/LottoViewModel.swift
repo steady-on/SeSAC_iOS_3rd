@@ -18,6 +18,10 @@ final class LottoViewModel {
         Array(1...1093).reversed().map { String($0) }
     )
     
+    // picker에서 선택된 값을 받아올 프로퍼티
+    /// UI에 연결되어서 실패할 가능성이 없기 때문에 relay로 처리
+    let selectedDrawingNumber = BehaviorRelay(value: "1093")
+    
     func requestLotto(selectedNumber: String) -> Observable<Lotto> {
         return Observable<Lotto>.create { [weak self] response in
             self?.lottoManager.fetchLotto(drawingNumber: selectedNumber) { lotto in
