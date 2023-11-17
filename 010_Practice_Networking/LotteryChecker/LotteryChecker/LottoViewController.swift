@@ -62,6 +62,7 @@ class LottoViewController: UIViewController {
                 self.viewModel.requestLotto(selectedNumber: $0)
             }
             .subscribe(with: self) { owner, lotto in
+                owner.drawingNumberTextField.resignFirstResponder()
                 owner.drawingDate.text = lotto.drawingDate
                 
                 for (label, number) in zip(owner.lotteryNumberLabels, lotto.loteryNumber) {

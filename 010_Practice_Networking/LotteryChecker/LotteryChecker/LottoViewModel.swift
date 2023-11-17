@@ -17,10 +17,6 @@ final class LottoViewModel {
     let drawingNumbers = Observable.just(
         Array(1...1093).reversed().map { String($0) }
     )
-
-    let seletedDrawingNumberLable = CustomObservable("")
-    
-    let lotto: CustomObservable<Lotto?> = CustomObservable(nil)
     
     func requestLotto(selectedNumber: String) -> Observable<Lotto> {
         return Observable<Lotto>.create { [weak self] response in
