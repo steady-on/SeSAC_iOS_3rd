@@ -42,7 +42,8 @@ final class LottoViewModel {
                     return
                 }
                 
-                response.onNext(lotto)
+                response.on(.next(lotto))
+                response.on(.completed)
             }
             
             return Disposables.create()
@@ -64,6 +65,9 @@ final class LottoViewModel {
             } onError: { owner, error in
                 // 여기서 requestLotto에 대해서 onError로 보내면, view에서 onError를 UI적으로 처리가능
                 publishedLotto.onError(error)
+                // 그런데! 여기서 onError를 던져버리면, 다음 이벤트(피커값을 다시 고르는 경우)를 받지못함
+            } onDisposed: { _ in
+                print("disposed")
             }
             .disposed(by: disposeBag)
         
