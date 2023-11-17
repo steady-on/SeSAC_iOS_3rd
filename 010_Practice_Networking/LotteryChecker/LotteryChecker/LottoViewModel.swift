@@ -6,26 +6,31 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 final class LottoViewModel {
     
     private lazy var lottoManager = LottoManager()
     
-    private let drawingNumbers = Array(1...1084).reversed().map { String($0) }
-    var numberOfDrawingNumbers: Int { drawingNumbers.count }
+    let drawingNumbers = Observable.just(
+        Array(1...1093).reversed().map { String($0) }
+    )
+    
+//    var numberOfDrawingNumbers: Int { drawingNumbers.count }
     
     let selectedNumber: CustomObservable<String?> = CustomObservable("1084")
     let seletedDrawingNumberLable = CustomObservable("")
     
     let lotto: CustomObservable<Lotto?> = CustomObservable(nil)
 
-    func titleForRow(_ row: Int) -> String {
-        return drawingNumbers[row]
-    }
+//    func titleForRow(_ row: Int) -> String {
+//        return drawingNumbers[row]
+//    }
     
-    func setPickerValueToSelectedNumber(for row: Int) {
-        selectedNumber.value = drawingNumbers[row]
-    }
+//    func setPickerValueToSelectedNumber(for row: Int) {
+//        selectedNumber.value = drawingNumbers[row]
+//    }
     
     func textForDrawingNumberLabel() {
         guard let selectedNumber = selectedNumber.value else {

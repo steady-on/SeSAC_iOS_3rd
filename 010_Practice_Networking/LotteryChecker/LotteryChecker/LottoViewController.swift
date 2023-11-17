@@ -23,13 +23,16 @@ class LottoViewController: UIViewController {
     @IBOutlet var lotteryNumberLabels: [UILabel]!
     @IBOutlet weak var bonusNumberLabel: UILabel!
     
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDesignForUI()
         
-        drawingNumberPicker.delegate = self
-        drawingNumberPicker.dataSource = self
+        bind()
+        
+//        drawingNumberPicker.delegate = self
+//        drawingNumberPicker.dataSource = self
         
         drawingNumberTextField.inputView = drawingNumberPicker
         drawingNumberTextField.tintColor = .clear
@@ -53,6 +56,15 @@ class LottoViewController: UIViewController {
 
             configureLabel(bonusNumberLabel, for: lotto?.bonusNumber ?? 0)
         }
+    }
+    
+    private func bind() {
+        viewModel.drawingNumbers
+            .bind(to: drawingNumberPicker.rx.itemTitles) { row, item in
+                print(row, item)
+                return item
+            }
+            .disposed(by: disposeBag)
     }
     
     func setUpDesignForUI() {
@@ -87,21 +99,21 @@ extension LottoViewController {
     }
 }
 
-extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return viewModel.numberOfDrawingNumbers
-    }
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return viewModel.titleForRow(row)
-    }
-    
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        viewModel.setPickerValueToSelectedNumber(for: row)
-    }
-}
+//extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        return 1
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return viewModel.numberOfDrawingNumbers
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return viewModel.titleForRow(row)
+//    }
+//    
+//    
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        viewModel.setPickerValueToSelectedNumber(for: row)
+//    }
+//}
