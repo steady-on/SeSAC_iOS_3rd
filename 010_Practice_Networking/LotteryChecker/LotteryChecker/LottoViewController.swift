@@ -36,7 +36,7 @@ class LottoViewController: UIViewController {
     }
     
     private func bind2() {
-        let selectedDrawingNumber = BehaviorRelay(value: "1093")
+        let selectedDrawingNumber = BehaviorRelay(value: "1094")
         
         drawingNumberPicker.rx.modelSelected(String.self)
             .map { $0[0] }

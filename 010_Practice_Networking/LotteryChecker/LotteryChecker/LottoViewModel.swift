@@ -14,7 +14,7 @@ final class LottoViewModel {
     private lazy var lottoManager = LottoManager()
     private let disposeBag = DisposeBag()
     
-    private let drawingNumbers = Array(1...1093).reversed().map { String($0) }
+    private let drawingNumbers = Array(1...1094).reversed().map { String($0) }
     
     // 처음에 한번 Observable로 선언 후 다른 값으로 교체되지 않음
     let drawingNumbersObservable = Observable.just(
@@ -23,7 +23,7 @@ final class LottoViewModel {
     
     // picker에서 선택된 값을 받아올 프로퍼티
     /// UI에 연결되어서 실패할 가능성이 없기 때문에 relay로 처리
-    let selectedDrawingNumber = BehaviorRelay(value: "1093")
+    let selectedDrawingNumber = BehaviorRelay(value: "1094")
     
     struct Input {
         let selectedDrawingNumber: BehaviorRelay<String>
