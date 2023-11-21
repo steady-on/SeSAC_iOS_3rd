@@ -35,6 +35,7 @@ final class LottoViewModel {
     }
     
     func requestLotto(selectedNumber: String) -> Observable<Lotto> {
+        // MARK: Single이라는 애도 알아보자
         return Observable<Lotto>.create { [weak self] response in
             self?.lottoManager.fetchLotto(drawingNumber: selectedNumber) { lotto in
                 guard let lotto else {
@@ -42,13 +43,19 @@ final class LottoViewModel {
                     return
                 }
                 
-                response.on(.next(lotto))
-                response.on(.completed)
+                // create로 생성된 시퀀스는 동기적임!
+                response.onNext(lotto)
+                response.onCompleted()
             }
             
+            /// 그래서 여기서 뭘 반환하더라도 위에 있는 onNext로 전달된 이벤트가 생성/처리되고 completed되는데에는 전혀 문제가 없음
+            /// 그래서 이건 그냥 일반적으로 반환하는 일회용임
+            /// 이게 반환될 일은 없음
             return Disposables.create()
         }
+        .debug()
     }
+
     
     func transform(input: Input) -> Output {
         let drawingNumbersObservable = Observable.just(drawingNumbers)
@@ -57,6 +64,7 @@ final class LottoViewModel {
         input.selectedDrawingNumber
             .debounce(.seconds(1), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
+        // ???: 네트워크 통신할때 flatMap 왜씀?
             .flatMap {
                 self.requestLotto(selectedNumber: $0)
             }
