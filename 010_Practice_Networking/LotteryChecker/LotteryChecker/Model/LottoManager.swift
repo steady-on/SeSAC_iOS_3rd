@@ -12,13 +12,10 @@ struct LottoManager {
 
     private let lottoURL: String = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber"
     
-    func fetchLotto(drawingNumber: String, completion: @escaping (Lotto?) -> ()) {
+    func fetchLotto(drawingNumber: String) -> Single<Lotto> {
         let urlString = "\(lottoURL)&drwNo=\(drawingNumber)"
-        performRequest(with: urlString) { lotto in
-            DispatchQueue.main.async { completion(lotto) }
-        }
+        return performRequest(with: urlString)
     }
-    
     
     private func performRequest(with urlString: String) -> Single<Lotto> {
         guard let url = URL(string: urlString) else {
@@ -43,6 +40,13 @@ struct LottoManager {
             task.resume()
             
             return Disposables.create { task.cancel() }
+        }
+    }
+    
+    func fetchLotto(drawingNumber: String, completion: @escaping (Lotto?) -> ()) {
+        let urlString = "\(lottoURL)&drwNo=\(drawingNumber)"
+        performRequest(with: urlString) { lotto in
+            DispatchQueue.main.async { completion(lotto) }
         }
     }
     
