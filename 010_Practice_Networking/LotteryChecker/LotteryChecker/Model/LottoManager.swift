@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 struct LottoManager {
 
@@ -15,6 +16,29 @@ struct LottoManager {
         let urlString = "\(lottoURL)&drwNo=\(drawingNumber)"
         performRequest(with: urlString) { lotto in
             DispatchQueue.main.async { completion(lotto) }
+        }
+    }
+    
+    
+    private func performRequest(with urlString: String) -> Single<Lotto> {
+        return Single<Lotto>.create { single in
+            let task = URLSession.shared.dataTask(with: URL(string: urlString)!) { data, _, error in
+                if let error {
+                    single(.failure(error))
+                    return
+                }
+                
+                guard let data = data, let lotto = self.parseJSON(data) else {
+                    single(.failure(LottoError.unknowned))
+                    return
+                }
+                
+                single(.success(lotto))
+            }
+            
+            task.resume()
+            
+            return Disposables.create { task.cancel() }
         }
     }
     

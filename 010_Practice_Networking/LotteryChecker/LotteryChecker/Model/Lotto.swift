@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Lotto {
+struct Lotto: Hashable {
     let drawingNumber: Int
     let drawingDate: String
     let loteryNumber: [Int]
