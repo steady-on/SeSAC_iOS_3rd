@@ -9,4 +9,6 @@ import Foundation
 
 enum LottoError: Error {
     case unknowned
+    case jsonParsingError
+    case urlError
 }

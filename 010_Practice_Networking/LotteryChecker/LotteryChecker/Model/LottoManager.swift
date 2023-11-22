@@ -21,15 +21,19 @@ struct LottoManager {
     
     
     private func performRequest(with urlString: String) -> Single<Lotto> {
+        guard let url = URL(string: urlString) else {
+            return Single<Lotto>.error(LottoError.urlError)
+        }
+        
         return Single<Lotto>.create { single in
-            let task = URLSession.shared.dataTask(with: URL(string: urlString)!) { data, _, error in
+            let task = URLSession.shared.dataTask(with: url) { data, _, error in
                 if let error {
                     single(.failure(error))
                     return
                 }
                 
                 guard let data = data, let lotto = self.parseJSON(data) else {
-                    single(.failure(LottoError.unknowned))
+                    single(.failure(LottoError.jsonParsingError))
                     return
                 }
                 
