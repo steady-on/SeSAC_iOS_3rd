@@ -83,15 +83,29 @@ final class LottoViewModel {
          */
             .flatMap {
                 self.requestLotto(selectedNumber: $0)
+                    .catchAndReturn(Lotto(drawingNumber: 0, drawingDate: "회차 정보를 불러오지 못했습니다.", loteryNumber: [], bonusNumber: 0))
             }
+        // MARK: error handling
+        /// error handling은 catch와 reply 두가지로 나뉨
+        /// reply는 지정된 횟수 혹은 무한, 아니면 특정 에러일때 계속 재시도 하는 것임
+        /// 근데 이번의 경우는 picker에서 잘못된 값이 들어오는 경우에는 재시도를 계속 해봤자 의미가 없음
+        /// 그래서 catch를 사용해 보고자 함
+        /// flatMap을 통해서 에러가 전달되면 catchAndReturn 메서드로 잡아보려고 했는데 자꾸 dispose되어버림
+        /// 생각해보니 시점의 문제였음! 이미 flatMap을 통해서 error가 넘어오면 그냥 그 시점에서 이 Observable의 생명주기가 끝나버리는 것임
+        /// 그래서 flatMap을 통해서 이벤트가 방출되기 전에 이 이벤트가 에러인지 아닌지 판단하고 잡아줄 필요가 있음
+        /// request메서드로 리턴된 single자체에 catchAndReturn을 붙여주니까 이제 error가 넘어오지 않고 계속 다음 요청을 할 수가 있게됨
+//            .catchAndReturn(Lotto(drawingNumber: 0, drawingDate: "", loteryNumber: [], bonusNumber: 0))
+            .debug()
             .subscribe(with: self) { owner, lotto in
                 publishedLotto.onNext(lotto)
-            } onError: { owner, error in
-                print(error)
-                // 여기서 requestLotto에 대해서 onError로 보내면, view에서 onError를 UI적으로 처리가능
-                publishedLotto.onError(error)
-                // 그런데! 여기서 onError를 던져버리면, 다음 이벤트(피커값을 다시 고르는 경우)를 받지못함
-            } onDisposed: { _ in
+            }
+//    onError: { owner, error in
+//                print(error)
+//                // 여기서 requestLotto에 대해서 onError로 보내면, view에서 onError를 UI적으로 처리가능
+//                publishedLotto.onError(error)
+//                // 그런데! 여기서 onError를 던져버리면, 다음 이벤트(피커값을 다시 고르는 경우)를 받지못함
+//            } 
+    onDisposed: { _ in
                 print("disposed")
             }
             .disposed(by: disposeBag)

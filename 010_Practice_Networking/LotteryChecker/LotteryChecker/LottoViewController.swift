@@ -36,7 +36,7 @@ class LottoViewController: UIViewController {
     }
     
     private func bind2() {
-        let selectedDrawingNumber = BehaviorRelay(value: "1094")
+        let selectedDrawingNumber = BehaviorRelay(value: "sdf")
         
         drawingNumberPicker.rx.modelSelected(String.self)
             .map { $0[0] }
@@ -60,6 +60,7 @@ class LottoViewController: UIViewController {
             .disposed(by: disposeBag)
         
         output.lotto
+            .observe(on: MainScheduler.instance)
             .subscribe(with: self) { owner, lotto in
                 owner.drawingNumberTextField.resignFirstResponder()
                 owner.drawingNumberLabel.text = "\(lotto.drawingNumber)회 당첨 결과"
