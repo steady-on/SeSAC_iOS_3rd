@@ -16,7 +16,9 @@ final class LottoViewModel {
     
     private let drawingNumbers = Array(1...1094).reversed().map { String($0) }
     
-    // 처음에 한번 Observable로 선언 후 다른 값으로 교체되지 않음
+    // just메서드로 만들어진 Observable은 매개변수로 받은 객체 자체를 Observable로 변환해서 원본 그대로를 방출함
+    /// onNext는 불가능!
+    /// picker에 쓰일 숫자 배열은 처음에 한번 Observable로 선언 후 다른 값으로 교체되지 않음.
     let drawingNumbersObservable = Observable.just(
         Array(1...1093).reversed().map { String($0) }
     )
@@ -34,28 +36,30 @@ final class LottoViewModel {
         let lotto: PublishSubject<Lotto>
     }
     
-    func requestLotto(selectedNumber: String) -> Observable<Lotto> {
-        // MARK: Single이라는 애도 알아보자
-        return Observable<Lotto>.create { [weak self] response in
-            self?.lottoManager.fetchLotto(drawingNumber: selectedNumber) { lotto in
-                guard let lotto else {
-                    response.onError(LottoError.unknowned)
-                    return
-                }
-                
-                // create로 생성된 시퀀스는 동기적임!
-                response.onNext(lotto)
-                response.onCompleted()
-            }
-            
-            /// 그래서 여기서 뭘 반환하더라도 위에 있는 onNext로 전달된 이벤트가 생성/처리되고 completed되는데에는 전혀 문제가 없음
-            /// 그래서 이건 그냥 일반적으로 반환하는 일회용임
-            /// 이게 반환될 일은 없음
-            return Disposables.create()
-        }
-        .debug()
-    }
+//    func requestLotto(selectedNumber: String) -> Observable<Lotto> {
+//        // MARK: Single이라는 애도 알아보자
+//        return Observable<Lotto>.create { [weak self] response in
+//            self?.lottoManager.fetchLotto(drawingNumber: selectedNumber) { lotto in
+//                guard let lotto else {
+//                    response.onError(LottoError.unknowned)
+//                    return
+//                }
+//                
+//                // create로 생성된 시퀀스는 동기적임!
+//                response.onNext(lotto)
+//                response.onCompleted()
+//            }
+//            
+//            /// 그래서 여기서 뭘 반환하더라도 위에 있는 onNext로 전달된 이벤트가 생성/처리되고 completed되는데에는 전혀 문제가 없음
+//            /// 그래서 이건 그냥 일반적으로 반환하는 일회용임
+//            /// 이게 반환될 일은 없음
+//            return Disposables.create()
+//        }
+//    }
 
+    func requestLotto(selectedNumber: String) -> Single<Lotto> {
+        return lottoManager.fetchLotto(drawingNumber: selectedNumber)
+    }
     
     func transform(input: Input) -> Output {
         let drawingNumbersObservable = Observable.just(drawingNumbers)
@@ -65,12 +69,25 @@ final class LottoViewModel {
             .debounce(.seconds(1), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
         // ???: 네트워크 통신할때 flatMap 왜씀?
+        /* 
+         - flatMap: transform the items emitted by an Observable into Observables, then flatten the emissions from those into a single Observable
+                Observable이 방출한 항목을 Observable로 변환한 다음 해당 항목의 방출을 단일 Observable로 평탄화
+         - map: transform the items emitted by an Observable by applying a function to each item
+                각 아이템에 함수를 적용하여 Observable에서 방출된 아이템을 변환
+        즉, 네트워크 통신에 flatMap을 쓰는게 아니고 두개의 operator의 쓰임이 다른것
+         
+         requestLotto(selectedNumber:)메서드가 Single을 리턴하니까 당연히 subscribe(onSuccess:onError:)메서드를 써야 할줄 알았는데 그렇게 메서드 체이닝이 불가능함
+        - flatMap에서 말하는 평탄화는 변환된 Observable을 그대로 방출하는게 아니라 그 변환된 Observable이 방출하는 결과들을 병합한다는 뜻!
+         아래 코드에 map을 적용하면 PrimitiveSequence<SingleTrait, Lotto>를 그대로 리턴, 그래서 map으로 리턴된 어떤 Observable을 구독하려면 subscribe 내에서 또 subscribe를 해줘야 함
+         flatMap 적용 시 PrimitiveSequence<SingleTrait, Lotto>.Element(방출하는 그것!)를 리턴! 그래서 그냥 바로 subscribe로 방출 결과를 받아서 사용이 가능!
+         */
             .flatMap {
                 self.requestLotto(selectedNumber: $0)
             }
             .subscribe(with: self) { owner, lotto in
                 publishedLotto.onNext(lotto)
             } onError: { owner, error in
+                print(error)
                 // 여기서 requestLotto에 대해서 onError로 보내면, view에서 onError를 UI적으로 처리가능
                 publishedLotto.onError(error)
                 // 그런데! 여기서 onError를 던져버리면, 다음 이벤트(피커값을 다시 고르는 경우)를 받지못함

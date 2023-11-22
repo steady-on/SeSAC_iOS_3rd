@@ -17,6 +17,10 @@ struct LottoManager {
         return performRequest(with: urlString)
     }
     
+    // MARK: Single
+    /// RxSwift의 Trait 중 하나로 Swift의 Result와 비슷함
+    /// 여러 elements를 지속적으로 방출하지 않고, 단 하나의 element 혹은 error를 방출함
+    /// 따라서 첫 번째 방출 이후에는 (그게 element든 error든) 더 이상 이벤트가 발생하지 않음! → 자동으로 구독 종료
     private func performRequest(with urlString: String) -> Single<Lotto> {
         guard let url = URL(string: urlString) else {
             return Single<Lotto>.error(LottoError.urlError)
@@ -34,7 +38,9 @@ struct LottoManager {
                     return
                 }
                 
-                single(.success(lotto))
+                DispatchQueue.main.async {
+                    single(.success(lotto))
+                }
             }
             
             task.resume()
