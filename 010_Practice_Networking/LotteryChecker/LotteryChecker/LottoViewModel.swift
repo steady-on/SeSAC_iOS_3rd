@@ -16,9 +16,9 @@ final class LottoViewModel {
     
     private let drawingNumbers = Array(1...1094).reversed().map { String($0) }
     
-    // just메서드로 만들어진 Observable은 매개변수로 받은 객체 자체를 Observable로 변환해서 원본 그대로를 방출함
-    /// onNext는 불가능!
-    /// picker에 쓰일 숫자 배열은 처음에 한번 Observable로 선언 후 다른 값으로 교체되지 않음.
+    // just메서드로 만들어진 Observable은 매개변수로 받은 객체 자체를 Observable로 변환해서 원본 그대로를 방출
+    /// Observable은 onNext가 불가능!
+    /// picker에 쓰일 숫자 배열은 처음에 한번 Observable로 선언 후 다른 값으로 교체될 필요가 없으므로 굳이 Subject나 relay로 만들 필요가 없음
     let drawingNumbersObservable = Observable.just(
         Array(1...1093).reversed().map { String($0) }
     )
@@ -66,7 +66,7 @@ final class LottoViewModel {
         let publishedLotto = PublishSubject<Lotto>()
         
         input.selectedDrawingNumber
-            .debounce(.seconds(1), scheduler: MainScheduler.instance)
+            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
         // ???: 네트워크 통신할때 flatMap 왜씀?
         /* 
@@ -105,7 +105,7 @@ final class LottoViewModel {
 //                publishedLotto.onError(error)
 //                // 그런데! 여기서 onError를 던져버리면, 다음 이벤트(피커값을 다시 고르는 경우)를 받지못함
 //            } 
-    onDisposed: { _ in
+            onDisposed: { _ in
                 print("disposed")
             }
             .disposed(by: disposeBag)
