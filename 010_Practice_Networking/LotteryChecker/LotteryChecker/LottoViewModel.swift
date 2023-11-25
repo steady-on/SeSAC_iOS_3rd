@@ -37,7 +37,6 @@ final class LottoViewModel {
     }
     
 //    func requestLotto(selectedNumber: String) -> Observable<Lotto> {
-//        // MARK: Single이라는 애도 알아보자
 //        return Observable<Lotto>.create { [weak self] response in
 //            self?.lottoManager.fetchLotto(drawingNumber: selectedNumber) { lotto in
 //                guard let lotto else {
